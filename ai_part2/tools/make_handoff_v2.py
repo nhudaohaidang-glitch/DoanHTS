@@ -32,12 +32,34 @@ def integration_examples(model):
         raw = [packets, byte_sum//packets, 127*syn//packets, src, dst, ports] if packets else [0]*6
         q = quantize([raw], model['divisors'])[0]
         scores = infer([q], model)[0]
-        examples.append(dict(counter_inputs=counters, raw=raw, quantized=q.tolist(),
+        examples.append(dict(counter_inputs=counters, decision_valid=bool(packets), raw=raw, quantized=q.tolist(),
                              feat_hex=f'{sum(int(v)<<(8*i) for i,v in enumerate(q)):012x}',
                              scores=scores.tolist(), class_id=int(scores.argmax())))
     return dict(purpose='Arithmetic integration examples, NOT network ground truth',
                 counter_input_order=['packets','ip_byte_sum','syn_open','src_count','dst_count','port_count'],
                 raw_feature_order=NAMES, examples=examples)
+
+
+def integration_guard_header():
+    return '''#ifndef AI_V2_INTEGRATION_H
+#define AI_V2_INTEGRATION_H
+#include "ai_quant_v2.h"
+/* Return value is SAMPLE VALIDITY, not a class ID. Call the AI driver only
+ * when this returns 1. Empty windows must not create a new block decision.
+ * Use RAW packet count: 1..7 packets can have q0==0 and are still valid.
+ * Existing block TTL/expiry runs independently, including during idle time. */
+static inline int ai_v2_prepare_window(uint32_t packets, uint64_t ip_bytes,
+    uint32_t syn_open, uint32_t src_count, uint32_t dst_count,
+    uint32_t port_count, uint64_t *feat_out) {
+    if (!feat_out) return 0;
+    *feat_out = 0;
+    if (packets == 0u) return 0;
+    *feat_out = ai_v2_pack(packets, ip_bytes, syn_open,
+                           src_count, dst_count, port_count);
+    return 1;
+}
+#endif
+'''
 
 
 def package(model_dir, project, dataset, evaluation, collection, output, kit=KIT):
@@ -80,6 +102,7 @@ def package(model_dir, project, dataset, evaluation, collection, output, kit=KIT
         if path.is_file() and not any(p in ('build','__pycache__') for p in rel.parts):
             add(path, str(Path('gowin_ai_v2') / rel))
     add(log, 'evidence/rtl_simulation.log')
+    files['gowin_ai_v2/firmware/ai_v2_integration.h'] = integration_guard_header().encode()
     for name in ('model.json','metrics.json','FREEZE.json','w1.hex','w2.hex','b1.hex','b2.hex','quant_params.vh','vectors.txt'):
         add(model_dir / name, 'model/' + name)
     for name in ('metrics.json','per_capture.csv','report.html'):
@@ -100,6 +123,7 @@ def package(model_dir, project, dataset, evaluation, collection, output, kit=KIT
                     packet_blocking_verified=False)
     files['evidence/GOWIN_USER_REPORTED.json'] = json.dumps(evidence, indent=2).encode()
     m = report['ai']; baseline = report['baseline']
+    empty_class = int(infer([[0]*6], model)[0].argmax())
     document = f'''# Bàn giao AI v2 cho người 1 và 3
 
 Model SHA256: {freeze['model_sha256']}
@@ -115,11 +139,18 @@ RTL số học khớp {count} vector, 84 chu kỳ. Không có phép đo chặn E
 
 ## Người 1: CPU và driver
 
-Thêm gowin_ai_v2/src/ai_core_model_v2.v và gowin_ai_v2/firmware/ai_quant_v2.h của CÙNG project.
+Thêm gowin_ai_v2/src/ai_core_model_v2.v; firmware include gowin_ai_v2/firmware/ai_v2_integration.h (header này include ai_quant_v2.h cùng thư mục).
 Verilog này đã nhúng ROM, không cần readmemh/file HEX lúc chạy; HEX trong model/ dùng đối chiếu, không thêm generic ai_core lần nữa.
 Hàm ai_v2_pack(packets, ip_byte_sum, syn_open, src_count, dst_count, port_count) trả uint64 chứa 48 bit feat.
 feat[7:0]=q0, ..., feat[47:40]=q5. Ghi phần thấp/cao theo driver thực của nhóm, không tạo địa chỉ thanh ghi mới theo tài liệu này.
 q=clamp(raw//divisor,0,127). Empty window cả sáu số 0. Kiểm tra helper uint64 chia số nguyên được toolchain RISC-V liên kết đầy đủ.
+
+QUAN TRỌNG: model này trả class_id={empty_class} khi feat toàn 0. Đây là kết quả số học trên đầu vào rỗng, không phải bằng chứng có tấn công.
+Gọi ai_v2_prepare_window(..., &feat); chỉ gọi driver AI khi hàm trả 1. Khi trả 0, ghi mẫu không hợp lệ/rỗng, không START và không tạo luật chặn mới từ mẫu đó.
+Giá trị trả về của hàm là sample-valid, không phải class_id=0/1. Không ép kết quả model thành normal giả.
+Guard kiểm RAW packet_count==0; không kiểm q0==0 vì 1..7 gói hợp lệ cũng lượng tử q0=0. Không bỏ mẫu ít gói: điều đó có thể làm bỏ sót quét chậm.
+TTL/expiry của luật chặn hiện có và việc hoàn tất giao dịch AI cũ vẫn được xử lý độc lập; cửa sổ rỗng không tự gỡ chặn.
+Giữ nguyên trọng số/model/hash và các vector số học, bao gồm vector toàn 0; đây là guard ở điều khiển đầu vào, không phải huấn luyện/sửa nhãn.
 
 clk/rst_n/start/feat/busy/done/class_id/scores theo spec/AI_INTERFACE.md.
 Reset đồng bộ mức thấp, bỏ phép tính đang chạy. start chỉ nhận khi busy=0, chốt feat tại cạnh nhận; start lúc busy bị bỏ qua.
@@ -137,7 +168,7 @@ Căn mốc cửa sổ/reset khi so PCAP. Đếm overflow/CRC lỗi và có chín
 
 ## Kiểm ghép
 
-1. CPU nạp các vector feat, đối chiếu score/class và số chu kỳ, rồi kiểm reset/start khi busy.
+1. Kiểm guard: 0 gói không gọi START/không tạo luật mới; 1 và 7 gói vẫn valid dù q0=0. CPU nạp các vector feat, đối chiếu score/class và số chu kỳ, rồi kiểm reset/start khi busy. Vector toàn0 chỉ dùng kiểm số học; đường xử lý mạng phải skip theo raw count.
 2. Chạy cùng luồng header có mốc cửa sổ xác định: so raw -> quantized -> packed giữa Python và RTL.
 3. Xác minh bridge chuyển hai chiều, ARP, lọc luật cố định và counters trước khi dùng AI ra quyết định.
 4. Gắn model vào chính sách chọn IP/chặn: kiểm nguồn bình thường vẫn qua, nguồn thử nghiệm bị chặn, số gói lọt và chặn nhầm.

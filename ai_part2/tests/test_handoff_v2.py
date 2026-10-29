@@ -1,14 +1,16 @@
 """Handoff consistency checks using artificial feature fixtures, not network results."""
 import json
 from pathlib import Path
+import shutil
+import subprocess
 import tempfile
 import unittest
 from zipfile import ZipFile
 
 from test_v2_development import fixture
 from part2.development import evaluate_v2, train_v2, verify_freeze
-from tools.make_handoff_v2 import package
-from tools.prepare_gowin import prepare
+from tools.make_handoff_v2 import package, integration_guard_header
+from tools.prepare_gowin import prepare, firmware_header
 
 KIT = Path(__file__).resolve().parents[1]
 
@@ -38,6 +40,30 @@ def inputs(root):
 
 
 class HandoffV2Test(unittest.TestCase):
+    @unittest.skipUnless(shutil.which('gcc'), 'host C compiler unavailable')
+    def test_guard_skips_raw_zero_but_accepts_small_nonempty_windows(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            model=json.loads((KIT/'examples/synthetic_model/model.json').read_text())
+            model.update(model_version='v2',divisors=[8,2,1,1,1,1])
+            (root/'ai_quant_v2.h').write_text(firmware_header(model))
+            (root/'ai_v2_integration.h').write_text(integration_guard_header())
+            source=root/'guard_test.c'
+            source.write_text('''#include "ai_v2_integration.h"
+int main(void) {
+    uint64_t feat = 123;
+    if (ai_v2_prepare_window(0,0,0,0,0,0,&feat) || feat != 0) return 1;
+    if (!ai_v2_prepare_window(1,60,1,1,1,1,&feat) || (feat & 255) != 0 || feat == 0) return 2;
+    if (!ai_v2_prepare_window(7,280,5,1,1,5,&feat) || (feat & 255) != 0 || feat == 0) return 3;
+    if (!ai_v2_prepare_window(8,320,6,1,1,6,&feat) || (feat & 255) != 1) return 4;
+    if (ai_v2_prepare_window(1,60,1,1,1,1,0)) return 5;
+    return 0;
+}
+''')
+            result=subprocess.run(['gcc','-std=c11','-Wall','-Wextra','-Werror','-I',str(root),str(source),'-o',str(root/'guard_test')],capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertEqual(subprocess.run([str(root/'guard_test')]).returncode,0)
+
     def test_consistent_bundle_checksum_and_no_overwrite(self):
         import hashlib
         with tempfile.TemporaryDirectory() as d:
@@ -54,7 +80,10 @@ class HandoffV2Test(unittest.TestCase):
                 examples = json.loads(archive.read('ai_v2_handoff/INTEGRATION_VECTORS.json'))
                 self.assertEqual(examples['examples'][2]['quantized'][5],2)
                 self.assertEqual(examples['examples'][3]['quantized'][5],6)
+                self.assertFalse(examples['examples'][0]['decision_valid'])
+                self.assertTrue(examples['examples'][1]['decision_valid'])
                 self.assertIn('ai_v2_handoff/gowin_ai_v2/firmware/ai_quant_v2.h',archive.namelist())
+                self.assertEqual(archive.read('ai_v2_handoff/gowin_ai_v2/firmware/ai_v2_integration.h').decode(),integration_guard_header())
                 self.assertIn('ai_v2_handoff/holdout/features.csv',archive.namelist())
                 self.assertIn('ai_v2_handoff/holdout/features.meta.json',archive.namelist())
                 self.assertFalse(any(name.endswith('.vvp') or name.endswith('.pcap') for name in archive.namelist()))
