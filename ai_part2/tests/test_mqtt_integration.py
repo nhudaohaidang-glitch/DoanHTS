@@ -4,15 +4,13 @@ from pathlib import Path
 
 @unittest.skipUnless(os.environ.get('PART2_MOSQUITTO_BIN'),'Set PART2_MOSQUITTO_BIN for real MQTT integration')
 class MQTTIntegration(unittest.TestCase):
- def test_real_publish_and_receive(self):
+ def exercise(self,prefixes):
   with tempfile.TemporaryDirectory() as d:
    root=Path(d)
    with socket.socket() as s:s.bind(('127.0.0.1',0));port=s.getsockname()[1]
-   # Mosquitto 2.x without a config starts in local-only mode. Avoid custom
-   # config paths that Ubuntu AppArmor may deny (especially temporary dirs).
    log=(root/'broker.log').open('w')
    broker=subprocess.Popen([os.environ['PART2_MOSQUITTO_BIN'],'-p',str(port)],stdout=log,stderr=log)
-   observer=None
+   observer=None;sensors=[];received=None
    try:
     for _ in range(40):
      if broker.poll() is not None:raise RuntimeError('broker failed: '+(root/'broker.log').read_text())
@@ -23,14 +21,24 @@ class MQTTIntegration(unittest.TestCase):
     received=(root/'received.jsonl').open('w')
     observer=subprocess.Popen([sys.executable,'-u','lab/broker_observer.py','--host','127.0.0.1','--port',str(port)],stdout=received,stderr=subprocess.STDOUT)
     time.sleep(.5)
-    sensor=subprocess.run([sys.executable,'lab/sensor_client.py','--host','127.0.0.1','--port',str(port),'--count','3','--interval','.2'],text=True,capture_output=True,timeout=20)
-    self.assertEqual(sensor.returncode,0,sensor.stderr)
-    rows=[json.loads(x) for x in sensor.stdout.splitlines()]
-    self.assertEqual(len(rows),3)
-    self.assertTrue(all(r['ok'] for r in rows),rows)
-    time.sleep(.2);observer.terminate();observer.wait(timeout=3);observer=None;received.close()
+    for prefix in prefixes:
+     sensors.append(subprocess.Popen([sys.executable,'lab/sensor_client.py','--host','127.0.0.1','--port',str(port),'--count','3','--interval','.2','--client-prefix',prefix],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE))
+    for sensor in sensors:
+     stdout,stderr=sensor.communicate(timeout=20)
+     self.assertEqual(sensor.returncode,0,stderr)
+     rows=[json.loads(x) for x in stdout.splitlines()]
+     self.assertEqual(len(rows),3)
+     self.assertTrue(all(r['ok'] for r in rows),rows)
+    time.sleep(.2);observer.terminate();observer.wait(timeout=3);observer=None;received.close();received=None
     messages=[json.loads(x) for x in (root/'received.jsonl').read_text().splitlines()]
-    self.assertEqual([r['payload']['seq'] for r in messages],[0,1,2])
+    actual={(r['payload']['sensor_id'],r['payload']['seq']) for r in messages}
+    expected={(prefix,seq) for prefix in prefixes for seq in range(3)}
+    self.assertEqual(actual,expected)
    finally:
+    for sensor in sensors:
+     if sensor.poll() is None:sensor.terminate();sensor.wait(timeout=3)
     if observer:observer.terminate();observer.wait(timeout=3)
+    if received:received.close()
     broker.terminate();broker.wait(timeout=3);log.close()
+ def test_real_publish_and_receive(self):self.exercise(['one'])
+ def test_two_legitimate_clients_no_id_collision(self):self.exercise(['primary','secondary'])

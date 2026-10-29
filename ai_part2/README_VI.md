@@ -245,3 +245,28 @@ sudo bash lab/run_capture.sh normal train normal_train02 20
 ```
 
 Giữ thư mục phiên lỗi cũ để chẩn đoán. Các dòng DENIED của Firefox không liên quan tới broker MQTT. Trên Ubuntu có chính sách tùy chỉnh khác, không tự đoán đường dẫn hoặc thêm quyền rộng hơn; gửi thông báo của helper để kiểm tra tiếp.
+
+### Bổ sung đối chứng bình thường hai nguồn trước khi train
+
+Không để tập normal chỉ có một IP nguồn còn mọi tập tấn công có hai IP, vì f3 (src_count) có thể trở thành dấu hiệu giả. sensor_client.py bản mới có --client-prefix; run_capture.sh nhận tham số thứ bảy NORMAL_CLIENTS (1 hoặc 2, mặc định 1, chỉ áp dụng cho normal). Với 2, namespace p2source cũng chạy một cảm biến MQTT HỢP LỆ, client ID riêng tránh làm ngắt kết nối cảm biến chính. Hai log được ghi riêng; capture chỉ được đăng ký khi cả hai có ít nhất một lần publish thành công.
+
+```bash
+sudo bash lab/run_capture.sh normal train normal_train03 20 200 0.2 2
+sudo bash lab/run_capture.sh syn train syn_train02 20 80
+sudo bash lab/run_capture.sh scan train scan_train02 20 200
+```
+
+Số 200 ở vị trí PPS của normal không tạo lưu lượng tấn công; khoảng gửi cảm biến là 0.2 giây, số nguồn là 2. Hai phiên tấn công bổ sung thay đổi tốc độ để mô hình không chỉ học tốc độ cố định của một kịch bản. Các phiên cũ vẫn được giữ và có thể dùng; đây là bổ sung đối chứng, không phải đổi nhãn chúng.
+
+Sau khi đã kiểm tra đối chứng hoạt động, thu cả normal một nguồn và normal hai nguồn trong validation/test, cùng các phiên SYN/scan có tốc độ khác nhau. Ví dụ hai nguồn:
+
+```bash
+sudo bash lab/run_capture.sh normal val normal_val01 20 200 0.5 2
+sudo bash lab/run_capture.sh syn val syn_val01 20 250
+sudo bash lab/run_capture.sh scan val scan_val01 20 60
+sudo bash lab/run_capture.sh normal test normal_test01 20 200 0.3 2
+sudo bash lab/run_capture.sh syn test syn_test01 20 120
+sudo bash lab/run_capture.sh scan test scan_test01 20 150
+```
+
+Chỉ dùng tên ID chưa tồn tại. Xem capture.log và PCAP của từng phiên; source_count có thể khác ở từng cửa sổ, cần thống kê sau khi tạo feature để kiểm tra đối chứng. Nhiều nguồn hợp lệ hơn, dịch vụ khác và thay đổi mạng vẫn là những điều kiện cần đánh giá thêm; đối chứng hai nguồn không tự chứng minh khả năng tổng quát.
