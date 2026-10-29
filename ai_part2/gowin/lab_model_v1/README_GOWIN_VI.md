@@ -64,3 +64,7 @@ Mô hình train distinct=exact. Nếu RTL dùng bitmap, cần mô phỏng đúng
 Float, integer và luật ngưỡng đều được báo cáo đúng 96/96 cửa sổ test. Chưa chứng minh AI hơn luật. Test gồm 6 capture; toàn bộ 18 capture/288 cửa sổ. Các cửa sổ trong một capture có tương quan, không coi là 96 thí nghiệm độc lập.
 
 84 chu kỳ ở clock THỰC SỰ đạt 27MHz tương đương khoảng 3.11us. Phản ứng firewall còn gồm cửa sổ thống kê, xác nhận và firmware. Chưa có kết quả timing Gowin hoặc lọc Ethernet thật trong gói này.
+
+## Cập nhật: đã có ảnh báo cáo Gowin từ người dùng
+
+Synthesis hoàn thành, Logic 447 (395 LUT + 52 ALU), FF 246, latch 0, BSRAM 0, DSP 1. Report đặt clock 50MHz và ước tính Fmax 56.3MHz; chưa có timing sau routing hoặc đo trên kit. Chi tiết và giới hạn ở verification/GOWIN_SYNTHESIS_USER.md. Không thay đổi RTL/trọng số trong cập nhật này.

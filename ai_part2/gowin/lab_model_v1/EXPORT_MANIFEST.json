@@ -19,7 +19,7 @@
     6,
     2
   ],
-  "status": "Simulation and generic RTL checks passed; Gowin synthesis/PNR/hardware remain unrun.",
+  "status": "Simulation/generic checks passed; user provided Gowin synthesis screenshots. PNR/hardware unverified.",
   "device_template_reference": "https://github.com/sipeed/TangNano-9K-example/blob/c3b795799f23de91982be52db4273a8eea100cdb/led/9K_LED_project.gprj",
   "verification": {
     "integer_vectors": 360,
@@ -27,6 +27,22 @@
     "latency_cycles": 84,
     "c_quantization_cases": 204,
     "yosys_check_problems": 0,
-    "gowin_executed": false
+    "gowin_executed": false,
+    "gowin_executed_in_cloud": false,
+    "gowin_user_synthesis_reported": true
+  },
+  "gowin_user_synthesis": {
+    "evidence": "User screenshots; HTML/netlist not independently inspected",
+    "logic_total": 447,
+    "lut_utilization_summary": 395,
+    "alu": 52,
+    "registers": 246,
+    "latches": 0,
+    "bsram": 0,
+    "dsp": 1,
+    "io_ports": 103,
+    "clock_constraint_mhz": 50.0,
+    "estimated_fmax_mhz": 56.3,
+    "post_route_verified": false
   }
 }
