@@ -226,3 +226,22 @@ Không chỉ thu đúng một cấu hình rồi kết luận mô hình tổng qu
 Bài test MQTT bản mới chạy `mosquitto -p PORT` ở chế độ chỉ loopback, không đọc cấu hình tạm. Không cần tắt AppArmor hoặc chạy cả bài test bằng sudo. Nếu lỗi vẫn xảy ra, đọc log cụ thể để chẩn đoán thay vì coi AppArmor là nguyên nhân chắc chắn.
 
 Script lab bản mới tạo cấu hình tạm dưới /etc/mosquitto/part2-lab (ngoài conf.d), dùng riêng cho broker trong namespace và xóa file sau phiên. Một bản sao được lưu trong thư mục phiên để đối chiếu. Không sửa cấu hình dịch vụ Mosquitto mặc định. Thư mục part2-lab có thể còn rỗng sau khi chạy.
+
+### Khi log kernel xác nhận AppArmor DENIED cho profile mosquitto
+
+Nếu `/usr/sbin/mosquitto` bị profile `mosquitto` chặn đọc `/etc/mosquitto/part2-lab/session.*.conf`, dùng helper hẹp thay vì tắt AppArmor hoặc đổi đường dẫn cấu hình tiếp:
+
+```bash
+python3 scripts/allow_lab_apparmor.py
+sudo python3 scripts/allow_lab_apparmor.py --apply
+```
+
+Lệnh đầu chỉ hiển thị kế hoạch. Lệnh thứ hai tự tìm một trong hai tên profile phân phối thường dùng, tìm local include của chính profile đó, giữ nguyên quy tắc hiện có và thêm DUY NHẤT quyền đọc các file cấu hình phiên lab. Nó không cấp quyền ghi, không sửa profile chính, không mở quyền đọc /tmp/Home, không tắt AppArmor. Nếu không tìm thấy profile/local include rõ ràng, nó dừng. Nó sao lưu local include nếu đã tồn tại, kiểm tra cú pháp không nạp kernel, sau đó reload chỉ Mosquitto. Nếu lỗi nó khôi phục file; thông báo riêng nếu không xác nhận được việc reload lại policy cũ.
+
+Sau khi báo OK, giữ nguyên các namespace đã tạo và dùng tên phiên mới:
+
+```bash
+sudo bash lab/run_capture.sh normal train normal_train02 20
+```
+
+Giữ thư mục phiên lỗi cũ để chẩn đoán. Các dòng DENIED của Firefox không liên quan tới broker MQTT. Trên Ubuntu có chính sách tùy chỉnh khác, không tự đoán đường dẫn hoặc thêm quyền rộng hơn; gửi thông báo của helper để kiểm tra tiếp.

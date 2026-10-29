@@ -15,3 +15,5 @@ Chưa kiểm chứng ở cloud:
 - Tấn công thật, broker suy giảm, độ chính xác lab thật, LAN8720, lọc trên FPGA, log thật UART, Node-RED và tích hợp firmware.
 
 Không có mã nguồn hoặc lockfile trong checkout DoanHTS bị thay đổi. Gói này là thư mục riêng để người dùng kiểm tra rồi bàn giao nhóm.
+
+Cập nhật AppArmor: helper chỉ sửa local include và thêm quyền đọc config phiên lab. 6 kiểm thử bổ sung PASS cho tìm include hiện đại/cũ, từ chối profile mơ hồ, thêm quyền idempotent, giữ quy tắc cũ, khôi phục khi parse lỗi và từ chối symlink thoát thư mục. Chưa nạp profile vào kernel Ubuntu thật trong cloud; cần thực thi helper trên Ubuntu người dùng.
