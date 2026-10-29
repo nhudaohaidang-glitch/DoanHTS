@@ -25,6 +25,17 @@ class GowinExportTest(unittest.TestCase):
    model=self.fixture(Path(d));path=model/'w1.hex';lines=path.read_text().splitlines()
    lines[0]='00' if lines[0]!='00' else 'ff';path.write_text('\n'.join(lines)+'\n')
    with self.assertRaisesRegex(ValueError,'w1.hex differs'):exporter.validate(model)
+ def test_v2_project_has_distinct_filenames_and_firmware_symbols(self):
+  import json
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);model=self.fixture(root);path=model/'model.json'
+   m=json.loads(path.read_text());m['model_version']='v2';path.write_text(json.dumps(m))
+   out=root/'v2';exporter.prepare(model,out,KIT)
+   self.assertTrue((out/'src/ai_core_model_v2.v').is_file())
+   self.assertTrue((out/'ai_core_v2.gprj').is_file())
+   self.assertIn('ai_v2_pack',(out/'firmware/ai_quant_v2.h').read_text())
+   self.assertIn('src/ai_core_model_v2.v',(out/'verification/run_sim.sh').read_text())
+   self.assertFalse((out/'src/ai_core_model_v1.v').exists())
  def test_wrong_vector_class_rejected(self):
   with tempfile.TemporaryDirectory() as d:
    model=self.fixture(Path(d));path=model/'vectors.txt';lines=path.read_text().splitlines()

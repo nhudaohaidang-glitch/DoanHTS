@@ -28,8 +28,10 @@ while not stopping and time.monotonic()-began<a.seconds:
         pkt=IP(src='198.18.0.3',dst='198.18.0.1')/TCP(sport=rng.randrange(20000,60000),dport=dport,flags='S',seq=rng.randrange(2**31))
         sock.send(pkt)
     i+=1
-    deadline=began+i/a.pps
+    # Do not catch up after a paused VM with a burst of overdue packets.
+    # Requested PPS is a ceiling; PCAP/source.log determines achieved rate.
+    deadline=time.monotonic()+1/a.pps
     time.sleep(max(0,deadline-time.monotonic()))
 if sock:sock.close()
 unit='attempts' if a.mode=='probe' else 'packets'
-print(f'mode={a.mode} {unit}={i} elapsed={time.monotonic()-began:.3f}s',flush=True)
+print(f'mode={a.mode} {unit}={i} elapsed={time.monotonic()-began:.3f}s requested_pps={a.pps} pacing=no_catchup',flush=True)

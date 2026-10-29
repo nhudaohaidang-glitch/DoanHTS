@@ -65,6 +65,8 @@ def standalone(source,m):
 
 
 def firmware_header(m):
+    version=m.get('model_version','v1')
+    if version not in ('v1','v2'):raise ValueError('Unsupported model version')
     shifts=[int(math.log2(d)) for d in m['divisors']]
     lines=['#ifndef AI_QUANT_V1_H','#define AI_QUANT_V1_H','#include <stdint.h>',
            '/* Raw feature order and semantics: see spec/FEATURES_V0.md. */',
@@ -77,18 +79,20 @@ def firmware_header(m):
            '    uint64_t feat = 0;']
     for i,shift in enumerate(shifts):lines.append(f'    feat |= (uint64_t)ai_v1_clip(raw[{i}] >> {shift}) << {i*8};')
     lines += ['    return feat;','}','#endif','']
-    return '\n'.join(lines)
+    return '\n'.join(lines).replace('AI_QUANT_V1_H','AI_QUANT_'+version.upper()+'_H').replace('ai_v1_', 'ai_'+version+'_')
 
 
 def prepare(model_dir,out,kit):
     model_dir,out,kit=Path(model_dir),Path(out),Path(kit)
     m,count=validate(model_dir)
+    version=m.get('model_version','v1')
+    if version not in ('v1','v2'):raise ValueError('Unsupported model version')
     if out.exists():raise ValueError('Output directory exists; choose a new path')
     for d in ('src','constraints','verification','firmware','reference'): (out/d).mkdir(parents=True,exist_ok=True)
     generated=standalone((kit/'rtl/ai_core.v').read_text(),m)
-    (out/'src/ai_core_model_v1.v').write_text(generated)
+    (out/f'src/ai_core_model_{version}.v').write_text(generated)
     (out/'constraints/ai_core.sdc').write_text('create_clock -name clk_ai -period 37.037 [get_ports {clk}]\n')
-    (out/'firmware/ai_quant_v1.h').write_text(firmware_header(m))
+    (out/f'firmware/ai_quant_{version}.h').write_text(firmware_header(m))
     shutil.copy2(kit/'sim/tb_ai_core.v',out/'verification/tb_ai_core.v')
     shutil.copy2(model_dir/'vectors.txt',out/'verification/vectors.txt')
     shutil.copy2(model_dir/'model.json',out/'reference/model.json')
@@ -105,7 +109,8 @@ def prepare(model_dir,out,kit):
     </FileList>
 </Project>
 '''
-    (out/'ai_core_v1.gprj').write_text(project)
+    project=project.replace('ai_core_model_v1.v',f'ai_core_model_{version}.v')
+    (out/f'ai_core_{version}.gprj').write_text(project)
     tcl='''# Standalone synthesis only. No pin assignment or board programming.
 set root [file normalize [file dirname [info script]]]
 cd $root
@@ -116,17 +121,18 @@ set_option -top_module ai_core
 set_option -output_base_name ai_core_v1
 run syn
 '''
-    (out/'synth_ai.tcl').write_text(tcl)
-    (out/'verification/run_sim.sh').write_text('''#!/usr/bin/env bash
+    (out/'synth_ai.tcl').write_text(tcl.replace('ai_core_model_v1.v',f'ai_core_model_{version}.v').replace('ai_core_v1',f'ai_core_{version}'))
+    sim_script='''#!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p verification/build
 iverilog -g2012 -Wall -s tb_ai_core -o verification/build/sim.vvp src/ai_core_model_v1.v verification/tb_ai_core.v
 vvp verification/build/sim.vvp +vectors=verification/vectors.txt | tee verification/build/result.log
 grep -q '^PASS vectors=' verification/build/result.log
-''')
+'''
+    (out/'verification/run_sim.sh').write_text(sim_script.replace('ai_core_model_v1.v',f'ai_core_model_{version}.v'))
     manifest={'model_sha256':hashlib.sha256((model_dir/'model.json').read_bytes()).hexdigest(),
-              'rtl_sha256':hashlib.sha256(generated.encode()).hexdigest(),
+              'rtl_sha256':hashlib.sha256(generated.encode()).hexdigest(),'model_version':version,
               'vector_count':count,'architecture':m['architecture'],'divisors':m['divisors'],
               'shifts':[m['shift1'],m['shift2']],
               'status':'Generated; validate simulation. Gowin synthesis/timing not executed by this generator.',

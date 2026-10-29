@@ -4,3 +4,5 @@ build/
 data/captures/*
 reports/
 data/challenge/
+data/v2_development/
+data/v2_holdout/

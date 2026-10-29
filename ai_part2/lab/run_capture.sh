@@ -5,6 +5,7 @@ KIT_DIR="$PWD"
 [ "$(id -u)" -eq 0 ] || { echo 'Use sudo bash lab/run_capture.sh MODE SPLIT ID [SECONDS]';exit 1; }
 MODE="${1:-}";SPLIT="${2:-}";RUN_ID="${3:-}";SECONDS_RUN="${4:-20}"
 PPS="${5:-200}";SENSOR_INTERVAL="${6:-1}";NORMAL_CLIENTS="${7:-1}";PAYLOAD_BYTES="${8:-0}"
+CAPTURE_SET="${9:-}"
 case "$MODE" in normal|normal_probe) LABEL=0;;syn) LABEL=1;;scan) LABEL=2;;*) echo 'MODE normal|normal_probe|syn|scan';exit 1;;esac
 case "$NORMAL_CLIENTS" in 1|2);;*) echo "NORMAL_CLIENTS must be 1 or 2";exit 1;;esac
 case "$SPLIT" in train|val|test|challenge);;*) echo 'SPLIT train|val|test|challenge';exit 1;;esac
@@ -17,6 +18,14 @@ PYTHON="$KIT_DIR/.venv/bin/python"
 SEED="$("$PYTHON" -c 'import hashlib,sys;print(int(hashlib.sha256(sys.argv[1].encode()).hexdigest()[:8],16))' "$RUN_ID")"
 CAPTURE_ROOT="$KIT_DIR/data/captures"
 if [ "$SPLIT" = challenge ]; then CAPTURE_ROOT="$KIT_DIR/data/challenge"; fi
+if [ -n "$CAPTURE_SET" ]; then
+ [[ "$CAPTURE_SET" =~ ^v2_(development|holdout)/[a-zA-Z0-9_-]+$ ]] || { echo 'Invalid v2 capture set';exit 1; }
+ case "$CAPTURE_SET:$SPLIT" in
+  v2_development/*:train|v2_development/*:val|v2_holdout/*:challenge);;
+  *) echo 'v2 development requires train/val; holdout requires challenge';exit 1;;
+ esac
+ CAPTURE_ROOT="$KIT_DIR/data/$CAPTURE_SET"
+fi
 OUT="$CAPTURE_ROOT/$RUN_ID"
 [ ! -e "$OUT" ] || { echo 'Run directory exists; refusing overwrite';exit 1; }
 "$PYTHON" -c 'import sys;assert 0<=int(sys.argv[1])<=4096' "$PAYLOAD_BYTES"
