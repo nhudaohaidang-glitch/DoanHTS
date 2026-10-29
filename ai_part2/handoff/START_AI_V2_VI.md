@@ -26,7 +26,13 @@ Khoảng 8–10 phút tùy máy: 20 phiên, mỗi phiên 20 giây, 10 train và 
 
 Chương trình tạo lại CHỈ lab namespace thuộc bộ mã trước MỖI phiên; dừng các tiến trình lab cũ. Không chạy song song một lệnh capture khác. Nếu chưa có lab, chương trình tự dựng. Không cần chạy setup_lab.sh up trước. Marker không hợp lệ/tên namespace đã bị ứng dụng khác chiếm thì chương trình dừng. Không đổi firewall hoặc SYN cookies của máy chủ.
 
-Đường dẫn mới: data/v2_development/v2dev01/. Hai manifest cũ data/captures/manifest.csv và data/challenge/manifest.csv không đổi. Mỗi phiên kiểm 0 kernel drops; thiếu thống kê/mất gói thì dừng. Khi lỗi, giữ thư mục cũ để kiểm tra, dùng prefix v2dev02 nếu cần thu lại cả bộ. Không xóa phiên để lấy kết quả đẹp hơn.
+Đường dẫn mới: data/v2_development/v2dev01/. Hai manifest cũ data/captures/manifest.csv và data/challenge/manifest.csv không đổi. Mỗi phiên kiểm 0 kernel drops; thiếu thống kê/mất gói thì dừng. Khi lỗi, giữ thư mục cũ để kiểm tra. Bản đã sửa hỗ trợ tiếp tục các phiên còn thiếu:
+
+```bash
+sudo bash lab/collect_v2.sh dev v2dev01 --resume
+```
+
+Lệnh kiểm manifest, PCAP, log mất gói và tham số kịch bản trước khi in KEEP cho các phiên đã hoàn tất. COLLECTION.json ban đầu và các phiên đã đăng ký không bị ghi đè. Nếu còn thư mục phiên dở chưa đăng ký, chương trình dừng để kiểm tra, không tự thay thế. Holdout cũng có --resume và bắt buộc giữ nguyên model đã đóng băng. Không xóa phiên để lấy kết quả đẹp hơn.
 
 Kết thúc thành công có COMPLETE.json. Xem lại:
 
