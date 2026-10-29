@@ -19,6 +19,46 @@ class FeaturesTest(unittest.TestCase):
    self.assertEqual(values(w[100],'exact'),[3,37,42,2,1,2])
    self.assertEqual(values(None,'exact'),[0]*6)
    self.assertEqual(s['ingress_ipv4'],3)
+ def test_out_of_order_packets_preserve_windows_and_file(self):
+  import hashlib
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);packets=[]
+   for t,port,flags in [(101.1,80,'S'),(100.9,81,'SA'),(100.1,53,'A'),(101.8,83,'S')]:
+    pkt=Ether(src="02:00:00:00:00:02",dst="02:00:00:00:00:01")/IP(src='198.18.0.2',dst='198.18.0.1')/TCP(dport=port,flags=flags)
+    pkt.time=t;packets.append(pkt)
+   original=root/'unordered.pcap';ordered=root/'ordered.pcap'
+   wrpcap(str(original),packets)
+   wrpcap(str(ordered),sorted(packets,key=lambda p:float(p.time)))
+   digest=hashlib.sha256(original.read_bytes()).hexdigest()
+   windows,stats=extract(original,'198.18.0.1/32')
+   reference,_=extract(ordered,'198.18.0.1/32')
+   self.assertEqual(windows,reference)
+   self.assertEqual(values(windows[100],'exact'),[2,40,0,1,1,2])
+   self.assertEqual(values(windows[101],'exact'),[2,40,127,1,1,2])
+   self.assertEqual(stats['ingress_ipv4'],4)
+   self.assertEqual(stats['timestamp_reversals'],2)
+   self.assertAlmostEqual(stats['max_backward_seconds'],.8)
+   self.assertEqual(hashlib.sha256(original.read_bytes()).hexdigest(),digest)
+ def test_dataset_reports_reordering_without_losing_rows(self):
+  import warnings
+  with tempfile.TemporaryDirectory() as d:
+   root=Path(d);packets=[]
+   for t in (101.1,100.1):
+    pkt=Ether(src="02:00:00:00:00:02",dst="02:00:00:00:00:01")/IP(src='198.18.0.2',dst='198.18.0.1')/TCP(flags='S')
+    pkt.time=t;packets.append(pkt)
+   wrpcap(str(root/'x.pcap'),packets)
+   row=dict(capture_id='realistic_order',pcap='x.pcap',split='train',label=1,start=100,end=102,source_kind='synthetic')
+   with (root/'manifest.csv').open('w',newline='') as f:
+    writer=csv.DictWriter(f,fieldnames=list(row));writer.writeheader();writer.writerow(row)
+   with warnings.catch_warnings(record=True) as caught:
+    warnings.simplefilter('always')
+    meta=build_dataset(root/'manifest.csv',root/'features.csv')
+   self.assertEqual(meta['captures'][0]['stats']['timestamp_reversals'],1)
+   self.assertTrue(any('timestamp reversals' in str(w.message) for w in caught))
+   with (root/'features.csv').open() as f:rows=list(csv.DictReader(f))
+   self.assertEqual(len(rows),2)
+   self.assertEqual(sum(int(r['packet_count']) for r in rows),2)
+
  def test_divisors_and_clipping(self):
   raw=np.array([[254,126,127,1,1,1],[0,0,0,0,0,0]])
   divisors=fit_divisors(raw)

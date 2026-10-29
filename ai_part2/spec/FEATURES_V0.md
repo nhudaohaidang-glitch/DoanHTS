@@ -32,3 +32,5 @@ Gốc cửa sổ phần mềm mặc định là epoch (floor(timestamp / window)
 0 bình thường, 1 SYN flood, 2 TCP vertical scan. Nhãn là nhãn kịch bản/cửa sổ có thời gian được kiểm soát, không phải nhãn mỗi gói trong cửa sổ. Phiên tấn công chứa MQTT bình thường vẫn là cửa sổ tấn công nếu hoạt động tấn công thực sự diễn ra. Kiểm tra source.log và PCAP; nếu nguồn thử nghiệm không chạy thì không dùng nhãn đó.
 
 Các phiên khác nhau nằm trong train/val/test; không cắt cửa sổ ngẫu nhiên rồi chia. SHA256 trùng bị từ chối. Chạy tối thiểu nhiều phiên cho mỗi lớp và thay đổi tải MQTT, tốc độ tấn công, tốc độ quét trước khi tin kết quả. Các lệnh minh họa một phiên/lớp/split chỉ để bắt đầu, chưa chứng minh khái quát.
+
+Thứ tự ghi PCAP không bắt buộc theo timestamp: mỗi gói cập nhật bucket floor(timestamp/window) của chính nó, không dùng vị trí trong file làm mốc. Bộ đọc ghi lại số lần timestamp lùi và mức lùi lớn nhất, không bỏ gói hoặc sửa PCAP chỉ để ép thứ tự tăng. Các đảo thứ tự qua biên cửa sổ cũng phải được phân đúng bucket; đã có kiểm thử so với bản sắp thứ tự và tổng đếm thủ công. Timestamp không hữu hạn vẫn bị từ chối.

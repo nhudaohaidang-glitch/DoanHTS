@@ -19,3 +19,5 @@ Không có mã nguồn hoặc lockfile trong checkout DoanHTS bị thay đổi. 
 Cập nhật AppArmor: helper chỉ sửa local include và thêm quyền đọc config phiên lab. 6 kiểm thử bổ sung PASS cho tìm include hiện đại/cũ, từ chối profile mơ hồ, thêm quyền idempotent, giữ quy tắc cũ, khôi phục khi parse lỗi và từ chối symlink thoát thư mục. Chưa nạp profile vào kernel Ubuntu thật trong cloud; cần thực thi helper trên Ubuntu người dùng.
 
 Cập nhật đối chứng hai nguồn: bài MQTT integration đã thêm hai client hợp lệ chạy đồng thời với client ID khác nhau, kiểm tra subscriber nhận đủ các cặp sensor_id/seq; không chỉ đếm PUBACK. Đây là kiểm tra hai client trên loopback; hai IP trong namespace vẫn cần kiểm chứng ở máy người dùng bằng PCAP. Các phiên lab SYN/scan người dùng đã thu được, nhưng dữ liệu đó không có trong cloud để đánh giá model.
+
+Cập nhật timestamp PCAP: thêm 2 regression test cho đảo thứ tự qua biên cửa sổ, SYN/SYN-ACK, giữ đủ số gói và giữ nguyên SHA256 PCAP. Kiểm tra CSV và metadata báo đảo timestamp. PCAP thực tế trên máy người dùng chưa có trong cloud; chưa xác định mức timestamp lùi của các phiên đó.

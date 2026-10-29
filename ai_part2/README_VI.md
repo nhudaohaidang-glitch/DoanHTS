@@ -270,3 +270,9 @@ sudo bash lab/run_capture.sh scan test scan_test01 20 150
 ```
 
 Chỉ dùng tên ID chưa tồn tại. Xem capture.log và PCAP của từng phiên; source_count có thể khác ở từng cửa sổ, cần thống kê sau khi tạo feature để kiểm tra đối chứng. Nhiều nguồn hợp lệ hơn, dịch vụ khác và thay đổi mạng vẫn là những điều kiện cần đánh giá thêm; đối chứng hai nguồn không tự chứng minh khả năng tổng quát.
+
+### PCAP có timestamp không tăng theo thứ tự ghi
+
+Linux có thể ghi các gói vào PCAP với timestamp hơi lệch thứ tự. Bộ trích xuất mới không yêu cầu sắp xếp toàn bộ file: mỗi gói được cộng vào cửa sổ của chính timestamp đó, nên không bỏ gói và không thay timestamp. File PCAP gốc không bị sửa. Công cụ ghi timestamp_reversals và max_backward_seconds trong stats của từng capture ở file .meta.json, đồng thời phát RuntimeWarning một lần mỗi file có lệch. Cảnh báo không làm lệnh thất bại. Nếu mức lệch lớn bất thường, cần xem lại clock/PCAP trước khi dùng dữ liệu; việc chạy xong không tự xác nhận chất lượng timestamp.
+
+Sau khi thay part2/features.py bằng bản mới, chạy lại bước tạo feature. Nếu output cũ đã tồn tại, dùng tên mới thay vì ghi đè. Không cần thu lại PCAP chỉ vì thông báo Unsorted capture timestamps của bản cũ.

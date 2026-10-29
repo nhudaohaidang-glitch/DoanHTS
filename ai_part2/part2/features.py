@@ -1,5 +1,5 @@
 """Feature contract v0: ingress IPv4, integer arithmetic, no FPGA dependency."""
-import csv, hashlib, ipaddress, json, math
+import csv, hashlib, ipaddress, json, math, warnings
 from pathlib import Path
 import numpy as np
 from scapy.all import PcapReader, IP, TCP, UDP
@@ -14,17 +14,23 @@ def cardinality(values, mode):
     return len(bins)
 
 def extract(path, dst, width=1.0, distinct='exact'):
-    if width <= 0: raise ValueError('window must be positive')
+    if not math.isfinite(width) or width <= 0: raise ValueError('window must be finite and positive')
     destination = ipaddress.ip_network(dst, strict=False)
     if destination.version != 4: raise ValueError('IPv4 only')
     windows, stats = {}, {'frames': 0, 'ingress_ipv4': 0, 'non_ingress': 0, 'fragments_skipped': 0,
-                          'truncated_skipped': 0}
+                          'truncated_skipped': 0, 'timestamp_reversals': 0, 'max_backward_seconds': 0.0}
     previous = None
     with PcapReader(str(path)) as capture:
         for packet in capture:
             stats['frames'] += 1
             t = float(packet.time)
-            if previous is not None and t < previous: raise ValueError('Unsorted capture timestamps')
+            if not math.isfinite(t):
+                raise ValueError(f'Non-finite timestamp in frame {stats["frames"]}')
+            if previous is not None and t < previous:
+                stats['timestamp_reversals'] += 1
+                stats['max_backward_seconds'] = max(stats['max_backward_seconds'], previous-t)
+            # File order does not determine the window. Retain each packet in
+            # the bucket of its own timestamp; never clamp it to previous time.
             previous = t
             if IP not in packet or ipaddress.ip_address(packet[IP].dst) not in destination:
                 stats['non_ingress'] += 1; continue
@@ -68,7 +74,14 @@ def build_dataset(manifest, output, width=1.0, distinct='exact'):
             digest = hashlib.file_digest(source, 'sha256').hexdigest()
         if digest in fingerprints: raise ValueError('Duplicate capture content: cannot reuse across sessions/splits')
         fingerprints[digest] = e['capture_id']
-        windows, stats = extract(path, e.get('target_net') or '198.18.0.1/32', width, distinct)
+        try:
+            windows, stats = extract(path, e.get('target_net') or '198.18.0.1/32', width, distinct)
+        except ValueError as error:
+            raise ValueError(f'{e["capture_id"]} ({path}): {error}') from error
+        if stats['timestamp_reversals']:
+            warnings.warn(f'{e["capture_id"]}: {stats["timestamp_reversals"]} timestamp reversals; '
+                          f'max backward {stats["max_backward_seconds"]:.6f}s. '
+                          'Packets retained in their own timestamp windows; inspect metadata.', RuntimeWarning)
         start, end = float(e['start']), float(e['end'])
         if end <= start: raise ValueError('Invalid labeled interval')
         count = 0
@@ -84,7 +97,8 @@ def build_dataset(manifest, output, width=1.0, distinct='exact'):
     output.parent.mkdir(parents=True,exist_ok=True)
     with output.open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
-    metadata={'contract':'v0','window_seconds':width,'distinct':distinct,'features':NAMES,
+    metadata={'timestamp_order_policy':'Per-packet timestamp buckets; no frame discarded for reordering',
+              'contract':'v0','window_seconds':width,'distinct':distinct,'features':NAMES,
               'captures':provenance,'rows':len(rows),
               'note':'Scenario/window labels, not per-packet labels; empty attack windows remain labeled and must be reviewed.'}
     output.with_suffix('.meta.json').write_text(json.dumps(metadata,indent=2))
