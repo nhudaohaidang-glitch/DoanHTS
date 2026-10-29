@@ -84,6 +84,8 @@ def package(model_dir, project, dataset, evaluation, collection, output, kit=KIT
         add(model_dir / name, 'model/' + name)
     for name in ('metrics.json','per_capture.csv','report.html'):
         add(evaluation / name, 'holdout/' + name)
+    add(Path(dataset), 'holdout/features.csv')
+    add(Path(dataset).with_suffix('.meta.json'), 'holdout/features.meta.json')
     add(Path(collection), 'holdout/COLLECTION.json')
     for name in ('FEATURES_V0.md','AI_INTERFACE.md'):
         add(kit / 'spec' / name, 'spec/' + name)

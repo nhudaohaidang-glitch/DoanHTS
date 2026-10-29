@@ -55,6 +55,8 @@ class HandoffV2Test(unittest.TestCase):
                 self.assertEqual(examples['examples'][2]['quantized'][5],2)
                 self.assertEqual(examples['examples'][3]['quantized'][5],6)
                 self.assertIn('ai_v2_handoff/gowin_ai_v2/firmware/ai_quant_v2.h',archive.namelist())
+                self.assertIn('ai_v2_handoff/holdout/features.csv',archive.namelist())
+                self.assertIn('ai_v2_handoff/holdout/features.meta.json',archive.namelist())
                 self.assertFalse(any(name.endswith('.vvp') or name.endswith('.pcap') for name in archive.namelist()))
                 evidence = json.loads(archive.read('ai_v2_handoff/evidence/GOWIN_USER_REPORTED.json'))
                 self.assertFalse(evidence['routed_timing_verified'])
