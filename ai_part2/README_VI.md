@@ -276,3 +276,15 @@ Chỉ dùng tên ID chưa tồn tại. Xem capture.log và PCAP của từng phi
 Linux có thể ghi các gói vào PCAP với timestamp hơi lệch thứ tự. Bộ trích xuất mới không yêu cầu sắp xếp toàn bộ file: mỗi gói được cộng vào cửa sổ của chính timestamp đó, nên không bỏ gói và không thay timestamp. File PCAP gốc không bị sửa. Công cụ ghi timestamp_reversals và max_backward_seconds trong stats của từng capture ở file .meta.json, đồng thời phát RuntimeWarning một lần mỗi file có lệch. Cảnh báo không làm lệnh thất bại. Nếu mức lệch lớn bất thường, cần xem lại clock/PCAP trước khi dùng dữ liệu; việc chạy xong không tự xác nhận chất lượng timestamp.
 
 Sau khi thay part2/features.py bằng bản mới, chạy lại bước tạo feature. Nếu output cũ đã tồn tại, dùng tên mới thay vì ghi đè. Không cần thu lại PCAP chỉ vì thông báo Unsorted capture timestamps của bản cũ.
+
+## Project Gowin theo mô hình lab v1 đã bàn giao
+
+Thư mục gowin/lab_model_v1 chứa project dùng trọng số thực tế người dùng đã gửi, không phải model demo nhân tạo. Xem README_GOWIN_VI.md trong đó. Chỉ chạy Synthesis, không Run All/PNR hoặc nạp riêng xuống kit. ROM được nhúng vào RTL nên không cần sửa đường dẫn HEX.
+
+Muốn xuất project cho model khác đã train và có đủ HEX/vectors:
+
+```bash
+.venv/bin/python tools/prepare_gowin.py --model build/lab_model_v1 --output build/gowin_export_v1
+```
+
+Đầu ra phải chưa tồn tại. Generator kiểm tra HEX/model/vectors khớp nhau; nó không chạy Gowin và không khẳng định timing. Hướng dẫn bổ sung trong gói Gowin lab_model_v1 là hướng dẫn cho bản v1 đã review, không tự coi model tương lai có cùng scale/divisor.

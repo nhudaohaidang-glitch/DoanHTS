@@ -1,0 +1,2 @@
+PASS: C feature packing matches Python on 204 cases (zero, boundary, random).
+Not a RISC-V runtime or hardware timing test.
