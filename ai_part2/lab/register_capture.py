@@ -1,7 +1,7 @@
 import argparse,csv,os
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('directory');p.add_argument('--id',required=True)
-p.add_argument('--split',choices=['train','val','test'],required=True);p.add_argument('--label',type=int,choices=[0,1,2],required=True)
+p.add_argument('--split',choices=['train','val','test','challenge'],required=True);p.add_argument('--label',type=int,choices=[0,1,2],required=True)
 p.add_argument('--start',type=float,required=True);p.add_argument('--end',type=float,required=True);a=p.parse_args()
 directory=Path(a.directory);manifest=directory/'manifest.csv'
 rows=[]

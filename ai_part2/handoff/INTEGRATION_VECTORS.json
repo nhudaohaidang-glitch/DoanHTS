@@ -1,0 +1,166 @@
+{
+  "kind": "numeric_integration_examples_not_network_ground_truth",
+  "model_sha256": "b67f6de6b847a4d2500e2af130c9e31091c92a9cbd3f68de84fe0a31d2a59007",
+  "cases": [
+    {
+      "name": "empty",
+      "packet_count": 0,
+      "ip_byte_sum": 0,
+      "syn_open_count": 0,
+      "src_count": 0,
+      "dst_count": 0,
+      "dst_port_count": 0,
+      "raw_features": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quantized": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "feat_hex": "000000000000",
+      "scores": [
+        686,
+        -459,
+        -104
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "normal_example",
+      "packet_count": 50,
+      "ip_byte_sum": 5000,
+      "syn_open_count": 5,
+      "src_count": 2,
+      "dst_count": 1,
+      "dst_port_count": 1,
+      "raw_features": [
+        50,
+        100,
+        12,
+        2,
+        1,
+        1
+      ],
+      "quantized": [
+        6,
+        100,
+        12,
+        2,
+        1,
+        0
+      ],
+      "feat_hex": "0001020c6406",
+      "scores": [
+        910,
+        -337,
+        -433
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "syn_example",
+      "packet_count": 200,
+      "ip_byte_sum": 8000,
+      "syn_open_count": 190,
+      "src_count": 2,
+      "dst_count": 1,
+      "dst_port_count": 1,
+      "raw_features": [
+        200,
+        40,
+        120,
+        2,
+        1,
+        1
+      ],
+      "quantized": [
+        25,
+        40,
+        120,
+        2,
+        1,
+        0
+      ],
+      "feat_hex": "000102782819",
+      "scores": [
+        -449,
+        735,
+        -171
+      ],
+      "class_id": 1
+    },
+    {
+      "name": "scan_example",
+      "packet_count": 200,
+      "ip_byte_sum": 8000,
+      "syn_open_count": 190,
+      "src_count": 2,
+      "dst_count": 1,
+      "dst_port_count": 150,
+      "raw_features": [
+        200,
+        40,
+        120,
+        2,
+        1,
+        150
+      ],
+      "quantized": [
+        25,
+        40,
+        120,
+        2,
+        1,
+        37
+      ],
+      "feat_hex": "250102782819",
+      "scores": [
+        -452,
+        -478,
+        1017
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "clipping_example",
+      "packet_count": 2000,
+      "ip_byte_sum": 2000000,
+      "syn_open_count": 1990,
+      "src_count": 200,
+      "dst_count": 1,
+      "dst_port_count": 600,
+      "raw_features": [
+        2000,
+        1000,
+        126,
+        200,
+        1,
+        600
+      ],
+      "quantized": [
+        127,
+        127,
+        126,
+        127,
+        1,
+        127
+      ],
+      "feat_hex": "7f017f7e7f7f",
+      "scores": [
+        -425,
+        -492,
+        1008
+      ],
+      "class_id": 2
+    }
+  ]
+}

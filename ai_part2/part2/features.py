@@ -66,8 +66,8 @@ def build_dataset(manifest, output, width=1.0, distinct='exact'):
     if len({e['capture_id'] for e in entries}) != len(entries): raise ValueError('Duplicate capture_id')
     fingerprints, rows, provenance = {}, [], []
     for e in entries:
-        if e['split'] not in ('train','val','test') or e['label'] not in ('0','1','2'):
-            raise ValueError('Explicit train/val/test split and label 0/1/2 are required')
+        if e['split'] not in ('train','val','test','challenge') or e['label'] not in ('0','1','2'):
+            raise ValueError('Explicit train/val/test/challenge split and label 0/1/2 are required')
         if e['source_kind'] not in ('lab','synthetic','external'): raise ValueError('Invalid source_kind')
         path = (manifest.parent / e['pcap']).resolve()
         with path.open('rb') as source:

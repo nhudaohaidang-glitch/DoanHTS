@@ -288,3 +288,7 @@ Muốn xuất project cho model khác đã train và có đủ HEX/vectors:
 ```
 
 Đầu ra phải chưa tồn tại. Generator kiểm tra HEX/model/vectors khớp nhau; nó không chạy Gowin và không khẳng định timing. Hướng dẫn bổ sung trong gói Gowin lab_model_v1 là hướng dẫn cho bản v1 đã review, không tự coi model tương lai có cùng scale/divisor.
+
+## Công việc sau AI v1: dashboard và challenge
+
+Đọc README_NEXT_STEPS_VI.md cho quy trình cập nhật có sao lưu, dashboard mới (mặc định chưa kết nối FPGA), so sánh dịch vụ MQTT, thu challenge tách biệt và đánh giá model v1 đã đóng băng. Không dùng dữ liệu challenge để huấn luyện lại rồi coi đó là test độc lập. Gói cập nhật part2_next_steps.zip có trình cài mã nguồn không ghi đè data/, .venv/ hoặc model trong build.
