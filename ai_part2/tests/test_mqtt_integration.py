@@ -8,9 +8,10 @@ class MQTTIntegration(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    root=Path(d)
    with socket.socket() as s:s.bind(('127.0.0.1',0));port=s.getsockname()[1]
-   config=root/'mosquitto.conf';config.write_text(f'listener {port} 127.0.0.1\nallow_anonymous true\npersistence false\n')
+   # Mosquitto 2.x without a config starts in local-only mode. Avoid custom
+   # config paths that Ubuntu AppArmor may deny (especially temporary dirs).
    log=(root/'broker.log').open('w')
-   broker=subprocess.Popen([os.environ['PART2_MOSQUITTO_BIN'],'-c',str(config)],stdout=log,stderr=log)
+   broker=subprocess.Popen([os.environ['PART2_MOSQUITTO_BIN'],'-p',str(port)],stdout=log,stderr=log)
    observer=None
    try:
     for _ in range(40):
@@ -18,6 +19,7 @@ class MQTTIntegration(unittest.TestCase):
      try:
       with socket.create_connection(('127.0.0.1',port),timeout=.2):break
      except OSError:time.sleep(.05)
+    else:raise RuntimeError('broker did not become ready: '+(root/'broker.log').read_text())
     received=(root/'received.jsonl').open('w')
     observer=subprocess.Popen([sys.executable,'-u','lab/broker_observer.py','--host','127.0.0.1','--port',str(port)],stdout=received,stderr=subprocess.STDOUT)
     time.sleep(.5)

@@ -220,3 +220,9 @@ sudo bash lab/run_capture.sh normal train normal_train02 30 200 0.2
 ```
 
 Không chỉ thu đúng một cấu hình rồi kết luận mô hình tổng quát. Khi tăng số nguồn hoặc thay loại dịch vụ, cần thu và đánh giá thêm dữ liệu.
+
+## Sửa lỗi Ubuntu: Mosquitto không mở được cấu hình trong /tmp hoặc Home
+
+Bài test MQTT bản mới chạy `mosquitto -p PORT` ở chế độ chỉ loopback, không đọc cấu hình tạm. Không cần tắt AppArmor hoặc chạy cả bài test bằng sudo. Nếu lỗi vẫn xảy ra, đọc log cụ thể để chẩn đoán thay vì coi AppArmor là nguyên nhân chắc chắn.
+
+Script lab bản mới tạo cấu hình tạm dưới /etc/mosquitto/part2-lab (ngoài conf.d), dùng riêng cho broker trong namespace và xóa file sau phiên. Một bản sao được lưu trong thư mục phiên để đối chiếu. Không sửa cấu hình dịch vụ Mosquitto mặc định. Thư mục part2-lab có thể còn rỗng sau khi chạy.

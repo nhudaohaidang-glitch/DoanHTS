@@ -18,21 +18,29 @@ OUT="$KIT_DIR/data/captures/$RUN_ID"
 [ ! -e "$OUT" ] || { echo 'Run directory exists; refusing overwrite';exit 1; }
 mkdir -p "$OUT"
 printf 'mode=%s\nsplit=%s\nrequested_pps=%s\nsensor_interval=%s\nseed=%s\n' "$MODE" "$SPLIT" "$PPS" "$SENSOR_INTERVAL" "$SEED" > "$OUT/scenario.txt"
-# Config inside the network namespace only; no global Mosquitto settings are changed.
-cat > "$OUT/mosquitto.conf" <<'EOF'
+# Runtime config lives under Mosquitto's standard configuration tree so Ubuntu
+# confinement need not allow arbitrary files under a user's home directory.
+# This subdirectory is not conf.d and is not included by the normal service.
+BROKER_CONFIG=""
+PIDS=()
+cleanup() {
+ for pid in "${PIDS[@]}"; do kill -TERM "$pid" 2>/dev/null || true; done
+ for pid in "${PIDS[@]}"; do wait "$pid" 2>/dev/null || true; done
+ if [ -n "$BROKER_CONFIG" ]; then rm -f -- "$BROKER_CONFIG"; BROKER_CONFIG=""; fi
+ if [ -n "${SUDO_UID:-}" ]; then chown -R "$SUDO_UID:${SUDO_GID:-$SUDO_UID}" "$OUT"; fi
+}
+trap cleanup EXIT
+mkdir -p /etc/mosquitto/part2-lab
+BROKER_CONFIG="$(mktemp /etc/mosquitto/part2-lab/session.XXXXXXXX.conf)"
+cat > "$BROKER_CONFIG" <<'EOF'
 listener 1883 198.18.0.1
 allow_anonymous true
 persistence false
 max_connections 30
 EOF
-PIDS=()
-cleanup() {
- for pid in "${PIDS[@]}"; do kill -TERM "$pid" 2>/dev/null || true; done
- for pid in "${PIDS[@]}"; do wait "$pid" 2>/dev/null || true; done
- if [ -n "${SUDO_UID:-}" ]; then chown -R "$SUDO_UID:${SUDO_GID:-$SUDO_UID}" "$OUT"; fi
-}
-trap cleanup EXIT
-ip netns exec p2broker mosquitto -c "$OUT/mosquitto.conf" > "$OUT/broker.log" 2>&1 & PIDS+=("$!")
+chmod 644 "$BROKER_CONFIG"
+cat "$BROKER_CONFIG" > "$OUT/mosquitto.conf"
+ip netns exec p2broker mosquitto -c "$BROKER_CONFIG" > "$OUT/broker.log" 2>&1 & PIDS+=("$!")
 sleep 0.5
 kill -0 "${PIDS[0]}" || { cat "$OUT/broker.log";exit 1; }
 ip netns exec p2broker "$PYTHON" -u lab/broker_observer.py > "$OUT/received.jsonl" 2>&1 & PIDS+=("$!")
