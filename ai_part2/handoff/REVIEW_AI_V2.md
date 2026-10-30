@@ -4,6 +4,8 @@ Nguồn: ban_giao_ai_v2.zip người dùng gửi ngày 29/10/2026. Đọc dữ l
 
 Model SHA256: `57da88b7b596766749034a5bdf72a9a21be82189517260176e4d8ecdc4387a07`.
 
+**Cập nhật 30/10/2026:** kiểm tra ngoại miền trên PCAP IoT-23 benign Philips Hue4 cho896/2880cửa sổ có gói đúng normal,1984nhầm scan (FPR68,89%). Đây là dữ liệu mới chưa dùng huấn luyện; không thay đổi kết quả lab đã kiểm ở dưới nhưng cho thấy model chưa đủ khả năng khái quát để chặn ngoài lab. Core/header/vector vẫn dùng được cho kiểm số học khi ghép. Xem reports/IOT23_FIXED_SCOPE_FINDINGS.md; không dùng kết quả lab100%để thay cho đánh giá IoT-23.
+
 ## Kết quả
 
 - ZIP CRC đúng; 32 file dữ liệu/tài liệu/code khớp FILE_SHA256.json, không có file thừa ngoài manifest.
