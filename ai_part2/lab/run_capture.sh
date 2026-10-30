@@ -19,9 +19,9 @@ SEED="$("$PYTHON" -c 'import hashlib,sys;print(int(hashlib.sha256(sys.argv[1].en
 CAPTURE_ROOT="$KIT_DIR/data/captures"
 if [ "$SPLIT" = challenge ]; then CAPTURE_ROOT="$KIT_DIR/data/challenge"; fi
 if [ -n "$CAPTURE_SET" ]; then
- [[ "$CAPTURE_SET" =~ ^v2_(development|holdout)/[a-zA-Z0-9_-]+$ ]] || { echo 'Invalid v2 capture set';exit 1; }
+ [[ "$CAPTURE_SET" =~ ^v[23]_(development|holdout)/[a-zA-Z0-9_-]+$ ]] || { echo 'Invalid capture set';exit 1; }
  case "$CAPTURE_SET:$SPLIT" in
-  v2_development/*:train|v2_development/*:val|v2_holdout/*:challenge);;
+  v2_development/*:train|v2_development/*:val|v2_holdout/*:challenge|v3_holdout/*:challenge);;
   *) echo 'v2 development requires train/val; holdout requires challenge';exit 1;;
  esac
  CAPTURE_ROOT="$KIT_DIR/data/$CAPTURE_SET"

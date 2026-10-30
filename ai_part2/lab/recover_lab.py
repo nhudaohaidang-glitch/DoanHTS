@@ -13,12 +13,15 @@ def recover_orphans(kit, collection):
     kit, collection = Path(kit).resolve(), Path(collection).resolve()
     root = collection.parent
     if (not root.is_relative_to(kit / 'data') or root.parent.name not in
-            ('v2_development', 'v2_holdout') or root.parent.parent != kit / 'data'
+            ('v2_development', 'v2_holdout','v3_holdout') or root.parent.parent != kit / 'data'
             or collection.name != 'COLLECTION.json'):
         raise ValueError('Recovery requires an existing v2 collection in this kit')
     from lab.collect_v2 import plan
     record = json.loads(collection.read_text())
-    expected_root, commands = plan(record['phase'], root.name)
+    profile=record.get('protocol_profile','v2')
+    if (root.parent.name=='v3_holdout') != (profile=='hybrid-v3'):
+        raise ValueError('Collection profile/root mismatch')
+    expected_root, commands = plan(record['phase'], root.name,profile)
     if (root != kit / 'data' / expected_root or record.get('format') != 1
             or record.get('plan') != commands or record.get('capture_ids') != [r['capture_id'] for r in commands]
             or record.get('reset_owned_lab_each_session') is not True):

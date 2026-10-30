@@ -1,0 +1,55 @@
+<!doctype html><meta charset="utf-8"><title>Hybrid v3</title><style>body{font:17px system-ui;max-width:1050px;margin:30px auto}td,th{border:1px solid #bbb;padding:8px}table{border-collapse:collapse}</style>
+<h1>V3: IoT‑23 kết hợp lab có kiểm soát</h1>
+<p>Không huấn luyện lại, không chỉnh luật ngưỡng. Chưa đo chặn Ethernet/thời gian phần cứng.</p>
+<p>IoT‑23 test dành riêng ở đây chỉ có lớp bình thường. SYN và vertical scan test đến từ lab mới; không gọi đây là test ba lớp hoàn toàn từ IoT‑23.</p>
+<p><strong>Chưa có bộ lab mới: chưa hoàn thành test đủ ba lớp.</strong></p>
+<h2>IoT‑23 Somfy bình thường — chưa dùng khi chọn model</h2>
+<h3>integer</h3><p>705 cửa sổ; Accuracy=100.00%; FPR=0.00%; capture/class recall=100.00%</p>
+<p>Hàng nhãn thật; cột Bình thường / SYN / Scan.</p><table>
+<tr><td>705</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<h3>float</h3><p>705 cửa sổ; Accuracy=100.00%; FPR=0.00%; capture/class recall=100.00%</p>
+<p>Hàng nhãn thật; cột Bình thường / SYN / Scan.</p><table>
+<tr><td>705</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<h3>baseline</h3><p>705 cửa sổ; Accuracy=100.00%; FPR=0.00%; capture/class recall=100.00%</p>
+<p>Hàng nhãn thật; cột Bình thường / SYN / Scan.</p><table>
+<tr><td>705</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table><tr><th>Phiên</th><th>AI đúng</th></tr>
+<tr><td>iot23_somfy01</td><td>100.00%</td></tr>
+</table>
+<h2>Tổng hợp — phải đọc cùng kết quả theo nguồn</h2>
+<h3>integer</h3><p>705 cửa sổ; Accuracy=100.00%; FPR=0.00%; capture/class recall=100.00%</p>
+<p>Hàng nhãn thật; cột Bình thường / SYN / Scan.</p><table>
+<tr><td>705</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<h3>float</h3><p>705 cửa sổ; Accuracy=100.00%; FPR=0.00%; capture/class recall=100.00%</p>
+<p>Hàng nhãn thật; cột Bình thường / SYN / Scan.</p><table>
+<tr><td>705</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<h3>baseline</h3><p>705 cửa sổ; Accuracy=100.00%; FPR=0.00%; capture/class recall=100.00%</p>
+<p>Hàng nhãn thật; cột Bình thường / SYN / Scan.</p><table>
+<tr><td>705</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table><tr><th>Phiên</th><th>AI đúng</th></tr>
+<tr><td>iot23_somfy01</td><td>100.00%</td></tr>
+</table>
+<h2>Giới hạn</h2><ul>
+<li>Native IoT23 SYN currently only one verified 22-second episode, used for train</li>
+<li>Vertical scan from controlled lab, not relabelled horizontal IoT23 scan</li>
+<li>Reserved IoT23 external test is benign-only; fresh lab test must supply all three classes</li>
+<li>No claim of a fully IoT23 three-class model or unseen IoT23 SYN/vertical coverage</li>
+</ul>

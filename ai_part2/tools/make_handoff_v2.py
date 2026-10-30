@@ -40,8 +40,9 @@ def integration_examples(model):
                 raw_feature_order=NAMES, examples=examples)
 
 
-def integration_guard_header():
-    return '''#ifndef AI_V2_INTEGRATION_H
+def integration_guard_header(version='v2'):
+    if version not in ('v2','v3'):raise ValueError('Unsupported guard version')
+    text='''#ifndef AI_V2_INTEGRATION_H
 #define AI_V2_INTEGRATION_H
 #include "ai_quant_v2.h"
 /* Return value is SAMPLE VALIDITY, not a class ID. Call the AI driver only
@@ -60,6 +61,7 @@ static inline int ai_v2_prepare_window(uint32_t packets, uint64_t ip_bytes,
 }
 #endif
 '''
+    return text.replace('V2',version.upper()).replace('ai_v2_', 'ai_'+version+'_').replace('ai_quant_v2.h','ai_quant_'+version+'.h')
 
 
 def package(model_dir, project, dataset, evaluation, collection, output, kit=KIT):

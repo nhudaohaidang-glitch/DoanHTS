@@ -6,3 +6,5 @@ reports/
 data/challenge/
 data/v2_development/
 data/v2_holdout/
+data/v3_holdout/
+data/iot23_v3/

@@ -66,7 +66,7 @@ def standalone(source,m):
 
 def firmware_header(m):
     version=m.get('model_version','v1')
-    if version not in ('v1','v2'):raise ValueError('Unsupported model version')
+    if version not in ('v1','v2','v3'):raise ValueError('Unsupported model version')
     shifts=[int(math.log2(d)) for d in m['divisors']]
     lines=['#ifndef AI_QUANT_V1_H','#define AI_QUANT_V1_H','#include <stdint.h>',
            '/* Raw feature order and semantics: see spec/FEATURES_V0.md. */',
@@ -86,7 +86,7 @@ def prepare(model_dir,out,kit):
     model_dir,out,kit=Path(model_dir),Path(out),Path(kit)
     m,count=validate(model_dir)
     version=m.get('model_version','v1')
-    if version not in ('v1','v2'):raise ValueError('Unsupported model version')
+    if version not in ('v1','v2','v3'):raise ValueError('Unsupported model version')
     if out.exists():raise ValueError('Output directory exists; choose a new path')
     for d in ('src','constraints','verification','firmware','reference'): (out/d).mkdir(parents=True,exist_ok=True)
     generated=standalone((kit/'rtl/ai_core.v').read_text(),m)

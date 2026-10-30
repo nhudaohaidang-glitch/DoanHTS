@@ -1,0 +1,929 @@
+{
+  "kind": "hybrid_v3_frozen_test",
+  "model_sha256": "e10f81b3e3ec9b458c4d574ee978cf0f2efa45954b4f8fe0c86fed6a3a26c35d",
+  "model_retrained": false,
+  "thresholds_retuned": false,
+  "external_test_source": {
+    "capture_id": "iot23_somfy01",
+    "role": "reserved_test",
+    "label": 0,
+    "protected_ip": "192.168.1.158",
+    "pcap_sha256": "0ec756ff0e26fc6c7d985178a35206bd7bc5b8a33cc5c7a23d6bb0b103db2a2a",
+    "pcap_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-7-1/Somfy-01/2019-07-03-15-15-47-first_start_somfy_gateway.pcap",
+    "native_annotation": "Published benign Somfy01, reserved before fitting",
+    "publisher_checksum_verified": false
+  },
+  "limitations": [
+    "Native IoT23 SYN currently only one verified 22-second episode, used for train",
+    "Vertical scan from controlled lab, not relabelled horizontal IoT23 scan",
+    "Reserved IoT23 external test is benign-only; fresh lab test must supply all three classes",
+    "No claim of a fully IoT23 three-class model or unseen IoT23 SYN/vertical coverage"
+  ],
+  "native_empty_slots_excluded": 4382,
+  "native_benign": {
+    "integer": {
+      "windows": 705,
+      "accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "false_positive_rate": 0.0,
+      "confusion_matrix": [
+        [
+          705,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 705
+        },
+        {
+          "id": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        {
+          "id": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      ],
+      "per_capture": [
+        {
+          "capture_id": "iot23_somfy01",
+          "label": 0,
+          "source_dataset": "IoT-23",
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      ],
+      "capture_class_macro_recall": 1.0,
+      "per_source": {
+        "IoT-23": {
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    "float": {
+      "windows": 705,
+      "accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "false_positive_rate": 0.0,
+      "confusion_matrix": [
+        [
+          705,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 705
+        },
+        {
+          "id": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        {
+          "id": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      ],
+      "per_capture": [
+        {
+          "capture_id": "iot23_somfy01",
+          "label": 0,
+          "source_dataset": "IoT-23",
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      ],
+      "capture_class_macro_recall": 1.0,
+      "per_source": {
+        "IoT-23": {
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    "baseline": {
+      "windows": 705,
+      "accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "false_positive_rate": 0.0,
+      "confusion_matrix": [
+        [
+          705,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 705
+        },
+        {
+          "id": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        {
+          "id": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      ],
+      "per_capture": [
+        {
+          "capture_id": "iot23_somfy01",
+          "label": 0,
+          "source_dataset": "IoT-23",
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      ],
+      "capture_class_macro_recall": 1.0,
+      "per_source": {
+        "IoT-23": {
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    "input_clipped_fraction": [
+      0.0,
+      0.6567375886524822,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "native_missing_classes": [
+    1,
+    2
+  ],
+  "lab": null,
+  "all_three_class_test_complete": false,
+  "combined": {
+    "integer": {
+      "windows": 705,
+      "accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "false_positive_rate": 0.0,
+      "confusion_matrix": [
+        [
+          705,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 705
+        },
+        {
+          "id": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        {
+          "id": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      ],
+      "per_capture": [
+        {
+          "capture_id": "iot23_somfy01",
+          "label": 0,
+          "source_dataset": "IoT-23",
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      ],
+      "capture_class_macro_recall": 1.0,
+      "per_source": {
+        "IoT-23": {
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    "float": {
+      "windows": 705,
+      "accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "false_positive_rate": 0.0,
+      "confusion_matrix": [
+        [
+          705,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 705
+        },
+        {
+          "id": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        {
+          "id": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      ],
+      "per_capture": [
+        {
+          "capture_id": "iot23_somfy01",
+          "label": 0,
+          "source_dataset": "IoT-23",
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      ],
+      "capture_class_macro_recall": 1.0,
+      "per_source": {
+        "IoT-23": {
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    "baseline": {
+      "windows": 705,
+      "accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "false_positive_rate": 0.0,
+      "confusion_matrix": [
+        [
+          705,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 705
+        },
+        {
+          "id": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        {
+          "id": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      ],
+      "per_capture": [
+        {
+          "capture_id": "iot23_somfy01",
+          "label": 0,
+          "source_dataset": "IoT-23",
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      ],
+      "capture_class_macro_recall": 1.0,
+      "per_source": {
+        "IoT-23": {
+          "windows": 705,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": [
+            [
+              705,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 705
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    "input_clipped_fraction": [
+      0.0,
+      0.6567375886524822,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "combined_missing_classes": [
+    1,
+    2
+  ]
+}

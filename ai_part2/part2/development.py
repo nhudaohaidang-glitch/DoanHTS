@@ -28,7 +28,7 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def load_dataset(path, allowed_splits):
+def load_dataset(path, allowed_splits, allowed_sources=('lab',)):
     path = Path(path)
     meta = json.loads(path.with_suffix('.meta.json').read_text())
     if (meta.get('features') != NAMES or meta.get('distinct') != 'exact'
@@ -50,11 +50,11 @@ def load_dataset(path, allowed_splits):
     seen = set()
     for row in rows:
         capture = captures[row['capture_id']]
-        if row['split'] not in allowed_splits or row['source_kind'] != 'lab':
+        if row['split'] not in allowed_splits or row['source_kind'] not in allowed_sources:
             raise ValueError('Unexpected split or non-lab source')
         if row['split'] != capture['split'] or row['label'] != str(capture['label']):
             raise ValueError('Row labels/split differ from provenance')
-        if capture['source_kind'] != 'lab' or len(capture['sha256']) != 64:
+        if capture['source_kind'] not in allowed_sources or capture['source_kind'] != row['source_kind'] or len(capture['sha256']) != 64:
             raise ValueError('Invalid capture provenance')
         key = (row['capture_id'], float(row['window_start']))
         if key in seen or not math.isfinite(key[1]):

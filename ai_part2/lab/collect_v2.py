@@ -15,7 +15,7 @@ sys.path.insert(0, str(KIT))
 from part2.development import verify_freeze
 
 
-def plan(phase, prefix):
+def plan(phase, prefix, profile='v2'):
     if not re.fullmatch(r'[a-zA-Z0-9_-]+', prefix):
         raise ValueError('Use an alphanumeric prefix with underscores/hyphens')
     # Name, mode, PPS, legitimate interval, sources, padding bytes.
@@ -46,7 +46,20 @@ def plan(phase, prefix):
                       ('scan_slow','scan',6,1,1,0), ('scan_fast','scan',100,1,1,0)]}
     if phase not in ('dev', 'holdout'):
         raise ValueError('Phase must be dev or holdout')
+    if profile not in ('v2','hybrid-v3'):raise ValueError('Unknown collection profile')
+    if profile=='hybrid-v3':
+        if phase!='holdout':raise ValueError('Hybrid v3 profile is reserved for fresh holdout')
+        settings['challenge']=[('normal_small','normal',200,.4,1,64),
+                               ('normal_large','normal',200,.6,1,1280),
+                               ('normal_two','normal',200,.35,2,384),
+                               ('normal_sparse','normal',200,2.5,1,0),
+                               ('retry_low','normal_probe',3,1,1,0),
+                               ('retry_high','normal_probe',7,1,1,0),
+                               ('syn_low','syn',35,1,1,0),('syn_mid','syn',120,1,1,0),
+                               ('syn_high','syn',350,1,1,0),
+                               ('scan_slow','scan',4,1,1,0),('scan_fast','scan',150,1,1,0)]
     root = f'v2_{"development" if phase == "dev" else "holdout"}/{prefix}'
+    if profile=='hybrid-v3':root=f'v3_holdout/{prefix}'
     commands = []
     for split in (('train', 'val') if phase == 'dev' else ('challenge',)):
         for name, mode, pps, interval, sources, padding in settings[split]:
@@ -95,8 +108,8 @@ def completed_sessions(root, commands):
     return completed
 
 
-def collect(phase, prefix, model_dir, dry_run=False, resume=False):
-    relative_root, commands = plan(phase, prefix)
+def collect(phase, prefix, model_dir, dry_run=False, resume=False, profile='v2'):
+    relative_root, commands = plan(phase, prefix, profile)
     root = KIT / 'data' / relative_root
     if dry_run:
         return dict(root=str(root), sessions=commands, resets_owned_lab_before_every_session=True)
@@ -110,6 +123,7 @@ def collect(phase, prefix, model_dir, dry_run=False, resume=False):
     record = dict(format=1, phase=phase, capture_ids=[r['capture_id'] for r in commands],
                   collection_started_at=time.time(), plan=commands,
                   reset_owned_lab_each_session=True)
+    if profile!='v2':record['protocol_profile']=profile
     if phase == 'holdout':
         record['selection'] = verify_freeze(model_dir)
     marker = KIT / 'build/lab.created'
@@ -117,7 +131,7 @@ def collect(phase, prefix, model_dir, dry_run=False, resume=False):
         raise ValueError('Unexpected lab ownership marker; refusing reset')
     if resume:
         original = json.loads((root / 'COLLECTION.json').read_text())
-        for key in ('format', 'phase', 'capture_ids', 'plan', 'reset_owned_lab_each_session'):
+        for key in ('format', 'phase', 'capture_ids', 'plan', 'reset_owned_lab_each_session','protocol_profile'):
             if original.get(key) != record.get(key):
                 raise ValueError('Existing collection plan differs; cannot resume')
         if phase == 'holdout' and original.get('selection') != record['selection']:
@@ -172,8 +186,9 @@ if __name__ == '__main__':
     p.add_argument('--model-dir', default=str(KIT / 'build/lab_model_v2'))
     p.add_argument('--dry-run', action='store_true')
     p.add_argument('--resume', action='store_true', help='Keep validated registered sessions and collect only missing ones')
+    p.add_argument('--profile',choices=['v2','hybrid-v3'],default='v2')
     a = p.parse_args()
     try:
-        print(json.dumps(collect(a.phase, a.prefix, a.model_dir, a.dry_run, a.resume), indent=2))
+        print(json.dumps(collect(a.phase, a.prefix, a.model_dir, a.dry_run, a.resume, a.profile), indent=2))
     except (ValueError, OSError, KeyError, subprocess.CalledProcessError) as e:
         raise SystemExit('ERROR: ' + str(e))
