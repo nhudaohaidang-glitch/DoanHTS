@@ -1,0 +1,48 @@
+{
+  "model_sha256": "b67f6de6b847a4d2500e2af130c9e31091c92a9cbd3f68de84fe0a31d2a59007",
+  "rtl_sha256": "a25095358d87384ec51da612615e745bcd070b74eb5d38c736ad29bc5b28fad3",
+  "vector_count": 360,
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "divisors": [
+    8,
+    1,
+    1,
+    1,
+    1,
+    4
+  ],
+  "shifts": [
+    6,
+    2
+  ],
+  "status": "Simulation/generic checks passed; user provided Gowin synthesis screenshots. PNR/hardware unverified.",
+  "device_template_reference": "https://github.com/sipeed/TangNano-9K-example/blob/c3b795799f23de91982be52db4273a8eea100cdb/led/9K_LED_project.gprj",
+  "verification": {
+    "integer_vectors": 360,
+    "standalone_rtl_vectors": 360,
+    "latency_cycles": 84,
+    "c_quantization_cases": 204,
+    "yosys_check_problems": 0,
+    "gowin_executed": false,
+    "gowin_executed_in_cloud": false,
+    "gowin_user_synthesis_reported": true
+  },
+  "gowin_user_synthesis": {
+    "evidence": "User screenshots; HTML/netlist not independently inspected",
+    "logic_total": 447,
+    "lut_utilization_summary": 395,
+    "alu": 52,
+    "registers": 246,
+    "latches": 0,
+    "bsram": 0,
+    "dsp": 1,
+    "io_ports": 103,
+    "clock_constraint_mhz": 50.0,
+    "estimated_fmax_mhz": 56.3,
+    "post_route_verified": false
+  }
+}
