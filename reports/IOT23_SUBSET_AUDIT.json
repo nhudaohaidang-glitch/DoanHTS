@@ -1,0 +1,248 @@
+{
+  "scope": "five previously downloaded official scenario logs, not the complete dataset",
+  "training_ready": false,
+  "model_trained": false,
+  "official_reference": "https://www.stratosphereips.org/datasets-iot23",
+  "files": [
+    {
+      "scenario": "CTU-IoT-Malware-Capture-34-1",
+      "bytes": 2926718,
+      "sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+      "rows": 23145,
+      "labels": {
+        "Benign/-": 1923,
+        "Malicious/C&C": 6706,
+        "Malicious/PartOfAHorizontalPortScan": 122,
+        "Malicious/DDoS": 14394
+      },
+      "protocols": {
+        "-/tcp": 111,
+        "-/udp": 1812,
+        "C&C/tcp": 6706,
+        "PartOfAHorizontalPortScan/tcp": 121,
+        "PartOfAHorizontalPortScan/udp": 1,
+        "DDoS/tcp": 14393,
+        "DDoS/udp": 1
+      },
+      "ddos_ports": {
+        "tcp/80": 14393,
+        "udp/5376": 1
+      },
+      "ddos_history": {
+        "C": 14252,
+        "S": 133,
+        "CCCC": 6,
+        "CCC": 2,
+        "D": 1
+      },
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/bro/conn.log.labeled",
+      "fields": [
+        "ts",
+        "uid",
+        "id.orig_h",
+        "id.orig_p",
+        "id.resp_h",
+        "id.resp_p",
+        "proto",
+        "service",
+        "duration",
+        "orig_bytes",
+        "resp_bytes",
+        "conn_state",
+        "local_orig",
+        "local_resp",
+        "missed_bytes",
+        "history",
+        "orig_pkts",
+        "orig_ip_bytes",
+        "resp_pkts",
+        "resp_ip_bytes",
+        "tunnel_parents",
+        "label",
+        "detailed-label"
+      ]
+    },
+    {
+      "scenario": "CTU-IoT-Malware-Capture-44-1",
+      "bytes": 31179,
+      "sha256": "12cd99bcda78140dd5f31cf3d786642f150e42e0ebc3599190f35314e406f71f",
+      "rows": 237,
+      "labels": {
+        "Malicious/C&C-FileDownload": 11,
+        "Malicious/C&C": 14,
+        "Benign/-": 211,
+        "Malicious/DDoS": 1
+      },
+      "protocols": {
+        "C&C-FileDownload/tcp": 11,
+        "C&C/tcp": 14,
+        "-/udp": 209,
+        "-/tcp": 2,
+        "DDoS/udp": 1
+      },
+      "ddos_ports": {
+        "udp/80": 1
+      },
+      "ddos_history": {
+        "D": 1
+      },
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-44-1/bro/conn.log.labeled",
+      "fields": [
+        "ts",
+        "uid",
+        "id.orig_h",
+        "id.orig_p",
+        "id.resp_h",
+        "id.resp_p",
+        "proto",
+        "service",
+        "duration",
+        "orig_bytes",
+        "resp_bytes",
+        "conn_state",
+        "local_orig",
+        "local_resp",
+        "missed_bytes",
+        "history",
+        "orig_pkts",
+        "orig_ip_bytes",
+        "resp_pkts",
+        "resp_ip_bytes",
+        "tunnel_parents",
+        "label",
+        "detailed-label"
+      ]
+    },
+    {
+      "scenario": "CTU-IoT-Malware-Capture-3-1",
+      "bytes": 24383537,
+      "sha256": "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+      "rows": 156103,
+      "labels": {
+        "Malicious/PartOfAHorizontalPortScan": 145597,
+        "Benign/-": 4536,
+        "Malicious/C&C": 8,
+        "Malicious/Attack": 5962
+      },
+      "protocols": {
+        "PartOfAHorizontalPortScan/tcp": 145597,
+        "-/udp": 738,
+        "C&C/tcp": 8,
+        "-/tcp": 2591,
+        "-/icmp": 1207,
+        "Attack/tcp": 5962
+      },
+      "ddos_ports": {},
+      "ddos_history": {},
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/bro/conn.log.labeled",
+      "fields": [
+        "ts",
+        "uid",
+        "id.orig_h",
+        "id.orig_p",
+        "id.resp_h",
+        "id.resp_p",
+        "proto",
+        "service",
+        "duration",
+        "orig_bytes",
+        "resp_bytes",
+        "conn_state",
+        "local_orig",
+        "local_resp",
+        "missed_bytes",
+        "history",
+        "orig_pkts",
+        "orig_ip_bytes",
+        "resp_pkts",
+        "resp_ip_bytes",
+        "tunnel_parents",
+        "label",
+        "detailed-label"
+      ]
+    },
+    {
+      "scenario": "CTU-Honeypot-Capture-4-1",
+      "bytes": 61653,
+      "sha256": "aebe40ea0e03b120265a5c7bc140dd9b0d3fe2fce65559e84776b7dd5360e71e",
+      "rows": 452,
+      "labels": {
+        "benign/-": 452
+      },
+      "protocols": {
+        "-/udp": 310,
+        "-/tcp": 142
+      },
+      "ddos_ports": {},
+      "ddos_history": {},
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-4-1/bro/conn.log.labeled",
+      "fields": [
+        "ts",
+        "uid",
+        "id.orig_h",
+        "id.orig_p",
+        "id.resp_h",
+        "id.resp_p",
+        "proto",
+        "service",
+        "duration",
+        "orig_bytes",
+        "resp_bytes",
+        "conn_state",
+        "local_orig",
+        "local_resp",
+        "missed_bytes",
+        "history",
+        "orig_pkts",
+        "orig_ip_bytes",
+        "resp_pkts",
+        "resp_ip_bytes",
+        "tunnel_parents",
+        "label",
+        "detailed-label"
+      ]
+    },
+    {
+      "scenario": "CTU-Honeypot-Capture-5-1",
+      "bytes": 182147,
+      "sha256": "f36db06e7d6ba7364e932a5b003f75835e004b320d70019e8a2f0ba8685d9262",
+      "rows": 1374,
+      "labels": {
+        "benign/-": 1374
+      },
+      "protocols": {
+        "-/udp": 806,
+        "-/tcp": 482,
+        "-/icmp": 86
+      },
+      "ddos_ports": {},
+      "ddos_history": {},
+      "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-5-1/bro/conn.log.labeled",
+      "fields": [
+        "ts",
+        "uid",
+        "id.orig_h",
+        "id.orig_p",
+        "id.resp_h",
+        "id.resp_p",
+        "proto",
+        "service",
+        "duration",
+        "orig_bytes",
+        "resp_bytes",
+        "conn_state",
+        "local_orig",
+        "local_resp",
+        "missed_bytes",
+        "history",
+        "orig_pkts",
+        "orig_ip_bytes",
+        "resp_pkts",
+        "resp_ip_bytes",
+        "tunnel_parents",
+        "label",
+        "detailed-label"
+      ]
+    }
+  ]
+}
