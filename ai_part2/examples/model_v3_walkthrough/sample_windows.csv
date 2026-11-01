@@ -1,0 +1,5 @@
+capture_id,split,label,source_kind,window_start,packet_count,mean_ip_bytes,syn_ratio_q127,src_count,dst_count,dst_port_count
+challenge01_normal_large,train,0,lab,1793278615.0,16,136,15,1,1,1
+challenge01_syn_low,train,1,lab,1793278710.0,29,48,96,2,1,1
+challenge01_scan_slow,train,2,lab,1793278773.0,13,58,58,2,1,6
+v3test01_challenge_scan_slow,challenge,2,lab,1793448183.0,11,62,46,2,1,4
