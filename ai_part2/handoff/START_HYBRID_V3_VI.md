@@ -1,5 +1,7 @@
 # Bản cập nhật v3 — model đã huấn luyện, bạn chạy test mới
 
+Cập nhật giới hạn đã kiểm chứng: v3test01 trên lab mới đúng214/219(97,72%), còn5cửa sổ quét chậm bị bỏ sót; baseline219/219. Checker phản ánh ghép nối còn xác nhận một SYN hợp lệ đơn lẻ bị chọn SYN flood ở cả float/integer. Model/weights được giữ nguyên, gói này KHÔNG chữa hết lỗi v2 bằng việc đổi phiên bản. Không dùng class_id đơn lẻ làm lệnh chặn. Đọc HYBRID_V3_STATUS_VI.md và báo cáo https://github.com/nhudaohaidang-glitch/DoanHTS/blob/ai-part2-starter-20261029/reports/AI_V2_V3_INTEGRATION_FEEDBACK.md . Nếu đã có v3test01 và báo cáo, giữ nguyên chúng; không cần thu/đánh giá lại cùng tên theo các bước bên dưới.
+
 Tải ai_v3_hybrid_update.zip từ nhánh ai-part2-starter-20261029, Download raw, giải nén vào Downloads thành thư mục ai_v3_hybrid_update. Gói có model/core v3 đã chốt, công cụ test mới và cache đặc trưng Somfy dùng kiểm tra. Không cần tải PCAP hay huấn luyện lại để chạy các bước sau.
 
 ## 1. Cài code và model v3, giữ v2

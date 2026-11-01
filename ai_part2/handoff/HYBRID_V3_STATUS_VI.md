@@ -2,14 +2,14 @@
 
 Model SHA256: e10f81b3e3ec9b458c4d574ee978cf0f2efa45954b4f8fe0c86fed6a3a26c35d.
 
-Đã huấn luyện/chốt ứng viên mới. Chưa hoàn thành test lab mới đủ ba lớp hoặc đo phần cứng. Không gọi đây là mô hình ba lớp huấn luyện hoàn toàn bằng IoT‑23.
+Đã huấn luyện/chốt ứng viên, nhận test lab mới đủ ba lớp và báo cáo tổng hợp Gowin riêng. V3 vẫn còn lỗi phân loại cần ghi khi bàn giao: một SYN hợp lệ đơn lẻ bị gán SYN flood, và 5 cửa sổ quét chậm trộn MQTT trong v3test01 bị gán Normal. Chưa có đo chặn gói hoặc timing sau đặt/đi dây của thiết kế đã ghép. Không gọi đây là mô hình ba lớp huấn luyện hoàn toàn bằng IoT‑23 hoặc bộ phát hiện đã hoàn thiện.
 
 | Bộ | IoT‑23 | Lab có kiểm soát | Mục đích |
 |---|---:|---:|---|
 | Train | Hue4 normal2880 + Syn34 có bằng chứng21 | challenge01 cũ182 | Học trọng số |
 | Validation | Amazon Echo5 normal1619 | v2test01 cũ210 | Chọn model số nguyên |
-| Test ngoại miền dành riêng | Somfy01 normal705 | Chưa có | Kiểm normal trên capture mới sau freeze |
-| Test lab mới | Không áp dụng | 11 phiên chưa thu | Kiểm đủ ba lớp sau freeze |
+| Test ngoại miền dành riêng | Somfy01 normal705 | Không áp dụng | Kiểm normal trên capture mới sau freeze |
+| Test lab mới v3test01 | Không áp dụng | 219 cửa sổ không rỗng, 11 phiên | AI đúng214/219, baseline219/219 |
 
 Challenge v1 và holdout v2 cũ đã được chuyển thành dữ liệu PHÁT TRIỂN v3; không dùng lại để công bố test độc lập v3. Không dùng quét ngang IoT‑23 để giả thành quét dọc.
 
@@ -25,4 +25,6 @@ Kết quả float/integer validation:1829/1829, FPR0. Đây là VALIDATION, khô
 
 Core6–8–3,550vector PASS cả bản HEX và ROM nhúng,84chu kỳ. Divisors không đổi nhưng shift1=7, shift2=0, hidden_scale=8, score_scale=64. Firmware dùng ai_v3_prepare_window/ai_quant_v3.h của cùng project. Scores int16 có dấu, không phải xác suất. Giữ guard RAW packet_count==0; 1..7gói vẫn hợp lệ dù q0=0. Không tạo luật chặn mới từ cửa sổ rỗng, TTL/giao dịch đang chạy xử lý độc lập.
 
-Project mới: gowin/hybrid_v3/ai_core_v3.gprj. Chỉ dùng một ai_core khi tích hợp, không thêm cả corev2vàv3. Báo cáo resource/Fmaxv2 không đại diện v3; cần synthesis/routed timing mới. Chưa có FPGA/CPU/bus/bridge blocking hoặc end-to-end latency của v3. Profile lab test mới còn cần chạy trên Ubuntu của người dùng vì cloud không tạo được namespace mạng thật.
+Project mới: gowin/hybrid_v3/ai_core_v3.gprj. Chỉ dùng một ai_core khi tích hợp, không thêm cả corev2vàv3. Báo cáo Gowin v3 người dùng gửi:426logic(~5%),246register(~4%),DSP1,BSRAM0,latch0; synthesis target50MHz, estimatedFmax55.9MHz, đường được báo slack+2.119ns. SDC khai báo27MHz; việc file đó có trong project không chứng minh riêng bước synthesis áp dụng nó. Đây chưa phải routed timing hoặc clock đo trên bo. Chưa có FPGA/CPU/bus/bridge blocking hoặc end-to-end latency của v3.
+
+V3test01: normal114/114, SYN63/63, scan37/42; scan chậm16/21, scan nhanh21/21, FPR0/114. Giữ nguyên model sau test. Bộ checker phản ánh ghép nối còn tái lập một SYN hợp lệ raw[1,40,127,1,1,1] bị chọn lớp1 ở cả float và integer. ai_v3_prepare_window chỉ kiểm cửa sổ không rỗng, không có điều kiện chống báo flood ở lưu lượng rất ít. Không dùng riêng class_id làm lệnh chặn IP và không che lỗi bằng bỏ mọi q0=0. Xem báo cáo hiện hành: https://github.com/nhudaohaidang-glitch/DoanHTS/blob/ai-part2-starter-20261029/reports/AI_V2_V3_INTEGRATION_FEEDBACK.md .
