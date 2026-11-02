@@ -1,0 +1,12 @@
+{
+  "fixture_contains_actual_reviewed_pcaps": true,
+  "streaming_archive_extraction": true,
+  "selective_output_and_path_guards": true,
+  "original_archive_sha256_matches": true,
+  "raw_csv_matches_previous_v3_sources": true,
+  "windows": 2901,
+  "xz_pcap_verified": true,
+  "rejects_unreviewed_variants_without_creating_labels": true,
+  "full_user_20gb_archive_executed_here": false,
+  "note": "Tested on archive fixtures with actual reviewed PCAPs; full official archive header layout independently checked. User archive must be verified locally."
+}
