@@ -1,0 +1,23 @@
+{
+  "sparse_regression_vector": [
+    1,
+    60,
+    127,
+    1,
+    1,
+    1
+  ],
+  "sparse_legacy_rows": 9,
+  "automatic_project_labels_removed_reversibly": true,
+  "original_legacy_label_bytes_preserved": true,
+  "original_feature_bytes_preserved": true,
+  "original_report_unchanged": true,
+  "synthetic_mixed_window_peak_included": true,
+  "standalone_repair_cli_verified": true,
+  "label_repair_regression_tests_passed": 4,
+  "no_new_normal_or_flood_labels_created": true,
+  "no_pps_threshold_added": true,
+  "no_archive_or_pcap_reopened": true,
+  "frozen_model_and_previously_reviewed_dataset_unchanged": true,
+  "actual_user_406_window_peak_not_available_here": true
+}

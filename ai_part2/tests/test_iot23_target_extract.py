@@ -1,4 +1,4 @@
-"""Artificial PCAPs test byte preservation and conservative window labels."""
+"""Artificial PCAPs test byte preservation and unlabelled packet candidates."""
 import csv
 import gzip
 import hashlib
@@ -58,7 +58,7 @@ class TargetExtractChecks(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'cache exceeds'):
                 target_tool.copy_destinations(io.BytesIO(path.read_bytes()),path.stat().st_size,[DST],other,cache_limit=25)
 
-    def test_only_complete_pure_matched_syn_windows_get_labels_including_zero_q0(self):
+    def test_pure_syn_candidates_remain_unlabelled_including_zero_q0(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);pcap=root/'in.pcap'
             packets=[packet(t) for t in (100.1,101.1,101.5,102.2,103.2,104.2,104.9)]
@@ -69,18 +69,21 @@ class TargetExtractChecks(unittest.TestCase):
             with gzip.open(native,'wt') as stream:stream.write(HEADER+f'100.1\t4.8\t{SRC}\t40000\t{DST}\t80\ttcp\tMalicious\tDDoS\n')
             out=root/'result';out.mkdir()
             report=target_tool.verify_windows(pcap,native,DST,(99.1,106.9),out)
-            self.assertEqual(report['verified_syn_windows'],1)
+            self.assertEqual(report['pure_native_ddos_syn_candidate_windows'],1)
             self.assertEqual(report['observed_tcp_flags']['3a'],1)
-            with (out/'syn_da_kiem_tra/X_6_fpga.csv').open() as stream:rows=list(csv.reader(stream))
+            with (out/'ung_vien_syn_chua_gan_nhan/X_6_fpga.csv').open() as stream:rows=list(csv.reader(stream))
             self.assertEqual(rows[1][0],'0')
-            with (out/'syn_da_kiem_tra/THONG_TIN_DONG.csv').open() as stream:info=list(csv.DictReader(stream))
+            with (out/'ung_vien_syn_chua_gan_nhan/THONG_TIN_DONG.csv').open() as stream:info=list(csv.DictReader(stream))
             self.assertEqual(info[0]['window_start'],'101')
             self.assertFalse(report['training_ready'])
+            self.assertFalse(report['project_labels_created'])
+            self.assertFalse(report['syn_flood_verified'])
+            self.assertFalse(list(out.rglob('y.csv')))
             no_syn=root/'no_syn.pcap';wrpcap(str(no_syn),[packet(t,0x3a) for t in (100.1,101.1,102.1,103.1,104.9)])
             no_syn_out=root/'no_syn_result';no_syn_out.mkdir()
             no_syn_report=target_tool.verify_windows(no_syn,native,DST,(99.1,106.9),no_syn_out)
-            self.assertEqual(no_syn_report['verified_syn_windows'],0)
-            self.assertFalse((no_syn_out/'syn_da_kiem_tra').exists())
+            self.assertEqual(no_syn_report['pure_native_ddos_syn_candidate_windows'],0)
+            self.assertFalse((no_syn_out/'ung_vien_syn_chua_gan_nhan').exists())
 
     def test_conflicting_native_benign_label_prevents_automatic_syn_label(self):
         with tempfile.TemporaryDirectory() as d:
@@ -91,7 +94,7 @@ class TargetExtractChecks(unittest.TestCase):
             out=root/'result';out.mkdir();target_tool.verify_windows(pcap,native,DST,(99.1,106.9),out)
             with (out/'tat_ca_cua_so_dich/BANG_CHUNG.csv').open() as stream:rows=list(csv.DictReader(stream))
             row=next(row for row in rows if row['window_start']=='101')
-            self.assertEqual(row['verified_syn_label'],'')
+            self.assertEqual(row['pure_syn_native_ddos_candidate'],'0')
             self.assertEqual(int(row['other_or_unmatched_syn_packets']),2)
 
     def test_changed_full_native_log_cannot_be_used_as_a_verified_source(self):

@@ -1,4 +1,4 @@
-"""Extract selected IPv4 destinations and verify native SYN windows, no training."""
+"""Extract selected IPv4 traffic and unlabelled native SYN candidates, no training."""
 import argparse
 from array import array
 from bisect import bisect_right
@@ -150,7 +150,7 @@ def copy_target_log(source,spec,targets,output):
 
 
 def verify_windows(pcap,native_log,target,source_bounds,output,episode_gap=2.0,capture_id='unassigned_source'):
-    """Whole ingress windows first, then strict native-DDoS/SYN evidence."""
+    """Verify packet facts and export unlabelled candidates, never infer flood."""
     import numpy as np
     native,index=audit.flow_audit(native_log)
     print('Extracting canonical six features for',target,flush=True)
@@ -187,26 +187,26 @@ def verify_windows(pcap,native_log,target,source_bounds,output,episode_gap=2.0,c
         ev=evidence[slot];position=bisect_right(starts,slot)-1
         inside=position>=0 and slot+1<=episodes[position]['end']
         approved=inside and row[2]==127 and row[0]==ev['audited_ipv4']==ev['syn_open']==ev['native_ddos_syn']
-        raw.append(row);information.append([len(raw),slot,ev['syn_open'],ev['native_ddos_syn'],ev['other_or_unmatched_syn'],1 if approved else ''])
+        raw.append(row);information.append([len(raw),slot,ev['syn_open'],ev['native_ddos_syn'],ev['other_or_unmatched_syn'],int(approved)])
         if approved:verified.append(row);verified_info.append([len(verified),capture_id,target,slot,position+1])
     all_folder=output/'tat_ca_cua_so_dich';all_folder.mkdir()
     csv_write(all_folder/'X_6_raw.csv',NAMES,raw)
     csv_write(all_folder/'X_6_fpga.csv',['q0','q1','q2','q3','q4','q5'],quantize(raw,[8,2,1,1,1,1]).tolist() if raw else [])
-    csv_write(all_folder/'BANG_CHUNG.csv',['row_number','window_start','syn_open_packets','native_ddos_syn_packets','other_or_unmatched_syn_packets','verified_syn_label'],information)
+    csv_write(all_folder/'BANG_CHUNG.csv',['row_number','window_start','syn_open_packets','native_ddos_syn_packets','other_or_unmatched_syn_packets','pure_syn_native_ddos_candidate'],information)
     if verified:
-        folder=output/'syn_da_kiem_tra';folder.mkdir()
+        folder=output/'ung_vien_syn_chua_gan_nhan';folder.mkdir()
         csv_write(folder/'X_6_raw.csv',NAMES,verified)
         csv_write(folder/'X_6_fpga.csv',['q0','q1','q2','q3','q4','q5'],quantize(verified,[8,2,1,1,1,1]).tolist())
-        csv_write(folder/'y.csv',['class'],[[1] for _ in verified])
         csv_write(folder/'THONG_TIN_DONG.csv',['row_number','capture_id','protected_ip','window_start','episode_id'],verified_info)
     return dict(target=target,native_target_flow_audit=native,canonical_feature_stats=stats,
-                eligible_nonempty_complete_windows=len(raw),verified_syn_windows=len(verified),
+                eligible_nonempty_complete_windows=len(raw),pure_native_ddos_syn_candidate_windows=len(verified),
                 observed_tcp_flags=dict(flags),matched_native_ddos_syn_packets=len(times),
                 syn_episodes=episodes,episode_gap_seconds=episode_gap,
                 max_syn_open_ports_per_source_over_whole_target_capture=max(map(len,syn_ports.values()),default=0),
-                verified_packets_per_second_range=[min(r[0] for r in verified),max(r[0] for r in verified)] if verified else None,
+                candidate_packets_per_second_range=[min(r[0] for r in verified),max(r[0] for r in verified)] if verified else None,
                 source_capture_group=capture_id,source_group_must_stay_in_one_split=True,training_ready=False,
-                label_rule='Complete windows inside a native-matched SYN episode; all canonical ingress IPv4 packets must be SYN-open and uniquely native Malicious/DDoS. Other windows remain unlabelled.')
+                project_labels_created=False,syn_flood_verified=False,
+                candidate_rule='Complete windows inside a native-matched SYN episode; all canonical ingress IPv4 packets SYN-open and native Malicious/DDoS. Packet facts alone do not establish SYN flood; all rows remain unlabelled.')
 
 
 def write_page(output,report):
@@ -217,13 +217,14 @@ def write_page(output,report):
         result=report['verification'];body+='<h1>Đã trích và kiểm tra gói thực tế</h1>'
         body+='<p>Đích phân tích: <b>'+html.escape(result['target'])+'</b>. Đã khớp hash toàn bộ log gốc với lượt sàng lọc trước.</p>'
         body+='<table><tr><th>Nội dung</th><th>Số lượng</th></tr>'
-        for label,key in [('Cửa sổ đầy đủ có gói','eligible_nonempty_complete_windows'),('Gói SYN mở khớp nhãn DDoS gốc','matched_native_ddos_syn_packets'),('Cửa sổ SYN đã kiểm tra','verified_syn_windows')]:
+        for label,key in [('Cửa sổ đầy đủ có gói','eligible_nonempty_complete_windows'),('Gói SYN mở khớp nhãn DDoS gốc','matched_native_ddos_syn_packets'),('Ứng viên thuần SYN, chưa gán nhãn flood','pure_native_ddos_syn_candidate_windows')]:
             body+='<tr><td>'+label+'</td><td>'+str(result[key])+'</td></tr>'
         body+='</table><p>Cờ TCP quan sát: '+html.escape(json.dumps(result['observed_tcp_flags']))+'</p>'
-        body+='<p>Số gói/giây trong các cửa sổ SYN đã kiểm: '+html.escape(str(result['verified_packets_per_second_range']))+'</p>'
-        if result['verified_syn_windows']:
-            body+='<p><a href="syn_da_kiem_tra/X_6_raw.csv">Sáu đặc trưng SYN đã kiểm</a> | <a href="syn_da_kiem_tra/X_6_fpga.csv">Sáu q</a> | <a href="syn_da_kiem_tra/y.csv">Nhãn1 riêng</a></p>'
-        else:body+='<p>Chưa có cửa sổ đủ điều kiện gán nhãn SYN. Không tạo nhãn giả cho phần còn lại.</p>'
+        body+='<p>Số gói/giây trong các ứng viên: '+html.escape(str(result['candidate_packets_per_second_range']))+'</p>'
+        body+='<p><b>Chưa xác minh SYN flood; không tạo y.csv.</b> Một gói SYN trong một giây chưa đủ bằng chứng flood, kể cả khi flow gốc có nhãn DDoS.</p>'
+        if result['pure_native_ddos_syn_candidate_windows']:
+            body+='<p><a href="ung_vien_syn_chua_gan_nhan/X_6_raw.csv">Sáu đặc trưng ứng viên chưa gán nhãn</a> | <a href="ung_vien_syn_chua_gan_nhan/X_6_fpga.csv">Sáu q</a></p>'
+        else:body+='<p>Chưa tìm thấy cửa sổ thuần SYN theo quy tắc chọn ứng viên.</p>'
         body+='<p><a href="tat_ca_cua_so_dich/X_6_raw.csv">Sáu đặc trưng của mọi cửa sổ hợp lệ tại đích</a> | <a href="tat_ca_cua_so_dich/BANG_CHUNG.csv">Bằng chứng từng cửa sổ</a></p>'
     body+='<p><a href="BAO_CAO_PCAP.json">Báo cáo chi tiết</a>. Giữ nguyên model v3. Chưa phải bộ train đủ ba lớp hoặc đánh giá model mới. Không gán các cửa sổ còn lại thành Normal. Các IP/đoạn từ cùng capture phải thuộc cùng một split.</p>'
     body+='<p>Cửa sổ giữ đủ lưu lượng vào đích, không chỉ các gói có SYN. Kiểm tra ở đây dùng cờ gói và nhãn flow theo hướng khởi tạo, dung sai thời gian1 ms. Không coi hai cổng trên cả log là bằng chứng vertical scan.</p>'
@@ -250,10 +251,10 @@ def run(archive,screen_output,profile_output,output,capture='35'):
     if not archive.is_file():raise ValueError('Archive not found')
     output.parent.mkdir(parents=True,exist_ok=True)
     if shutil.disk_usage(output.parent).free<2304*MIB:raise ValueError('Need at least 2.25 GiB free for selected destination caches and results')
-    output.mkdir();report=dict(status='in_progress',capture_id=identity,selected_targets=targets,primary_target=primary['dst'],
+    output.mkdir();report=dict(schema_version=2,status='in_progress',capture_id=identity,selected_targets=targets,primary_target=primary['dst'],
         archive_name=archive.name,archive_sha256_recorded_at_screening=screened.get('archive_sha256'),
         entire_archive_rehashed=False,screening_report_sha256=sha(screen_path),profile_report_sha256=sha(profile_path),
-        pcap_member=str(pcap_member),labelled_log_member=str(log_member),model_changed=False)
+        pcap_member=str(pcap_member),labelled_log_member=str(log_member),model_changed=False,project_labels_created=False)
     report.update(feature_names=NAMES,divisors=[8,2,1,1,1,1],
                   feature_extractor_sha256=sha(KIT/'part2/features.py'),extractor_tool_sha256=sha(Path(__file__)))
     try:
@@ -284,8 +285,8 @@ def run(archive,screen_output,profile_output,output,capture='35'):
     finally:
         (output/'BAO_CAO_PCAP.json').write_text(json.dumps(report,indent=2),encoding='utf-8');write_page(output,report)
     result=report['verification']
-    csv_write(output/'TOM_TAT_PCAP.csv',['capture_id','target','matched_native_ddos_syn_packets','complete_ingress_windows','verified_syn_windows'],
-        [[identity,result['target'],result['matched_native_ddos_syn_packets'],result['eligible_nonempty_complete_windows'],result['verified_syn_windows']]])
+    csv_write(output/'TOM_TAT_PCAP.csv',['capture_id','target','matched_native_ddos_syn_packets','complete_ingress_windows','unlabelled_pure_syn_candidate_windows'],
+        [[identity,result['target'],result['matched_native_ddos_syn_packets'],result['eligible_nonempty_complete_windows'],result['pure_native_ddos_syn_candidate_windows']]])
     print('DONE. Open:',output/'MO_KET_QUA_PCAP.html',flush=True)
     return report
 
