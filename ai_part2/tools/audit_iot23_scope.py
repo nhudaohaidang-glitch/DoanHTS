@@ -5,6 +5,7 @@ official files. PCAP TCP flags are inspected directly; flow history is not used
 as a substitute. Matches below are audit evidence, not a training label pipeline.
 """
 import argparse
+import gzip
 from bisect import bisect_right
 from collections import Counter, defaultdict
 import hashlib
@@ -27,7 +28,8 @@ def fingerprint(path):
 
 def labelled_flows(path):
     fields = None
-    with Path(path).open() as source:
+    path=Path(path)
+    with (gzip.open(path,'rt',encoding='utf-8') if path.suffix=='.gz' else path.open()) as source:
         for number, line in enumerate(source, 1):
             if line.startswith('#fields'):
                 fields = [ALIASES.get(x, x) for x in line.split()[1:]]

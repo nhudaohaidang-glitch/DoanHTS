@@ -1,0 +1,22 @@
+{
+  "authentic_native34_pcap_and_full_label_log_used": true,
+  "source_pcap_full_sha256_matches_reference": true,
+  "all_retained_global_headers_record_headers_and_packet_bytes_preserved": true,
+  "native_syn_packets_matched": 40568,
+  "verified_syn_windows": 21,
+  "raw_and_q_equal_previous_native34_cache": true,
+  "other_labels_retained_and_conflicts_prevent_syn_labels": true,
+  "ack_udp_and_fragment_packets_not_removed_before_features": true,
+  "nano_micro_big_little_endian_chunk_boundary_and_link_types_tested": true,
+  "timestamp_reversals_preserved": true,
+  "q0_zero_windows_not_discarded": true,
+  "zero_verified_windows_do_not_create_false_labels": true,
+  "full_native_log_hash_checked": true,
+  "packaged_standalone_cli_verified": true,
+  "target_extract_synthetic_guard_tests_passed": 5,
+  "shared_audit_regression_tests_passed": 4,
+  "model_changed": false,
+  "user_capture35_pcap_executed_here": false,
+  "whole_archive_rehashed_this_step": false,
+  "note": "Capture35 is verified on the user VM; no claim of additional SYN windows before that run."
+}
