@@ -49,6 +49,14 @@ def dump_csv(path, names, rows):
         writer=csv.writer(f); writer.writerow(names); writer.writerows(rows)
 
 
+def diagnostic_page(output, message):
+    page='<!doctype html><html lang="vi"><meta charset="utf-8"><title>Chưa tạo dữ liệu IoT-23</title>'
+    page+='<style>body{font:18px system-ui;max-width:900px;margin:40px auto;line-height:1.6}</style>'
+    page+='<h1>Chưa tạo dữ liệu sáu cột</h1><p>'+html.escape(str(message))+'</p>'
+    page+='<p>Gửi nội dung <a href="BAO_CAO.json">BAO_CAO.json</a> và thông báo lỗi để kiểm tra. Giữ thư mục này; chưa cần đọc lại archive lớn.</p>'
+    (Path(output)/'MO_KET_QUA.html').write_text(page,encoding='utf-8')
+
+
 def process(archive_path, output, choices):
     # Fail early if the wrong Python interpreter lacks the kit's dependencies.
     try:
@@ -129,7 +137,18 @@ def process(archive_path, output, choices):
                 model_changed=False,full_archive_extracted=False)
     (output/'BAO_CAO.json').write_text(json.dumps(report,indent=2))
     missing=[s['capture_id'] for s in sources if s['capture_id'] not in found]
-    if missing:raise ValueError('Selected reviewed PCAPs not found/verified: '+', '.join(missing)+'. Send BAO_CAO.json and KIEM_KE.csv; do not relabel unverified variants.')
+    if missing:
+        message='Selected reviewed PCAPs not found/verified: '+', '.join(missing)+'. Send BAO_CAO.json and KIEM_KE.csv; do not relabel unverified variants.'
+        diagnostic_page(output,message)
+        raise ValueError(message)
+    return write_results(output,sources,found,report,
+                         'Đã đọc archive và chỉ trích PCAP được xác minh.')
+
+
+def write_results(output,sources,found,report,origin_summary):
+    """Reproduce the same reviewed windows for archive and recovery workflows."""
+    from scapy.utils import RawPcapReader
+    from part2.features import NAMES, extract, values, quantize
     raw_rows=[];ys=[];info=[];counts={}
     for source in sources:
         pcap=found[source['capture_id']]
@@ -154,7 +173,7 @@ def process(archive_path, output, choices):
     dump_csv(data/'X_6_fpga.csv',['q0','q1','q2','q3','q4','q5'],quantize(raw_rows,[8,2,1,1,1,1]).tolist())
     dump_csv(data/'y.csv',['class'],ys)
     dump_csv(data/'THONG_TIN_DONG.csv',['row_number','capture_id','window_start'],info)
-    report.update(windows=counts,total_windows=len(raw_rows),feature_names=NAMES,
+    report.update(status='complete',windows=counts,total_windows=len(raw_rows),feature_names=NAMES,
                   observed_labels=sorted({row[0] for row in ys}),
                   class2_note='Vertical scan is not supplied by this native registry; use controlled-lab data with verified labels',
                   purpose='Reproduce existing V3 development sources; not new independent test or retraining')
@@ -162,10 +181,11 @@ def process(archive_path, output, choices):
     names_vi=['Số gói','Byte IP trung bình','SYN×127','Số IP nguồn','Số IP đích','Số cổng đích']
     body=''.join('<tr><td>'+str(i+1)+'</td>'+''.join('<td>'+str(v)+'</td>' for v in row)+'<td>'+str(ys[i][0])+'</td></tr>' for i,row in enumerate(raw_rows[:20]))
     page='''<!doctype html><html lang="vi"><meta charset="utf-8"><title>Kết quả xử lý IoT-23</title><style>body{font:17px system-ui;max-width:1100px;margin:30px auto;line-height:1.6}td,th{padding:9px;border:1px solid #ccd}table{border-collapse:collapse}th{background:#edf4fa}</style>'''
-    page+='<h1>Đã tạo đúng sáu đặc trưng</h1><p>Đã đọc archive và chỉ trích PCAP được xác minh. Không train hoặc đổi model.</p>'
+    page+='<h1>Đã tạo đúng sáu đặc trưng</h1><p>'+html.escape(origin_summary)+' Không train hoặc đổi model.</p>'
     page+='<p>Số cửa sổ theo nguồn: '+html.escape(json.dumps(counts))+'</p>'
     page+='<p><a href="du_lieu_6_cot/X_6_raw.csv">X_6_raw.csv: đúng sáu cột đầu vào</a> | <a href="du_lieu_6_cot/X_6_fpga.csv">Sáu cột q</a> | <a href="du_lieu_6_cot/y.csv">y.csv: nhãn riêng</a></p>'
     page+='<p>Mỗi dòng là một giây. Nhãn0=Normal,1=đoạn SYN đã xác minh. Không có lớp2 trong các nguồn native được chọn; vertical scan của dự án lấy từ lab. Đây chưa phải bộ train mới đủ ba lớp. Các nguồn này đã dùng development v3.</p>'
+    page+='<p><a href="BAO_CAO.json">Báo cáo nguồn và kiểm tra</a>. Chỉ giữ cửa sổ đầy đủ một giây và có gói; không bỏ dòng chỉ vì q0=0.</p>'
     page+='<table><tr><th>Dòng</th>'+''.join('<th>'+n+'</th>' for n in names_vi)+'<th>Nhãn, không phải input</th></tr>'+body+'</table>'
     page+='<p>Tỷ lệ SYN lấy phần nguyên của127×SYN mở/số gói. Độ dài dùng IPv4 TotalLength. Mỗi cửa sổ chỉ tính hướng tới IP bảo vệ. q=clip(raw//[8,2,1,1,1,1],0,127). Không lấy sáu cột tùy ý từ bảng11cột chuẩn hóa theo flow.</p>'
     (output/'MO_KET_QUA.html').write_text(page,encoding='utf-8')

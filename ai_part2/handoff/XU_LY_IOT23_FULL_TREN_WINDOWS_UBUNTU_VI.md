@@ -63,6 +63,8 @@ firefox ~/iot23_work_01/MO_KET_QUA.html
 
 Bạn gửi BAO_CAO.json và X_6_raw.csv để kiểm tra bước tiếp, không cần gửi archive20 GB. Nếu ERROR trước DONE, gửi nguyên lỗi; nếu đã có BAO_CAO.json và KIEM_KE.csv thì kèm chúng. Đừng tự đổi tên nhãn, hash hoặc xóa những dòng không hợp ý.
 
+Nếu Syn34 đã verified nhưng Hue4 báo hash_differs_from_reviewed_capture, giữ nguyên thư mục đã trích và xem [hướng dẫn tiếp tục sau lỗi Hue4](KHOI_PHUC_IOT23_SAU_LOI_HUE4_VI.md). Công cụ khoi_phuc_iot23.zip dùng lại Syn34 và đối chiếu/bổ sung Hue4 bằng nguồn riêng khoảng377 KB; không cần quét lại archive. Bản full helper mới có trang chẩn đoán khi thiếu nguồn, nhưng không cần chạy lại chỉ để tạo trang đó.
+
 ## 5. Giới hạn của bước này
 
 Đây là bước đọc/kiểm kê và tái lập các nguồn native đã dùng trong development v3, không phải train mới hay test độc lập. Các nguồn mặc định chỉ có0=Normal và1=đoạn SYN;2=vertical scan tiếp tục lấy từ lab có kiểm soát. Những capture khác trong toàn bộ IoT-23 có nhiều nhãn và loại lưu lượng khác; phải kiểm tra trước khi chọn vào bài toán ba lớp.
