@@ -33,6 +33,14 @@ SYN_REVIEW = dict(
     start=1545475806.96806, end=1545475828.998385,
     flow_rows=133, packet_metadata_sum=40568)
 BENIGN_SCENARIOS = {'CTU-Honeypot-Capture-4-1', 'CTU-Honeypot-Capture-5-1', 'CTU-Honeypot-Capture-7-1'}
+# Only this exact released implementation is compatible with the tail-record
+# fix. Inputs, saved label indices and every published output must still pass
+# their original hashes before its checkpoint can be upgraded.
+COMPATIBLE_PREVIOUS_CODE = {
+    'export_iot23_normal_syn.py':'9e87ab4dec695e4b6cc4a776bd9662f0b3672e6551ab7f428ed9e415a3262332',
+    'iot23_label_index.py':'5f20857e90ddf75685261e944559005a5d6ca2a79c38f0ea05ae9aa50336e26b',
+    'iot23_pcap_filter.py':'29104ac90f2d57ebf42dffa72278d8d85cfbec387e58c367f39f808fcaadc4ea',
+}
 
 
 def sha(path):
@@ -232,6 +240,11 @@ def write_reports(output, report):
     page += '<h1>'+('Đã xuất CSV và PCAP' if report['status'] == 'complete' else 'Xuất dữ liệu chưa hoàn tất')+'</h1>'
     if report.get('error'):
         page += '<p>'+html.escape(report['error'])+'</p>'
+    if report.get('source_integrity_warnings'):
+        page += '<p><strong>Có tệp nguồn thiếu bản ghi cuối.</strong> Đã xuất các gói hoàn chỉnh phù hợp; bỏ phần đuôi thiếu, không bổ sung byte hoặc gán nhãn cho gói thiếu. Chi tiết nằm trong báo cáo:</p><ul>'
+        for warning in report['source_integrity_warnings']:
+            page += '<li>'+html.escape(warning['archive_member'])+': bỏ '+str(warning['excluded_bytes'])+' byte đuôi thiếu.</li>'
+        page += '</ul>'
     page += '<p>Bình thường: nhãn Benign gốc. SYN flood: đoạn capture 34 đã kiểm chứng; không đổi mọi DDoS hoặc SYN đơn lẻ thành SYN flood. Nguồn có loại nào thì xuất loại đó, không có thì bỏ qua. Không tạo tệp rỗng.</p>'
     page += '<p>CSV nén giữ các cột flow gốc và thêm loai_da_loc. PCAP nén giữ nguyên byte gói tin và header gốc. Số flow và số gói là hai đơn vị khác nhau; CSV này không phải bộ sáu đặc trưng mỗi giây.</p>'
     page += '<p>Trong capture malware, PCAP bình thường chỉ giữ gói IPv4 TCP/UDP/ICMP khớp tuple hai chiều và thời gian của Benign, dung sai 1 ms; loại các khoảng nhãn xung đột. Gói không khớp, IPv6, phân mảnh hoặc lỗi không được tự gán bình thường. Các PCAP thuộc ba kịch bản honeypot bình thường được giữ toàn bộ. Tệp phụ có thể trùng gói với tệp chính; không cộng chúng thành các mẫu độc lập.</p>'
@@ -258,12 +271,27 @@ def run(archive, screen_output, inventory, output, resume=False, minimum_free_gi
         if not resume or not state.is_file():
             raise ValueError('Output exists; use --resume for this job or choose a new folder')
         report = json.loads(state.read_text())
-        if report.get('fingerprint') != fingerprint:
+        previous = report.get('fingerprint', {})
+        upgrade = (previous != fingerprint and previous.get('code') == COMPATIBLE_PREVIOUS_CODE and
+                   {k:v for k,v in previous.items() if k != 'code'} == {k:v for k,v in fingerprint.items() if k != 'code'})
+        if previous != fingerprint and not upgrade:
             raise ValueError('Resume inputs/tool differ from the saved job')
+        print('Checking saved CSV, label-index and completed PCAP checksums; keeping completed outputs.', flush=True)
         for result in report['sources'].values():
             check_index(output, result); publish(output, result)
         for result in report['pcaps'].values():
             publish(output, result)
+        if upgrade:
+            backup = output/'BAO_CAO_XUAT_TRUOC_SUA_DUOI.json'
+            if not backup.exists():
+                backup.write_bytes(state.read_bytes())
+            report.setdefault('tool_upgrades', []).append(dict(
+                reason='Handle an incomplete final PCAP record without discarding earlier complete records',
+                previous_code=previous['code'], current_code=code,
+                published_files_and_indices_sha256_verified=True))
+            report['fingerprint'] = fingerprint
+            write_reports(output, report)
+            print('Upgraded compatible checkpoint. CSV and previously completed PCAPs will be reused.', flush=True)
         if report['status'] == 'complete':
             print('Already complete:', output, flush=True)
             return report
@@ -320,7 +348,8 @@ def run(archive, screen_output, inventory, output, resume=False, minimum_free_gi
                                 log_result = next(r for r in report['sources'].values() if r['capture_id'] == spec['capture_id'])
                                 index = None if spec['pure_normal'] else Index(output/log_result['index_folder'])
                                 try:
-                                    result = filter_pcap(source, spec['bytes'], index, output, spec['stem'], spec['pure_normal'], SYN_REVIEW if spec['reviewed_syn'] else None)
+                                    result = filter_pcap(source, spec['bytes'], index, output, spec['stem'], spec['pure_normal'], SYN_REVIEW if spec['reviewed_syn'] else None,
+                                                         allow_incomplete_final_record=True)
                                 finally:
                                     del index
                                 result.update(capture_id=spec['capture_id'], archive_member=name)
@@ -344,6 +373,9 @@ def run(archive, screen_output, inventory, output, resume=False, minimum_free_gi
                       syn_flood_flow_rows=sum(r['reviewed_syn_flood_rows'] for r in report['sources'].values()),
                       normal_pcap_packets=sum(r['normal_packets'] for r in report['pcaps'].values()),
                       syn_flood_pcap_packets=sum(r['reviewed_syn_flood_packets'] for r in report['pcaps'].values()))
+        report['source_integrity_warnings'] = [dict(archive_member=name, **r['source_tail_excluded'])
+                                               for name,r in report['pcaps'].items() if r.get('source_tail_excluded')]
+        report['source_packet_records_complete'] = not report['source_integrity_warnings']
     except BaseException as error:
         report.update(status='interrupted' if isinstance(error,KeyboardInterrupt) else 'failed', error=str(error) or 'Interrupted; run again with --resume')
         raise

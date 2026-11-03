@@ -135,12 +135,45 @@ class ExportChecks(unittest.TestCase):
                 exporting.export_log(io.BytesIO(native(rows)),changed,root/'changed')
             self.assertFalse(list((root/'changed').rglob('*.csv.gz')))
 
+    def test_incomplete_final_record_keeps_only_complete_original_packets(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);builder=indexing.Builder(root/'index');builder.observe(flow());builder.finish()
+            for endian in '<>':
+                for nano in (False,True):
+                    complete,header,records=pcap([(101.,frame()),(102.,frame(reverse=True)),(103.,frame())],endian,nano)
+                    for missing in (7,len(records[-1])-5):
+                        original=complete[:-missing]
+                        stem=f'{ord(endian)}_{nano}_{missing}'
+                        with self.assertRaisesRegex(ValueError,'incomplete record'):
+                            packets.filter_pcap(io.BytesIO(original),len(original),indexing.Index(root/'index'),root,'strict_'+stem)
+                        result=packets.filter_pcap(io.BytesIO(original),len(original),indexing.Index(root/'index'),root,stem,
+                                                   allow_incomplete_final_record=True)
+                        self.assertEqual(result['source_packets'],2)
+                        self.assertEqual(result['normal_packets'],2)
+                        tail=result['source_tail_excluded']
+                        self.assertEqual(tail['excluded_bytes'],len(records[-1])-missing)
+                        self.assertEqual(result['source_pcap_sha256'],hashlib.sha256(original).hexdigest())
+                        exporting.publish(root,result)
+                        self.assertEqual(gzip.decompress((root/result['files']['binh_thuong']['path']).read_bytes()),header+records[0]+records[1])
+            with self.assertRaisesRegex(ValueError,'size changed'):
+                packets.filter_pcap(io.BytesIO(complete),len(complete)+1,indexing.Index(root/'index'),root,'size',allow_incomplete_final_record=True)
+            with self.assertRaisesRegex(ValueError,'no complete packet'):
+                packets.filter_pcap(io.BytesIO(header),len(header),indexing.Index(root/'index'),root,'empty',allow_incomplete_final_record=True)
+            broken=bytearray(complete)
+            struct.pack_into(endian+'I',broken,24+4,10**9 if nano else 10**6)
+            with self.assertRaisesRegex(ValueError,'Invalid PCAP record header'):
+                packets.filter_pcap(io.BytesIO(broken),len(broken),indexing.Index(root/'index'),root,'corrupt',allow_incomplete_final_record=True)
+            with self.assertRaisesRegex(ValueError,'incomplete record'):
+                packets.filter_pcap(io.BytesIO(original),len(original),indexing.Index(root/'index'),root,'syn_tail',
+                                    syn_rule=exporting.SYN_REVIEW,allow_incomplete_final_record=True)
+
     def test_archive_two_pass_resume_and_checksum_failures(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); source_id='CTU-IoT-Malware-Capture-99-1'; prefix='opt/data/'+source_id
             log_member=prefix+'/bro/conn.log.labeled';pcap_member=prefix+'/mixed.pcap'
             rows=[flow(),flow(101,0,'Malicious',sport=6000)]; data=native(rows)
             original,_,_=pcap([(102.,frame()),(101.,frame(sport=6000))])
+            original=original[:-7]  # Original source ends within its final packet.
             archive=root/'input.tar.gz'
             with tarfile.open(archive,'w:gz') as tar:
                 for name,payload in [(pcap_member,original),(log_member,data),('../escape',b'x')]:
@@ -157,6 +190,10 @@ class ExportChecks(unittest.TestCase):
                 with self.assertRaises(KeyboardInterrupt):exporting.run(archive,screen,inventory,root/'out',minimum_free_gib=0)
             self.assertFalse((root/'escape').exists())
             state=json.loads((root/'out/BAO_CAO_XUAT.json').read_text());self.assertEqual(state['passes_complete'],[1])
+            # A released v1 checkpoint can be upgraded without recomputing CSV
+            # or the saved label index. Arbitrary code changes remain blocked.
+            state['fingerprint']['code']=exporting.COMPATIBLE_PREVIOUS_CODE.copy()
+            (root/'out/BAO_CAO_XUAT.json').write_text(json.dumps(state))
             # Emulate interruption between manifest commit and output rename.
             item=next(iter(state['sources'][log_member]['files'].values()))
             final=root/'out'/item['path']; final.rename(str(final)+'.part')
@@ -164,8 +201,20 @@ class ExportChecks(unittest.TestCase):
                 report=exporting.run(archive,screen,inventory,root/'out',resume=True,minimum_free_gib=0)
             self.assertEqual(report['status'],'complete');self.assertEqual(report['normal_pcap_packets'],1)
             self.assertEqual(report['syn_flood_pcap_packets'],0)
+            self.assertFalse(report['source_packet_records_complete'])
+            self.assertEqual(len(report['source_integrity_warnings']),1)
+            self.assertEqual(report['source_integrity_warnings'][0]['missing_payload_bytes'],7)
+            self.assertIn('Có tệp nguồn thiếu bản ghi cuối',(root/'out/MO_DU_LIEU_DA_LOC.html').read_text())
+            self.assertEqual(len(report['tool_upgrades']),1)
+            self.assertTrue((root/'out/BAO_CAO_XUAT_TRUOC_SUA_DUOI.json').is_file())
             self.assertTrue(final.is_file());self.assertIs(actual_filter,exporting.filter_pcap)
             self.assertFalse(list((root/'out').rglob('*.part')))
+            completed=(root/'out/BAO_CAO_XUAT.json').read_text()
+            unknown=json.loads(completed);unknown['fingerprint']['code']['iot23_label_index.py']='0'*64
+            (root/'out/BAO_CAO_XUAT.json').write_text(json.dumps(unknown))
+            with self.assertRaisesRegex(ValueError,'inputs/tool differ'):
+                exporting.run(archive,screen,inventory,root/'out',resume=True,minimum_free_gib=0)
+            (root/'out/BAO_CAO_XUAT.json').write_text(completed)
             final.write_bytes(b'changed')
             with self.assertRaisesRegex(ValueError,'missing/changed'):
                 exporting.run(archive,screen,inventory,root/'out',resume=True,minimum_free_gib=0)

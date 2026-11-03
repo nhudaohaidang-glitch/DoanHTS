@@ -91,7 +91,8 @@ def packet(data, linktype):
     return (a, b, proto, src, dst, dport, flags), None
 
 
-def filter_pcap(source, expected_size, index, output, stem, pure_normal=False, syn_rule=None):
+def filter_pcap(source, expected_size, index, output, stem, pure_normal=False, syn_rule=None,
+                allow_incomplete_final_record=False):
     header = source.read(24)
     if len(header) != 24 or header[:4] not in FORMATS:
         raise ValueError('Expected complete classic PCAP')
@@ -153,8 +154,25 @@ def filter_pcap(source, expected_size, index, output, stem, pure_normal=False, s
                     raise ValueError('Low disk space; completed files can be resumed')
                 print(f'PCAP {stem}: {size/1e9:.2f}/{expected_size/1e9:.2f} GB; Normal {counts["binh_thuong"]:,}; SYN {counts["syn_flood"]:,}', flush=True)
                 tick = time.monotonic()
-        if carry or size != expected_size or not counts['source_packets']:
-            raise ValueError('Truncated, empty or changed source PCAP')
+        if size != expected_size:
+            raise ValueError(f'Source PCAP size changed: read {size} bytes, expected {expected_size}')
+        if not counts['source_packets']:
+            raise ValueError('Source PCAP contains no complete packet records')
+        tail = None
+        if carry:
+            tail = dict(source_offset=size-len(carry), excluded_bytes=len(carry),
+                        excluded_sha256=hashlib.sha256(carry).hexdigest(),
+                        reason='incomplete_final_record_header' if len(carry) < 16 else 'incomplete_final_packet_payload')
+            if len(carry) >= 16:
+                sec, fraction, caplen, wirelen = record.unpack_from(carry)
+                # Header validity was checked in the loop; only its final
+                # payload may be missing. Never scan past corrupt record data.
+                tail.update(packet_sec=sec, packet_fraction=fraction, caplen=caplen,
+                            wirelen=wirelen, available_payload_bytes=len(carry)-16,
+                            missing_payload_bytes=16+caplen-len(carry))
+            if not allow_incomplete_final_record or syn_rule:
+                raise ValueError(f'Source PCAP ends with an incomplete record: {len(carry)} trailing bytes at offset {size-len(carry)}')
+            print(f'WARNING {stem}: source has an incomplete final record; excluded {len(carry)} trailing bytes; all earlier complete records processed', flush=True)
         if syn_rule and (digest.hexdigest() != syn_rule['pcap_sha256'] or counts['syn_flood'] != syn_rule['packet_metadata_sum']):
             raise ValueError('Reviewed SYN PCAP SHA/count changed; output remains partial')
     finally:
@@ -170,5 +188,7 @@ def filter_pcap(source, expected_size, index, output, stem, pure_normal=False, s
                 source_packets=counts['source_packets'], normal_packets=counts['binh_thuong'],
                 reviewed_syn_flood_packets=counts['syn_flood'], excluded_decode_reasons=dict(reasons),
                 unmatched_or_non_benign=counts['unmatched_or_non_benign'], files=files,
+                source_record_integrity='incomplete_final_record' if tail else 'complete',
+                source_tail_excluded=tail,
                 normal_policy='whole reviewed benign scenario' if pure_normal else 'native Benign tuple/time minus conflicting labels',
                 linktype=linktype)

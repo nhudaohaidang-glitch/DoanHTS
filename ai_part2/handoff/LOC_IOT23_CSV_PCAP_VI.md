@@ -64,6 +64,13 @@ model mỗi giây. Đọc bằng Python: `gzip.open(path, 'rt')` rồi `csv.Dict
 Các tệp `.pcap.gz` là PCAP nén, Wireshark mở trực tiếp được. Sau khi giải nén,
 header và từng gói được giữ nguyên byte từ tệp nguồn.
 
+Bản cập nhật xử lý được PCAP nguồn thiếu bản ghi cuối: chỉ xuất những gói
+hoàn chỉnh, bỏ đuôi thiếu và ghi rõ trong báo cáo cùng cảnh báo trên HTML.
+PCAP 39 ở nguồn công bố có gói cuối thiếu 28 byte. Công cụ vẫn dừng nếu
+kích thước nguồn sai, không có gói hoàn chỉnh hoặc header bản ghi lỗi.
+PCAP SYN flood đã duyệt vẫn phải khớp đầy đủ checksum và số gói. Nếu trước
+đây bị dừng ở capture 39, xem [hướng dẫn chạy tiếp](SUA_LOI_LOC_IOT23_CUOI_PCAP_VI.md).
+
 ## Quy tắc lọc
 
 **Bình thường:** lấy nhãn `Benign` gốc trong **mọi log**, bao gồm capture malware.
