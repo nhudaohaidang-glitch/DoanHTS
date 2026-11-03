@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "authentic_fixture_archive_sha256": "c77cea9fce72d35af50f069abdc5bc68817e3c6b4e56110992ae85b41b2bf8f5",
+  "normal_flow_rows": 2375,
+  "reviewed_syn_flood_flow_rows": 133,
+  "normal_pcap_packets": 48773,
+  "reviewed_syn_flood_pcap_packets": 40568,
+  "independent_capture34_normal_packet_protocol_counts": {
+    "6": 24034,
+    "17": 3075
+  },
+  "all_retained_pcap_records_byte_exact_and_in_original_order": true,
+  "synthetic_safety_checks": 5,
+  "full_user_archive_executed_here": false,
+  "model_changed": false,
+  "bundled_launcher_executed": true,
+  "bundled_second_run_reuses_complete_job": true,
+  "uploaded_full_inventory_mapping": {
+    "labelled_logs": 23,
+    "pcaps": 39,
+    "pure_benign_pcaps": 9,
+    "reviewed_syn_pcaps": 1
+  },
+  "real_native_whitespace_variant_preserves_reviewed_flow_signature": true
+}
