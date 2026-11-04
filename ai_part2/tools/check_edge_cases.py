@@ -36,8 +36,8 @@ def check(model_dir, output):
     data = (model_dir / 'model.json').read_bytes()
     model = json.loads(data)
     version = model.get('model_version')
-    if version not in ('v2', 'v3') or model['architecture'] != [6, 8, 3]:
-        raise ValueError('Expected a v2/v3 6-8-3 model')
+    if version not in ('v2', 'v3', 'v4') or model['architecture'] != [6, 8, 3]:
+        raise ValueError('Expected a v2/v3/v4 6-8-3 model')
     cases = probes()
     raw = np.asarray([c[2] for c in cases], dtype=np.int64)
     q = quantize(raw, model['divisors'])
@@ -79,7 +79,7 @@ def check(model_dir, output):
     (output / 'check_pack.c').write_text('\n'.join(c_lines))
     write_vectors(q, model, output / 'vectors.txt')
     with (output / 'cases.csv').open('w', newline='') as f:
-        w = csv.writer(f)
+        w = csv.writer(f,lineterminator='\n')
         w.writerow(['case', *NAMES, 'quantized', 'feat_hex', 'score_normal', 'score_syn', 'score_scan', 'prediction', 'expected_scenario_class'])
         for row in rows:
             w.writerow([row['case'], *row['raw'].values(), json.dumps(row['quantized']), row['feat_hex'],

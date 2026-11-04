@@ -1,0 +1,25 @@
+{
+  "model_sha256": "51050d9c05fbbbdda6cca1e21f26366ffcfeddbe7e3a01479a38eb70e790d906",
+  "rtl_sha256": "a988b3da5b3c5fecbfd98497892fd8d3fe1805086b084def4633aa7c62b004e8",
+  "model_version": "v4",
+  "vector_count": 1069,
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "shifts": [
+    8,
+    2
+  ],
+  "status": "Generated; validate simulation. Gowin synthesis/timing not executed by this generator.",
+  "device_template_reference": "https://github.com/sipeed/TangNano-9K-example/blob/c3b795799f23de91982be52db4273a8eea100cdb/led/9K_LED_project.gprj"
+}

@@ -1,0 +1,3177 @@
+{
+  "kind": "v4_filtered_three_class_training_fit",
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "library_versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "sklearn": "1.7.2"
+  },
+  "model_sha256": "51050d9c05fbbbdda6cca1e21f26366ffcfeddbe7e3a01479a38eb70e790d906",
+  "independent_test_evaluated": false,
+  "validation_used_for_selection": false,
+  "selection": {
+    "seed": 23,
+    "alpha": 0.01,
+    "max_iter": 1600,
+    "solver": "lbfgs",
+    "candidate_count": 1
+  },
+  "training_windows_by_class": [
+    39253935,
+    21,
+    4
+  ],
+  "unique_quantized_patterns_by_class": [
+    1513,
+    1,
+    4
+  ],
+  "retained_fit_patterns_by_class": [
+    1513,
+    1,
+    4
+  ],
+  "balanced_fit_rows": 4539,
+  "fit_sampling": "Uniform deterministic reservoir of unique q patterns, capped per class; repeat retained patterns to equal class sizes. Repeats are not new traffic.",
+  "sampling_cap_per_class": 5000,
+  "training_fit": {
+    "float": {
+      "windows": 39253960,
+      "accuracy": 0.9999996942983587,
+      "macro_f1": 0.9259258749756122,
+      "confusion_matrix": [
+        [
+          39253923,
+          12,
+          0
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "false_positive_rate": 3.057018360070143e-07,
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 0.999999694298164,
+          "f1": 0.9999998471490587,
+          "support": 39253935
+        },
+        {
+          "id": 1,
+          "precision": 0.6363636363636364,
+          "recall": 1.0,
+          "f1": 0.7777777777777778,
+          "support": 21
+        },
+        {
+          "id": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        }
+      ]
+    },
+    "integer": {
+      "windows": 39253960,
+      "accuracy": 0.9999996942983587,
+      "macro_f1": 0.9259258749756122,
+      "confusion_matrix": [
+        [
+          39253923,
+          12,
+          0
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "false_positive_rate": 3.057018360070143e-07,
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 0.999999694298164,
+          "f1": 0.9999998471490587,
+          "support": 39253935
+        },
+        {
+          "id": 1,
+          "precision": 0.6363636363636364,
+          "recall": 1.0,
+          "f1": 0.7777777777777778,
+          "support": 21
+        },
+        {
+          "id": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        }
+      ]
+    }
+  },
+  "per_source": [
+    {
+      "source_id": "000_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-4-1",
+      "label": 0,
+      "windows": 7808,
+      "metrics": {
+        "float": {
+          "windows": 7808,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              7808,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 7808
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 7808,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              7808,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 7808
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "001_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-5-1",
+      "label": 0,
+      "windows": 6334,
+      "metrics": {
+        "float": {
+          "windows": 6334,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              6334,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 6334
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 6334,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              6334,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 6334
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "002_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-01",
+      "label": 0,
+      "windows": 1707,
+      "metrics": {
+        "float": {
+          "windows": 1707,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              1707,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1707
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 1707,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              1707,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1707
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "003_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-02",
+      "label": 0,
+      "windows": 27071,
+      "metrics": {
+        "float": {
+          "windows": 27071,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              27071,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 27071
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 27071,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              27071,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 27071
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "004_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-03",
+      "label": 0,
+      "windows": 14050,
+      "metrics": {
+        "float": {
+          "windows": 14050,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              14050,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 14050
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 14050,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              14050,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 14050
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "005_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-04",
+      "label": 0,
+      "windows": 27037,
+      "metrics": {
+        "float": {
+          "windows": 27037,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              27037,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 27037
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 27037,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              27037,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 27037
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "006_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-05",
+      "label": 0,
+      "windows": 27559,
+      "metrics": {
+        "float": {
+          "windows": 27559,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              27559,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 27559
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 27559,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              27559,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 27559
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "007_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-06",
+      "label": 0,
+      "windows": 27404,
+      "metrics": {
+        "float": {
+          "windows": 27404,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              27404,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 27404
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 27404,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              27404,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 27404
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "008_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-1-1",
+      "label": 0,
+      "windows": 506582,
+      "metrics": {
+        "float": {
+          "windows": 506582,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              506582,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 506582
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 506582,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              506582,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 506582
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "009_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-17-1",
+      "label": 0,
+      "windows": 38491,
+      "metrics": {
+        "float": {
+          "windows": 38491,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              38491,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 38491
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 38491,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              38491,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 38491
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "010_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-20-1",
+      "label": 0,
+      "windows": 5542,
+      "metrics": {
+        "float": {
+          "windows": 5542,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              5542,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 5542
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 5542,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              5542,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 5542
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "011_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-21-1",
+      "label": 0,
+      "windows": 4502,
+      "metrics": {
+        "float": {
+          "windows": 4502,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              4502,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4502
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 4502,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              4502,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4502
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "012_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-3-1",
+      "label": 0,
+      "windows": 10097,
+      "metrics": {
+        "float": {
+          "windows": 10097,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              10097,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 10097
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 10097,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              10097,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 10097
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "013_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-33-1",
+      "label": 0,
+      "windows": 1393440,
+      "metrics": {
+        "float": {
+          "windows": 1393440,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              1393440,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1393440
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 1393440,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              1393440,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1393440
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "014_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+      "label": 0,
+      "windows": 3189,
+      "metrics": {
+        "float": {
+          "windows": 3189,
+          "accuracy": 0.9962370649106302,
+          "macro_f1": 0.3327049952874646,
+          "confusion_matrix": [
+            [
+              3177,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0037629350893697085,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 0.9962370649106302,
+              "f1": 0.9981149858623939,
+              "support": 3189
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 3189,
+          "accuracy": 0.9962370649106302,
+          "macro_f1": 0.3327049952874646,
+          "confusion_matrix": [
+            [
+              3177,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0037629350893697085,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 0.9962370649106302,
+              "f1": 0.9981149858623939,
+              "support": 3189
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "015_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-35-1",
+      "label": 0,
+      "windows": 16459369,
+      "metrics": {
+        "float": {
+          "windows": 16459369,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              16459369,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 16459369
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 16459369,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              16459369,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 16459369
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "016_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-36-1",
+      "label": 0,
+      "windows": 4088,
+      "metrics": {
+        "float": {
+          "windows": 4088,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              4088,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4088
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 4088,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              4088,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4088
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "017_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-39-1",
+      "label": 0,
+      "windows": 11045,
+      "metrics": {
+        "float": {
+          "windows": 11045,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              11045,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 11045
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 11045,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              11045,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 11045
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "018_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-42-1",
+      "label": 0,
+      "windows": 8960,
+      "metrics": {
+        "float": {
+          "windows": 8960,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              8960,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 8960
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 8960,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              8960,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 8960
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "019_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-43-1",
+      "label": 0,
+      "windows": 20575288,
+      "metrics": {
+        "float": {
+          "windows": 20575288,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              20575288,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 20575288
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 20575288,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              20575288,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 20575288
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "020_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-44-1",
+      "label": 0,
+      "windows": 404,
+      "metrics": {
+        "float": {
+          "windows": 404,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              404,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 404
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 404,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              404,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 404
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "021_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-48-1",
+      "label": 0,
+      "windows": 4933,
+      "metrics": {
+        "float": {
+          "windows": 4933,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              4933,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4933
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 4933,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              4933,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4933
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "022_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-49-1",
+      "label": 0,
+      "windows": 5796,
+      "metrics": {
+        "float": {
+          "windows": 5796,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              5796,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 5796
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 5796,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              5796,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 5796
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "023_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-52-1",
+      "label": 0,
+      "windows": 2054,
+      "metrics": {
+        "float": {
+          "windows": 2054,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              2054,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 2054
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 2054,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              2054,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 2054
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "024_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-60-1",
+      "label": 0,
+      "windows": 3471,
+      "metrics": {
+        "float": {
+          "windows": 3471,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              3471,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 3471
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 3471,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              3471,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 3471
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "025_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-7-1",
+      "label": 0,
+      "windows": 12214,
+      "metrics": {
+        "float": {
+          "windows": 12214,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              12214,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 12214
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 12214,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              12214,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 12214
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "026_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-8-1",
+      "label": 0,
+      "windows": 4319,
+      "metrics": {
+        "float": {
+          "windows": 4319,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              4319,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4319
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 4319,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              4319,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4319
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "027_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-9-1",
+      "label": 0,
+      "windows": 61181,
+      "metrics": {
+        "float": {
+          "windows": 61181,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              61181,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 61181
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 61181,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              61181,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 0.0,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 61181
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "028_class1",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+      "label": 1,
+      "windows": 21,
+      "metrics": {
+        "float": {
+          "windows": 21,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              21,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 21
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 21,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              21,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 21
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "029_class2",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 4,
+      "metrics": {
+        "float": {
+          "windows": 4,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4
+            }
+          ]
+        },
+        "integer": {
+          "windows": 4,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "conflicting_quantized_patterns": 1,
+  "conflict_examples": [
+    {
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "counts_by_label": {
+        "0": 11,
+        "1": 21
+      }
+    }
+  ],
+  "candidate_status": "needs_label_review",
+  "ready_for_automatic_blocking": false,
+  "convergence_warning_count": 0,
+  "rtl_vector_count": 1782,
+  "limitations": [
+    "Scores are training-fit metrics across all prepared windows, not independent test accuracy.",
+    "Only one reviewed SYN-flood episode and one public vertical-scan episode; no independent three-class holdout can be formed.",
+    "No random adjacent-window split; repeated/unique quantized rows are not independent sessions.",
+    "Different labels with identical q inputs cannot be separated by any classifier using only those q values; labels are preserved for review.",
+    "Normal uses filtered Benign-only packets, grouped by receiver /32. Both traffic directions may produce different receiver samples.",
+    "Filtered packets change traffic composition; results do not reproduce full unfiltered capture windows.",
+    "Protected destination scope and one-second clock alignment must agree with hardware.",
+    "Any Somfy data used here ceases to be an independent test for this candidate.",
+    "No Ethernet blocking, board timing, fresh lab test or superiority over V3 is established."
+  ]
+}

@@ -1,0 +1,1 @@
+RV32I/ILP32 freestanding compile and link: PASS. Not executed on target.
