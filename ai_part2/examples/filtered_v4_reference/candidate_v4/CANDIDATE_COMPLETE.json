@@ -1,0 +1,677 @@
+{
+  "fingerprint": {
+    "selection": {
+      "native_report_sha256": "d4e6da43ed7bb1565899b60a7ee9f2e98e74b9e5accf630f87610f6e0ddee9c5",
+      "scan_report_sha256": "be1bc5bfcdf25af5f9d565c0763b2d624551397adabc5ff960125b8a1d18b4e8",
+      "excluded_overlapping_auxiliary_pcaps": [],
+      "selection_rule": "largest original PCAP per parent directory; retain distinct Somfy session directories",
+      "normal_capture_files": 2,
+      "syn_episode_files": 1,
+      "scan_episode_files": 1
+    },
+    "sources": [
+      {
+        "label": 0,
+        "path": "binh_thuong/pcap/CTU-Honeypot-Capture-4-1__2018-10-25-14-06-32-192.168.1.132.pcap.gz",
+        "sha256": "382268f98a3f383fd4001bb1c904c2ce8b3d00dc91f4327cd08a854d241ccaef",
+        "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-4-1",
+        "target_ip": null,
+        "start": null,
+        "end": null,
+        "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+        "id": "000_class0"
+      },
+      {
+        "label": 0,
+        "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-34-1__2018-12-21-15-50-14-192.168.1.195.pcap.gz",
+        "sha256": "c01e177831761294b5eacd8325e5ab646b2cbeda35f4956e16b4f0cdb590cb9d",
+        "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+        "target_ip": null,
+        "start": null,
+        "end": null,
+        "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+        "id": "001_class0"
+      },
+      {
+        "label": 1,
+        "path": "syn_flood/pcap/CTU-IoT-Malware-Capture-34-1__2018-12-21-15-50-14-192.168.1.195.pcap.gz",
+        "sha256": "e9adf7269ba420ffa57c552e8d7b0dd1150fec50da8cb9bad1b9db831dcfd9d9",
+        "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+        "target_ip": "71.61.66.148",
+        "start": 1545475806.96806,
+        "end": 1545475828.998385,
+        "class_provenance": "reviewed IoT23 capture34 SYN-flood episode",
+        "id": "002_class1"
+      },
+      {
+        "label": 2,
+        "path": "vertical_scan/pcap/chris_sanders_synscan_vertical.pcap",
+        "sha256": "dec17c51b1b9d464831edb6e1f0a5bbcbeabdc519bfb4a5a402803384adb257c",
+        "source_group": "ChrisSanders/synscan_one_episode",
+        "target_ip": "64.13.134.52",
+        "start": 1278275056.27487,
+        "end": 1278275061.416441,
+        "class_provenance": "public scan sample; one scanner probes 1000 ports on one destination",
+        "id": "003_class2"
+      }
+    ],
+    "maximum_patterns": 5000,
+    "code": {
+      "part2/filtered_training_data.py": "bec876df628d136c20b6f4f57a02bf62aeccb50a1596ee9970c10f9b66b24eaa",
+      "part2/filtered_training.py": "aec7b29bebcf05e1e516a5de54283f1863c0b2296fe724e44931ef36c9bfd1a7",
+      "part2/features.py": "fe433d5fd22952d2b21e6cb03e5072032c3d724b227fd55cae12e6e5320f3dc5",
+      "part2/integer.py": "3a0497193bb09f0c157d9791814e75da69fc600b5c53e67427e039195cca84be",
+      "part2/development.py": "5e13fc8aa00ce96e1cabe3f3727faa090eba824ca5d804c680d36f8f1f9067e2"
+    },
+    "driver_sha256": "d35926b9aa811752c5f8e175c20d23a4570aa691e93a11791168cd591e8dd822",
+    "exporter_sha256": "5b55a5a102edd44ce47854ba85bae8855b62df3340cf375fe96057c51392867d"
+  },
+  "training": {
+    "kind": "v4_filtered_three_class_training_fit",
+    "architecture": [
+      6,
+      8,
+      3
+    ],
+    "divisors": [
+      8,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "library_versions": {
+      "numpy": "2.2.6",
+      "scipy": "1.18.1",
+      "sklearn": "1.6.1"
+    },
+    "model_sha256": "8950476e72b1135a8867ace566ddd20d7460e58c79e7ef82ed060472e20c74f5",
+    "independent_test_evaluated": false,
+    "validation_used_for_selection": false,
+    "selection": {
+      "seed": 23,
+      "alpha": 0.01,
+      "max_iter": 1600,
+      "solver": "lbfgs",
+      "candidate_count": 1
+    },
+    "training_windows_by_class": [
+      10997,
+      21,
+      4
+    ],
+    "unique_quantized_patterns_by_class": [
+      129,
+      1,
+      4
+    ],
+    "retained_fit_patterns_by_class": [
+      129,
+      1,
+      4
+    ],
+    "balanced_fit_rows": 387,
+    "fit_sampling": "Uniform deterministic reservoir of unique q patterns, capped per class; repeat retained patterns to equal class sizes. Repeats are not new traffic.",
+    "sampling_cap_per_class": 5000,
+    "training_fit": {
+      "float": {
+        "windows": 11022,
+        "accuracy": 0.999001996007984,
+        "macro_f1": 0.9306508145087529,
+        "confusion_matrix": [
+          [
+            10986,
+            11,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            0,
+            4
+          ]
+        ],
+        "false_positive_rate": 0.0010002728016731835,
+        "per_class": [
+          {
+            "id": 0,
+            "precision": 1.0,
+            "recall": 0.9989997271983269,
+            "f1": 0.9994996133375791,
+            "support": 10997
+          },
+          {
+            "id": 1,
+            "precision": 0.65625,
+            "recall": 1.0,
+            "f1": 0.7924528301886793,
+            "support": 21
+          },
+          {
+            "id": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 4
+          }
+        ]
+      },
+      "integer": {
+        "windows": 11022,
+        "accuracy": 0.999001996007984,
+        "macro_f1": 0.9306508145087529,
+        "confusion_matrix": [
+          [
+            10986,
+            11,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            0,
+            4
+          ]
+        ],
+        "false_positive_rate": 0.0010002728016731835,
+        "per_class": [
+          {
+            "id": 0,
+            "precision": 1.0,
+            "recall": 0.9989997271983269,
+            "f1": 0.9994996133375791,
+            "support": 10997
+          },
+          {
+            "id": 1,
+            "precision": 0.65625,
+            "recall": 1.0,
+            "f1": 0.7924528301886793,
+            "support": 21
+          },
+          {
+            "id": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 4
+          }
+        ]
+      }
+    },
+    "per_source": [
+      {
+        "source_id": "000_class0",
+        "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-4-1",
+        "label": 0,
+        "windows": 7808,
+        "metrics": {
+          "float": {
+            "windows": 7808,
+            "accuracy": 1.0,
+            "macro_f1": 0.3333333333333333,
+            "confusion_matrix": [
+              [
+                7808,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "false_positive_rate": 0.0,
+            "per_class": [
+              {
+                "id": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 7808
+              },
+              {
+                "id": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              }
+            ]
+          },
+          "integer": {
+            "windows": 7808,
+            "accuracy": 1.0,
+            "macro_f1": 0.3333333333333333,
+            "confusion_matrix": [
+              [
+                7808,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "false_positive_rate": 0.0,
+            "per_class": [
+              {
+                "id": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 7808
+              },
+              {
+                "id": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "source_id": "001_class0",
+        "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+        "label": 0,
+        "windows": 3189,
+        "metrics": {
+          "float": {
+            "windows": 3189,
+            "accuracy": 0.9965506428347445,
+            "macro_f1": 0.33275744725407047,
+            "confusion_matrix": [
+              [
+                3178,
+                11,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "false_positive_rate": 0.003449357165255566,
+            "per_class": [
+              {
+                "id": 0,
+                "precision": 1.0,
+                "recall": 0.9965506428347445,
+                "f1": 0.9982723417622114,
+                "support": 3189
+              },
+              {
+                "id": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              }
+            ]
+          },
+          "integer": {
+            "windows": 3189,
+            "accuracy": 0.9965506428347445,
+            "macro_f1": 0.33275744725407047,
+            "confusion_matrix": [
+              [
+                3178,
+                11,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "false_positive_rate": 0.003449357165255566,
+            "per_class": [
+              {
+                "id": 0,
+                "precision": 1.0,
+                "recall": 0.9965506428347445,
+                "f1": 0.9982723417622114,
+                "support": 3189
+              },
+              {
+                "id": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "source_id": "002_class1",
+        "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+        "label": 1,
+        "windows": 21,
+        "metrics": {
+          "float": {
+            "windows": 21,
+            "accuracy": 1.0,
+            "macro_f1": 0.3333333333333333,
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                21,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "false_positive_rate": null,
+            "per_class": [
+              {
+                "id": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 1,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 21
+              },
+              {
+                "id": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              }
+            ]
+          },
+          "integer": {
+            "windows": 21,
+            "accuracy": 1.0,
+            "macro_f1": 0.3333333333333333,
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                21,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "false_positive_rate": null,
+            "per_class": [
+              {
+                "id": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 1,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 21
+              },
+              {
+                "id": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "source_id": "003_class2",
+        "source_group": "ChrisSanders/synscan_one_episode",
+        "label": 2,
+        "windows": 4,
+        "metrics": {
+          "float": {
+            "windows": 4,
+            "accuracy": 1.0,
+            "macro_f1": 0.3333333333333333,
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4
+              ]
+            ],
+            "false_positive_rate": null,
+            "per_class": [
+              {
+                "id": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 2,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 4
+              }
+            ]
+          },
+          "integer": {
+            "windows": 4,
+            "accuracy": 1.0,
+            "macro_f1": 0.3333333333333333,
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4
+              ]
+            ],
+            "false_positive_rate": null,
+            "per_class": [
+              {
+                "id": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 0
+              },
+              {
+                "id": 2,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 4
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "conflicting_quantized_patterns": 1,
+    "conflict_examples": [
+      {
+        "q": [
+          127,
+          20,
+          127,
+          1,
+          1,
+          1
+        ],
+        "counts_by_label": {
+          "0": 11,
+          "1": 21
+        }
+      }
+    ],
+    "candidate_status": "needs_label_review",
+    "ready_for_automatic_blocking": false,
+    "convergence_warning_count": 0,
+    "rtl_vector_count": 398,
+    "limitations": [
+      "Scores are training-fit metrics across all prepared windows, not independent test accuracy.",
+      "Only one reviewed SYN-flood episode and one public vertical-scan episode; no independent three-class holdout can be formed.",
+      "No random adjacent-window split; repeated/unique quantized rows are not independent sessions.",
+      "Different labels with identical q inputs cannot be separated by any classifier using only those q values; labels are preserved for review.",
+      "Normal uses filtered Benign-only packets, grouped by receiver /32. Both traffic directions may produce different receiver samples.",
+      "Filtered packets change traffic composition; results do not reproduce full unfiltered capture windows.",
+      "Protected destination scope and one-second clock alignment must agree with hardware.",
+      "Any Somfy data used here ceases to be an independent test for this candidate.",
+      "No Ethernet blocking, board timing, fresh lab test or superiority over V3 is established."
+    ]
+  },
+  "verification": {
+    "rtl": "PASS vectors=398 cycles_min=84 cycles_max=84 (start accepted to done)\n/workspace/train_v4_reference/release_reference/.candidate_training_1v6k6gl7/candidate/gowin/verification/tb_ai_core.v:54: $finish called at 342416000 (1ps)",
+    "vectors": 398,
+    "gowin_synthesis_executed": false
+  },
+  "files": {
+    "gowin/EXPORT_MANIFEST.json": "510b0b6566b67b602f7b263ae6af6d41f70ca38361cf095354afc8b3ddd4d513",
+    "gowin/ai_core_v4.gprj": "994645540471dc91712cdd415ef184cd54a2e43ee25cfb01241ccda9cffeacbf",
+    "gowin/synth_ai.tcl": "74ed9f6ed9b769620856c5e7b6be6269afb411a56cd0922f0ad74e9c9ae87c1a",
+    "model/quant_params.vh": "529de0f099d569f72be77814c0c44f9c71551cbbb4e0093a6b5ee84b5302321b",
+    "model/FREEZE.json": "8c6a7d4cd8b3bd484ab8f99cc129c3a0c476e3f07f2f10ca0ff8c39f622b34c6",
+    "model/float_model.json": "ba48e544e3890f4241fcba73b6e5a449a91b2cb56d511dcafa7d2c840538a7e5",
+    "model/w1.hex": "eaa9a65e0d8933a4cc4d0adeebade66e993061dc42e3a48507c4ccb4a7d66b4c",
+    "model/b1.hex": "637defb7336a507905e9b632b3c0515b4f1fad58cfa06fd83ace84af4ccd012a",
+    "model/training_patterns.sqlite": "be5a2edc0d5e64eb8844c450aa5ccd9ffaf98b90e3e15ff20d79d9fa34b88acd",
+    "model/w2.hex": "3ccd38fc2ec87d3c4a0ba0673a4cf055b2a57bd937b3df38d682f5eae2f82f30",
+    "model/vectors.txt": "f8aa9ccd0ab06d6878b05d01d7fe59f5885eddf691c2b3a7da672333cd62e9fa",
+    "model/b2.hex": "93a4a49389a244264fa35969e44e20515cb0736a9f9527e33772c790fd3df43b",
+    "model/model.json": "8950476e72b1135a8867ace566ddd20d7460e58c79e7ef82ed060472e20c74f5",
+    "model/metrics.json": "0798b76dd77c1ccd5dc6fe249b104c34c3458705e553c9e060ac2a309ef21815",
+    "gowin/firmware/ai_v4_integration.h": "43f3ef340bac9c8e16c73ff4d468fd798ea66320cdb28ea931cd8f112b426953",
+    "gowin/firmware/ai_quant_v4.h": "990919a2f8af7490e255ed355ea435424d560f45fc85cda8c2a955884f779224",
+    "gowin/constraints/ai_core.sdc": "75e35dad3b37db36e34824892b62c058806000c73086cc38c62a1e3631a74c95",
+    "gowin/verification/RESULT.txt": "6ba51198d745319ef2f078acce25322d002b4145d8f636f55284b745cc0289d4",
+    "gowin/verification/run_sim.sh": "2c0330ead576ac65749cca5c420fa8161f6c7dee8105a6c3cd2e9aeb42df4251",
+    "gowin/verification/vectors.txt": "f8aa9ccd0ab06d6878b05d01d7fe59f5885eddf691c2b3a7da672333cd62e9fa",
+    "gowin/verification/tb_ai_core.v": "311879e11a1b93ed214def8e176f15ec5578ddc2865f6a4e419acce6bbe4ba40",
+    "gowin/reference/model.json": "8950476e72b1135a8867ace566ddd20d7460e58c79e7ef82ed060472e20c74f5",
+    "gowin/reference/metrics.json": "0798b76dd77c1ccd5dc6fe249b104c34c3458705e553c9e060ac2a309ef21815",
+    "gowin/src/ai_core_model_v4.v": "c0fc656b2d79d026a7aec5d077e2f792d565fa6d8a46462ce32ac61c62cb15cf"
+  }
+}
