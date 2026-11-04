@@ -1,0 +1,351 @@
+{
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "source_counts_by_class": [
+    28,
+    1,
+    1
+  ],
+  "original_sources": [
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-Honeypot-Capture-4-1__2018-10-25-14-06-32-192.168.1.132.pcap.gz",
+      "sha256": "359ba6b0c024cf6ea7d266c664ac03b1d697df86d31c423b6e776e646f337e46",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-4-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "000_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-Honeypot-Capture-5-1__2018-09-21-capture.pcap.gz",
+      "sha256": "3fad42e5edbb2409fd8e8bbef680bb04775e12927a7dee7fa06dac77f7031cba",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-5-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "001_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-Honeypot-Capture-7-1__Somfy-01__2019-07-03-15-15-47-first_start_somfy_gateway.pcap.gz",
+      "sha256": "42dcd0b9d2f756b1fbb459c7e521752d9905fde797e3d837651c843415188054",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-01",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "002_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-Honeypot-Capture-7-1__Somfy-02__2019-07-03-16-41-09-192.168.1.158.pcap.gz",
+      "sha256": "0248d86b750716280abf41a44c1442c1900428a241ed3128325e98c18e56cf73",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-02",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "003_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-Honeypot-Capture-7-1__Somfy-03__2019-07-04-16-41-10-192.168.1.158.pcap.gz",
+      "sha256": "229547af1ec0f6eaf9114cb5b8e703f2cb37636c572879bcef02ad791b5e1fe2",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-03",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "004_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-Honeypot-Capture-7-1__Somfy-04__2019-07-05-16-41-14-192.168.1.158.pcap.gz",
+      "sha256": "651f1063fb137e1d46b277a19211aa05f3d16c13d14192d5ff07c894bc6f8087",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-04",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "005_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-Honeypot-Capture-7-1__Somfy-05__2019-07-06-16-41-17-192.168.1.158.pcap.gz",
+      "sha256": "06c9cc21abd14c07a2ed609e4fee161fc4cdc27dd557412ac09cf7d129b9c973",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-05",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "006_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-Honeypot-Capture-7-1__Somfy-06__2019-07-07-16-41-19-192.168.1.158.pcap.gz",
+      "sha256": "82b3ae3202f2b211b78fce0813a8d2bfe393646ad61a3322cf0971062e7502e1",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-Honeypot-Capture-7-1/Somfy-06",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "007_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-1-1__2018-05-09-192.168.100.103.pcap.gz",
+      "sha256": "8db9ac021143655a7b8135c597483b853d6f66aea72a23d8a23dc7a923043bef",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-1-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "008_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-17-1__2018-09-06-11-43-12-192.168.100.111.pcap.gz",
+      "sha256": "c716190f0dedd1730ecfe9f40cb3d6ffe293cd79c6a260312ae2f2e084fe71bd",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-17-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "009_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-20-1__2018-10-02-13-12-30-192.168.100.103.pcap.gz",
+      "sha256": "d9af9f79026e401732e107ae22d1e2c997fb054d2471a8edffc5fad721704e17",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-20-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "010_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-21-1__2018-10-03-15-22-32-192.168.100.113.pcap.gz",
+      "sha256": "bd5954176f2054bf024137efe083f8e51c52f033a586a8871bc4a1bd7e34b6d2",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-21-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "011_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-3-1__2018-05-21_capture.pcap.gz",
+      "sha256": "4d7eeac50bfcb27368e01fc6bd13b0ada8e30096e36bec7307ffc3dfd94f41e3",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-3-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "012_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-33-1__2018-12-20-21-10-00-192.168.1.197.pcap.gz",
+      "sha256": "eb8e865b5447ddecbe26848d1ce96aa89e30ac9f3cfe6a5879b520fbdaaf8d2d",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-33-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "013_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-34-1__2018-12-21-15-50-14-192.168.1.195.pcap.gz",
+      "sha256": "c01e177831761294b5eacd8325e5ab646b2cbeda35f4956e16b4f0cdb590cb9d",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "014_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-35-1__2018-12-21-15-33-59-192.168.1.196.pcap.gz",
+      "sha256": "72e89ea35c7785328e9179bc76efd057032f52a094bdf8db18406eb5c14a402f",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-35-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "015_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-36-1__2018-12-21-13-36-41-192.168.1.198.pcap.gz",
+      "sha256": "e773c1016fc74ff31cb5481ac2bfc136f1a54391bcf4a55ba78e346b7a6aa7fd",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-36-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "016_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-39-1__2019-01-09-21-25-11-192.168.1.194.pcap.gz",
+      "sha256": "1a2e14fdf6719859189e50c033ca02deeb0fe52e84637b9abe89f016f060fba9",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-39-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "017_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-42-1__2019-01-10-14-34-38-192.168.1.197.pcap.gz",
+      "sha256": "33d115c3dc8235e04d30602e09af11c4c3cfaf8846849160218e64b499e84fba",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-42-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "018_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-43-1__2019-01-10-19-22-51-192.168.1.198.pcap.gz",
+      "sha256": "d8820462067ca7531ae179109c8ee1f99991d44814e13d15b0c88e864601e8a1",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-43-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "019_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-44-1__2019-01-10-21-06-26-192.168.1.199.pcap.gz",
+      "sha256": "50ff1866be5fc2444c62f7f86e525a29bc48edf971c32280a724746a95d11354",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-44-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "020_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-48-1__2019-02-28-19-15-13-192.168.1.200.pcap.gz",
+      "sha256": "54fc78d72791883c11fbb4a48a549d06211424e26ac26fedd656a7af26b5c977",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-48-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "021_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-49-1__2019-02-28-20-50-15-192.168.1.193.pcap.gz",
+      "sha256": "98fe576f68065bd0c198c289cb7b081390e0d84b031f5001c54cd3f2844fae15",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-49-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "022_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-52-1__2019-03-08-13-24-30-192.168.1.197.pcap.gz",
+      "sha256": "983de24d9d6fd9776f702fdeee18431457f6f2e2cf0468902118d02d0f38cb4f",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-52-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "023_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-60-1__2019-09-20-02-40-32-192.168.1.195.pcap.gz",
+      "sha256": "fa2e4fbf4a2252adb257d94412f47d16704681d3e3f6f20059e8a0b9b433328a",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-60-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "024_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-7-1__2018-07-20-17-31-20-192.168.100.108.pcap.gz",
+      "sha256": "5cf4435acafac68c7be3b13460ebd8036d6008810a23df02839dc1b4f9d2e616",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-7-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "025_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-8-1__2018-07-31-15-15-09-192.168.100.113.pcap.gz",
+      "sha256": "c4fce38b8f933c5f64793f9dbd69734ca09f82a768fa4d0ce7a3d15a42b8c73d",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-8-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "026_class0"
+    },
+    {
+      "label": 0,
+      "path": "binh_thuong/pcap/CTU-IoT-Malware-Capture-9-1__2018-07-25-10-53-16-192.168.100.111.pcap.gz",
+      "sha256": "7acbccfa3c3c5398fa38d60102b8acb0c194d4d4ab585ec6010a1fb8184b187c",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-9-1",
+      "target_ip": null,
+      "start": null,
+      "end": null,
+      "class_provenance": "Native Benign filtered packets; each destination treated as its own receiver",
+      "id": "027_class0"
+    },
+    {
+      "label": 1,
+      "path": "syn_flood/pcap/CTU-IoT-Malware-Capture-34-1__2018-12-21-15-50-14-192.168.1.195.pcap.gz",
+      "sha256": "e9adf7269ba420ffa57c552e8d7b0dd1150fec50da8cb9bad1b9db831dcfd9d9",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+      "target_ip": "71.61.66.148",
+      "start": 1545475806.96806,
+      "end": 1545475828.998385,
+      "class_provenance": "reviewed IoT23 capture34 SYN-flood episode",
+      "id": "028_class1"
+    },
+    {
+      "label": 2,
+      "path": "vertical_scan/pcap/chris_sanders_synscan_vertical.pcap",
+      "sha256": "dec17c51b1b9d464831edb6e1f0a5bbcbeabdc519bfb4a5a402803384adb257c",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "target_ip": "64.13.134.52",
+      "start": 1278275056.27487,
+      "end": 1278275061.416441,
+      "class_provenance": "public scan sample; one scanner probes 1000 ports on one destination",
+      "id": "029_class2"
+    }
+  ],
+  "original_training_windows_by_class": [
+    39253935,
+    21,
+    4
+  ],
+  "scan_time_augmented_windows": 1423,
+  "new_independent_scan_episodes": 0,
+  "no_new_data_used_for_training_in_this_integration": true,
+  "original_label_conflicts_kept": true,
+  "original_v5_normal_errors": 12,
+  "independent_test_accuracy_claimed": false
+}

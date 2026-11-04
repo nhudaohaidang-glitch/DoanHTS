@@ -1,0 +1,28 @@
+# Tong hop / dat day (sinh lai bang board/build_oss.sh hoac Gowin)
+build/
+impl/
+*.json.bak
+
+# Mo phong (sinh lai bang run_sim.sh)
+sim/out/
+*.vvp
+*.vcd
+*.fst
+# ModelSim / Questa
+work/
+transcript
+*.wlf
+modelsim.ini
+
+# Firmware trung gian (giu lai firmware.hex, firmware_sim.hex vi can khi tong hop / mo phong)
+fw/*.elf
+fw/*.bin
+fw/*.map
+fw/*.lst
+
+# Python, he dieu hanh, editor
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.vscode/
