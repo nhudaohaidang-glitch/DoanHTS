@@ -1,0 +1,4 @@
+/workspace/train_v5_full_user/release_final/.train_v5_yp0t_mde/candidate/gowin/src/ai_core_model_v5.v:146: warning: @* is sensitive to all 8 words in array 'hidden'.
+
+PASS vectors=1896 cycles_min=84 cycles_max=84 (start accepted to done)
+/workspace/train_v5_full_user/release_final/.train_v5_yp0t_mde/candidate/gowin/verification/tb_ai_core.v:54: $finish called at 1630696000 (1ps)

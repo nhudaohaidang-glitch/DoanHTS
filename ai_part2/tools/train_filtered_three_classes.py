@@ -54,8 +54,8 @@ def verify_files(root,checksums):
         if not path.is_file() or sha(path)!=expected:raise ValueError('Saved file changed/missing: '+str(path))
 
 
-def export_candidate(stage,sources,fingerprint,maximum_patterns):
-    training=train(sources,stage/'model',maximum_patterns)
+def export_candidate(stage,sources,fingerprint,maximum_patterns,model_version='v4'):
+    training=train(sources,stage/'model',maximum_patterns,model_version)
     prepare(stage/'model',stage/'gowin',KIT)
     header='''#ifndef AI_V4_INTEGRATION_H
 #define AI_V4_INTEGRATION_H
@@ -71,12 +71,13 @@ static inline int ai_v4_prepare_window(uint32_t packets, uint64_t ip_bytes,
 }
 #endif
 '''
-    (stage/'gowin/firmware/ai_v4_integration.h').write_text(header)
+    header=header.replace('V4',model_version.upper()).replace('v4',model_version)
+    (stage/f'gowin/firmware/ai_{model_version}_integration.h').write_text(header)
     verification=dict(rtl='not run: Icarus tools unavailable',vectors=training['rtl_vector_count'],gowin_synthesis_executed=False)
     if shutil.which('iverilog') and shutil.which('vvp'):
         executable=stage/'gowin/verification/sim.vvp'
         commands=[['iverilog','-g2012','-Wall','-s','tb_ai_core','-o',str(executable),
-                   str(stage/'gowin/src/ai_core_model_v4.v'),str(stage/'gowin/verification/tb_ai_core.v')],
+                   str(stage/f'gowin/src/ai_core_model_{model_version}.v'),str(stage/'gowin/verification/tb_ai_core.v')],
                   ['vvp',str(executable),'+vectors='+str(stage/'gowin/verification/vectors.txt')]]
         log=[]
         for command in commands:

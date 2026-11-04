@@ -38,7 +38,7 @@ def weighted_metrics(confusion):
                 per_class=classes)
 
 
-def train(sources,output,maximum_patterns=5000):
+def train(sources,output,maximum_patterns=5000,model_version='v4'):
     output=Path(output)
     if output.exists():raise ValueError('Candidate model folder exists; preserve it')
     output.mkdir();database=output/'training_patterns.sqlite';db=sqlite3.connect(database)
@@ -68,11 +68,17 @@ def train(sources,output,maximum_patterns=5000):
         chunks.append(points[order])
     xfit=np.vstack(chunks);yfit=np.repeat(np.arange(3),size)
     clf=MLPClassifier(hidden_layer_sizes=(8,),activation='relu',solver='lbfgs',alpha=ALPHA,max_iter=1600,random_state=SEED)
-    print('TRAIN new candidate V4:',len(xfit),'balanced fit rows; observed windows by class:',window_counts,flush=True)
+    print('TRAIN new candidate '+model_version.upper()+':',len(xfit),'balanced fit rows; observed windows by class:',window_counts,flush=True)
     with warnings.catch_warnings(record=True) as caught,threadpool_limits(limits=1):
         warnings.simplefilter('always',ConvergenceWarning);clf.fit(xfit/128.,yfit)
-    model=integer_model(clf,xfit,SEED)
-    model.update(model_version='v4',candidate_kind='filtered_iot23_public_vertical_scan',
+    calibration=None
+    if model_version=='v5':
+        from part2.filtered_calibration import calibrate_integer_model
+        rows=list(db.execute('SELECT label,packed,count FROM patterns ORDER BY label,packed'))
+        model,calibration=calibrate_integer_model(clf,np.asarray([unpack(p) for l,p,n in rows]),
+                                                 [l for l,p,n in rows],[n for l,p,n in rows],SEED)
+    else:model=integer_model(clf,xfit,SEED)
+    model.update(model_version=model_version,candidate_kind='filtered_iot23_public_vertical_scan',
                  source_kind='filtered_class_pcap_training',selected_alpha=ALPHA,
                  independent_test_evaluated=False,training_receiver_scope='each destination /32; positive reviewed target only')
     export_model(model,output)
@@ -101,7 +107,7 @@ def train(sources,output,maximum_patterns=5000):
     generator=np.random.default_rng(112)
     edges=np.vstack([np.zeros((1,6),dtype=int),np.full((1,6),127),np.eye(6,dtype=int)*127,generator.integers(0,128,(256,6))])
     vectors=np.vstack([*chosen,edges]);vector_count=write_vectors(vectors,model,output/'vectors.txt')
-    report=dict(kind='v4_filtered_three_class_training_fit',architecture=[6,8,3],divisors=DIVISORS,
+    report=dict(kind=model_version+'_filtered_three_class_training_fit',architecture=[6,8,3],divisors=DIVISORS,
                 library_versions=dict(numpy=np.__version__,scipy=scipy.__version__,sklearn=sklearn.__version__),
                 model_sha256=sha(output/'model.json'),independent_test_evaluated=False,
                 validation_used_for_selection=False,selection=dict(seed=SEED,alpha=ALPHA,max_iter=1600,solver='lbfgs',candidate_count=1),
@@ -125,6 +131,9 @@ def train(sources,output,maximum_patterns=5000):
                     'Protected destination scope and one-second clock alignment must agree with hardware.',
                     'Any Somfy data used here ceases to be an independent test for this candidate.',
                     'No Ethernet blocking, board timing, fresh lab test or superiority over V3 is established.'])
+    if calibration is not None:
+        report['integer_calibration']=calibration
+        report['selection']['integer_calibration_candidates']=calibration['candidate_count']
     (output/'metrics.json').write_text(json.dumps(report,indent=2))
     (output/'FREEZE.json').write_text(json.dumps(dict(format=1,model_sha256=report['model_sha256'],
         metrics_sha256=sha(output/'metrics.json'),float_model_sha256=sha(output/'float_model.json'),

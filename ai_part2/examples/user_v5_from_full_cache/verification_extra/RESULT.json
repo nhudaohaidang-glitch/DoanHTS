@@ -1,0 +1,19 @@
+{
+  "kind": "v5_additional_arithmetic_verification",
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "scalar_numpy_scores_match": true,
+  "additional_vector_count": 1069,
+  "known_development_probe_count": 36,
+  "unmet_probe_expectations": [],
+  "probes_used_for_fit_or_calibration": false,
+  "independent_traffic_test": false,
+  "automatic_blocking_ready": false,
+  "gowin_synthesis_executed": false,
+  "board_timing_measured": false,
+  "rtl": "PASS vectors=1069 cycles_min=84 cycles_max=84 (start accepted to done)\nai_part2/examples/user_v5_from_full_cache/candidate_v5/gowin/verification/tb_ai_core.v:54: $finish called at 919476000 (1ps)",
+  "int32_accumulator_bounds": {
+    "w1": 103479,
+    "w2": 21936
+  },
+  "c_header_rv32i_compile_link": "PASS; compilation/link only, not executed"
+}
