@@ -1,0 +1,171 @@
+{
+  "artifact": "ghep_phan1_ai_v6.zip",
+  "artifact_sha256": "284f25345430655410e9fc9901504f8e90a8131cb4d913b1060757f394c809aa",
+  "artifact_bytes": 9037247,
+  "archive_identity_checked": true,
+  "final_archive_fast_checks": true,
+  "corrupted_model_package_rejected": true,
+  "active_html_links_exist": true,
+  "portable_gowin_top_elaboration_passed": true,
+  "regenerated_data_byte_identical_files": 241,
+  "selected_fit_reproduced_exact_model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "native_cache_checksum_negative_check": true,
+  "full_scenario_hardware_firmware_and_testbenches_identical_to_final_archive": true,
+  "validated_functional_file_sha256": {
+    "fw/firmware.hex": "492eebd36fd67625596ef5f72cfc9bd408649e39e0f0d693b5503ffd40b684a2",
+    "fw/firmware_sim.hex": "14a09585534243738b724bbdfc21fba7b04dcae04baf61366ad25fd8a044ca6d",
+    "sources.f": "1757a21a284c0a61d4b707e1758ffa97390d08f7c23229217e35c9ec59cf8e20",
+    "rtl/gateway_soc.v": "8af20d24c49aabf748ba71af2b6b1cb6812ef7067e0e7bc0052991005805bb3a",
+    "rtl/wb_feat_regs.v": "c355f62fdda0bc1023a05c6914132bd66ba1e7d09f7fc2ad19b98d52a2171f71",
+    "rtl/wb_sys.v": "3295a0e9ee8e2a34ab130f02efa4931a8aa2b56aa29736d03918135619ad635f",
+    "rtl/picorv32_LICENSE.txt": "041ebc727233e5bf096dd41260cbb81014d3d29ca007a15f3b1807d4e9ff288e",
+    "rtl/wb_uart.v": "dd4bbd79e6ac937fdeea579a8a318408e08fb96f6316e2d5c757193769587fcb",
+    "rtl/picorv32.v": "0836050971b3c6cdd28ac3b1e5719a67fb645161912bef1e472e63995ceb0622",
+    "rtl/wb_ram.v": "d76cd029799fc474a0f35fc00a27d0d65657c789dff4fc26f6688a06d22e1c43",
+    "rtl/wb_ai_regs.v": "604551cad4671337afba1e8b9130cc4152877485d0a4b123bb90e85516f89617",
+    "rtl/wb_filter_regs.v": "d47a27c80a81dc968156cfd5f3109f5231a78aab2c139dd2cba717050dfbd621",
+    "rtl/clk_meter.v": "7617f52f766c085d4c52381d95052b5743f9c9ebeb4e08a51fc93474eefb8a0c",
+    "rtl/uart_tx.v": "c70881b21019779ddd8c9e424d8f1afe7a2e0125bdd7545b114e43094b86f6df",
+    "rtl/fw_ram.v": "9a2bab1c41b5f37f238d11ca64563d4c98d3ef482ea0657e80993c5c353df6af",
+    "rtl/stubs/pkt_parser_stub.v": "e4c580c4394789e149cce0684c2eed8d34868bd7372be496737e2a0f6121f5cb",
+    "rtl/stubs/feat_core_stub.v": "9b826c08fa93a55afbdb01dcf074ae3ae0c5dc05c69388c58e005bdb8feac6f5",
+    "rtl/stubs/pkt_filter_stub.v": "e5c03c231c5f36ee5fcade57a19c7a49f7945842e722b2e9ee8c6e671b02874b",
+    "rtl/stubs/eth_stub.v": "d131c3079625afc2d1bf223ae92950a643d0bbe21fa4b58c0914041f69b7721a",
+    "rtl/part4_eth/rmii_rx.v": "1c9815a8a5dbf1861f43db9215d7124204ee7124b92dcd3ffc95f8b9f7e0d8dd",
+    "rtl/part4_eth/eth_mac.v": "a055c8984ea7b159f1a4558c6e9d1de4e8200c9d19b437b456f14370f99e5cbc",
+    "rtl/part4_eth/async_fifo.v": "f3b571f0205296e4b88ea7961c0c5368e4ded545cba094c24306ac7bcf02eb50",
+    "rtl/part4_eth/rmii_tx.v": "4a29769909b541c0536a78c821c4feda8bea919ee9ea42ca1b4067784fcacbc2",
+    "rtl/part2_ai/float_model.json": "cb0fb801e2387bbdf2f7f8e1f490dcce6d5d002184c39855490632e234d5cacd",
+    "rtl/part2_ai/model.json": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+    "rtl/part2_ai/ai_core_model_v6.v": "b4e99f801c7ac30fe3d7f61a2bc9818916d26dc16bb1ac231a763a6a8391261c",
+    "rtl/board/tangnano9k_top.v": "7ee0721c9ed9e48bbfc18c38e1ebb3e93a507fc44e958a6df7c7721d386a793c",
+    "sim/tb_ai_v6_cpu.v": "91cfad81e3c7365332629cc9f730092006a92965398f4ab36c09e964004a6616",
+    "sim/modelsim_run.do": "9a8fba748d8f2ac56aacd54775e3d5c8e85fff3d5097242cfc3a646054bb751f",
+    "sim/tb_ai_v6_bus.v": "4f252f266faafa2419f53111993b99c5d2b6b790b4651e22c5dc86a4f1144e6a",
+    "sim/tb_board.v": "46ec3a3bfd21f39bbb9cd65790eeb93da991edf4b91f1175df3cc7d54fe641d9",
+    "sim/font5x7.hex": "341da6899ed21a06eb9bb10975f398535be14ff18be4a3a38261a535b2f103ef",
+    "sim/modelsim_demo.do": "485cb4a149e878dd79ab7ede3420562c2ed9e3b6088dea40db841acb66e35b79",
+    "sim/tb_oled.v": "00ac77fdb7b348a0ab7b08df01fc9c7188faf11baa46b5e4a64efded461173c3",
+    "sim/tb_system_mac.v": "ffd6538a01fe96c848aa809ed90f7beb7209a5555b4a41879359a5df131250b2",
+    "sim/ai_v6_vectors.txt": "43d2cf2f7b5c65b5cb9d279934d82be9c964992ea0e4b32fbdd0ec7931cc7381",
+    "sim/tb_v6_feature_contract.v": "4bc6b69bac724b1ce245c5c18f0a839c776a6beee8d87ca31d3260ff5dc3b89d",
+    "sim/tb_eth_mac.v": "8e5b282a0904b14e30b812f737a7861cde68025d9bcca20a67106b938e34ed18",
+    "sim/ssd1306_model.v": "d8979a239cf8948a1d2288cd5e885c429fb5627a0531b4fb1f580e21c2a53d62",
+    "sim/tb_gateway.v": "255c2d906cf00d0d8b74885aef2e9b7da717205ed93de5ece539c9bca3e63380",
+    "sim/modelsim_gateway.do": "423e418670472cdeb8b4d570d8b852d33e3dcf93404f6d48131f5a40326f545b"
+  },
+  "full_scenarios": {
+    "ai_v6": {
+      "test": "ai_v6",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "ai_cpu": {
+      "test": "ai_cpu",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "features": {
+      "test": "features",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "full": {
+      "test": "full",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [
+        {
+          "kind": "uart_policy_scenario",
+          "passed": true
+        }
+      ],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "system": {
+      "test": "system",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    }
+  },
+  "runtime_trace": {
+    "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+    "runtime_windows": 37,
+    "raw_to_pack_and_scores_match": true,
+    "detection_accuracy_claimed": false,
+    "syn_demo_examples": [
+      {
+        "win": 6,
+        "raw": [
+          406,
+          40,
+          125,
+          2,
+          1,
+          1
+        ],
+        "q": [
+          50,
+          20,
+          125,
+          2,
+          1,
+          1
+        ],
+        "scores": [
+          606,
+          1002,
+          -1700
+        ],
+        "predicted_class": 1,
+        "note": "SYN stimulus in the existing demo; predicted class is recorded, not assumed"
+      },
+      {
+        "win": 7,
+        "raw": [
+          407,
+          40,
+          125,
+          2,
+          1,
+          1
+        ],
+        "q": [
+          50,
+          20,
+          125,
+          2,
+          1,
+          1
+        ],
+        "scores": [
+          606,
+          1002,
+          -1700
+        ],
+        "predicted_class": 1,
+        "note": "SYN stimulus in the existing demo; predicted class is recorded, not assumed"
+      }
+    ]
+  },
+  "historical_lab_regression": {
+    "v5_correct": 135,
+    "v6_correct": 218,
+    "nonempty_windows": 219,
+    "independent_new_test": false
+  },
+  "board_validated": false,
+  "physical_timing_pass_claimed": false,
+  "notes": [
+    "Full scenarios were rerun from a relocated staged ZIP. Final additions are the report collector and documentation/whitespace/attributes only; all 41 hardware/firmware/testbench source files verified byte-identical. The final ZIP also passed identity and three fast simulations after extraction.",
+    "No V6 full-top Gowin/P&R or real-board test was run. See READY_REPORT for P3/MAC/labels and independent testing limits."
+  ]
+}

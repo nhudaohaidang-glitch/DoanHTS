@@ -36,8 +36,8 @@ def check(model_dir, output):
     data = (model_dir / 'model.json').read_bytes()
     model = json.loads(data)
     version = model.get('model_version')
-    if version not in ('v2', 'v3', 'v4', 'v5') or model['architecture'] != [6, 8, 3]:
-        raise ValueError('Expected a v2/v3/v4/v5 6-8-3 model')
+    if version not in ('v2', 'v3', 'v4', 'v5', 'v6') or model['architecture'] != [6, 8, 3]:
+        raise ValueError('Expected a v2/v3/v4/v5/v6 6-8-3 model')
     cases = probes()
     raw = np.asarray([c[2] for c in cases], dtype=np.int64)
     q = quantize(raw, model['divisors'])

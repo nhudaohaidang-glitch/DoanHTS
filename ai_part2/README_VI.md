@@ -1,5 +1,17 @@
 # Người 2 — bộ mã độc lập cho SYN flood và vertical scan
 
+## Bàn giao V6 đã ghép với Phần 1
+
+Gói mới: [ghep_phan1_ai_v6.zip](../ghep_phan1_ai_v6.zip). Hướng dẫn và phạm vi nghiệm thu:
+[integration/phan1_v6/README.md](integration/phan1_v6/README.md).
+V6 dùng đúng Normal/SYN34 IoT-23 và vertical scan Chris Sanders, thêm các
+biến thể thời gian/nền từ chính nguồn đó. Bus 3.762 vector, CPU POST37/37,
+demo chặn SYN/scan và prototype RMII/MAC đều đạt bài mô phỏng. Lab lịch sử
+đúng218/219; còn lỗi nhãn/giới hạn được giữ trong báo cáo. Chưa có nghiệm thu
+timing top V6, module P3 chính thức, mất gói MAC và chạy trên bo thật.
+Các mục bên dưới mô tả bộ công cụ AI ban đầu; bản ghép V6 có thêm source và
+firmware tham chiếu của Phần 1, giữ riêng bản V5 cũ.
+
 ## Bộ này giúp làm được gì?
 
 1. Cài công cụ trong Ubuntu VirtualBox; giữ nguyên Windows, VS Code và Gowin.

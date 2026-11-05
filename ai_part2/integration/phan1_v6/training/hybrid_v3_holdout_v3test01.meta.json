@@ -1,0 +1,249 @@
+{
+  "timestamp_order_policy": "Per-packet timestamp buckets; no frame discarded for reordering",
+  "contract": "v0",
+  "window_seconds": 1.0,
+  "distinct": "exact",
+  "features": [
+    "packet_count",
+    "mean_ip_bytes",
+    "syn_ratio_q127",
+    "src_count",
+    "dst_count",
+    "dst_port_count"
+  ],
+  "captures": [
+    {
+      "capture_id": "v3test01_challenge_normal_small",
+      "pcap": "v3test01_challenge_normal_small/traffic.pcap",
+      "split": "challenge",
+      "label": "0",
+      "start": "1793447940.0952008",
+      "end": "1793447962.1312227",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "8516b19a29cb115e6bbee3015f95989b1c44c4f9796d04d63af3c5975a964244",
+      "stats": {
+        "frames": 857,
+        "ingress_ipv4": 476,
+        "non_ingress": 381,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_normal_large",
+      "pcap": "v3test01_challenge_normal_large/traffic.pcap",
+      "split": "challenge",
+      "label": "0",
+      "start": "1793447966.881853",
+      "end": "1793447988.9120708",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "2dee8d7b5c530509ffd6d8b4c74b9191394f4d9889a3c37d8e720fd1dd217983",
+      "stats": {
+        "frames": 596,
+        "ingress_ipv4": 318,
+        "non_ingress": 278,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_normal_two",
+      "pcap": "v3test01_challenge_normal_two/traffic.pcap",
+      "split": "challenge",
+      "label": "0",
+      "start": "1793447993.6181445",
+      "end": "1793448015.6337097",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "95c8db2918811918dff7cd7cd1ccc9a7131921b502cbabf3b56cfa15eb3f1aab",
+      "stats": {
+        "frames": 1875,
+        "ingress_ipv4": 1098,
+        "non_ingress": 777,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_normal_sparse",
+      "pcap": "v3test01_challenge_normal_sparse/traffic.pcap",
+      "split": "challenge",
+      "label": "0",
+      "start": "1793448020.7658784",
+      "end": "1793448042.774821",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "e46be5f98cd7ecefbed3de4357a1113b6a9233cc8d66114a0eb4a421dbb4598e",
+      "stats": {
+        "frames": 206,
+        "ingress_ipv4": 80,
+        "non_ingress": 126,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_retry_low",
+      "pcap": "v3test01_challenge_retry_low/traffic.pcap",
+      "split": "challenge",
+      "label": "0",
+      "start": "1793448047.621398",
+      "end": "1793448069.6889355",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "23a01766fc64513c9153c0a347113b2d789f114fd3b3ac72b3285513d2a25888",
+      "stats": {
+        "frames": 541,
+        "ingress_ipv4": 268,
+        "non_ingress": 273,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_retry_high",
+      "pcap": "v3test01_challenge_retry_high/traffic.pcap",
+      "split": "challenge",
+      "label": "0",
+      "start": "1793448074.775816",
+      "end": "1793448096.7941432",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "33a36ac47d68bfef5efcceb7d6941a8b01b2b75cb99862f8d846fe3c11b019dd",
+      "stats": {
+        "frames": 712,
+        "ingress_ipv4": 351,
+        "non_ingress": 361,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 1,
+        "max_backward_seconds": 7.200241088867188e-05
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_syn_low",
+      "pcap": "v3test01_challenge_syn_low/traffic.pcap",
+      "split": "challenge",
+      "label": "1",
+      "start": "1793448101.678354",
+      "end": "1793448123.6959376",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "26584bd9f4dc5903f5c26ecb53ee4f38b3df56be7cb79be34e9a991a638faffa",
+      "stats": {
+        "frames": 2167,
+        "ingress_ipv4": 802,
+        "non_ingress": 1365,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 2,
+        "max_backward_seconds": 8.988380432128906e-05
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_syn_mid",
+      "pcap": "v3test01_challenge_syn_mid/traffic.pcap",
+      "split": "challenge",
+      "label": "1",
+      "start": "1793448128.4373221",
+      "end": "1793448150.4480076",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "7113e8ef134300aa3cb19d35e669b91106001bae7e46480f680c0d976ae067d3",
+      "stats": {
+        "frames": 4182,
+        "ingress_ipv4": 1804,
+        "non_ingress": 2378,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 1,
+        "max_backward_seconds": 1.0013580322265625e-05
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_syn_high",
+      "pcap": "v3test01_challenge_syn_high/traffic.pcap",
+      "split": "challenge",
+      "label": "1",
+      "start": "1793448155.2327468",
+      "end": "1793448177.243453",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "7b864864a83e6853381d39f5e55848f2babf50003a65c09a6189b74a72387e0f",
+      "stats": {
+        "frames": 5731,
+        "ingress_ipv4": 2587,
+        "non_ingress": 3144,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_scan_slow",
+      "pcap": "v3test01_challenge_scan_slow/traffic.pcap",
+      "split": "challenge",
+      "label": "2",
+      "start": "1793448182.3387158",
+      "end": "1793448204.361147",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "fb639d3b571670f8336b7d08ad9276b726badb2019d47ffbb485aada07a30d93",
+      "stats": {
+        "frames": 588,
+        "ingress_ipv4": 291,
+        "non_ingress": 297,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 1,
+        "max_backward_seconds": 3.600120544433594e-05
+      },
+      "windows": 21
+    },
+    {
+      "capture_id": "v3test01_challenge_scan_fast",
+      "pcap": "v3test01_challenge_scan_fast/traffic.pcap",
+      "split": "challenge",
+      "label": "2",
+      "start": "1793448209.2392988",
+      "end": "1793448231.2589476",
+      "source_kind": "lab",
+      "target_net": "198.18.0.1/32",
+      "sha256": "b7d6982cddc722c9477ed3f4e4d0eb0d38ccf40327cb035074850860dffcf67d",
+      "stats": {
+        "frames": 3118,
+        "ingress_ipv4": 1557,
+        "non_ingress": 1561,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "windows": 21
+    }
+  ],
+  "rows": 231,
+  "note": "Scenario/window labels, not per-packet labels; empty attack windows remain labeled and must be reviewed."
+}
