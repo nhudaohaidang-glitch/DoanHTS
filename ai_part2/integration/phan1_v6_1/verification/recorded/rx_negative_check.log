@@ -1,0 +1,5 @@
+Expected failure when the V6.1 stage is removed (negative test):
+FATAL: sim/tb_rmii_rx_retime.v:26: SAMPLE_NEG=1 differs from delayed baseline at cycle 42 new=1ce8 expected=0000
+       Time: 1051000  Scope: tb_rmii_rx_retime
+
+PASS: regression test rejects an unretimed RX.

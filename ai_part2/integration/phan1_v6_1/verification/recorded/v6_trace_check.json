@@ -1,0 +1,60 @@
+{
+  "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "runtime_windows": 37,
+  "raw_to_pack_and_scores_match": true,
+  "detection_accuracy_claimed": false,
+  "syn_demo_examples": [
+    {
+      "win": 6,
+      "raw": [
+        406,
+        40,
+        125,
+        2,
+        1,
+        1
+      ],
+      "q": [
+        50,
+        20,
+        125,
+        2,
+        1,
+        1
+      ],
+      "scores": [
+        606,
+        1002,
+        -1700
+      ],
+      "predicted_class": 1,
+      "note": "SYN stimulus in the existing demo; predicted class is recorded, not assumed"
+    },
+    {
+      "win": 7,
+      "raw": [
+        407,
+        40,
+        125,
+        2,
+        1,
+        1
+      ],
+      "q": [
+        50,
+        20,
+        125,
+        2,
+        1,
+        1
+      ],
+      "scores": [
+        606,
+        1002,
+        -1700
+      ],
+      "predicted_class": 1,
+      "note": "SYN stimulus in the existing demo; predicted class is recorded, not assumed"
+    }
+  ]
+}

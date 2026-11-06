@@ -1,0 +1,2 @@
+PASS V6_RV32I_POST counters=37 inference_calls=36 empty_skipped=1 CPU_cycles=308283
+sim/tb_ai_v6_cpu.v:36: $finish called at 3082835000 (1ps)

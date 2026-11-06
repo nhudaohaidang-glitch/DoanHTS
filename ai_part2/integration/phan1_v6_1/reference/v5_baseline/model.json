@@ -1,0 +1,150 @@
+{
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "model_version": "v5",
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "shift1": 5,
+  "shift2": 0,
+  "w1": [
+    [
+      127,
+      -119,
+      -15,
+      34,
+      -35,
+      -86
+    ],
+    [
+      15,
+      -3,
+      4,
+      -1,
+      0,
+      -17
+    ],
+    [
+      -74,
+      5,
+      -127,
+      -1,
+      -9,
+      -5
+    ],
+    [
+      -1,
+      6,
+      -10,
+      0,
+      0,
+      -8
+    ],
+    [
+      -5,
+      6,
+      -10,
+      1,
+      1,
+      -8
+    ],
+    [
+      113,
+      -41,
+      10,
+      -4,
+      -2,
+      -89
+    ],
+    [
+      -109,
+      29,
+      -127,
+      107,
+      -110,
+      2
+    ],
+    [
+      -29,
+      70,
+      -127,
+      54,
+      12,
+      -27
+    ]
+  ],
+  "w2": [
+    [
+      0,
+      19,
+      0,
+      102,
+      48,
+      -1,
+      0,
+      0
+    ],
+    [
+      1,
+      21,
+      0,
+      -40,
+      -10,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      -41,
+      0,
+      -60,
+      -39,
+      0,
+      0,
+      0
+    ]
+  ],
+  "b1": [
+    -50647,
+    -375,
+    41,
+    1314,
+    1257,
+    -12701,
+    -11498,
+    -20977
+  ],
+  "b2": [
+    -346,
+    -288,
+    623
+  ],
+  "score_scale": 32.0,
+  "source_kind": "filtered_class_pcap_training",
+  "selected_seed": 23,
+  "arithmetic": "round-to-nearest-even; arithmetic shifts; hidden 0..127; int16 scores; first argmax",
+  "hidden_scales": [
+    265.4169415101202,
+    6.720106938900762,
+    76.88828555538431,
+    3.62861085571658,
+    4.933063773162403,
+    129.0567976562149,
+    1023.3650585740926,
+    797.8905605428142
+  ],
+  "integer_conversion": "positive per-hidden-neuron rescaling; shared shift; int8 weights",
+  "candidate_kind": "filtered_iot23_public_vertical_scan",
+  "selected_alpha": 0.01,
+  "independent_test_evaluated": false,
+  "training_receiver_scope": "each destination /32; positive reviewed target only"
+}

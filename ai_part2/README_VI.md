@@ -1,5 +1,9 @@
 # Người 2 — bộ mã độc lập cho SYN flood và vertical scan
 
+## Bản sửa timing RX V6.1
+
+Báo cáo P&R V6 của người dùng: clock27MHz và cổngA50MHz đạt nội bộ, cổngB50MHz chưa đạt (Fmax48,696MHz,8setup lỗi,slack xấu nhất−0,268ns). [ghep_phan1_ai_v6_1.zip](../ghep_phan1_ai_v6_1.zip) thêm tầng thanh ghi RX lấy mẫu cạnh xuống; model/firmware/chân/SDC V6 giữ nguyên. Kiểm chức năng đã đạt, **V6.1 cần chạy lại Gowin để xác nhận timing**. Xem [hướng dẫn V6.1](integration/phan1_v6_1/README.md). V6 gốc được giữ riêng bên dưới.
+
 ## Bàn giao V6 đã ghép với Phần 1
 
 Gói mới: [ghep_phan1_ai_v6.zip](../ghep_phan1_ai_v6.zip). Hướng dẫn và phạm vi nghiệm thu:

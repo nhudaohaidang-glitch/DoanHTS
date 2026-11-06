@@ -1,0 +1,12 @@
+{
+  "test": "full",
+  "passed": true,
+  "full_check": true,
+  "extra_checks": [
+    {
+      "kind": "uart_policy_scenario",
+      "passed": true
+    }
+  ],
+  "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+}
