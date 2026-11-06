@@ -1,5 +1,9 @@
 # Người 2 — bộ mã độc lập cho SYN flood và vertical scan
 
+## Demo V6.1 đã đạt timing, chuyển sang thử SRAM/UART
+
+Báo cáo demo mới:clk27MHz,FmaxSTA35,820MHz,0setup/hold lỗi,12I/O; model/firmware/source khớp gói bàn giao. [Hướng dẫn nạpSRAM và đọcUART](NAP_SRAM_DEMO_V6_1_VI.md) dùng fileFS đã có trên máy người dùng; không cần tải lại gói hoặc train. [Báo cáo đối chiếu](reports/V6_1_DEMO_GOWIN_REVIEW.json). Chưa có kết quả thực chạy bo; demo không thay kiểmEthernet/PHY.
+
 ## Bàn giao V6.1 đã kiểm timing nội bộ
 
 [Tải ban_giao_ai_v6_1.zip](../ban_giao_ai_v6_1.zip). Báo cáo người dùng mới đã xác nhận đúng source/model/firmware,0setup và0hold lỗi ở27/50/50MHz; FmaxSTA33,655/92,664/78,935MHz. [Biên bản bàn giao](integration/phan1_v6_1/BAN_GIAO_AI_V6_1.md) giữ rõ PR1014,PHY I/O/CDC/reset và bo thật chưa nghiệm thu. Có helperdemo riêng cho TangNano9K chưa nối đủ LAN8720:CHUAN_BI_DEMO_GOWIN.py, topgowin_demo_top, trafficheader nội bộ/clock27MHz, cần P&R demo riêng. Model/RTL AI/firmware/constraintsMAC không đổi; các ZIP trước vẫn được giữ riêng.
