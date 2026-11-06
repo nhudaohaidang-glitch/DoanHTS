@@ -1,0 +1,52 @@
+{
+  "scope": "person2_AI_only",
+  "model_version": "v6",
+  "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "rtl_sha256": "b4e99f801c7ac30fe3d7f61a2bc9818916d26dc16bb1ac231a763a6a8391261c",
+  "rtl_module": "ai_core",
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "shift1": 5,
+  "shift2": 0,
+  "core_cycles_start_accepted_to_done": 84,
+  "q_vectors": 3762,
+  "counter_cases": 41,
+  "includes_other_members_implementation": false,
+  "excluded": [
+    "CPU",
+    "bus_adapter",
+    "system_firmware",
+    "MAC_PHY",
+    "P3_RTL",
+    "board_top",
+    "demo",
+    "bitstream"
+  ],
+  "standalone_synthesis_and_physical_timing_run_for_this_package": false,
+  "physical_board_tested": false,
+  "new_independent_traffic_test": false,
+  "validation": {
+    "kind": "part2_only_numeric_interface_validation_not_detection_accuracy",
+    "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+    "python_vectors": 3762,
+    "counter_cases": 41,
+    "valid_counter_cases": 40,
+    "empty_skipped": 1,
+    "c_packing_checked": true,
+    "standalone_rtl_checked": true,
+    "cpu_bus_or_mac_tested_by_this_script": false,
+    "core_cycles_min": 84,
+    "core_cycles_max": 84
+  }
+}

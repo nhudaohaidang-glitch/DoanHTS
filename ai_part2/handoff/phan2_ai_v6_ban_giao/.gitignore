@@ -1,0 +1,5 @@
+verification/build/
+gowin/impl/
+__pycache__/
+*.pyc
+*.vvp

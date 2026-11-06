@@ -1,5 +1,11 @@
 # Người 2 — bộ mã độc lập cho SYN flood và vertical scan
 
+## Gói mới chỉ riêng phần AI V6 để gửi người tích hợp
+
+[Tải phan2_ai_v6_ban_giao.zip](../phan2_ai_v6_ban_giao.zip) — chỉ có core AI, model, header C, hợp đồng giao tiếp và bộ kiểm riêng; không kèm CPU/bus/firmware hệ thống/MAC/P3/top/demo của các thành viên khác. Giữ nguyên model V6 đã chốt. Python, C và RTL độc lập đã kiểm 3.762 vector q và 41 tham chiếu counter; core mất 84 chu kỳ. [Hướng dẫn gói riêng](handoff/phan2_ai_v6_ban_giao/README.md).
+
+Gói bổ sung [phan2_ai_v6_train_va_du_lieu.zip](../phan2_ai_v6_train_va_du_lieu.zip) có mã train, cache, PCAP/CSV của phần AI; không bắt buộc để ghép. Các gói V6/V6.1 tích hợp bên dưới vẫn được giữ nguyên để đối chiếu.
+
 ## Demo V6.1 đã đạt timing, chuyển sang thử SRAM/UART
 
 Báo cáo demo mới:clk27MHz,FmaxSTA35,820MHz,0setup/hold lỗi,12I/O; model/firmware/source khớp gói bàn giao. [Hướng dẫn nạpSRAM và đọcUART](NAP_SRAM_DEMO_V6_1_VI.md) dùng fileFS đã có trên máy người dùng; không cần tải lại gói hoặc train. [Báo cáo đối chiếu](reports/V6_1_DEMO_GOWIN_REVIEW.json). Chưa có kết quả thực chạy bo; demo không thay kiểmEthernet/PHY.
