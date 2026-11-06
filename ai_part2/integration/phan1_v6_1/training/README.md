@@ -11,7 +11,7 @@ SYN train dùng 12.000 gói đầu, development dùng 12.000 gói tiếp theo c�
 Sau khi cài dependencies vào venv riêng (xem `LIBRARY_VERSIONS.json` và `requirements-reproduce.txt`; không thay môi trường đang dùng của bạn):
 
 ```bash
-cd ~/Downloads/ghep_phan1_ai_v6_1
+cd ~/Downloads/ban_giao_ai_v6_1
 ~/ai_part2/.venv/bin/python training/test_data.py
 ~/ai_part2/.venv/bin/python training/prepare_data.py --output ~/iot23_v6_data_tai_tao_01
 ~/ai_part2/.venv/bin/python training/train.py --output ~/iot23_v6_train_tai_tao_01

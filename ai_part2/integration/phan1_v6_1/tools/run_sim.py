@@ -13,7 +13,12 @@ def run(name):
     if not shutil.which('iverilog') or not shutil.which('vvp'):
         raise ValueError('Need Icarus Verilog (iverilog and vvp) in PATH')
     out=ROOT/'sim/out';out.mkdir(parents=True,exist_ok=True)
+    if name in ('demo_post','demo'):
+        prep=subprocess.run([sys.executable,str(ROOT/'CHUAN_BI_DEMO_GOWIN.py')],cwd=ROOT,capture_output=True,text=True)
+        if prep.returncode:raise ValueError(prep.stdout+prep.stderr)
     tests={
+      'demo_post':('tb_board_demo_v6_1',['-c','sources.f','rtl/board/tangnano9k_top.v','build/gowin_demo/gowin_demo_top.v','sim/tb_board_demo_v6_1.v','-Ptb_board_demo_v6_1.FAST=0'],'PASS V6_1_BOARD_DEMO_POST',180),
+      'demo':('tb_board_demo_v6_1',['-c','sources.f','rtl/board/tangnano9k_top.v','build/gowin_demo/gowin_demo_top.v','sim/tb_board_demo_v6_1.v'],'PASS V6_1_BOARD_DEMO_ALL3',600),
       'rmii_rx':('tb_rmii_rx_retime',['rtl/part4_eth/rmii_rx.v','sim/rmii_rx_v6_baseline.v','sim/tb_rmii_rx_retime.v'],'PASS V6_1_RMII_RX',60),
       'ai_v6':('tb_ai_v6_bus',['rtl/wb_ai_regs.v','rtl/part2_ai/ai_core_model_v6.v','sim/tb_ai_v6_bus.v'],'PASS V6_WISHBONE',60),
       'ai_cpu':('tb_ai_v6_cpu',['-c','sources.f','sim/tb_ai_v6_cpu.v'],'PASS V6_RV32I_POST',180),
@@ -49,7 +54,7 @@ def run(name):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('test',nargs='?',default='full',choices=['rmii_rx','ai_v6','ai_cpu','features','full','quick','vcd','mac','system','board','oled','all'])
+    parser.add_argument('test',nargs='?',default='full',choices=['demo_post','demo','rmii_rx','ai_v6','ai_cpu','features','full','quick','vcd','mac','system','board','oled','all'])
     args=parser.parse_args()
     try:
         for name in (['ai_v6','ai_cpu','features','rmii_rx','full','oled','board','mac','system'] if args.test=='all' else [args.test]):run(name)

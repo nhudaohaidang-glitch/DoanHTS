@@ -1,0 +1,14 @@
+test_demo_uses_its_own_wrapper_and_twelve_matching_pin_constraints (test_demo_helper.DemoProjectChecks.test_demo_uses_its_own_wrapper_and_twelve_matching_pin_constraints) ... ok
+test_active_model_and_firmware_reference_match_frozen_v6 (test_v6_integration.V6MigrationChecks.test_active_model_and_firmware_reference_match_frozen_v6) ... ok
+test_actual_runtime_trace_matches_and_changed_score_is_detected (test_v6_integration.V6MigrationChecks.test_actual_runtime_trace_matches_and_changed_score_is_detected) ... ok
+test_legacy_vector_generation_is_rejected_before_files_change (test_v6_integration.V6MigrationChecks.test_legacy_vector_generation_is_rejected_before_files_change) ... ok
+test_testbench_fail_cannot_be_reported_as_success_with_zero_exit (test_v6_integration.V6MigrationChecks.test_testbench_fail_cannot_be_reported_as_success_with_zero_exit) ... PASS V6_RUNTIME_TRACE windows=37 counters_to_C_pack_to_RTL_match=OK
+Compile/run: system (network scenarios may take several minutes)
+[tb] FAIL: 1 loi
+
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.135s
+
+OK

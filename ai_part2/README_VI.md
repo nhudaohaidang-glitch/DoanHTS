@@ -1,5 +1,9 @@
 # Người 2 — bộ mã độc lập cho SYN flood và vertical scan
 
+## Bàn giao V6.1 đã kiểm timing nội bộ
+
+[Tải ban_giao_ai_v6_1.zip](../ban_giao_ai_v6_1.zip). Báo cáo người dùng mới đã xác nhận đúng source/model/firmware,0setup và0hold lỗi ở27/50/50MHz; FmaxSTA33,655/92,664/78,935MHz. [Biên bản bàn giao](integration/phan1_v6_1/BAN_GIAO_AI_V6_1.md) giữ rõ PR1014,PHY I/O/CDC/reset và bo thật chưa nghiệm thu. Có helperdemo riêng cho TangNano9K chưa nối đủ LAN8720:CHUAN_BI_DEMO_GOWIN.py, topgowin_demo_top, trafficheader nội bộ/clock27MHz, cần P&R demo riêng. Model/RTL AI/firmware/constraintsMAC không đổi; các ZIP trước vẫn được giữ riêng.
+
 ## Bản sửa timing RX V6.1
 
 Báo cáo P&R V6 của người dùng: clock27MHz và cổngA50MHz đạt nội bộ, cổngB50MHz chưa đạt (Fmax48,696MHz,8setup lỗi,slack xấu nhất−0,268ns). [ghep_phan1_ai_v6_1.zip](../ghep_phan1_ai_v6_1.zip) thêm tầng thanh ghi RX lấy mẫu cạnh xuống; model/firmware/chân/SDC V6 giữ nguyên. Kiểm chức năng đã đạt, **V6.1 cần chạy lại Gowin để xác nhận timing**. Xem [hướng dẫn V6.1](integration/phan1_v6_1/README.md). V6 gốc được giữ riêng bên dưới.

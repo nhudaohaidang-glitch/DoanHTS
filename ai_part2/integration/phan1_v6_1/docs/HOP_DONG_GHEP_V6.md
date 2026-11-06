@@ -37,8 +37,12 @@ DONE được chốt; START lúc busy bị bỏ qua. ABORT dừng giao dịch ch
 
 Một `class_id` không xác định được IP tấn công. Firmware dùng thông tin nguồn nghi ngờ đã xác nhận, whitelist, mức tải tối thiểu, hai cửa sổ và TTL. Đếm nhiều cổng tổng hợp trong receiver không tự chứng minh một nguồn đã vertical scan. Cần đối chiếu logic gán nguồn của P3 khi thay module.
 
-RAM16KB dùng khoảng12,9KB code/data/BSS; phần còn lại cho stack, chưa đo high-water. AI V6 chưa có báo cáo timing top sau P&R hoặc đo trên bo. Cần nộp các báo cáo đó cùng UART/hash/PCAP thực để chốt nghiệm thu phần cứng.
+RAM16KB dùng khoảng12,9KB code/data/BSS; phần còn lại cho stack, chưa đo high-water. V6.1 đã được đối chiếu báo cáo timing nội bộ top sau P&R (0setup/hold lỗi ở27/50/50MHz), xem GOWIN_V6_1_REVIEW.json; chưa đo trên bo/PHY. Cần nộp các báo cáo đó cùng UART/hash/PCAP thực để chốt nghiệm thu phần cứng.
 
 ## Ghi chú V6.1
 
-Model/core/bus/firmware V6 giữ nguyên. RX SAMPLE_NEG=1 thêm tầng3FF căn dữ liệu/carrier từ cạnh xuống sang cạnh lên; CRC/FSM có nguyên chu kỳ xử lý. Thêm1chu kỳ50MHz (20ns) cho luồng RX đó; đường lấy mẫu cạnh lên không đổi. Bytes, SOF/EOF và CRC đã so khớp source cũ với độ trễ này. Cần P&R lại; không dùng STA của bản trước để xác nhận bản sửa. CST/SDC giữ nguyên, cảnh báo PR1014/PHY I/O/CDC/reset chưa được kết luận đạt trên bo.
+Model/core/bus/firmware V6 giữ nguyên. RX SAMPLE_NEG=1 thêm tầng3FF căn dữ liệu/carrier từ cạnh xuống sang cạnh lên; CRC/FSM có nguyên chu kỳ xử lý. Thêm1chu kỳ50MHz (20ns) cho luồng RX đó; đường lấy mẫu cạnh lên không đổi. Bytes, SOF/EOF và CRC đã so khớp source cũ với độ trễ này. Báo cáo P&R V6.1 đã xác nhận source sửa với0setup/hold lỗi; kết quả V6 trước sửa được giữ để đối chiếu. CST/SDC giữ nguyên, cảnh báo PR1014/PHY I/O/CDC/reset chưa được kết luận đạt trên bo.
+
+## Demo bo không có PHY
+
+Project gateway_phan1_v6_1_demo/top gowin_demo_top chỉ có12chân và clock27MHz, SELFTEST=1, tạo header bên trong FPGA. Không thay projectMAC đã đóng timing; demo cần P&R riêng. Model/firmware giống MAC. Chạy POST/nhìn3class trên bo không chứng minh Ethernet/MAC/PHY hoặc độ chính xác trên PCAP/test độc lập.

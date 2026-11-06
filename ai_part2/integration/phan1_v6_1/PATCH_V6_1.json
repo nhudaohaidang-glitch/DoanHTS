@@ -6,7 +6,10 @@
   "baseline_model_and_firmware_preserved": true,
   "baseline_rx_sha256": "1c9815a8a5dbf1861f43db9215d7124204ee7124b92dcd3ffc95f8b9f7e0d8dd",
   "retimed_rx_sha256": "4c6e29a8403965f7347eda1dac97f510353fa6ac35edc4ef6d8b2a309749b7ac",
-  "new_gowin_timing_verified": false,
+  "new_gowin_timing_verified": true,
   "board_verified": false,
-  "review_file": "GOWIN_V6_REVIEW.json"
+  "review_file": "GOWIN_V6_1_REVIEW.json",
+  "timing_verification_scope": "Internal setup/hold with supplied three-clock SDC",
+  "timing_review": "GOWIN_V6_1_REVIEW.json",
+  "baseline_review_file": "GOWIN_V6_REVIEW.json"
 }

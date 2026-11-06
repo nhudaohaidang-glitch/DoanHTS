@@ -1,5 +1,5 @@
 {
-  "version": "v6.1_RMII_timing_candidate",
+  "version": "v6.1_internal_STA_verified_handoff",
   "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
   "architecture": [
     6,
@@ -306,11 +306,11 @@
     "Historical lab: 218/219; one Normal reconnect window predicted Scan. Not a new blind test; no retraining on these lab rows.",
     "P3 parser/features/filter are Person1 reference stubs; official P3 modules still need contract integration and tests.",
     "RAM stack high-water not measured; provided policy defaults DETECT, whitelist and two-window confirmation unchanged.",
-    "Uploaded V6 P&R report fails 8 setup endpoints in b_ref_clk at 50MHz. V6.1 has not been rerun in Gowin here, so no closure claim.",
-    "PR1014 clock source routing and PHY I/O delays/CDC/reset remain to be reviewed with actual board/PHY connections."
+    "PR1014 clock source routing and PHY I/O delays/CDC/reset remain to be reviewed with actual board/PHY connections.",
+    "V6.1 now passes the supplied internal setup/hold STA at 27/50/50MHz. PR1014 remains, no PHY I/O delay budgets are present, and there is no board/CDC/reset signoff yet."
   ],
   "physical_acceptance_pending": [
-    "Rerun V6.1 full-top Gowin synthesis/P&R at 27/50/50MHz; require zero setup/hold violations, then review PR1014, CDC/reset and pin/PHY I/O timing against actual wiring.",
+    "Internal V6.1 P&R timing verified from uploaded reports. Before Ethernet acceptance review PR1014, actual clock/pin/PHY input-output timing and CDC/reset; rerun builds/checks after any source/firmware/constraint change.",
     "Build configuration must match the actual protected receiver /32 and whitelist; recompile firmware after edits.",
     "On-board POST37/37 with V6 hash; real Ethernet forwarding/MQTT/ARP, both directions, capture+UART and counter/drop/overflow review.",
     "Controlled real-board SYN/scan and legitimate reconnect sessions, TTL/unblock; independent detection evaluation before unattended blocking."
@@ -322,6 +322,14 @@
     "ai_v6_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "ai_v6_result.log": "53d54fd9b98122dd749639770741099fbbfd14e8bc2a7c74ea4895e9bc173969",
     "ai_v6_status.json": "e170a87d9b81626c761cc029fd4a27f25f2bb6b508be9334b71ef31a2e2bd8a3",
+    "demo_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "demo_post_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "demo_post_result.log": "933edd949dd6be86ebf6f4779ceb3837c8f8a1eb13caa7d8d6042489cd362b6c",
+    "demo_post_status.json": "f74786ed386378a0a890cbdb21a9af5e7ae90e2aeea4a6b5820eda15023f7c2e",
+    "demo_post_uart.log": "e75e5701cc55434dda0deb733cbaf5b0c6cbf62c22dfe4d3ffc02fac771cc11d",
+    "demo_result.log": "a83abed4e8e1ee0309e55454f77f30d1478466e76f0a760434c56f9461005edc",
+    "demo_status.json": "964aed57a7bd809946ad4c27025a1c364bb6f8294a32b46fa76e90453ab0974d",
+    "demo_uart.log": "abc96c7733960f77d93f7bc190bd6de6565a3ffb20eeaece41f4e2ff8a57747d",
     "features_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "features_result.log": "3f0245c00edd5fbe46c0ac378f490bdb8b4ceb9e100bcabaf739fd82811d8e85",
     "features_status.json": "282451eb49d287b35966aeae5cdc8cd651c4d7d1b05e08c4677bae8571411133",
@@ -329,6 +337,7 @@
     "full_result.log": "3e448122e665dbf96f6f72e6e1da49bd5ce007f667d6d8f57ea5720335e1b068",
     "full_status.json": "79c618dccb82613902397c5b33143038baf9a9e18a21929121a1e4449a67fe53",
     "full_uart_check.log": "84fa9ce7b5b9fde4ac8fda9dcaaa2248515bf80b2be85e63f9b625128b7752fa",
+    "handoff_helper_tests.log": "a3b6e1bc652fba04ac237d1fb0e0949dd3e39dcc3ccdda1ff6d8c83bfa1cf7a5",
     "integration_checks.log": "bee67e3d234a63d56233f68c57063b49fbdd3e364aa4ad7d2ac64600fb040d98",
     "mac_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "mac_result.log": "b448d352f2812962e7351dd0480192985c1cee592c24acc8fd21cef452dbcf3e",
@@ -474,6 +483,179 @@
       "Original prototype MAC overflow and official P3 integration remain unresolved; model/data limits stay unchanged."
     ]
   },
-  "patched_gowin_timing_verified": false,
-  "ready_for_board_test": false
+  "patched_gowin_timing_verified": true,
+  "ready_for_board_test": false,
+  "reviewed_gowin_v6_1": {
+    "kind": "reviewed_user_gowin_v6_1_internal_timing",
+    "input_zip_sha256": "8212f7836a1c5f61ecf71e1e6af12ef7c3c76c74c14d47feb42c0e45b292d89b",
+    "report_created_local": "2026-11-06 13:19:48",
+    "tool": "Gowin V1.9.8.11 Education",
+    "device": "GW1NR-LV9QN88PC6/I5",
+    "device_version": "C",
+    "top": "gowin_top",
+    "selftest_mode": 2,
+    "ref_meter": 0,
+    "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+    "firmware_sha256": "492eebd36fd67625596ef5f72cfc9bd408649e39e0f0d693b5503ffd40b684a2",
+    "all_collection_member_hashes_verified": true,
+    "source_matches_released_v6_1": {
+      "board/tangnano9k.sdc": true,
+      "board/tangnano9k.cst": true,
+      "sources.f": true,
+      "rtl/part4_eth/rmii_rx.v": true,
+      "rtl/part4_eth/eth_mac.v": true,
+      "rtl/part2_ai/ai_core_model_v6.v": true
+    },
+    "source_evidence_sha256": {
+      "impl/gwsynthesis/gateway_phan1_v6_1.log": "583b8a884d2a32b29ad0f79f4e3a7081d726ec4bcc0c942c1547311a36284b46",
+      "impl/gwsynthesis/gateway_phan1_v6_1_syn.rpt.html": "41183f77ac277f39616d0a2bea542918767e3fcef9b3e7e0f3751121ea2f70b0",
+      "impl/gwsynthesis/gateway_phan1_v6_1_syn_resource.html": "5f837a56123315eac7876d47639bf2a50ac184f34203d24c42d80354405d4bc8",
+      "impl/pnr/gateway_phan1_v6_1.log": "bd9bec315222fa6b96664851e9ccda1783fef90a0deb6745931ee9f52cd8c923",
+      "impl/pnr/gateway_phan1_v6_1.pin.html": "45ad708971b962058b99f6df7d1cf208661584022262bbedf99d32300c9f2423",
+      "impl/pnr/gateway_phan1_v6_1.power.html": "00ef26adf3e172ea4ce4f5061c54fcc25be70c50820f32ea87fadd4743878f6a",
+      "impl/pnr/gateway_phan1_v6_1.rpt.html": "cc7208892641773d26d375d1675b19e646b942aaa1a963a6b740e238be265ac6",
+      "impl/pnr/gateway_phan1_v6_1.tr.html": "1e0dfe080d858b95c2caba01a1d746521bc12b2937ebcc79079b426812aa4d40",
+      "impl/pnr/gateway_phan1_v6_1_tr_cata.html": "881df45229fd6c00252e69ad2e01e512414fbb53a971b0844add1bf484137521",
+      "impl/pnr/gateway_phan1_v6_1_tr_content.html": "4b4d76eed33ddd2495cbbdf74a7533c2455314b3116c7df4a586df66ad8b93f2",
+      "gateway_phan1_v6_1.gprj": "82901d1f7d87efc5604945064506e8b6a08d0982f84e896437f13adaa7af4776",
+      "board/tangnano9k.sdc": "a56e2526101e5936a0bc0978fc8b723d1ca249ebf819eebbcef045f4696cc1b7",
+      "board/tangnano9k.cst": "80aed836afdfa3f551d64cf45194d0568de0ca354a16d66d9dc932599a9d16e1",
+      "sources.f": "1757a21a284c0a61d4b707e1758ffa97390d08f7c23229217e35c9ec59cf8e20",
+      "build/gowin/gowin_top.v": "fd30e4dc27f54149a4405f1be18a03a04a63f770c9fed333b19dbe6d5e3ca68e",
+      "rtl/part4_eth/rmii_rx.v": "4c6e29a8403965f7347eda1dac97f510353fa6ac35edc4ef6d8b2a309749b7ac",
+      "rtl/part4_eth/eth_mac.v": "a055c8984ea7b159f1a4558c6e9d1de4e8200c9d19b437b456f14370f99e5cbc",
+      "rtl/part2_ai/ai_core_model_v6.v": "b4e99f801c7ac30fe3d7f61a2bc9818916d26dc16bb1ac231a763a6a8391261c"
+    },
+    "synthesis_completed": true,
+    "place_and_route_completed": true,
+    "bitstream_generated": true,
+    "internal_setup_hold_timing_passed": true,
+    "setup_violated_endpoints": 0,
+    "hold_violated_endpoints": 0,
+    "clocks": [
+      {
+        "name": "clk_27m",
+        "constraint_mhz": 27,
+        "reported_fmax_mhz": 33.655,
+        "setup_tns_ns": 0,
+        "hold_tns_ns": 0
+      },
+      {
+        "name": "a_ref_clk",
+        "constraint_mhz": 50,
+        "reported_fmax_mhz": 92.664,
+        "setup_tns_ns": 0,
+        "hold_tns_ns": 0
+      },
+      {
+        "name": "b_ref_clk",
+        "constraint_mhz": 50,
+        "reported_fmax_mhz": 78.935,
+        "setup_tns_ns": 0,
+        "hold_tns_ns": 0
+      }
+    ],
+    "minimum_reported_slack_ns": {
+      "setup": 3.666,
+      "hold": 0.482,
+      "recovery": 31.753,
+      "removal": 3.027,
+      "pulse_width": 8.082
+    },
+    "corrected_path": {
+      "start": "u_top/g_mac.u_eth/u_rxB/g_neg.rxd_f_0_s1/Q",
+      "end": "u_top/g_mac.u_eth/u_rxB/rxd_n_0_s0/D",
+      "launch_edge": "b_ref_clk falling",
+      "capture_edge": "b_ref_clk rising",
+      "setup_budget_ns": 10,
+      "slack_ns": 3.666
+    },
+    "resources": {
+      "logic_used": 5372,
+      "logic_available": 8640,
+      "logic_percent": 63,
+      "registers_used": 3204,
+      "registers_available": 6693,
+      "register_percent": 48,
+      "register_delta_vs_v6": 3,
+      "bsram_sp": 8,
+      "bsram_sdpb": 7,
+      "bsram_percent": 58,
+      "dsp_used": 1,
+      "latches": 0,
+      "io_ports": 26,
+      "cls_used": 3605,
+      "cls_available": 4320,
+      "cls_percent": 84
+    },
+    "warnings": [
+      {
+        "code": "PR1014",
+        "still_present": true,
+        "signal": "b_ref_clk_d",
+        "meaning": "Clock source uses generic routing under current pin constraints; internal STA now passes, but the routing warning has not disappeared."
+      },
+      {
+        "kind": "synthesis",
+        "errors": 0,
+        "warnings_by_code": {
+          "EX3073": 1,
+          "EX3827": 8,
+          "EX3826": 13,
+          "EX3791": 8,
+          "EX0211": 32
+        },
+        "context": "Same upstream PicoRV32/adapter warning categories as V6: unused/disabled outputs, case pragmas and intentional width truncations. No new warning in the RX fix."
+      }
+    ],
+    "timing_scope": "Internal paths analyzed with the supplied three-clock SDC. Asynchronous clock groups are cut; no PHY input/output delay budgets are specified. This is not an external PHY timing/CDC or real-board validation.",
+    "ready_for_team_handoff": true,
+    "phy_io_timing_verified": false,
+    "cdc_and_reset_signoff_complete": false,
+    "board_test_performed": false,
+    "ready_for_unattended_blocking": false,
+    "next_acceptance": [
+      "Review actual board/pin/PHY wiring and clock source/phase, including PR1014 and PHY I/O timing/CDC/reset.",
+      "Confirm V6 hash and POST37/37 on the physical board over UART.",
+      "Measure real Ethernet forwarding/MQTT/ARP, CRC/overflow/drop counters and traffic both ways.",
+      "Integrate official P3 modules and evaluate independent traffic before claiming deployment detection performance."
+    ],
+    "collection_model_firmware_ids_match_release": true
+  },
+  "ready_for_team_handoff": true,
+  "board_test_status": "Not run; user has Tang Nano9K and incomplete LAN8720 wiring. Separate internal-traffic demo prepared for USB/UART bring-up.",
+  "production_ethernet_validated": false,
+  "board_inventory_reported_by_user": "Tang Nano9K available; two LAN8720 not fully wired",
+  "onboard_demo": {
+    "project": "gateway_phan1_v6_1_demo.gprj",
+    "top": "gowin_demo_top",
+    "clock_mhz": 27,
+    "selftest_mode": 1,
+    "rmii_ports_exported": false,
+    "phy_clocks_required": false,
+    "firmware_unchanged": true,
+    "gowin_timing_verified": false,
+    "board_pass_claimed": false,
+    "purpose": "Internal header generator -> reference features -> real CPU/AI -> UART, not physical Ethernet or PCAP replay.",
+    "simulation_checks": {
+      "demo_post": {
+        "test": "demo_post",
+        "passed": true,
+        "full_check": true,
+        "extra_checks": [],
+        "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+      },
+      "demo": {
+        "test": "demo",
+        "passed": true,
+        "full_check": true,
+        "extra_checks": [],
+        "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+      }
+    },
+    "real_board_firmware_post_simulated_at_115200": true,
+    "three_classes_simulated_without_phy_clocks": true,
+    "demo_traffic_is_generated_headers_not_training_pcap_replay": true,
+    "fast_simulation_note": "Same real board firmware, shortened 400000-cycle seconds and UART1.8MHz; 11nonempty Normal,6SYN,2scan windows and both block events seen. Real board default remains27000000cycles/second,UART115200,TTL60."
+  }
 }

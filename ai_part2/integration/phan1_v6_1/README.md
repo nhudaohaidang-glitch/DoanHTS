@@ -1,6 +1,12 @@
 # V6.1 — sửa đường timing RX cổng B, giữ model AI V6
 
-Báo cáo Gowin bạn gửi đã hoàn tất tổng hợp, Place & Route và sinh bitstream. Thiết kế dùng63%logic,48%register,15BSRAM và1DSP, không có latch. Tuy nhiên cổngB chỉ đạt Fmax48,696MHz khi yêu cầu50MHz:8điểm setup vi phạm, slack xấu nhất−0,268ns. Clock hệ thống27MHz và cổngA50MHz đạt các đường nội bộ được báo cáo. Đây là kết quả **V6 trước sửa**, chưa phải kết quả V6.1.
+Bản V6.1 đã được đối chiếu với báo cáo Gowin mới: đúng source/model/firmware,0vi phạm setup và0vi phạm hold nội bộ ở27/50/50MHz. FmaxSTA lần lượt33,655/92,664/78,935MHz. Ba thanh ghi thêm vào đã giải quyết8điểm setup của RXB trong bản V6 trước sửa.
+
+Xem **BAN_GIAO_AI_V6_1.md** và **GOWIN_V6_1_REVIEW.json** để bàn giao. PR1014 vẫn hiện ởclockB; timing I/O theo PHY/dây, CDC/reset và bo thật chưa được nghiệm thu. Bản ZIP `ghep_phan1_ai_v6_1.zip` trước khi có báo cáo mới được giữ riêng; gói bàn giao cập nhật chỉ tài liệu/kết quả, không đổi RTL/model/firmware.
+
+## Đã có Tang Nano9K, chưa nối đủ LAN8720
+
+Dùng project demo riêng: `python CHUAN_BI_DEMO_GOWIN.py`, mở `gateway_phan1_v6_1_demo.gprj`, top `gowin_demo_top`, Synthesize và Place & Route, rồi `python THU_BAO_CAO_DEMO.py`. Gửi `BAO_CAO_DEMO_V6_1.zip` để kiểm trước bước nạp SRAM/đọc UART. Xem **HUONG_DAN_DEMO_TREN_BO.md**. Project demo không thay project MAC; chỉ có clock27MHz/12chân, tạo header bên trong FPGA, không cần PHY và không thử Ethernet thật. Model/firmware vẫn giữ nguyên. Timing demo chưa được xác nhận bởi báo cáo MAC. Mô phỏng demo đã đạt POST37/37 bằng firmware bo/UART115200, và bài tăng tốc đã thấy cả3class/chặn.50/.51, không cần clockPHY.
 
 ## Bản sửa này làm gì
 
@@ -10,7 +16,7 @@ Model V6, RTL AI, firmware, dữ liệu train, địa chỉ bảo vệ/whitelist
 
 ## Chạy trên Windows
 
-Giải nén `ghep_phan1_ai_v6_1.zip` vào một thư mục mới. Mở CMD và chạy file bằng đường dẫn thực tế: giữ Shift, nhấn chuột phải `CHUAN_BI_GOWIN.py`, Copy as path; gõ `python ` rồi dán đường dẫn và Enter. Nếu dùng launcher `py`, thay `python` bằng `py`.
+Giải nén gói V6.1 vào một thư mục mới (gói bàn giao cập nhật là `ban_giao_ai_v6_1.zip`). Mở CMD và chạy file bằng đường dẫn thực tế: giữ Shift, nhấn chuột phải `CHUAN_BI_GOWIN.py`, Copy as path; gõ `python ` rồi dán đường dẫn và Enter. Nếu dùng launcher `py`, thay `python` bằng `py`.
 
 ```text
 python CHUAN_BI_GOWIN.py
@@ -24,13 +30,13 @@ python THU_BAO_CAO_GOWIN.py
 
 Gửi **BAO_CAO_GOWIN_V6_1.zip** để kiểm lại. Collector mới gom cả source RX/AI/wrapper để đối chiếu đúng bản sửa. Nếu báo fileZIP đã tồn tại, đổi tên bản báo cáo cũ. Dùng thư mục V6.1 mới giúp giữ riêng kết quả V6 trước sửa.
 
-V6.1 chỉ được xác nhận đóng timing sau khi báo cáo mới có0vi phạm setup/hold tại27/50/50MHz. Việc sinh được `.fs` chưa xác nhận timing hay hoạt động trên bo. Môi trường chuẩn bị gói không có Gowin; không có số Fmax V6.1 để công bố lúc này.
+Báo cáo mới đã xác nhận timing nội bộ V6.1 với0setup/hold lỗi theo SDC hiện có. Đây là kết quả Gowin chạy trên máy người dùng, đã được đối chiếu source. Chưa có đo hoạt động trên bo/PHY; xem giới hạn trong biên bản bàn giao.
 
 ## Kiểm tra trên Ubuntu
 
 ```bash
-python3 ~/Downloads/ghep_phan1_ai_v6_1/KIEM_TRA_GHEP_V6_1.py
-python3 ~/Downloads/ghep_phan1_ai_v6_1/KIEM_TRA_GHEP_V6_1.py --full
+python3 ~/Downloads/ban_giao_ai_v6_1/KIEM_TRA_GHEP_V6_1.py
+python3 ~/Downloads/ban_giao_ai_v6_1/KIEM_TRA_GHEP_V6_1.py --full
 ```
 
 Lệnh đầu kiểm hash,3.762vector bus,CPU POST37/37,5cửa sổ feature, RX hai cạnh và MAC hai chiều. `--full` thêm demo40giây và hệ thống RMII/CPU/AI. Cần Python3+Icarus; không cần train hoặc cài thư viện AI. Log mới nằm trong `sim/out/`; bằng chứng chuẩn bị gói nằm trong `verification/recorded/`.
