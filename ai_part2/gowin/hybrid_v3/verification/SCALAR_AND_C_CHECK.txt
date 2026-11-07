@@ -1,0 +1,1 @@
+PASS550exported vectors against independent Python-integer oracle; C v3 guard skips only RAW0 and accepts1,7,8packets. No board/CPU execution claimed.

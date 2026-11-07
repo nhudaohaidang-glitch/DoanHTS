@@ -1,0 +1,141 @@
+{
+  "format": 1,
+  "model_sha256": "e10f81b3e3ec9b458c4d574ee978cf0f2efa45954b4f8fe0c86fed6a3a26c35d",
+  "metrics_sha256": "0871b5239fed946fe0977f3701b32949074d576e1cd37459ec75f9d5d567cdd1",
+  "float_model_sha256": "83b66de19e282359e142ffeea198504e6bd66de6bd43dac45b91ce4841dc2b9d",
+  "threshold_baseline": {
+    "packet_threshold": 24,
+    "port_threshold": 3,
+    "syn_ratio_q127_threshold": 32
+  },
+  "development_capture_sha256": [
+    "12b9d0aa0f1fe37f14ea7d917ffa781d0abeb8c8068f1a0c49511770bd5e39de",
+    "809ac21df6c7096b81d902d7bb78a442e4a7f9fce2d012390b503220e876f3ad",
+    "db3ceabbe3072f56f051af6af834ce17fa347df21f98cb4f50da9e331d4e2d71",
+    "7bea438c4cee4175fcb26729b08067b01465c87adf7e0393d7ebdbf848983b90",
+    "085f82944bb5976a111696de1ad5f5a2ca6efa45620f8ee55c212e44661b5d10",
+    "cd31951d65b1aebed6e18169f13907fd0c2222e835fa3925cf8183febb3a36ad",
+    "d65bad6178943850f13d6ee1b492df32e265884b8582decb2c518762d9176189",
+    "f764fdda027678750b39a8699cf8529963803f76a826c132fada9326b861cd3a",
+    "558e1f2568eb205715af232d4fb5569e1530a3e61ae7636762dae2458db89f43",
+    "ebe37e13719162ca3165ad617415ce62b9a86f2ce2575c8bed247ee9e66e1e2d",
+    "7df39d6a3309dad457bb36273dfab0cb2f8b154dee16e206a69328806f97edce",
+    "0cc376844f2d531f9f6634122b0e9e591cee3ec77fb2d14b857b8087c25877d2",
+    "b9d73c21942a4f09df1234062fec8a4883bc1763f950d16bac92c9e47be96904",
+    "71980ece4bc4cb4a4dfa85b47b116fd58d56e3ad2a0320be2651cfc1368616db",
+    "1b1bcf763d973dacafdc965b7f550768e30422d81babed49610a7c7cb468b30b",
+    "b4e5d8573348c4ad24bf487412972e9079ffd1d2c643b5d8997e04e5962e2446",
+    "e24c68cef75adb2396db1e59426f8a6bef795f257e101b1e8c65d1b75f5db416",
+    "3fb775c0391b6ad313a3f7845e634a277b07c3f6377346c2486ba63e1c22e90c",
+    "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+    "f6c2a4808a3fc3d7c01ae7656f1b341a1c7338bcd4d5a371f96280035efcbf79"
+  ],
+  "development_capture_ids": [
+    "challenge01_normal_large",
+    "challenge01_normal_two",
+    "challenge01_normal_retry",
+    "challenge01_syn_low",
+    "challenge01_syn_high",
+    "challenge01_scan_slow",
+    "challenge01_scan_fast",
+    "v2test01_challenge_normal_small",
+    "v2test01_challenge_normal_large",
+    "v2test01_challenge_normal_two",
+    "v2test01_challenge_retry_low",
+    "v2test01_challenge_retry_high",
+    "v2test01_challenge_syn_low",
+    "v2test01_challenge_syn_mid",
+    "v2test01_challenge_syn_high",
+    "v2test01_challenge_scan_slow",
+    "v2test01_challenge_scan_fast",
+    "iot23_hue4",
+    "iot23_syn34",
+    "iot23_echo5"
+  ],
+  "reserved_external_test": {
+    "capture_id": "iot23_somfy01",
+    "scenario_group": "CTU-Honeypot-Capture-7-1",
+    "subcapture": "Somfy-01",
+    "class_id": 0,
+    "pcap_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-7-1/Somfy-01/2019-07-03-15-15-47-first_start_somfy_gateway.pcap",
+    "protected_ip_rule": "First RFC1918 nonzero origin IPv4 in publisher labelled flow metadata:192.168.1.158; IPv6/unspecified/broadcast excluded. Fixed before PCAP download/feature inspection.",
+    "all_Somfy_sessions_reserved_from_training": true,
+    "protected_ip": "192.168.1.158"
+  },
+  "protocol": {
+    "version": 1,
+    "model_version": "v3",
+    "kind": "hybrid_IoT23_and_controlled_lab",
+    "classes": [
+      "Normal",
+      "SYN flood",
+      "TCP vertical scan"
+    ],
+    "architecture": [
+      6,
+      8,
+      3
+    ],
+    "divisors": [
+      8,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "window_seconds": 1.0,
+    "distinct": "exact",
+    "valid_sample_rule": "RAW packet_count > 0; skip/report empty windows, never q0==0 filtering",
+    "training_sources": [
+      "all previously inspected challenge01 lab captures from v1 diagnostics",
+      "IoT23 benign Philips Hue capture4, ingress protected 192.168.1.132",
+      "IoT23 malware34 SYN-only native-DDoS episode toward 71.61.66.148"
+    ],
+    "validation_sources": [
+      "all previously inspected v2test01 lab captures, now DEVELOPMENT VALIDATION",
+      "IoT23 benign Amazon Echo capture5, ingress protected 192.168.2.3"
+    ],
+    "reserved_external_test": {
+      "capture_id": "iot23_somfy01",
+      "scenario_group": "CTU-Honeypot-Capture-7-1",
+      "subcapture": "Somfy-01",
+      "class_id": 0,
+      "pcap_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-7-1/Somfy-01/2019-07-03-15-15-47-first_start_somfy_gateway.pcap",
+      "protected_ip_rule": "First RFC1918 nonzero origin IPv4 in publisher labelled flow metadata:192.168.1.158; IPv6/unspecified/broadcast excluded. Fixed before PCAP download/feature inspection.",
+      "all_Somfy_sessions_reserved_from_training": true,
+      "protected_ip": "192.168.1.158"
+    },
+    "reserved_lab_test": "Fresh hybrid-v3 profile captures collected after model freeze, not any old v1/v2 challenge/holdout",
+    "selection": {
+      "seeds": [
+        11,
+        23,
+        47
+      ],
+      "alpha": [
+        0.01,
+        0.1,
+        0.001
+      ],
+      "solver": "lbfgs",
+      "hidden": 8,
+      "max_iter": 1600,
+      "primary_metric": "mean class recall after equal capture weighting within each class",
+      "ties": [
+        "global macro-F1",
+        "smaller worst-source normal FPR",
+        "fixed candidate order"
+      ]
+    },
+    "fit_sampling": "Deduplicate quantized training points separately per class; repeat to equal per-class counts using seed. Never count repetitions as independent windows.",
+    "split_rule": "Whole original PCAP/capture group belongs to one split. Never random adjacent window splitting.",
+    "reuse_disclosure": "V1 challenge and V2 holdout are repurposed as V3 development. They are not V3 independent tests.",
+    "coverage_limits": [
+      "Native IoT23 SYN currently only one verified 22-second episode, used for train",
+      "Vertical scan from controlled lab, not relabelled horizontal IoT23 scan",
+      "Reserved IoT23 external test is benign-only; fresh lab test must supply all three classes",
+      "No claim of a fully IoT23 three-class model or unseen IoT23 SYN/vertical coverage"
+    ]
+  }
+}

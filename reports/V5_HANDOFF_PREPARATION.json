@@ -1,0 +1,35 @@
+{
+  "kind": "v5_software_handoff_preparation_verification",
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "original_training_groups": [
+    "Normal IoT-23 (28 selected PCAPs)",
+    "Reviewed SYN flood IoT-23 capture34",
+    "Chris Sanders vertical scan; original plus same-parent timestamp variants"
+  ],
+  "new_training_data_added": false,
+  "model_retrained": false,
+  "labels_changed": false,
+  "cache_original_windows_verified": [
+    39253935,
+    21,
+    4
+  ],
+  "remaining_original_normal_errors": 12,
+  "unit_tests": {
+    "suite": "test_v5_handoff.py",
+    "passed": 3,
+    "failed": 0
+  },
+  "numerical_integration_cases": 37,
+  "valid_inference_cases": 36,
+  "empty_window_skip_cases": 1,
+  "rtl": "PASS vectors=1896 cycles_min=84 cycles_max=84 (start accepted to done)",
+  "c_header_37_case_compile_link": "PASS RV32I/ILP32; compile/link only, not executed",
+  "package_frontend_extracted_and_executed": true,
+  "package_html_links_checked": true,
+  "hardware_cpu_register_driver_checked": false,
+  "hardware_feature_extractor_checked": false,
+  "v5_gowin_synthesis_checked": false,
+  "board_test_performed": false,
+  "note": "Software files are prepared for integration testing. This does not certify classification generalization or a complete hardware firewall."
+}

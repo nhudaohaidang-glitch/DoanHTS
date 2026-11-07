@@ -1,0 +1,2 @@
+PASS V5_FEATURE_CONTRACT windows=5 exact_to_128_and_q127_saturation=OK
+sim/tb_v5_feature_contract.v:41: $finish called at 1500036000 (1ps)

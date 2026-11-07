@@ -1,0 +1,898 @@
+{
+  "name": "a0.01_s5",
+  "alpha": 0.01,
+  "seed": 5,
+  "calibration": {
+    "kind": "training_only_integer_calibration",
+    "candidate_count": 40,
+    "selection": "minimize mean per-class window error; tie-break mean per-class distinct-pattern error; stable grid order",
+    "calibration_unique_patterns_by_class": [
+      1549,
+      395,
+      329
+    ],
+    "calibration_windows_by_class": [
+      39254370,
+      3059,
+      2227
+    ],
+    "independent_validation_used": false,
+    "engineered_probes_used": false,
+    "selected": {
+      "kind": "per_neuron_rescaling",
+      "shift1": 5,
+      "hidden_utilization": 1.0,
+      "output_scale_exponent": 6,
+      "window_errors_by_class": [
+        12,
+        0,
+        0
+      ],
+      "unique_pattern_errors_by_class": [
+        2,
+        0,
+        0
+      ],
+      "mean_class_window_error": 1.0189948278370026e-07,
+      "mean_class_unique_error": 0.0004303851947493006
+    },
+    "candidates": [
+      {
+        "kind": "legacy_global_hidden_scale",
+        "window_errors_by_class": [
+          21950644,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          3,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639660586409446,
+        "mean_class_unique_error": 0.000645577792123951
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 0,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          0,
+          3059,
+          2227
+        ],
+        "unique_pattern_errors_by_class": [
+          0,
+          395,
+          329
+        ],
+        "mean_class_window_error": 0.6666666666666666,
+        "mean_class_unique_error": 0.6666666666666666
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 0,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          84,
+          3059,
+          732
+        ],
+        "unique_pattern_errors_by_class": [
+          55,
+          395,
+          79
+        ],
+        "mean_class_window_error": 0.44289848309132035,
+        "mean_class_unique_error": 0.4252094530379766
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 0,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          143,
+          2855,
+          628
+        ],
+        "unique_pattern_errors_by_class": [
+          95,
+          333,
+          56
+        ],
+        "mean_class_window_error": 0.4051029653804375,
+        "mean_class_unique_error": 0.3581935436309222
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 1,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          140,
+          2855,
+          635
+        ],
+        "unique_pattern_errors_by_class": [
+          92,
+          333,
+          60
+        ],
+        "mean_class_window_error": 0.40615068724877895,
+        "mean_class_unique_error": 0.36160065074254694
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 1,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          1941,
+          2980,
+          1233
+        ],
+        "unique_pattern_errors_by_class": [
+          22,
+          382,
+          105
+        ],
+        "mean_class_window_error": 0.5092945484558604,
+        "mean_class_unique_error": 0.43348008506395885
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 1,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          90,
+          2981,
+          584
+        ],
+        "unique_pattern_errors_by_class": [
+          51,
+          383,
+          44
+        ],
+        "mean_class_window_error": 0.4122466519980459,
+        "mean_class_unique_error": 0.3787611074621955
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 2,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          46,
+          2981,
+          593
+        ],
+        "unique_pattern_errors_by_class": [
+          29,
+          383,
+          48
+        ],
+        "mean_class_window_error": 0.41359338209359603,
+        "mean_class_unique_error": 0.37807955522370196
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 2,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          38481784,
+          2630,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          276,
+          267,
+          0
+        ],
+        "mean_class_window_error": 0.6133588541426301,
+        "mean_class_unique_error": 0.28470961257160604
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 2,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          113,
+          0,
+          9
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          6
+        ],
+        "mean_class_window_error": 0.0013480632804498578,
+        "mean_class_unique_error": 0.0069397977451217015
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 3,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950645,
+          0,
+          32
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          7
+        ],
+        "mean_class_window_error": 0.19118631649611614,
+        "mean_class_unique_error": 0.007952968971058886
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 3,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          11,
+          2803,
+          91
+        ],
+        "unique_pattern_errors_by_class": [
+          1,
+          335,
+          17
+        ],
+        "mean_class_window_error": 0.31905831568012094,
+        "mean_class_unique_error": 0.300139525379235
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 3,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          38479181,
+          88,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          28,
+          11,
+          0
+        ],
+        "mean_class_window_error": 0.3363399105205879,
+        "mean_class_unique_error": 0.015308093148431137
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 4,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          38479044,
+          91,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          23,
+          12,
+          0
+        ],
+        "mean_class_window_error": 0.3366656513852238,
+        "mean_class_unique_error": 0.015076012018097969
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 4,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          38477200,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          8,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673389824708265,
+        "mean_class_unique_error": 0.0017215407789972024
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 4,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          38477604,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          21,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673732886300305,
+        "mean_class_unique_error": 0.004519044544867657
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 5,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          38477537,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          14,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.3267367599242242,
+        "mean_class_unique_error": 0.0030126963632451046
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 5,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          12,
+          0,
+          9
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          0,
+          1
+        ],
+        "mean_class_window_error": 0.0013472056264697619,
+        "mean_class_unique_error": 0.001443556420686484
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 5,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          12,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          0,
+          0
+        ],
+        "mean_class_window_error": 1.0189948278370026e-07,
+        "mean_class_unique_error": 0.0004303851947493006
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 6,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          12,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          0,
+          0
+        ],
+        "mean_class_window_error": 1.0189948278370026e-07,
+        "mean_class_unique_error": 0.0004303851947493006
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 6,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          112,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          3,
+          0,
+          0
+        ],
+        "mean_class_window_error": 9.510618393145358e-07,
+        "mean_class_unique_error": 0.000645577792123951
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 6,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          12,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          0,
+          0
+        ],
+        "mean_class_window_error": 1.0189948278370026e-07,
+        "mean_class_unique_error": 0.0004303851947493006
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 7,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          113,
+          0,
+          9
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          1
+        ],
+        "mean_class_window_error": 0.0013480632804498578,
+        "mean_class_unique_error": 0.0018739416154357844
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 7,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          112,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          3,
+          0,
+          0
+        ],
+        "mean_class_window_error": 9.510618393145358e-07,
+        "mean_class_unique_error": 0.000645577792123951
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 7,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          112,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          3,
+          0,
+          0
+        ],
+        "mean_class_window_error": 9.510618393145358e-07,
+        "mean_class_unique_error": 0.000645577792123951
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 8,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950745,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639746351807454,
+        "mean_class_unique_error": 0.0010759629868732515
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 8,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950746,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          6,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863974720096981,
+        "mean_class_unique_error": 0.001291155584247902
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 8,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950746,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          6,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863974720096981,
+        "mean_class_unique_error": 0.001291155584247902
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 9,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 4,
+        "window_errors_by_class": [
+          38478698,
+          9,
+          4
+        ],
+        "unique_pattern_errors_by_class": [
+          13,
+          3,
+          2
+        ],
+        "mean_class_window_error": 0.32832604411792643,
+        "mean_class_unique_error": 0.007355491787365075
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 9,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 4,
+        "window_errors_by_class": [
+          38478698,
+          9,
+          4
+        ],
+        "unique_pattern_errors_by_class": [
+          13,
+          3,
+          2
+        ],
+        "mean_class_window_error": 0.32832604411792643,
+        "mean_class_unique_error": 0.007355491787365075
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 9,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 4,
+        "window_errors_by_class": [
+          38478698,
+          9,
+          4
+        ],
+        "unique_pattern_errors_by_class": [
+          13,
+          3,
+          2
+        ],
+        "mean_class_window_error": 0.32832604411792643,
+        "mean_class_unique_error": 0.007355491787365075
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 10,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 3,
+        "window_errors_by_class": [
+          38477345,
+          89,
+          41
+        ],
+        "unique_pattern_errors_by_class": [
+          16,
+          30,
+          7
+        ],
+        "mean_class_window_error": 0.34257009383946196,
+        "mean_class_unique_error": 0.03585173583575722
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 10,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 3,
+        "window_errors_by_class": [
+          38477345,
+          89,
+          41
+        ],
+        "unique_pattern_errors_by_class": [
+          16,
+          30,
+          7
+        ],
+        "mean_class_window_error": 0.34257009383946196,
+        "mean_class_unique_error": 0.03585173583575722
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 10,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 3,
+        "window_errors_by_class": [
+          38477345,
+          89,
+          41
+        ],
+        "unique_pattern_errors_by_class": [
+          16,
+          30,
+          7
+        ],
+        "mean_class_window_error": 0.34257009383946196,
+        "mean_class_unique_error": 0.03585173583575722
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 11,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 2,
+        "window_errors_by_class": [
+          38477258,
+          103,
+          37
+        ],
+        "unique_pattern_errors_by_class": [
+          13,
+          42,
+          10
+        ],
+        "mean_class_window_error": 0.34349619531362924,
+        "mean_class_unique_error": 0.048372253999925834
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 11,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 2,
+        "window_errors_by_class": [
+          38477258,
+          103,
+          37
+        ],
+        "unique_pattern_errors_by_class": [
+          13,
+          42,
+          10
+        ],
+        "mean_class_window_error": 0.34349619531362924,
+        "mean_class_unique_error": 0.048372253999925834
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 11,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 2,
+        "window_errors_by_class": [
+          38477258,
+          103,
+          37
+        ],
+        "unique_pattern_errors_by_class": [
+          13,
+          42,
+          10
+        ],
+        "mean_class_window_error": 0.34349619531362924,
+        "mean_class_unique_error": 0.048372253999925834
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 12,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 1,
+        "window_errors_by_class": [
+          12,
+          2963,
+          210
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          373,
+          62
+        ],
+        "mean_class_window_error": 0.35430492058311813,
+        "mean_class_unique_error": 0.37801493369230615
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 12,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 1,
+        "window_errors_by_class": [
+          12,
+          2963,
+          210
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          373,
+          62
+        ],
+        "mean_class_window_error": 0.35430492058311813,
+        "mean_class_unique_error": 0.37801493369230615
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 12,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 1,
+        "window_errors_by_class": [
+          12,
+          2963,
+          210
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          373,
+          62
+        ],
+        "mean_class_window_error": 0.35430492058311813,
+        "mean_class_unique_error": 0.37801493369230615
+      }
+    ]
+  },
+  "original": {
+    "windows": 39253960,
+    "accuracy": 0.9999996942983587,
+    "macro_f1": 0.9259258749756122,
+    "confusion_matrix": [
+      [
+        39253923,
+        12,
+        0
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        0,
+        0,
+        4
+      ]
+    ],
+    "false_positive_rate": 3.057018360070143e-07,
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 1.0,
+        "recall": 0.999999694298164,
+        "f1": 0.9999998471490587,
+        "support": 39253935
+      },
+      {
+        "id": 1,
+        "precision": 0.6363636363636364,
+        "recall": 1.0,
+        "f1": 0.7777777777777778,
+        "support": 21
+      },
+      {
+        "id": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      }
+    ]
+  },
+  "train": {
+    "windows": 39259656,
+    "accuracy": 0.9999996943427115,
+    "macro_f1": 0.999347420502127,
+    "confusion_matrix": [
+      [
+        39254358,
+        12,
+        0
+      ],
+      [
+        0,
+        3059,
+        0
+      ],
+      [
+        0,
+        0,
+        2227
+      ]
+    ],
+    "false_positive_rate": 3.056984483511008e-07,
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 1.0,
+        "recall": 0.9999996943015517,
+        "f1": 0.9999998471507525,
+        "support": 39254370
+      },
+      {
+        "id": 1,
+        "precision": 0.9960924780201889,
+        "recall": 1.0,
+        "f1": 0.9980424143556281,
+        "support": 3059
+      },
+      {
+        "id": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2227
+      }
+    ]
+  },
+  "development": {
+    "windows": 3344,
+    "accuracy": 0.999700956937799,
+    "macro_f1": 0.9994510035377178,
+    "confusion_matrix": [
+      [
+        348,
+        0,
+        0
+      ],
+      [
+        1,
+        2355,
+        0
+      ],
+      [
+        0,
+        0,
+        640
+      ]
+    ],
+    "false_positive_rate": 0.0,
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 0.997134670487106,
+        "recall": 1.0,
+        "f1": 0.9985652797704447,
+        "support": 348
+      },
+      {
+        "id": 1,
+        "precision": 1.0,
+        "recall": 0.9995755517826825,
+        "f1": 0.9997877308427086,
+        "support": 2356
+      },
+      {
+        "id": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 640
+      }
+    ]
+  },
+  "convergence_warnings": 1
+}

@@ -1,0 +1,18 @@
+{
+  "actual_native34_filtered_log_used": true,
+  "original_tcp_ddos_flows": 14393,
+  "origin_syn_history_flows": 133,
+  "checksum_history_flows": 14260,
+  "orig_pkts_metadata_sum": 40568,
+  "matched_previously_packet_verified_syn_target": "71.61.66.148:80",
+  "native_interval_matches_previous_packet_audit": true,
+  "unknown_durations_not_fabricated": true,
+  "bounded_candidate_sketch_and_omission_bound_tested": true,
+  "exact_recount_for_shown_targets": true,
+  "synthetic_guard_tests_passed": 4,
+  "packaged_standalone_cli_verified": true,
+  "no_archive_or_pcap_reopened": true,
+  "no_project_training_labels_created": true,
+  "model_unchanged": true,
+  "user_17_35_60_candidate_logs_executed_here": false
+}

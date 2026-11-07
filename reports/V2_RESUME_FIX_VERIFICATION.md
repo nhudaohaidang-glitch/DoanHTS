@@ -1,0 +1,9 @@
+# Resume and network teardown fix
+
+The user's development collection stopped before session 7 with `Existing veth name`. The old teardown sent TERM and removed namespace names, bridge and marker without explicitly deleting the three host veth endpoints. A process retaining an unnamed namespace can retain its veth. Removing a namespace name is not a synchronization barrier for process exit.
+
+Fix: explicitly delete owned host endpoints while the marker exists, handle confirmed concurrent disappearance, verify no owned host link remains before removing the marker, tag new links with the kit owner, and remove created endpoints on setup rollback. Keep the ownership guard for ordinary teardown.
+
+Add `--resume` to the v2 collector. Validate the original plan, labels, parameters, PCAP presence and kernel drop logs before skipping registered captures. Preserve the original collection record and completed capture bytes. Refuse unregistered partial capture directories. Holdout resumption requires the same frozen model. Orphan recovery for pre-fix failures checks the exact existing kit collection, reserved interface names, veth kind, no attached master, no foreign alias and no named lab namespaces/bridge before deleting anything.
+
+Validation: all 45 unittests passed, including a Bash lifecycle regression using a stateful fake `ip` command that retains veths after deleting namespace names; the fixed script passes up/down/up/down. A mocked collector failure before capture 7 resumes with six KEEP entries and exactly 14 new captures, without changing prior capture bytes or COLLECTION.json. Recovery refuses foreign/attached interfaces, live named namespaces and changed plans. Bash syntax and Python compilation passed. No real network namespace can be created in this cloud; the real Ubuntu run remains the user's next verification. No model, feature semantics, label, weights, accuracy or hardware claims are changed.

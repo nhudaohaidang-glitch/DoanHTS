@@ -1,0 +1,1084 @@
+{
+  "kind": "offline_engineered_feature_probes_not_pcaps_not_training",
+  "model_version": "v4",
+  "model_sha256": "51050d9c05fbbbdda6cca1e21f26366ffcfeddbe7e3a01479a38eb70e790d906",
+  "model_modified": false,
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "cases": [
+    {
+      "case": "sensor_feedback",
+      "scenario": "normal_control",
+      "raw": {
+        "packet_count": 7,
+        "mean_ip_bytes": 61,
+        "syn_ratio_q127": 18,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 1
+      },
+      "quantized": [
+        0,
+        30,
+        18,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "010101121e00",
+      "scores": [
+        2089,
+        -1190,
+        -807
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 0,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "single_legitimate_syn",
+      "scenario": "normal_control",
+      "raw": {
+        "packet_count": 1,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 1
+      },
+      "quantized": [
+        0,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "0101017f1400",
+      "scores": [
+        599,
+        -471,
+        -2
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 0,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "ack52_1",
+      "scenario": "normal_control",
+      "raw": {
+        "packet_count": 1,
+        "mean_ip_bytes": 52,
+        "syn_ratio_q127": 0,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 1
+      },
+      "quantized": [
+        0,
+        26,
+        0,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "010101001a00",
+      "scores": [
+        2272,
+        -1247,
+        -930
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 0,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "ack52_7",
+      "scenario": "normal_control",
+      "raw": {
+        "packet_count": 7,
+        "mean_ip_bytes": 52,
+        "syn_ratio_q127": 0,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 1
+      },
+      "quantized": [
+        0,
+        26,
+        0,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "010101001a00",
+      "scores": [
+        2272,
+        -1247,
+        -930
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 0,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "ack52_8",
+      "scenario": "normal_control",
+      "raw": {
+        "packet_count": 8,
+        "mean_ip_bytes": 52,
+        "syn_ratio_q127": 0,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 1
+      },
+      "quantized": [
+        1,
+        26,
+        0,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "010101001a01",
+      "scores": [
+        2254,
+        -1240,
+        -918
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 0,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "ack52_30",
+      "scenario": "normal_control",
+      "raw": {
+        "packet_count": 30,
+        "mean_ip_bytes": 52,
+        "syn_ratio_q127": 0,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 1
+      },
+      "quantized": [
+        3,
+        26,
+        0,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "010101001a03",
+      "scores": [
+        2254,
+        -1240,
+        -918
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 0,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "ack52_100",
+      "scenario": "normal_control",
+      "raw": {
+        "packet_count": 100,
+        "mean_ip_bytes": 52,
+        "syn_ratio_q127": 0,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 1
+      },
+      "quantized": [
+        12,
+        26,
+        0,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "010101001a0c",
+      "scores": [
+        2275,
+        -1233,
+        -947
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 0,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "ack52_1000",
+      "scenario": "normal_control",
+      "raw": {
+        "packet_count": 1000,
+        "mean_ip_bytes": 52,
+        "syn_ratio_q127": 0,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 1
+      },
+      "quantized": [
+        125,
+        26,
+        0,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "010101001a7d",
+      "scores": [
+        2161,
+        -175,
+        -1816
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 0,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_3",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 3,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 3
+      },
+      "quantized": [
+        0,
+        20,
+        127,
+        1,
+        1,
+        3
+      ],
+      "feat_hex": "0301017f1400",
+      "scores": [
+        571,
+        -493,
+        46
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_4",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 4,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 4
+      },
+      "quantized": [
+        0,
+        20,
+        127,
+        1,
+        1,
+        4
+      ],
+      "feat_hex": "0401017f1400",
+      "scores": [
+        571,
+        -493,
+        46
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_5",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 5,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 5
+      },
+      "quantized": [
+        0,
+        20,
+        127,
+        1,
+        1,
+        5
+      ],
+      "feat_hex": "0501017f1400",
+      "scores": [
+        525,
+        -479,
+        77
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_6",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 6,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 6
+      },
+      "quantized": [
+        0,
+        20,
+        127,
+        1,
+        1,
+        6
+      ],
+      "feat_hex": "0601017f1400",
+      "scores": [
+        514,
+        -486,
+        98
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_7",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 7,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 7
+      },
+      "quantized": [
+        0,
+        20,
+        127,
+        1,
+        1,
+        7
+      ],
+      "feat_hex": "0701017f1400",
+      "scores": [
+        515,
+        -507,
+        113
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_8",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 8,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 8
+      },
+      "quantized": [
+        1,
+        20,
+        127,
+        1,
+        1,
+        8
+      ],
+      "feat_hex": "0801017f1401",
+      "scores": [
+        497,
+        -500,
+        125
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_9",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 9,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 9
+      },
+      "quantized": [
+        1,
+        20,
+        127,
+        1,
+        1,
+        9
+      ],
+      "feat_hex": "0901017f1401",
+      "scores": [
+        458,
+        -501,
+        165
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_10",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 10,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 10
+      },
+      "quantized": [
+        1,
+        20,
+        127,
+        1,
+        1,
+        10
+      ],
+      "feat_hex": "0a01017f1401",
+      "scores": [
+        458,
+        -501,
+        165
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_11",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 11,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 11
+      },
+      "quantized": [
+        1,
+        20,
+        127,
+        1,
+        1,
+        11
+      ],
+      "feat_hex": "0b01017f1401",
+      "scores": [
+        441,
+        -515,
+        192
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_12",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 12,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 12
+      },
+      "quantized": [
+        1,
+        20,
+        127,
+        1,
+        1,
+        12
+      ],
+      "feat_hex": "0c01017f1401",
+      "scores": [
+        402,
+        -515,
+        233
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_13",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 13,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 13
+      },
+      "quantized": [
+        1,
+        20,
+        127,
+        1,
+        1,
+        13
+      ],
+      "feat_hex": "0d01017f1401",
+      "scores": [
+        402,
+        -515,
+        233
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_14",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 14,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 14
+      },
+      "quantized": [
+        1,
+        20,
+        127,
+        1,
+        1,
+        14
+      ],
+      "feat_hex": "0e01017f1401",
+      "scores": [
+        384,
+        -508,
+        244
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_15",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 15,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 15
+      },
+      "quantized": [
+        1,
+        20,
+        127,
+        1,
+        1,
+        15
+      ],
+      "feat_hex": "0f01017f1401",
+      "scores": [
+        374,
+        -537,
+        281
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_16",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 16,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 16
+      },
+      "quantized": [
+        2,
+        20,
+        127,
+        1,
+        1,
+        16
+      ],
+      "feat_hex": "1001017f1402",
+      "scores": [
+        346,
+        -530,
+        300
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_17",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 17,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 17
+      },
+      "quantized": [
+        2,
+        20,
+        127,
+        1,
+        1,
+        17
+      ],
+      "feat_hex": "1101017f1402",
+      "scores": [
+        328,
+        -523,
+        312
+      ],
+      "prediction": 0,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": false
+    },
+    {
+      "case": "pure_vertical_scan_18",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 18,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 18
+      },
+      "quantized": [
+        2,
+        20,
+        127,
+        1,
+        1,
+        18
+      ],
+      "feat_hex": "1201017f1402",
+      "scores": [
+        318,
+        -530,
+        333
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_19",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 19,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 19
+      },
+      "quantized": [
+        2,
+        20,
+        127,
+        1,
+        1,
+        19
+      ],
+      "feat_hex": "1301017f1402",
+      "scores": [
+        318,
+        -551,
+        348
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_20",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 20,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 20
+      },
+      "quantized": [
+        2,
+        20,
+        127,
+        1,
+        1,
+        20
+      ],
+      "feat_hex": "1401017f1402",
+      "scores": [
+        272,
+        -537,
+        379
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_21",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 21,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 21
+      },
+      "quantized": [
+        2,
+        20,
+        127,
+        1,
+        1,
+        21
+      ],
+      "feat_hex": "1501017f1402",
+      "scores": [
+        262,
+        -545,
+        400
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_22",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 22,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 22
+      },
+      "quantized": [
+        2,
+        20,
+        127,
+        1,
+        1,
+        22
+      ],
+      "feat_hex": "1601017f1402",
+      "scores": [
+        262,
+        -545,
+        400
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_23",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 23,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 23
+      },
+      "quantized": [
+        2,
+        20,
+        127,
+        1,
+        1,
+        23
+      ],
+      "feat_hex": "1701017f1402",
+      "scores": [
+        216,
+        -552,
+        446
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_24",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 24,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 24
+      },
+      "quantized": [
+        3,
+        20,
+        127,
+        1,
+        1,
+        24
+      ],
+      "feat_hex": "1801017f1403",
+      "scores": [
+        216,
+        -552,
+        446
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_25",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 25,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 25
+      },
+      "quantized": [
+        3,
+        20,
+        127,
+        1,
+        1,
+        25
+      ],
+      "feat_hex": "1901017f1403",
+      "scores": [
+        206,
+        -559,
+        468
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_26",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 26,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 26
+      },
+      "quantized": [
+        3,
+        20,
+        127,
+        1,
+        1,
+        26
+      ],
+      "feat_hex": "1a01017f1403",
+      "scores": [
+        188,
+        -552,
+        479
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_27",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 27,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 27
+      },
+      "quantized": [
+        3,
+        20,
+        127,
+        1,
+        1,
+        27
+      ],
+      "feat_hex": "1b01017f1403",
+      "scores": [
+        160,
+        -566,
+        513
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_28",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 28,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 28
+      },
+      "quantized": [
+        3,
+        20,
+        127,
+        1,
+        1,
+        28
+      ],
+      "feat_hex": "1c01017f1403",
+      "scores": [
+        150,
+        -574,
+        535
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_29",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 29,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 29
+      },
+      "quantized": [
+        3,
+        20,
+        127,
+        1,
+        1,
+        29
+      ],
+      "feat_hex": "1d01017f1403",
+      "scores": [
+        132,
+        -567,
+        547
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    },
+    {
+      "case": "pure_vertical_scan_30",
+      "scenario": "vertical_scan",
+      "raw": {
+        "packet_count": 30,
+        "mean_ip_bytes": 40,
+        "syn_ratio_q127": 127,
+        "src_count": 1,
+        "dst_count": 1,
+        "dst_port_count": 30
+      },
+      "quantized": [
+        3,
+        20,
+        127,
+        1,
+        1,
+        30
+      ],
+      "feat_hex": "1e01017f1403",
+      "scores": [
+        104,
+        -559,
+        566
+      ],
+      "prediction": 2,
+      "expected_scenario_class": 2,
+      "scenario_expectation_met": true
+    }
+  ],
+  "total": 36,
+  "failed_scenario_expectations": [
+    "pure_vertical_scan_3",
+    "pure_vertical_scan_4",
+    "pure_vertical_scan_5",
+    "pure_vertical_scan_6",
+    "pure_vertical_scan_7",
+    "pure_vertical_scan_8",
+    "pure_vertical_scan_9",
+    "pure_vertical_scan_10",
+    "pure_vertical_scan_11",
+    "pure_vertical_scan_12",
+    "pure_vertical_scan_13",
+    "pure_vertical_scan_14",
+    "pure_vertical_scan_15",
+    "pure_vertical_scan_16",
+    "pure_vertical_scan_17"
+  ],
+  "limitations": [
+    "No independent traffic collection or real FPGA run here.",
+    "RTL vectors reproduce MODEL scores, including semantic errors; RTL PASS is not detection accuracy.",
+    "A single SYN cannot establish SYN flood; these benign control scenarios must not cause automatic blocking.",
+    "Port count is global per window; multiport traffic alone does not prove one source vertically scanned one target."
+  ]
+}

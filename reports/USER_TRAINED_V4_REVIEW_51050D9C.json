@@ -1,0 +1,485 @@
+{
+  "kind": "uploaded_full_three_class_v4_review",
+  "model_sha256": "51050d9c05fbbbdda6cca1e21f26366ffcfeddbe7e3a01479a38eb70e790d906",
+  "metrics_sha256": "ea0d1431412bdde4fbdfb254937433bd2b28fbb4397d4140b6640650977cbdbc",
+  "original_uploaded_weights_preserved": true,
+  "model_retrained": false,
+  "training_report_internally_consistent": true,
+  "full_user_dataset_recomputed_here": false,
+  "independent_traffic_test_performed": false,
+  "float_metrics_recomputed_from_weights": false,
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "shifts": [
+    8,
+    2
+  ],
+  "parameter_count": 83,
+  "int32_accumulator_bounds": {
+    "w1": 47916,
+    "w2": 46540
+  },
+  "training_windows": 39253960,
+  "correct": 39253948,
+  "incorrect": 12,
+  "exact_integer_training_metrics": {
+    "windows": 39253960,
+    "accuracy": 0.9999996942983587,
+    "macro_f1": 0.9259258749756122,
+    "confusion_matrix": [
+      [
+        39253923,
+        12,
+        0
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        0,
+        0,
+        4
+      ]
+    ],
+    "false_positive_rate": 3.057018360070143e-07,
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 1.0,
+        "recall": 0.999999694298164,
+        "f1": 0.9999998471490587,
+        "support": 39253935
+      },
+      {
+        "id": 1,
+        "precision": 0.6363636363636364,
+        "recall": 1.0,
+        "f1": 0.7777777777777778,
+        "support": 21
+      },
+      {
+        "id": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      }
+    ]
+  },
+  "conflicting_quantized_patterns": 1,
+  "conflicts": [
+    {
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "counts_by_label": {
+        "0": 11,
+        "1": 21
+      }
+    }
+  ],
+  "errors_by_source": [
+    {
+      "source_id": "014_class0",
+      "source_group": "opt/Malware-Project/BigDataset/IoTScenarios/CTU-IoT-Malware-Capture-34-1",
+      "label": 0,
+      "windows": 3189,
+      "incorrect": 12
+    }
+  ],
+  "shared_capture34_reference_reproduced": true,
+  "capture34_reference_error_windows": [
+    {
+      "window_start": 1545456195,
+      "target_ip": "1.1.1.1",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1851,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457280,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        878,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        109,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        354,
+        851,
+        -1020
+      ],
+      "same_as_conflict": false
+    },
+    {
+      "window_start": 1545457281,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1823,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457282,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1910,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457283,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1834,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457284,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1868,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457285,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1860,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457286,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1860,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457287,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1839,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457288,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1862,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457289,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1840,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    },
+    {
+      "window_start": 1545457290,
+      "target_ip": "50.50.50.53",
+      "label": 0,
+      "prediction": 1,
+      "raw": [
+        1858,
+        40,
+        127,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        293,
+        1110,
+        -1211
+      ],
+      "same_as_conflict": true
+    }
+  ],
+  "unique_quantized_training_patterns": [
+    1513,
+    1,
+    4
+  ],
+  "balanced_fit_rows": 4539,
+  "prior_user_reported_rtl_vectors": 1782,
+  "independently_generated_arithmetic_vectors": 1069,
+  "scalar_vectorized_scores_match": true,
+  "engineered_probe_count": 36,
+  "failed_engineered_scenarios": [
+    "pure_vertical_scan_3",
+    "pure_vertical_scan_4",
+    "pure_vertical_scan_5",
+    "pure_vertical_scan_6",
+    "pure_vertical_scan_7",
+    "pure_vertical_scan_8",
+    "pure_vertical_scan_9",
+    "pure_vertical_scan_10",
+    "pure_vertical_scan_11",
+    "pure_vertical_scan_12",
+    "pure_vertical_scan_13",
+    "pure_vertical_scan_14",
+    "pure_vertical_scan_15",
+    "pure_vertical_scan_16",
+    "pure_vertical_scan_17"
+  ],
+  "engineered_probes_are_not_pcaps_or_independent_accuracy": true,
+  "automatic_blocking_ready": false,
+  "limitations": [
+    "Classification mismatches are relative to provided labels; their real-world intent requires annotation review.",
+    "Different labels sharing an identical q input cannot be separated by a classifier using only those q values.",
+    "One fast scan episode supplies very few scan training windows; constructed probes are not independent traffic tests.",
+    "No new model selection, training, full-data reconstruction or physical FPGA measurement here."
+  ],
+  "rtl_extra_verification": "PASS vectors=1069 cycles_min=84 cycles_max=84 (start accepted to done)\nverification/tb_ai_core.v:54: $finish called at 919476000 (1ps)",
+  "c_header_rv32i_ilp32_freestanding_compile_link_passed": true,
+  "c_header_executed_on_target": false
+}

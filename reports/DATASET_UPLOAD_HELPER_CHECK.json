@@ -1,0 +1,9 @@
+{
+  "whole_input_bytes": 66500149,
+  "whole_zip_bytes": 258817,
+  "split_parts": 2,
+  "max_part_zip_bytes": 16777829,
+  "roundtrip_bytes_identical": true,
+  "originals_unchanged": true,
+  "symlink_cache_output_guards": true
+}

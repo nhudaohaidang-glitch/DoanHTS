@@ -1,0 +1,8 @@
+{
+  "package_retraining_reproduced_model_bytes": true,
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "input_kind": "full user V4 quantized-pattern/count cache plus same-parent scan timestamp variants",
+  "original_pcap_files_reread_here": false,
+  "raw_traffic_independent_test": false,
+  "note": "Reproduction used the same library versions; this verifies packaging and reproducibility, not independent detection accuracy."
+}

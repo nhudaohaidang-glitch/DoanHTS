@@ -1,0 +1,50 @@
+[
+  {
+    "capture_id": "iot23_hue4",
+    "role": "train",
+    "label": 0,
+    "protected_ip": "192.168.1.132",
+    "pcap_sha256": "3fb775c0391b6ad313a3f7845e634a277b07c3f6377346c2486ba63e1c22e90c",
+    "relative_pcap": "CTU-Honeypot-Capture-4-1/2018-10-25-14-06-32-192.168.1.132.pcap",
+    "publisher_checksum_verified": true,
+    "native_annotation": "Published benign Philips Hue capture4",
+    "pcap_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-4-1/2018-10-25-14-06-32-192.168.1.132.pcap.xz",
+    "compression": "xz",
+    "download_sha256": "bc5a57306d9a5f614b09d9c0976f007667fee5b6de3427fbab094fa3084b9b64",
+    "download_bytes": 376840,
+    "pcap_bytes": 4594492
+  },
+  {
+    "capture_id": "iot23_syn34",
+    "role": "train",
+    "label": 1,
+    "protected_ip": "71.61.66.148",
+    "pcap_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+    "relative_pcap": "CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+    "publisher_checksum_verified": false,
+    "native_annotation": "Verified native Malicious/DDoS origin flows and flag02, selected target only",
+    "verified_episode_start": 1545475806.96806,
+    "verified_episode_end": 1545475828.998385,
+    "verified_syn_packets": 40568,
+    "pcap_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+    "compression": null,
+    "download_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+    "download_bytes": 126317980,
+    "pcap_bytes": 126317980
+  },
+  {
+    "capture_id": "iot23_echo5",
+    "role": "val",
+    "label": 0,
+    "protected_ip": "192.168.2.3",
+    "pcap_sha256": "f6c2a4808a3fc3d7c01ae7656f1b341a1c7338bcd4d5a371f96280035efcbf79",
+    "relative_pcap": "CTU-Honeypot-Capture-5-1/2018-09-21-capture.pcap",
+    "publisher_checksum_verified": false,
+    "native_annotation": "Published benign Amazon Echo Dot capture5",
+    "pcap_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-5-1/2018-09-21-capture.pcap",
+    "compression": null,
+    "download_sha256": "f6c2a4808a3fc3d7c01ae7656f1b341a1c7338bcd4d5a371f96280035efcbf79",
+    "download_bytes": 381382656,
+    "pcap_bytes": 381382656
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "only_six_input_columns": true,
+  "rows": 2901,
+  "normal_windows": 2880,
+  "syn_windows": 21,
+  "vertical_windows": 0,
+  "exactly_matches_previously_used_v3_native_features": true,
+  "quantization_matches": true,
+  "original_hue4_pcap_sha256": "3fb775c0391b6ad313a3f7845e634a277b07c3f6377346c2486ba63e1c22e90c",
+  "syn_excerpt_packets": 40568,
+  "model_modified": false,
+  "complete_iot23_dataset": false,
+  "archive_bytes": 1392877,
+  "zip_files": 18
+}

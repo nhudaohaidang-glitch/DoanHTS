@@ -1,0 +1,2 @@
+PASS vectors=384 cycles_min=84 cycles_max=84 (start accepted to done)
+sim/tb_ai_core.v:54: $finish called at 330376000 (1ps)

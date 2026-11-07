@@ -1,0 +1,3135 @@
+{
+  "kind": "controlled_packet_derived_v6_development",
+  "sources": {
+    "syn34": {
+      "path": "sources/syn34.pcap.gz",
+      "sha256": "e9adf7269ba420ffa57c552e8d7b0dd1150fec50da8cb9bad1b9db831dcfd9d9"
+    },
+    "normal34": {
+      "path": "sources/normal34.pcap.gz",
+      "sha256": "c01e177831761294b5eacd8325e5ab646b2cbeda35f4956e16b4f0cdb590cb9d"
+    },
+    "scan": {
+      "path": "sources/vertical_scan.pcap",
+      "sha256": "dec17c51b1b9d464831edb6e1f0a5bbcbeabdc519bfb4a5a402803384adb257c"
+    }
+  },
+  "original_base_v5_model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "same_original_training_groups": true,
+  "new_independent_attack_episodes": 0,
+  "profiles": [
+    {
+      "id": "syn_train_32_none",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 32,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_32_none.pcap.gz",
+      "pcap_sha256": "18794ee160d5830015900293775ec529ef5955cfd4a5012382a2888b6de09a44",
+      "features": "features/syn_train_32_none.csv.gz",
+      "features_sha256": "a14d6e6b6113f24786e5d6e0a3e04128cdecba2fd4a7ac5bc8bf9988944557b9",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 321,
+      "status_counts": {
+        "eligible": 251,
+        "sparse_attack_needs_context": 70
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_32_one_syn",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 32,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_32_one_syn.pcap.gz",
+      "pcap_sha256": "b16811d53ddbbd8226f4c970d05102f1d2f3dc04f86de1a40bd9e836d0df620d",
+      "features": "features/syn_train_32_one_syn.csv.gz",
+      "features_sha256": "b4a0b828fafebf6d7391d6495498a9b278fefabb8192a0d041cf7d4d9cfa20b1",
+      "frames": 12375,
+      "attack_frames": 12000,
+      "windows": 374,
+      "status_counts": {
+        "sparse_attack_needs_context": 123,
+        "eligible": 251
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_32_sensor7",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 32,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_32_sensor7.pcap.gz",
+      "pcap_sha256": "9dc5a1ee9804676ca4c6954cd935e30be886a0e12605651fb2f6d039254885a6",
+      "features": "features/syn_train_32_sensor7.csv.gz",
+      "features_sha256": "f90af304d2a4061418801bd24ce1216eec2bafe6d8ef1dfb4a2d24dc68d6a2c3",
+      "frames": 14625,
+      "attack_frames": 12000,
+      "windows": 374,
+      "status_counts": {
+        "sparse_attack_needs_context": 123,
+        "eligible": 251
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_32_sensor7_other",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 32,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_32_sensor7_other.pcap.gz",
+      "pcap_sha256": "1b835c5abd42d261918ceaa1ac807a2dd85167f6660299c1f15c6f187f7bf842",
+      "features": "features/syn_train_32_sensor7_other.csv.gz",
+      "features_sha256": "a1b8b6155e89d57ed70d4eb83ad4776dc5bb19b12cd705b0fe552507fa04e9c3",
+      "frames": 14625,
+      "attack_frames": 12000,
+      "windows": 374,
+      "status_counts": {
+        "sparse_attack_needs_context": 123,
+        "eligible": 251
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_32_two_sensors14",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 32,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_32_two_sensors14.pcap.gz",
+      "pcap_sha256": "c18b92e34cf3493bf0a122e16ba47f116d49f4e7da496b63af2a52d2cac03d84",
+      "features": "features/syn_train_32_two_sensors14.csv.gz",
+      "features_sha256": "0f05260ce2bec158657c285add29129e9e9e702633af889a28e5eb127446a465",
+      "frames": 17250,
+      "attack_frames": 12000,
+      "windows": 374,
+      "status_counts": {
+        "sparse_attack_needs_context": 123,
+        "eligible": 251
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_64_none",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 64,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_64_none.pcap.gz",
+      "pcap_sha256": "228e7b1091a423955194107d97d592d7a11ac6edf1deeb9536d3fbaa85852391",
+      "features": "features/syn_train_64_none.csv.gz",
+      "features_sha256": "00d9b623996fc60f9ee4b256ccddf6d320dba14ccc68406672796620cab3af8d",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 186,
+      "status_counts": {
+        "eligible": 186
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_64_one_syn",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 64,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_64_one_syn.pcap.gz",
+      "pcap_sha256": "fc4e96afbd200c36919e7bb6a6066545d56f9da52dfe2e3695ef582e0aa76528",
+      "features": "features/syn_train_64_one_syn.csv.gz",
+      "features_sha256": "6ad9047d14c6722bb02ec1e9984fc0d708f8aee9d5134fc7f4a0b85f32583a0a",
+      "frames": 12187,
+      "attack_frames": 12000,
+      "windows": 186,
+      "status_counts": {
+        "eligible": 186
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_64_sensor7",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 64,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_64_sensor7.pcap.gz",
+      "pcap_sha256": "0365a5f7209357a081b5a3e2b6a7e08af8b3e128f0f2ff42ebccab7b0122c6df",
+      "features": "features/syn_train_64_sensor7.csv.gz",
+      "features_sha256": "12ca85b0ab2b7eabd990c4b5094a9866da5bdc10e82d071974f621f65c1a2975",
+      "frames": 13312,
+      "attack_frames": 12000,
+      "windows": 186,
+      "status_counts": {
+        "eligible": 186
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_64_sensor7_other",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 64,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_64_sensor7_other.pcap.gz",
+      "pcap_sha256": "f27c44a024294af49720213196ad610243b433ca9035f0be56cfd8c09763a992",
+      "features": "features/syn_train_64_sensor7_other.csv.gz",
+      "features_sha256": "1b65516a1849b723830bedccd5d5eca759320a4b986bc98d538d5903da25c602",
+      "frames": 13312,
+      "attack_frames": 12000,
+      "windows": 186,
+      "status_counts": {
+        "eligible": 186
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_64_two_sensors14",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 64,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_64_two_sensors14.pcap.gz",
+      "pcap_sha256": "67b234e8878ad7c5ea1bc70815c019c6b057dfed6c58c2205f3d2cd47f870ea6",
+      "features": "features/syn_train_64_two_sensors14.csv.gz",
+      "features_sha256": "38d6a8ff68bb85678b88450ad21347dfc976374e3db584a9472794d761c23e7b",
+      "frames": 14624,
+      "attack_frames": 12000,
+      "windows": 186,
+      "status_counts": {
+        "eligible": 186
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_128_none",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 128,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_128_none.pcap.gz",
+      "pcap_sha256": "591a6c84dccdd1eb7c3c2cc5dc20b82e95a7e560d449bb4699eaf2869e11e44e",
+      "features": "features/syn_train_128_none.csv.gz",
+      "features_sha256": "38df306abffff18ca29c5c69def1e7e6171ad7739e7c23a05f946bd3886d2ec1",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 92,
+      "status_counts": {
+        "eligible": 92
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_128_one_syn",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 128,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_128_one_syn.pcap.gz",
+      "pcap_sha256": "04c5751a5f98d001872d91aab292ffda81907cafd88d5bbce7e92e38e9f21dbd",
+      "features": "features/syn_train_128_one_syn.csv.gz",
+      "features_sha256": "101bd83e4c15f8bb8943cff5f89af56890fa0aa90426cb668eb6f352d8c22631",
+      "frames": 12094,
+      "attack_frames": 12000,
+      "windows": 92,
+      "status_counts": {
+        "eligible": 92
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_128_sensor7",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 128,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_128_sensor7.pcap.gz",
+      "pcap_sha256": "b6b668469e067ce6243b6de9c2e5d3838c8d8320337b4f442238797d21b78840",
+      "features": "features/syn_train_128_sensor7.csv.gz",
+      "features_sha256": "852648cc5a2be3f20b4d68f53da654586c4b609e702e7ee06544709534e7bfbc",
+      "frames": 12656,
+      "attack_frames": 12000,
+      "windows": 92,
+      "status_counts": {
+        "eligible": 92
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_128_sensor7_other",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 128,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_128_sensor7_other.pcap.gz",
+      "pcap_sha256": "08696a3b6c48aba61560779ff340cf54a7b9127d2ea38b657c313fa0e59c0ad9",
+      "features": "features/syn_train_128_sensor7_other.csv.gz",
+      "features_sha256": "3f4f465b55a37602788df7e04062e45f48fb9fc9e45cbb452bfe34721f5a29b4",
+      "frames": 12656,
+      "attack_frames": 12000,
+      "windows": 92,
+      "status_counts": {
+        "eligible": 92
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_128_two_sensors14",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 128,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_128_two_sensors14.pcap.gz",
+      "pcap_sha256": "903912feb3f72e56c581b30128151230b8223fd80b9dedf78df9873461b4dcd5",
+      "features": "features/syn_train_128_two_sensors14.csv.gz",
+      "features_sha256": "c96c4a3087ffbb141ad079ba1835fec0633785ce1afe46cac073fee2c04b1f5e",
+      "frames": 13312,
+      "attack_frames": 12000,
+      "windows": 92,
+      "status_counts": {
+        "eligible": 92
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_256_none",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 256,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_256_none.pcap.gz",
+      "pcap_sha256": "3958b04f97a01c79f7bbf1612551c02f1d7aed06ee892e4b081edd2d315a6cea",
+      "features": "features/syn_train_256_none.csv.gz",
+      "features_sha256": "d94229cba050566e96e87c8a84dfc9a9fdf5d6ea8ca72801aad07e721681e75c",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 45,
+      "status_counts": {
+        "eligible": 45
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_256_one_syn",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 256,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_256_one_syn.pcap.gz",
+      "pcap_sha256": "ad54d2263e97e89d10e8d74d3d5095d956fe1ee96832574a39e15a7e19a2575a",
+      "features": "features/syn_train_256_one_syn.csv.gz",
+      "features_sha256": "e59d007d2903efb678148f9bfba1d58a909ea85a217bec6eebcf1429e9d1bd18",
+      "frames": 12047,
+      "attack_frames": 12000,
+      "windows": 45,
+      "status_counts": {
+        "eligible": 45
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_256_sensor7",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 256,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_256_sensor7.pcap.gz",
+      "pcap_sha256": "2b055f348cdd11d9b6b91435ee49d5ae18f0c786def51ae1855263f7b0e4fdf2",
+      "features": "features/syn_train_256_sensor7.csv.gz",
+      "features_sha256": "7a144c328e4b6048d3b4014c00e2d6e1a2f1f199ba57c995a4f8883b4cc7cf88",
+      "frames": 12328,
+      "attack_frames": 12000,
+      "windows": 45,
+      "status_counts": {
+        "eligible": 45
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_256_sensor7_other",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 256,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_256_sensor7_other.pcap.gz",
+      "pcap_sha256": "3c35b19595809f659c0a636cea4f467ecb9d94c6438a65f84ad8a2aa63a93f95",
+      "features": "features/syn_train_256_sensor7_other.csv.gz",
+      "features_sha256": "174666deb4294edfcb4b67ebf598cda643a8b2046c86301f93d2dcaeea20225e",
+      "frames": 12328,
+      "attack_frames": 12000,
+      "windows": 45,
+      "status_counts": {
+        "eligible": 45
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_256_two_sensors14",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 256,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_256_two_sensors14.pcap.gz",
+      "pcap_sha256": "f08c8aeec5342f59422c0437a878f38c42cf7eed844a0959c853e309822aa582",
+      "features": "features/syn_train_256_two_sensors14.csv.gz",
+      "features_sha256": "dcabc40b956dec4e7ab0996a15cc4e70e900cad012e3877b53ea522e4b5f8973",
+      "frames": 12656,
+      "attack_frames": 12000,
+      "windows": 45,
+      "status_counts": {
+        "eligible": 45
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_512_none",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 512,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_512_none.pcap.gz",
+      "pcap_sha256": "3b426dfaa3bfdfbda1168e02595e5684165909f005d7f098bd7c7e972db33bf4",
+      "features": "features/syn_train_512_none.csv.gz",
+      "features_sha256": "fd3d2d2891de1725e24595ac0d25d2cac08ca57637540c0e9362961105c67268",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 22,
+      "status_counts": {
+        "eligible": 22
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_512_one_syn",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 512,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_512_one_syn.pcap.gz",
+      "pcap_sha256": "ba5bdb8798e60aa17dfdb3fa76de98d60f09db3a789335ac571ff15a5f2763b8",
+      "features": "features/syn_train_512_one_syn.csv.gz",
+      "features_sha256": "cde1a3af768dd957c7d2c5367809517401a3246958aff55303b35b8f5ba0dde3",
+      "frames": 12023,
+      "attack_frames": 12000,
+      "windows": 22,
+      "status_counts": {
+        "eligible": 22
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_512_sensor7",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 512,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_512_sensor7.pcap.gz",
+      "pcap_sha256": "7965c65021b4683ca20927c4cd87b1b828048584cfaa9ddb37bed020a5b25388",
+      "features": "features/syn_train_512_sensor7.csv.gz",
+      "features_sha256": "288e8ca900532d1496cce7cc4b46283c751584719fb856241823779a1ba971e2",
+      "frames": 12164,
+      "attack_frames": 12000,
+      "windows": 22,
+      "status_counts": {
+        "eligible": 22
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_512_sensor7_other",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 512,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_512_sensor7_other.pcap.gz",
+      "pcap_sha256": "1c157f0cb0ab303f451e3878fe652f9f0c362281d846b11363424a735ec0a810",
+      "features": "features/syn_train_512_sensor7_other.csv.gz",
+      "features_sha256": "efd65be5d7f798e055fd2d0b963d3fbccea49b51368d4c117d886041b49b0e12",
+      "frames": 12164,
+      "attack_frames": 12000,
+      "windows": 22,
+      "status_counts": {
+        "eligible": 22
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_512_two_sensors14",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 512,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_512_two_sensors14.pcap.gz",
+      "pcap_sha256": "04fe1936141968f5325503727fbcf414e2184f45066d9479beb1c83de5d927ee",
+      "features": "features/syn_train_512_two_sensors14.csv.gz",
+      "features_sha256": "93b3b877cee043c8487574f9bc412c9c4c32a96a9137bab7e952b351fc82ef44",
+      "frames": 12328,
+      "attack_frames": 12000,
+      "windows": 22,
+      "status_counts": {
+        "eligible": 22
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_1024_none",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1024,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_1024_none.pcap.gz",
+      "pcap_sha256": "620715a739b62ae03a8440c79e05b5512e20fba40ec0dc063d1a5ab98aabd5bc",
+      "features": "features/syn_train_1024_none.csv.gz",
+      "features_sha256": "edf36b5e68acb8ca40f09a0d94be3d79782fe1d189b8a303f5e8296315bc3db7",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 10,
+      "status_counts": {
+        "native_label_alias_ambiguous": 8,
+        "eligible": 2
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_1024_one_syn",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1024,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_1024_one_syn.pcap.gz",
+      "pcap_sha256": "175b56a38b2e52d8af329afd9fa51ed68df6d01f3ad59bbc03eee741e3867d52",
+      "features": "features/syn_train_1024_one_syn.csv.gz",
+      "features_sha256": "055dda904eea45350c596e5495e522ea2751379f8a6978292dee0e981faa566d",
+      "frames": 12012,
+      "attack_frames": 12000,
+      "windows": 10,
+      "status_counts": {
+        "eligible": 10
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_1024_sensor7",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1024,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_1024_sensor7.pcap.gz",
+      "pcap_sha256": "acb35d25f4581b07693a07f4e8f63486ae3514947c1d19b9bfd80059a6e94e82",
+      "features": "features/syn_train_1024_sensor7.csv.gz",
+      "features_sha256": "d32bbc73b38a4b41087309c1c133c150e94e721b41a020f656e1076f3b52fb4d",
+      "frames": 12082,
+      "attack_frames": 12000,
+      "windows": 10,
+      "status_counts": {
+        "eligible": 10
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_1024_sensor7_other",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1024,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_1024_sensor7_other.pcap.gz",
+      "pcap_sha256": "7f3f39403393be1813b25416aa840ca10c3996846b75feaf46a08b99fe774e8c",
+      "features": "features/syn_train_1024_sensor7_other.csv.gz",
+      "features_sha256": "f46e071f67575f1a0b4a78c79a0a3d82040652d961b2041f8dd8a4a05970df52",
+      "frames": 12082,
+      "attack_frames": 12000,
+      "windows": 10,
+      "status_counts": {
+        "eligible": 10
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_1024_two_sensors14",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1024,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_1024_two_sensors14.pcap.gz",
+      "pcap_sha256": "122aa910a10d3e8ce257f453adc5b59eb8a76ef9e7c42e8d0c4124a649967e4e",
+      "features": "features/syn_train_1024_two_sensors14.csv.gz",
+      "features_sha256": "123989825afd8a368346dafca9676d5147463f0a6844bec110bbcfdd1c587e24",
+      "frames": 12164,
+      "attack_frames": 12000,
+      "windows": 10,
+      "status_counts": {
+        "eligible": 10
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_2048_none",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 2048,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_2048_none.pcap.gz",
+      "pcap_sha256": "67e69660128e36a5e9ca3ab415f8c9de85245f14ec6b1a553bbeadde2fab81b4",
+      "features": "features/syn_train_2048_none.csv.gz",
+      "features_sha256": "ed1de2c9a2c4f1961bc75f2c4630e6911a44bc4b311a8600e61295a0f5020fb6",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 4,
+      "status_counts": {
+        "native_label_alias_ambiguous": 4
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_2048_one_syn",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 2048,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_2048_one_syn.pcap.gz",
+      "pcap_sha256": "4495b462e2b84f10130da456b0bd9deba1d00ec45c48c795eac9a3a8c540ad26",
+      "features": "features/syn_train_2048_one_syn.csv.gz",
+      "features_sha256": "b9c2b5fbe7b697b692c49510da06e8d466bef1dbc4a70232f2e50fc8c348d69e",
+      "frames": 12006,
+      "attack_frames": 12000,
+      "windows": 4,
+      "status_counts": {
+        "eligible": 4
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_2048_sensor7",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 2048,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_2048_sensor7.pcap.gz",
+      "pcap_sha256": "c90b7ecdbf28ea8b45ff0501537ab71c0373d29c64dcf855c52806b3c8962457",
+      "features": "features/syn_train_2048_sensor7.csv.gz",
+      "features_sha256": "c019765ac76a6de7f9d7391acd2edbfe308f919d7599c9d6a973f14e210ebcb3",
+      "frames": 12041,
+      "attack_frames": 12000,
+      "windows": 4,
+      "status_counts": {
+        "eligible": 4
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_2048_sensor7_other",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 2048,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_2048_sensor7_other.pcap.gz",
+      "pcap_sha256": "a5100abaaa6dd9316b310eab66760839dcf259344d585079e8456292507c831c",
+      "features": "features/syn_train_2048_sensor7_other.csv.gz",
+      "features_sha256": "bbb6bc7d9d33d11bc5d766c55b8a9c779a480e9deec2da8549519e535fea2ab9",
+      "frames": 12041,
+      "attack_frames": 12000,
+      "windows": 4,
+      "status_counts": {
+        "eligible": 4
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "syn_train_2048_two_sensors14",
+      "split": "train",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 2048,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_train_2048_two_sensors14.pcap.gz",
+      "pcap_sha256": "123e6ae47c4f4fd23e0c27f196d04b283d422605687e2032f338609a3b5a1b16",
+      "features": "features/syn_train_2048_two_sensors14.csv.gz",
+      "features_sha256": "be2792e47fbb6c8d310ce3fb1bbf7b7c513b29996b16cea0b6f10c6c3e51d399",
+      "frames": 12082,
+      "attack_frames": 12000,
+      "windows": 4,
+      "status_counts": {
+        "eligible": 4
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        11999
+      ]
+    },
+    {
+      "id": "scan_train_2_one_syn",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 2,
+      "normal_profile": "one_syn",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_2_one_syn.pcap.gz",
+      "pcap_sha256": "49861b572602adf6388da1a0bf0fda9bc35a9aac544db8a624e29169545f1a4b",
+      "features": "features/scan_train_2_one_syn.csv.gz",
+      "features_sha256": "6ef0152e47f5a4c6127b8351a53f331c700ec8b7ab3e490f522031f9f4a2375d",
+      "frames": 2004,
+      "attack_frames": 1994,
+      "windows": 9,
+      "status_counts": {
+        "sparse_scan_needs_context": 1,
+        "eligible": 8
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_2_sensor7",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 2,
+      "normal_profile": "sensor7",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_2_sensor7.pcap.gz",
+      "pcap_sha256": "6f817dde4251806f91ec6eee04c8e35592c05e3600b651242fa040e409cd5060",
+      "features": "features/scan_train_2_sensor7.csv.gz",
+      "features_sha256": "d67c84e52de1bb07a7d23a102ba3650bb3f0d628270069ac80309a37e8b59701",
+      "frames": 2066,
+      "attack_frames": 1994,
+      "windows": 9,
+      "status_counts": {
+        "sparse_scan_needs_context": 1,
+        "eligible": 8
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_2_sensor7_other",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 2,
+      "normal_profile": "sensor7_other",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_2_sensor7_other.pcap.gz",
+      "pcap_sha256": "6f817dde4251806f91ec6eee04c8e35592c05e3600b651242fa040e409cd5060",
+      "features": "features/scan_train_2_sensor7_other.csv.gz",
+      "features_sha256": "9963945c0516e0ad5b638525ac2f0f55b39835751d3306c0a4e3e5390465ea47",
+      "frames": 2066,
+      "attack_frames": 1994,
+      "windows": 9,
+      "status_counts": {
+        "sparse_scan_needs_context": 1,
+        "eligible": 8
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_2_two_sensors14",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 2,
+      "normal_profile": "two_sensors14",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_2_two_sensors14.pcap.gz",
+      "pcap_sha256": "928b9ff5552c6c453ff6a12beef20e552aad2e265913128e447ecbccee0731a5",
+      "features": "features/scan_train_2_two_sensors14.csv.gz",
+      "features_sha256": "8d657cec3ec72b1415ff365dfd1e3e715204972d9987cd7eaa6dbc67787ad9d0",
+      "frames": 2138,
+      "attack_frames": 1994,
+      "windows": 9,
+      "status_counts": {
+        "sparse_scan_needs_context": 1,
+        "eligible": 8
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_8_one_syn",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 8,
+      "normal_profile": "one_syn",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_8_one_syn.pcap.gz",
+      "pcap_sha256": "430d29123bb283b250926fba7b80a0222313d017b48067a17007acf17dc413bb",
+      "features": "features/scan_train_8_one_syn.csv.gz",
+      "features_sha256": "9caaa743e7668111a8139c9c7fc931516217414e17ffc5d7c30e5fd489b8a2c1",
+      "frames": 2035,
+      "attack_frames": 1994,
+      "windows": 40,
+      "status_counts": {
+        "eligible": 32,
+        "sparse_scan_needs_context": 8
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_8_sensor7",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 8,
+      "normal_profile": "sensor7",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_8_sensor7.pcap.gz",
+      "pcap_sha256": "4477cd5f0b33d3b0eaebd857476d798e00d5017fc008a36e5e632de9b34c82fe",
+      "features": "features/scan_train_8_sensor7.csv.gz",
+      "features_sha256": "b5f7bbd171ff42f94210a6ce616987390f39afb61ac2e1a7edb2e345caa706ec",
+      "frames": 2282,
+      "attack_frames": 1994,
+      "windows": 40,
+      "status_counts": {
+        "eligible": 32,
+        "sparse_scan_needs_context": 8
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_8_sensor7_other",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 8,
+      "normal_profile": "sensor7_other",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_8_sensor7_other.pcap.gz",
+      "pcap_sha256": "4477cd5f0b33d3b0eaebd857476d798e00d5017fc008a36e5e632de9b34c82fe",
+      "features": "features/scan_train_8_sensor7_other.csv.gz",
+      "features_sha256": "2329093ffd72e1a33c4ec26002c4d4c5c9ff1a9be325633545df419b58bc1082",
+      "frames": 2282,
+      "attack_frames": 1994,
+      "windows": 40,
+      "status_counts": {
+        "eligible": 32,
+        "sparse_scan_needs_context": 8
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_8_two_sensors14",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 8,
+      "normal_profile": "two_sensors14",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_8_two_sensors14.pcap.gz",
+      "pcap_sha256": "0d73d8e7907e45b261da58c3f8aaef538234b16febb7f3de0eca99649b54d735",
+      "features": "features/scan_train_8_two_sensors14.csv.gz",
+      "features_sha256": "107d4f27c5940814078b460eef16053537ab7c6831d47972d61ff2bf52b7133a",
+      "frames": 2570,
+      "attack_frames": 1994,
+      "windows": 40,
+      "status_counts": {
+        "eligible": 32,
+        "sparse_scan_needs_context": 8
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_32_one_syn",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 32,
+      "normal_profile": "one_syn",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_32_one_syn.pcap.gz",
+      "pcap_sha256": "f5c8a62548205414a3eb76f39d91a25d995e56e7ff012d075226a62e911c1970",
+      "features": "features/scan_train_32_one_syn.csv.gz",
+      "features_sha256": "e12ae4d4e76e769af9b2bb344fb3fb561ee203a9539d3a60b14a5c44c59e06b6",
+      "frames": 2159,
+      "attack_frames": 1994,
+      "windows": 163,
+      "status_counts": {
+        "sparse_scan_needs_context": 90,
+        "eligible": 73
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_32_sensor7",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 32,
+      "normal_profile": "sensor7",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_32_sensor7.pcap.gz",
+      "pcap_sha256": "ec0f4487bbeeb08b2bff346b5e33f56043848d73c0c6237845f7547c03834365",
+      "features": "features/scan_train_32_sensor7.csv.gz",
+      "features_sha256": "fa34d035956ab34c28f44bdb1f8a18f57716e72144b912d53c4961e03d8a9236",
+      "frames": 3146,
+      "attack_frames": 1994,
+      "windows": 163,
+      "status_counts": {
+        "sparse_scan_needs_context": 90,
+        "eligible": 73
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_32_sensor7_other",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 32,
+      "normal_profile": "sensor7_other",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_32_sensor7_other.pcap.gz",
+      "pcap_sha256": "ec0f4487bbeeb08b2bff346b5e33f56043848d73c0c6237845f7547c03834365",
+      "features": "features/scan_train_32_sensor7_other.csv.gz",
+      "features_sha256": "ec5060e682fc74f9e0358bbef198984b72264ab59a53270fdcfe377aa9381720",
+      "frames": 3146,
+      "attack_frames": 1994,
+      "windows": 163,
+      "status_counts": {
+        "sparse_scan_needs_context": 90,
+        "eligible": 73
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_32_two_sensors14",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 32,
+      "normal_profile": "two_sensors14",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_32_two_sensors14.pcap.gz",
+      "pcap_sha256": "33ed44ddf8426074ebaf360cc0c6ba62822ed64071855054c890d057f017694a",
+      "features": "features/scan_train_32_two_sensors14.csv.gz",
+      "features_sha256": "e5bee9a17042f2fbeb96f1191e007b99d80d7c24a8d3d68520b45760f12ba3ea",
+      "frames": 4298,
+      "attack_frames": 1994,
+      "windows": 163,
+      "status_counts": {
+        "sparse_scan_needs_context": 90,
+        "eligible": 73
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_128_one_syn",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 128,
+      "normal_profile": "one_syn",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_128_one_syn.pcap.gz",
+      "pcap_sha256": "a39080c6d450f0a25043eb3a3b9e728945d35ea1a27e749df10a402b6e69419d",
+      "features": "features/scan_train_128_one_syn.csv.gz",
+      "features_sha256": "7410ea5429588556fed43603e3db3ac2aafd719f7fce2daa95916677d331e233",
+      "frames": 2652,
+      "attack_frames": 1994,
+      "windows": 657,
+      "status_counts": {
+        "sparse_scan_needs_context": 570,
+        "eligible": 87
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_128_sensor7",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 128,
+      "normal_profile": "sensor7",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_128_sensor7.pcap.gz",
+      "pcap_sha256": "78836683c30d69a05d792a1923cbb04420c7a7516d9210ffd5393cdde219821c",
+      "features": "features/scan_train_128_sensor7.csv.gz",
+      "features_sha256": "2d56e6ed1510f04249f56fd0879b8bc3e719ac0b8ad8cbfd39fbe22227a8163b",
+      "frames": 6600,
+      "attack_frames": 1994,
+      "windows": 657,
+      "status_counts": {
+        "sparse_scan_needs_context": 570,
+        "eligible": 87
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_128_sensor7_other",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 128,
+      "normal_profile": "sensor7_other",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_128_sensor7_other.pcap.gz",
+      "pcap_sha256": "78836683c30d69a05d792a1923cbb04420c7a7516d9210ffd5393cdde219821c",
+      "features": "features/scan_train_128_sensor7_other.csv.gz",
+      "features_sha256": "8a813e705005573bb4d903206e89d178fbbb99cbc7714a0b95d36073c5b2d230",
+      "frames": 6600,
+      "attack_frames": 1994,
+      "windows": 657,
+      "status_counts": {
+        "sparse_scan_needs_context": 570,
+        "eligible": 87
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_train_128_two_sensors14",
+      "split": "train",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 128,
+      "normal_profile": "two_sensors14",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_train_128_two_sensors14.pcap.gz",
+      "pcap_sha256": "fa502002aa1dcec82cf86be47fc67e5ec55a87a2ca596100bd44fddd322fa3bb",
+      "features": "features/scan_train_128_two_sensors14.csv.gz",
+      "features_sha256": "d4eeb17e01da133bfdab7e46db1db4b78bdc47fce43a32461ff8049ca3bc9e07",
+      "frames": 11206,
+      "attack_frames": 1994,
+      "windows": 657,
+      "status_counts": {
+        "sparse_scan_needs_context": 570,
+        "eligible": 87
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "normal_train_1_sensor7",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_1_sensor7.pcap.gz",
+      "pcap_sha256": "11e791a94b6b7c0b6f6844bcf127238447d509ec54f300a73c9799b7c66a1332",
+      "features": "features/normal_train_1_sensor7.csv.gz",
+      "features_sha256": "0a9a32b46e9c9e2e736253960029bc695dcc30bb98105a2491a4968159d5f0d2",
+      "frames": 30,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_1_sensor7_other",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_1_sensor7_other.pcap.gz",
+      "pcap_sha256": "d01a3267c9e503e7c7e8d7bbd4909ace68e8e75e8ed0415f3de97a3e5decd471",
+      "features": "features/normal_train_1_sensor7_other.csv.gz",
+      "features_sha256": "69c53ad08c8e188d901e391fc34ea406d2f949aa3801c46bd98f5344970de1ba",
+      "frames": 30,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_1_two_sensors14",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_1_two_sensors14.pcap.gz",
+      "pcap_sha256": "3ae4724197b1d031f6773178b1cf1d01f3b4668e270014674b19b96ae6477255",
+      "features": "features/normal_train_1_two_sensors14.csv.gz",
+      "features_sha256": "8c4855a7bcd8c236743985a076a4db2f7537c1dbbad5363c33cb329300cf7f46",
+      "frames": 30,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_7_sensor7",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_7_sensor7.pcap.gz",
+      "pcap_sha256": "8896fd526d04f8de4b4e837d4e592fb701ecde0e8ef60893f56094d87fb4e067",
+      "features": "features/normal_train_7_sensor7.csv.gz",
+      "features_sha256": "f62fc723271c592d6fbabfc7b015b02e82e8b6bd9b1b1b058d2282e377d8670a",
+      "frames": 210,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_7_sensor7_other",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_7_sensor7_other.pcap.gz",
+      "pcap_sha256": "0e07070b82c7056f1edb0682d76124dd0dba037c76a78dddc03a07b7bcbe6c72",
+      "features": "features/normal_train_7_sensor7_other.csv.gz",
+      "features_sha256": "03f7812d316c6458ef1e8db133f202242ed2ddd091c09ddd058021fa0d9364ba",
+      "frames": 210,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_7_two_sensors14",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_7_two_sensors14.pcap.gz",
+      "pcap_sha256": "56aa26f541c7d53168dc5400ef58e7c75912a8b219c99bb93ac0069986a36ec9",
+      "features": "features/normal_train_7_two_sensors14.csv.gz",
+      "features_sha256": "0d717587dacee66154293953ea49488e34423b9a86e75862f4e7d3c76aafa3d6",
+      "frames": 210,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_14_sensor7",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_14_sensor7.pcap.gz",
+      "pcap_sha256": "ea1aee9752b2d919007e33c242bcf385fbaac91f08366c0e1bf8c050ea2dd7ec",
+      "features": "features/normal_train_14_sensor7.csv.gz",
+      "features_sha256": "c6ebb0a4a20ac4d516a47d09254e0e8da94acfce7f7fb8d1b8c46a482b4266c0",
+      "frames": 420,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_14_sensor7_other",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_14_sensor7_other.pcap.gz",
+      "pcap_sha256": "0eaf4082826048ab094ec4aac0244fdf3bfb92cbed4f3cff05f06ab617c754fd",
+      "features": "features/normal_train_14_sensor7_other.csv.gz",
+      "features_sha256": "458a82475703a55a8b88444d262a63e9d64b84aca9b5a21f2d939cd31a5a3686",
+      "frames": 420,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_14_two_sensors14",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_14_two_sensors14.pcap.gz",
+      "pcap_sha256": "c8bffcb108e7ad85d8e021add75cece677328ec77ea8d0e08194f1ba0283ea53",
+      "features": "features/normal_train_14_two_sensors14.csv.gz",
+      "features_sha256": "6716085aba64e9e4acbffcb4bf9a936fa2b3e4100d247ff8cd0decf87418443e",
+      "frames": 420,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_64_sensor7",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_64_sensor7.pcap.gz",
+      "pcap_sha256": "de4397499a6e22a5249bdabd58394c14382da3940c91b395ab39b718a0052837",
+      "features": "features/normal_train_64_sensor7.csv.gz",
+      "features_sha256": "d221e362d65cfe354e0f7763d7d73410a8c8035a440b154aa72eaf3913500f05",
+      "frames": 1920,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_64_sensor7_other",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_64_sensor7_other.pcap.gz",
+      "pcap_sha256": "0102a63d149a1e877986e6b6346dcf1863d4d0ca347e13a71494eaf6d5cb8f5f",
+      "features": "features/normal_train_64_sensor7_other.csv.gz",
+      "features_sha256": "0f20ccb2db53075f1ee33ec76087ca1e0322857ee161acc46c075e56f5c0b662",
+      "frames": 1920,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_64_two_sensors14",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_64_two_sensors14.pcap.gz",
+      "pcap_sha256": "cad2bf336a85cc61b43784ea7ed7c8930b330b30889b311b02d67eea8a332911",
+      "features": "features/normal_train_64_two_sensors14.csv.gz",
+      "features_sha256": "c0837ba504c207a0b83fbd83c773cc107192c8b6827204606aa81898e6f79e52",
+      "frames": 1920,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_256_sensor7",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_256_sensor7.pcap.gz",
+      "pcap_sha256": "9f60eebd9f54d61ffe46511425dd2b28ae7ea920d1417365e444ddb7055451a6",
+      "features": "features/normal_train_256_sensor7.csv.gz",
+      "features_sha256": "9d735e8d182373fa091e8eb5271024fdde9888a1e48d841383d787a97919ea0f",
+      "frames": 7680,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_256_sensor7_other",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_256_sensor7_other.pcap.gz",
+      "pcap_sha256": "f49a317731dfe6be576d56e54b0ac3a7cfca4eeece770aab80252aa9a48da342",
+      "features": "features/normal_train_256_sensor7_other.csv.gz",
+      "features_sha256": "abe565f61a56f7d43d9d75697275a4b40c5a49e0e1d628f6f61417d01a9a7558",
+      "frames": 7680,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_train_256_two_sensors14",
+      "split": "train",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_train_256_two_sensors14.pcap.gz",
+      "pcap_sha256": "bd0c812bde0bcb41f4421e07cc2c47d903141f1566d88a491b0b50d0d4c6beb7",
+      "features": "features/normal_train_256_two_sensors14.csv.gz",
+      "features_sha256": "a69a85251a2ccd820bba741c5a67f3dd46458659a4f43cba957baad08c71b923",
+      "frames": 7680,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 125000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "syn_development_48_none",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 48,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_48_none.pcap.gz",
+      "pcap_sha256": "564620dd6c2958d53ac64d62d3cb10a98db214c31ad430d0942a3864563315af",
+      "features": "features/syn_development_48_none.csv.gz",
+      "features_sha256": "842157e380cdcd17bee107d7a8518a718fd8890b1e339a7e5920c0f0675d1370",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 243,
+      "status_counts": {
+        "eligible": 235,
+        "sparse_attack_needs_context": 8
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_48_one_syn",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 48,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_48_one_syn.pcap.gz",
+      "pcap_sha256": "eb6451192cfe111bb9a78e3fc696bdedad2215183d063dd195c8d88f0338047e",
+      "features": "features/syn_development_48_one_syn.csv.gz",
+      "features_sha256": "48861dd271f96357efe2b08717da092bddcf52ff5c44d7ef1a840bdef4c01f0b",
+      "frames": 12250,
+      "attack_frames": 12000,
+      "windows": 249,
+      "status_counts": {
+        "eligible": 235,
+        "sparse_attack_needs_context": 14
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_48_sensor7",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 48,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_48_sensor7.pcap.gz",
+      "pcap_sha256": "a49bc5069df1723f61240dac187de3dc3e2d5141fa50b080f7f1367591e7180f",
+      "features": "features/syn_development_48_sensor7.csv.gz",
+      "features_sha256": "002bf78523db59c3bacd22016127bcf3e9b0af311fb66c9e39f81fdc319e9338",
+      "frames": 13750,
+      "attack_frames": 12000,
+      "windows": 249,
+      "status_counts": {
+        "eligible": 235,
+        "sparse_attack_needs_context": 14
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_48_sensor7_other",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 48,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_48_sensor7_other.pcap.gz",
+      "pcap_sha256": "927a02ccf97f77cfada50dfcb2f471e044285a1d5a626660c0a592d5d5a5936b",
+      "features": "features/syn_development_48_sensor7_other.csv.gz",
+      "features_sha256": "f988ed12ab8de8089b217eca6db27542868082bcf151b30faf61e25da6a50b62",
+      "frames": 13750,
+      "attack_frames": 12000,
+      "windows": 249,
+      "status_counts": {
+        "eligible": 235,
+        "sparse_attack_needs_context": 14
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_48_two_sensors14",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 48,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_48_two_sensors14.pcap.gz",
+      "pcap_sha256": "cf75f792905b780e66838bc2c40211eeaacf7c202925dcec80a3937da6eaf476",
+      "features": "features/syn_development_48_two_sensors14.csv.gz",
+      "features_sha256": "dc8ae615d5c87e259ad911f02b1574d2cad4143cf30385fdad9113637ff21faf",
+      "frames": 15500,
+      "attack_frames": 12000,
+      "windows": 249,
+      "status_counts": {
+        "eligible": 235,
+        "sparse_attack_needs_context": 14
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_96_none",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 96,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_96_none.pcap.gz",
+      "pcap_sha256": "c7e9537e7f402750bf8ad758fb51f3739f648bdb968c36a818030ff15d6e0c08",
+      "features": "features/syn_development_96_none.csv.gz",
+      "features_sha256": "8ee31f8d7984cab07c2a5c9f59e64608cdc044a4eb4e4b7f0097636f40c125fb",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 124,
+      "status_counts": {
+        "eligible": 124
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_96_one_syn",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 96,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_96_one_syn.pcap.gz",
+      "pcap_sha256": "ccbd5fba1f58f03db9077324c0b8906d7a0363e5d776ac919ec07b3846d374dd",
+      "features": "features/syn_development_96_one_syn.csv.gz",
+      "features_sha256": "ab328ae11ca463c4194000f72ea9483f487e8b81689d6e700741e038d23e22bb",
+      "frames": 12125,
+      "attack_frames": 12000,
+      "windows": 124,
+      "status_counts": {
+        "eligible": 124
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_96_sensor7",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 96,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_96_sensor7.pcap.gz",
+      "pcap_sha256": "bc86459c44349676aaaea8cf9d8c4eb12474de1a502646854b7d388c6dacee0e",
+      "features": "features/syn_development_96_sensor7.csv.gz",
+      "features_sha256": "b91d5d56e72836a372a0c59a74a61577032849c53ba67e71da5cdf28a30a7a43",
+      "frames": 12875,
+      "attack_frames": 12000,
+      "windows": 124,
+      "status_counts": {
+        "eligible": 124
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_96_sensor7_other",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 96,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_96_sensor7_other.pcap.gz",
+      "pcap_sha256": "522e9c1e6e1042dfaffefb80e37c244b60147e57473b62d5969f1cbd276b4694",
+      "features": "features/syn_development_96_sensor7_other.csv.gz",
+      "features_sha256": "a42762f5a91fd4e74003b7c36a8ccf2bd837efdf60a088b5fbda0458fe7ccd15",
+      "frames": 12875,
+      "attack_frames": 12000,
+      "windows": 124,
+      "status_counts": {
+        "eligible": 124
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_96_two_sensors14",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 96,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_96_two_sensors14.pcap.gz",
+      "pcap_sha256": "767b92682fd874143096528b0d706fab16e5ce528820d3031f72fa1112ea75f2",
+      "features": "features/syn_development_96_two_sensors14.csv.gz",
+      "features_sha256": "e43feabe68c4b4778f35ae96a55685786da8758f99a3c7648618ff26d114c94c",
+      "frames": 13750,
+      "attack_frames": 12000,
+      "windows": 124,
+      "status_counts": {
+        "eligible": 124
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_192_none",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 192,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_192_none.pcap.gz",
+      "pcap_sha256": "ceda7064c8b37cc2ed47b406e08651a1892a3badd516283068546f5d1757c1cc",
+      "features": "features/syn_development_192_none.csv.gz",
+      "features_sha256": "65d9dfa484f88c88760279852ba7ca3812cfe67bd44cebcc01414c0434acc47a",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 62,
+      "status_counts": {
+        "eligible": 62
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_192_one_syn",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 192,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_192_one_syn.pcap.gz",
+      "pcap_sha256": "930bede5d476c7f311053c8f6d6d4d8bc6470b3e3f80a75f9fc9c492b31ccc87",
+      "features": "features/syn_development_192_one_syn.csv.gz",
+      "features_sha256": "d26b6fbd700216ba8f627f6400f0c19750467fabc1b8f3b22b96f462db746ff8",
+      "frames": 12062,
+      "attack_frames": 12000,
+      "windows": 62,
+      "status_counts": {
+        "eligible": 62
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_192_sensor7",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 192,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_192_sensor7.pcap.gz",
+      "pcap_sha256": "735058eef73ae85767e62d2fc689fa7128bc87759da0e1584690c3dbd2a66f29",
+      "features": "features/syn_development_192_sensor7.csv.gz",
+      "features_sha256": "4371e54262c0d0622380e7a7b4194c6b811ab188cfbe285aa4c2ec06c144962b",
+      "frames": 12437,
+      "attack_frames": 12000,
+      "windows": 62,
+      "status_counts": {
+        "eligible": 62
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_192_sensor7_other",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 192,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_192_sensor7_other.pcap.gz",
+      "pcap_sha256": "a2b2f2754b6f007800252b7dc198bc77466b69ab82a486f3d7558eda985d19e1",
+      "features": "features/syn_development_192_sensor7_other.csv.gz",
+      "features_sha256": "ed94287b201cee277dbb811b0d879c5d5a481c133a56019519e40ed2abd8b598",
+      "frames": 12437,
+      "attack_frames": 12000,
+      "windows": 62,
+      "status_counts": {
+        "eligible": 62
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_192_two_sensors14",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 192,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_192_two_sensors14.pcap.gz",
+      "pcap_sha256": "4a843a0770f76dc0df6f93881cac460647fb05402ab72d0d69af3e8f61274ef1",
+      "features": "features/syn_development_192_two_sensors14.csv.gz",
+      "features_sha256": "2c09a6703ca0715bb06f6a07729b43b369fed8d04384b61cfe4912b2132bc0db",
+      "frames": 12874,
+      "attack_frames": 12000,
+      "windows": 62,
+      "status_counts": {
+        "eligible": 62
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_384_none",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 384,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_384_none.pcap.gz",
+      "pcap_sha256": "2ddd9a66c2926d1d7cb507745deb350e493e0e3c0effc008a4d4f1d887550fd3",
+      "features": "features/syn_development_384_none.csv.gz",
+      "features_sha256": "25de8c34b0c024eaaa6021130cca423c82c1af74fa1467a6c869cabd8959f73b",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 30,
+      "status_counts": {
+        "eligible": 28,
+        "native_label_alias_ambiguous": 2
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_384_one_syn",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 384,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_384_one_syn.pcap.gz",
+      "pcap_sha256": "82106c994476be60810029bd9ae275f106cd13e0545827ab6bf8862e3c571111",
+      "features": "features/syn_development_384_one_syn.csv.gz",
+      "features_sha256": "48f9de518f8270db11c23a5a3651fe64cedf3a8fced5612b2e9449b6a68ca72a",
+      "frames": 12031,
+      "attack_frames": 12000,
+      "windows": 30,
+      "status_counts": {
+        "eligible": 30
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_384_sensor7",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 384,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_384_sensor7.pcap.gz",
+      "pcap_sha256": "d18aa13faeacec4a0eaa592acf2150dbb5e023905eb1f0644b380243bc885cbe",
+      "features": "features/syn_development_384_sensor7.csv.gz",
+      "features_sha256": "11e10a55efc8393590e3c9a800c553183ed179e216a9bcbe5ef03f5a704eb0d0",
+      "frames": 12218,
+      "attack_frames": 12000,
+      "windows": 30,
+      "status_counts": {
+        "eligible": 30
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_384_sensor7_other",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 384,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_384_sensor7_other.pcap.gz",
+      "pcap_sha256": "a874ff9dff5f2ef2994b1cf317644ce1e313acc6d6d376af2a75b82106ca1145",
+      "features": "features/syn_development_384_sensor7_other.csv.gz",
+      "features_sha256": "54eafb30ae990f2782103702299de509246e9763d0e913cb1450e06203363342",
+      "frames": 12218,
+      "attack_frames": 12000,
+      "windows": 30,
+      "status_counts": {
+        "eligible": 30
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_384_two_sensors14",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 384,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_384_two_sensors14.pcap.gz",
+      "pcap_sha256": "388c6d0ebe4fee0410c2f31fa7a73e450d4255fb8d6a7b3d06b153e007bee0b3",
+      "features": "features/syn_development_384_two_sensors14.csv.gz",
+      "features_sha256": "8c884fcab11316b8278619cf1cbe21f768f205e858ad6ac4891177cdf72c2522",
+      "frames": 12436,
+      "attack_frames": 12000,
+      "windows": 30,
+      "status_counts": {
+        "eligible": 30
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_768_none",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 768,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_768_none.pcap.gz",
+      "pcap_sha256": "0baa5a21459a407deda962e0542182c2845c9eb158bf901db8f1b832626a9415",
+      "features": "features/syn_development_768_none.csv.gz",
+      "features_sha256": "1033ede943d334be02c74b9a2bbd3bd3efd25d0f1affff9ea406f32ceaf6e7ce",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 15,
+      "status_counts": {
+        "eligible": 15
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_768_one_syn",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 768,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_768_one_syn.pcap.gz",
+      "pcap_sha256": "b07f757ae970ad76dc2999bdae4455bb7d55f02d6a144a7357518b5a015f8d08",
+      "features": "features/syn_development_768_one_syn.csv.gz",
+      "features_sha256": "ead7afb38cce01f8e1cb5fc8ea22e79b897b9111cc150ab532a52423178f644f",
+      "frames": 12016,
+      "attack_frames": 12000,
+      "windows": 15,
+      "status_counts": {
+        "eligible": 15
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_768_sensor7",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 768,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_768_sensor7.pcap.gz",
+      "pcap_sha256": "078b2edd9a8c56a8824ce4ff0071a980725cecd704bcaf89702d83dc674721ee",
+      "features": "features/syn_development_768_sensor7.csv.gz",
+      "features_sha256": "b1ff39081d4723c052081438afc1bb7606e7d34a433a689cdab0bbb333f90a08",
+      "frames": 12109,
+      "attack_frames": 12000,
+      "windows": 15,
+      "status_counts": {
+        "eligible": 15
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_768_sensor7_other",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 768,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_768_sensor7_other.pcap.gz",
+      "pcap_sha256": "10ae408a04add7e0ab755a0c1229fd9b7f692275b2fdeb00b0c2fcb5c638e04f",
+      "features": "features/syn_development_768_sensor7_other.csv.gz",
+      "features_sha256": "572ee2b0dfd01c3dfd59fd4111e315561bf03f8da2d61ced74104dd48456dc3d",
+      "frames": 12109,
+      "attack_frames": 12000,
+      "windows": 15,
+      "status_counts": {
+        "eligible": 15
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_768_two_sensors14",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 768,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_768_two_sensors14.pcap.gz",
+      "pcap_sha256": "e7ce9240bccd62a01e399ccbd48c3c30096e38807d8c99fe43b43645a0cbccf2",
+      "features": "features/syn_development_768_two_sensors14.csv.gz",
+      "features_sha256": "3e1a0e9818712e034a0d6f51dd631d01794db29bec4f5afb2362236bafb0ac40",
+      "frames": 12218,
+      "attack_frames": 12000,
+      "windows": 15,
+      "status_counts": {
+        "eligible": 15
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_1536_none",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1536,
+      "time_scale": null,
+      "normal_profile": "none",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_1536_none.pcap.gz",
+      "pcap_sha256": "4140d8a553a0ae28cd6199723c68e1ea84f6d99792d5164170d4c3cf5c401d8c",
+      "features": "features/syn_development_1536_none.csv.gz",
+      "features_sha256": "b93a0be6320724403c1ba6bfdc6aa0253e0be780ee05607930d93f0a1e9ac265",
+      "frames": 12000,
+      "attack_frames": 12000,
+      "windows": 7,
+      "status_counts": {
+        "native_label_alias_ambiguous": 7
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_1536_one_syn",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1536,
+      "time_scale": null,
+      "normal_profile": "one_syn",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_1536_one_syn.pcap.gz",
+      "pcap_sha256": "f03ec6cdec7d65e931d23724a0db9f3fdbd30fc601f97642a934d09ce2d8d373",
+      "features": "features/syn_development_1536_one_syn.csv.gz",
+      "features_sha256": "ddb36c774422e88226a2a556a6a75e8d324f533fe8b66151c51e38adaa438b8f",
+      "frames": 12008,
+      "attack_frames": 12000,
+      "windows": 7,
+      "status_counts": {
+        "eligible": 7
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_1536_sensor7",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1536,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_1536_sensor7.pcap.gz",
+      "pcap_sha256": "fdbe22ef5f6ea599204c5c265e03c81d54d9a65bb462342690f02d92b0243b30",
+      "features": "features/syn_development_1536_sensor7.csv.gz",
+      "features_sha256": "6cb090770f9c19fe35584280caa5d1c0136c4a839fd00f3fb1ef7d2908f6cdb9",
+      "frames": 12055,
+      "attack_frames": 12000,
+      "windows": 7,
+      "status_counts": {
+        "eligible": 7
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_1536_sensor7_other",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1536,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_1536_sensor7_other.pcap.gz",
+      "pcap_sha256": "343bfabb0c32b1a5562f9c061c9786644df60052c310e3a1684ffad4715cb6ba",
+      "features": "features/syn_development_1536_sensor7_other.csv.gz",
+      "features_sha256": "75fec4a9f38c2bd9deaa5393ee5d1cda2dfd2a49cdfcd1edafbf6c6d87d88805",
+      "frames": 12055,
+      "attack_frames": 12000,
+      "windows": 7,
+      "status_counts": {
+        "eligible": 7
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "syn_development_1536_two_sensors14",
+      "split": "development",
+      "label": 1,
+      "target": "71.61.66.148",
+      "rate": 1536,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "pcap": "pcap/syn_development_1536_two_sensors14.pcap.gz",
+      "pcap_sha256": "8cdde0b688cea7a2c53df7eb51184aae40d4e955226707b3117e5f8c3cc49fab",
+      "features": "features/syn_development_1536_two_sensors14.csv.gz",
+      "features_sha256": "7041429c44a6fde27b329f74e27d52d9f5adbae39ec1f9151bdf4e304db98c35",
+      "frames": 12110,
+      "attack_frames": 12000,
+      "windows": 7,
+      "status_counts": {
+        "eligible": 7
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        12000,
+        23999
+      ]
+    },
+    {
+      "id": "scan_development_4_one_syn",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 4,
+      "normal_profile": "one_syn",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_4_one_syn.pcap.gz",
+      "pcap_sha256": "8907bc96ff61dabd0fe425a9070919cc787f65099105a0ff300c21a5ef67258f",
+      "features": "features/scan_development_4_one_syn.csv.gz",
+      "features_sha256": "02d477b280ea0b1d93fdb00a9b41af00a3264f81f6b59d7fae8a6a6d8d51d36a",
+      "frames": 2015,
+      "attack_frames": 1994,
+      "windows": 20,
+      "status_counts": {
+        "eligible": 17,
+        "sparse_scan_needs_context": 3
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_4_sensor7",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 4,
+      "normal_profile": "sensor7",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_4_sensor7.pcap.gz",
+      "pcap_sha256": "d6e6446791c7fcc6488f699d568c590a64c2ef45e74883b4e9ae1034f5e22e9e",
+      "features": "features/scan_development_4_sensor7.csv.gz",
+      "features_sha256": "61549fe3e1e0c680f19235fb87c7fdce2d7a57754fa7980451953b047860ddc3",
+      "frames": 2138,
+      "attack_frames": 1994,
+      "windows": 20,
+      "status_counts": {
+        "eligible": 17,
+        "sparse_scan_needs_context": 3
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_4_sensor7_other",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 4,
+      "normal_profile": "sensor7_other",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_4_sensor7_other.pcap.gz",
+      "pcap_sha256": "d6e6446791c7fcc6488f699d568c590a64c2ef45e74883b4e9ae1034f5e22e9e",
+      "features": "features/scan_development_4_sensor7_other.csv.gz",
+      "features_sha256": "f3deb2116d5c0b7289ddc9445f7607b3616bf2bc925b55876dcf8ef1a1f162d7",
+      "frames": 2138,
+      "attack_frames": 1994,
+      "windows": 20,
+      "status_counts": {
+        "eligible": 17,
+        "sparse_scan_needs_context": 3
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_4_two_sensors14",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 4,
+      "normal_profile": "two_sensors14",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_4_two_sensors14.pcap.gz",
+      "pcap_sha256": "ac36a5ad9fad39428844a15b17d75a31e387b4cdf085e3c690b156df769bcb85",
+      "features": "features/scan_development_4_two_sensors14.csv.gz",
+      "features_sha256": "21ce92154a4cacc4f89894e47044d810d9fd9a7a81401e0a2d2ecdda37042a26",
+      "frames": 2282,
+      "attack_frames": 1994,
+      "windows": 20,
+      "status_counts": {
+        "eligible": 17,
+        "sparse_scan_needs_context": 3
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_16_one_syn",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 16,
+      "normal_profile": "one_syn",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_16_one_syn.pcap.gz",
+      "pcap_sha256": "d39a7e91ef7463cdfe972748fa92824e880dee94d753730d77a4e8d7fc9bb470",
+      "features": "features/scan_development_16_one_syn.csv.gz",
+      "features_sha256": "ebbce65294963663734599323ac283900de4c316e689c3555625d6b6fa326c2d",
+      "frames": 2076,
+      "attack_frames": 1994,
+      "windows": 81,
+      "status_counts": {
+        "sparse_scan_needs_context": 21,
+        "eligible": 60
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_16_sensor7",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 16,
+      "normal_profile": "sensor7",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_16_sensor7.pcap.gz",
+      "pcap_sha256": "a6c214a4aafd74c3d9ec3b5b3b10f1e0a49cc898d711fbdf017e71d1557ca948",
+      "features": "features/scan_development_16_sensor7.csv.gz",
+      "features_sha256": "df2109082e58cb504ec4c995d1f051f777aed096ca8e23c8f8b2843af49e6f02",
+      "frames": 2570,
+      "attack_frames": 1994,
+      "windows": 81,
+      "status_counts": {
+        "sparse_scan_needs_context": 21,
+        "eligible": 60
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_16_sensor7_other",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 16,
+      "normal_profile": "sensor7_other",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_16_sensor7_other.pcap.gz",
+      "pcap_sha256": "a6c214a4aafd74c3d9ec3b5b3b10f1e0a49cc898d711fbdf017e71d1557ca948",
+      "features": "features/scan_development_16_sensor7_other.csv.gz",
+      "features_sha256": "189688eab68b5bb22c58a14faf5e6840e6007819f6d18e7ab5f4bda58e8e43b1",
+      "frames": 2570,
+      "attack_frames": 1994,
+      "windows": 81,
+      "status_counts": {
+        "sparse_scan_needs_context": 21,
+        "eligible": 60
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_16_two_sensors14",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 16,
+      "normal_profile": "two_sensors14",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_16_two_sensors14.pcap.gz",
+      "pcap_sha256": "3edde0fa9f11dd17ff50f41426c6dfb91bfa3b1547f98dfd24c6f0809d8a7f00",
+      "features": "features/scan_development_16_two_sensors14.csv.gz",
+      "features_sha256": "afcaa878cdd5750a7da900fc4e3979d116f2e668072a27b1ab5f2d7aa0b27200",
+      "frames": 3146,
+      "attack_frames": 1994,
+      "windows": 81,
+      "status_counts": {
+        "sparse_scan_needs_context": 21,
+        "eligible": 60
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_64_one_syn",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 64,
+      "normal_profile": "one_syn",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_64_one_syn.pcap.gz",
+      "pcap_sha256": "c55a3c6720f2b5c1f09c566548f2e7c8379fa58e10ae6beaa89a2f597c7647ab",
+      "features": "features/scan_development_64_one_syn.csv.gz",
+      "features_sha256": "26ccb60cb32e0e24bbba930309e02ae90f0d9a6a5a34bf9dc31b805c557c471e",
+      "frames": 2323,
+      "attack_frames": 1994,
+      "windows": 328,
+      "status_counts": {
+        "sparse_scan_needs_context": 245,
+        "eligible": 83
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_64_sensor7",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 64,
+      "normal_profile": "sensor7",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_64_sensor7.pcap.gz",
+      "pcap_sha256": "bc45dfa0a77a82252f356a4f257d1531974fbfd77be74ca74554bd0f85eecfc2",
+      "features": "features/scan_development_64_sensor7.csv.gz",
+      "features_sha256": "211a52b18b5537a99d6d711fa99771ea94c6ef5378343fc5a9160eb919e9173d",
+      "frames": 4297,
+      "attack_frames": 1994,
+      "windows": 328,
+      "status_counts": {
+        "sparse_scan_needs_context": 245,
+        "eligible": 83
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_64_sensor7_other",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 64,
+      "normal_profile": "sensor7_other",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_64_sensor7_other.pcap.gz",
+      "pcap_sha256": "bc45dfa0a77a82252f356a4f257d1531974fbfd77be74ca74554bd0f85eecfc2",
+      "features": "features/scan_development_64_sensor7_other.csv.gz",
+      "features_sha256": "5161f967e8d3ed0e41918d29089a837641e5169ec6493073f272590f11fae3db",
+      "frames": 4297,
+      "attack_frames": 1994,
+      "windows": 328,
+      "status_counts": {
+        "sparse_scan_needs_context": 245,
+        "eligible": 83
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "scan_development_64_two_sensors14",
+      "split": "development",
+      "label": 2,
+      "target": "64.13.134.52",
+      "rate": null,
+      "time_scale": 64,
+      "normal_profile": "two_sensors14",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "pcap": "pcap/scan_development_64_two_sensors14.pcap.gz",
+      "pcap_sha256": "912cd157f96b5599d09fa575afc2a5b7913f50c593778657fd03fe793afef8d9",
+      "features": "features/scan_development_64_two_sensors14.csv.gz",
+      "features_sha256": "a551445c0829f3775393edfa270a1eed31c7e179f7dfffa089210e5c557ee25d",
+      "frames": 6600,
+      "attack_frames": 1994,
+      "windows": 328,
+      "status_counts": {
+        "sparse_scan_needs_context": 245,
+        "eligible": 83
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": [
+        0,
+        2004
+      ]
+    },
+    {
+      "id": "normal_development_2_sensor7",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_2_sensor7.pcap.gz",
+      "pcap_sha256": "7cad8c58aefb5deb77fec5b6c94923c40116fd15b9a3e90121ee26d32e560294",
+      "features": "features/normal_development_2_sensor7.csv.gz",
+      "features_sha256": "ea80b44e454ab42028864af6365bfcebd59ba637effa7fbd1b7112aef2e4fb28",
+      "frames": 60,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_2_sensor7_other",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_2_sensor7_other.pcap.gz",
+      "pcap_sha256": "a3c97f89a7de284b5bbaafd843af7cdef600638301d296b923b1eeb77bddfb62",
+      "features": "features/normal_development_2_sensor7_other.csv.gz",
+      "features_sha256": "afe90b4d8c95481b20bd08875d8c24a43d5ae54f41355712311e54b78a41c04c",
+      "frames": 60,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_2_two_sensors14",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_2_two_sensors14.pcap.gz",
+      "pcap_sha256": "f81d9c2b09cb3b567d120d6f39e35d442da3dbd335ae87d2643113835190b086",
+      "features": "features/normal_development_2_two_sensors14.csv.gz",
+      "features_sha256": "9c82e2cf00fbe9e3c2be22a6534a4cc6df9459a0330f3fdea45f9abcec3a73b5",
+      "frames": 60,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_21_sensor7",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_21_sensor7.pcap.gz",
+      "pcap_sha256": "dca20171903ab9d244f88d51e8b5a2a7277accecee84e0b14a308bb23a08a072",
+      "features": "features/normal_development_21_sensor7.csv.gz",
+      "features_sha256": "ae48111b948c67db4d889ade968fa192a2c65635bfda3fcce0ccac4b046c001e",
+      "frames": 630,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_21_sensor7_other",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_21_sensor7_other.pcap.gz",
+      "pcap_sha256": "81f9f79fa7ede69bc6c1632551ef7757cfe7fb01ee2a9c849fbaef1294a2e12b",
+      "features": "features/normal_development_21_sensor7_other.csv.gz",
+      "features_sha256": "599b4247c90f96894fdf1cd7b28f920c3c36582a20f85e21c701809ef66f521a",
+      "frames": 630,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_21_two_sensors14",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_21_two_sensors14.pcap.gz",
+      "pcap_sha256": "084bd1f8d2d2dcca60de863ce99b62a337a1d168479d5e902de7cc332d6a9015",
+      "features": "features/normal_development_21_two_sensors14.csv.gz",
+      "features_sha256": "4dd964b61c8a323aa18e39e663ef0f9a732b268674a9035bff5c8d23db737c70",
+      "frames": 630,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_96_sensor7",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_96_sensor7.pcap.gz",
+      "pcap_sha256": "a95aff2f830ca3608aa9ce75ec9830c01e0aa19e74dc14abf5503dbcc932da5f",
+      "features": "features/normal_development_96_sensor7.csv.gz",
+      "features_sha256": "c9525ce3a4f55df8894104d701ebf61a7579d2f0097b2e858c1efd6dd003aef2",
+      "frames": 2880,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_96_sensor7_other",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_96_sensor7_other.pcap.gz",
+      "pcap_sha256": "e2bc4734cffa4a07f17522359ccc3462c67a91bccae3e80684319602916b9439",
+      "features": "features/normal_development_96_sensor7_other.csv.gz",
+      "features_sha256": "243e332046218d1e925d3b0d4816918e05e0a3d1d42490c91cb30b2a01dddf7d",
+      "frames": 2880,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_96_two_sensors14",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_96_two_sensors14.pcap.gz",
+      "pcap_sha256": "e48b7a7d022df077d8650d01efcc0d3db023602ba14737af62bcce7148727fa1",
+      "features": "features/normal_development_96_two_sensors14.csv.gz",
+      "features_sha256": "c5b03a933c5457d7f36394832ac992aa15cb033e2d73b3d97dfdcb8ee99724da",
+      "frames": 2880,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_192_sensor7",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_192_sensor7.pcap.gz",
+      "pcap_sha256": "ec1386ada93640de92df42f97534ee812b38805d4b37db6e1b537783b4cc963b",
+      "features": "features/normal_development_192_sensor7.csv.gz",
+      "features_sha256": "e2e1b83c304eafe769377951975221bd618e5c0f881ed1d211d52c4235cbcdcd",
+      "frames": 5760,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_192_sensor7_other",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "sensor7_other",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_192_sensor7_other.pcap.gz",
+      "pcap_sha256": "11ea94a92bc55a106205909f931a62fd942e52001da15749d2bc4d7a3b4eda61",
+      "features": "features/normal_development_192_sensor7_other.csv.gz",
+      "features_sha256": "220d60b732ef4fd82aaeccaebed300865b6c84ef4d569ea0ae08f8e17a47bed0",
+      "frames": 5760,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    },
+    {
+      "id": "normal_development_192_two_sensors14",
+      "split": "development",
+      "label": 0,
+      "target": "71.61.66.148",
+      "rate": null,
+      "time_scale": null,
+      "normal_profile": "two_sensors14",
+      "parent_group": "IoT23/Normal34",
+      "pcap": "pcap/normal_development_192_two_sensors14.pcap.gz",
+      "pcap_sha256": "2c1bc4b4d9a8286b03d9853318f9ebfd19c847d865e6959ef9c7053cd5889c5d",
+      "features": "features/normal_development_192_two_sensors14.csv.gz",
+      "features_sha256": "b16e48aa9fe8ea10331d9f7edc28aa6f8a9656efd755f55477ec1b79bdfd6492",
+      "frames": 5760,
+      "attack_frames": 0,
+      "windows": 29,
+      "status_counts": {
+        "eligible": 29
+      },
+      "phase_microseconds": 625000,
+      "original_attack_record_range": null
+    }
+  ],
+  "source_templates": {
+    "normal_syn_record_ids": [
+      16,
+      271,
+      522,
+      708,
+      936,
+      1335,
+      1535,
+      1693,
+      1838,
+      1966,
+      2126,
+      2293
+    ],
+    "normal_ack_record_ids": [
+      0,
+      2,
+      4,
+      5,
+      6,
+      8,
+      18,
+      21,
+      22,
+      25,
+      26,
+      28,
+      30,
+      31,
+      32,
+      35,
+      37,
+      39,
+      40,
+      41,
+      43,
+      44,
+      47,
+      48,
+      50,
+      52,
+      54,
+      56,
+      58,
+      61,
+      62,
+      64,
+      67,
+      68,
+      71,
+      72,
+      74,
+      76,
+      78,
+      80,
+      82,
+      84,
+      87,
+      88,
+      90,
+      92,
+      94,
+      96,
+      98,
+      100,
+      102,
+      104,
+      106,
+      108,
+      109,
+      110,
+      112,
+      113,
+      115,
+      117,
+      119,
+      121,
+      123,
+      125,
+      127,
+      129,
+      131,
+      133,
+      135,
+      137,
+      139,
+      141,
+      143,
+      145,
+      147,
+      148,
+      149,
+      151,
+      153,
+      155,
+      157,
+      159,
+      161,
+      163,
+      165,
+      167,
+      169,
+      171,
+      173,
+      175,
+      177,
+      179,
+      181,
+      183,
+      185,
+      186,
+      187,
+      189,
+      191,
+      193,
+      196,
+      197,
+      199,
+      201,
+      203,
+      205,
+      208,
+      212,
+      214,
+      217,
+      218,
+      222,
+      226,
+      227,
+      230,
+      231,
+      232,
+      234,
+      237,
+      238,
+      240,
+      241,
+      242,
+      244,
+      246,
+      247,
+      248,
+      250
+    ]
+  },
+  "transforms": [
+    "Attack frame bytes preserved; only timestamp spacings scaled to requested rates.",
+    "Background packet templates are from original Native Benign normal34; SYN templates have recorded SYN-ACK replies.",
+    "Background source/destination IP and TCP destination port remapped to combine traffic at one protected receiver; IP/TCP checksums recomputed.",
+    "Derived labels are controlled scenario annotations, not new publisher-provided labels.",
+    "Keep all original cache labels. Derived windows aliasing another original native label are retained as ambiguous and excluded from fit/selection; report them separately.",
+    "Development rates and timestamps differ from training profiles but share the same parent captures; not an independent test."
+  ]
+}

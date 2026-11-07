@@ -1,0 +1,380 @@
+test_real_publish_and_receive (test_mqtt_integration.MQTTIntegration.test_real_publish_and_receive) ... skipped 'Set PART2_MOSQUITTO_BIN for real MQTT integration'
+test_direction_synack_empty_and_integer_counts (test_pipeline.FeaturesTest.test_direction_synack_empty_and_integer_counts) ... ok
+test_divisors_and_clipping (test_pipeline.FeaturesTest.test_divisors_and_clipping) ... ok
+test_duplicate_capture_rejected (test_pipeline.FeaturesTest.test_duplicate_capture_rejected) ... ok
+test_fragment_excluded (test_pipeline.FeaturesTest.test_fragment_excluded) ... ok
+test_negative_shift_and_saturation (test_pipeline.IntegerTest.test_negative_shift_and_saturation) ... ok
+test_vector_pack (test_pipeline.IntegerTest.test_vector_pack) ... ok
+test_checksum_and_source_format (test_pipeline.LogTest.test_checksum_and_source_format) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.006s
+
+OK (skipped=1)
+SYNTHETIC ONLY: build/demo_data/manifest.csv
+{
+  "contract": "v0",
+  "window_seconds": 1.0,
+  "distinct": "exact",
+  "features": [
+    "packet_count",
+    "mean_ip_bytes",
+    "syn_ratio_q127",
+    "src_count",
+    "dst_count",
+    "dst_port_count"
+  ],
+  "captures": [
+    {
+      "capture_id": "train_0_0",
+      "pcap": "train_0_0.pcap",
+      "split": "train",
+      "label": "0",
+      "start": "1700000000",
+      "end": "1700000020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "9e301f510b882264e60c42a6133ea14c1b50f49971afa8c1bfb96799a8ba7e20",
+      "stats": {
+        "frames": 843,
+        "ingress_ipv4": 843,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "train_0_1",
+      "pcap": "train_0_1.pcap",
+      "split": "train",
+      "label": "0",
+      "start": "1700001000",
+      "end": "1700001020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "5241cdb4d892fab5ff9a197c89c9dac81d33cdd00acefc338123540daee5ec6f",
+      "stats": {
+        "frames": 856,
+        "ingress_ipv4": 856,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "train_1_0",
+      "pcap": "train_1_0.pcap",
+      "split": "train",
+      "label": "1",
+      "start": "1700002000",
+      "end": "1700002020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "31b5eb599ddc2d15ee18d3ac665b4f13db64f3e457e625c95929fae9838d25e7",
+      "stats": {
+        "frames": 6389,
+        "ingress_ipv4": 6389,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "train_1_1",
+      "pcap": "train_1_1.pcap",
+      "split": "train",
+      "label": "1",
+      "start": "1700003000",
+      "end": "1700003020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "400773bb0d85881a579ae4efe23654a45dcd0c3eccdd335cedc9707f924b3bcd",
+      "stats": {
+        "frames": 6029,
+        "ingress_ipv4": 6029,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "train_2_0",
+      "pcap": "train_2_0.pcap",
+      "split": "train",
+      "label": "2",
+      "start": "1700004000",
+      "end": "1700004020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "b87cdd74e2abd72969b397de21b743192505f7d23bd128265aedf4fd69742d7b",
+      "stats": {
+        "frames": 1554,
+        "ingress_ipv4": 1554,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "train_2_1",
+      "pcap": "train_2_1.pcap",
+      "split": "train",
+      "label": "2",
+      "start": "1700005000",
+      "end": "1700005020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "2bfe96d6073771126ad81334720e1bda39e54dff230a67936971d3ea4abfa0c1",
+      "stats": {
+        "frames": 1699,
+        "ingress_ipv4": 1699,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "val_0_0",
+      "pcap": "val_0_0.pcap",
+      "split": "val",
+      "label": "0",
+      "start": "1700006000",
+      "end": "1700006020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "a36da30d9d8bab9d8be98f042f8255c0d4c3553351425c422dee8369e51af519",
+      "stats": {
+        "frames": 863,
+        "ingress_ipv4": 863,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "val_0_1",
+      "pcap": "val_0_1.pcap",
+      "split": "val",
+      "label": "0",
+      "start": "1700007000",
+      "end": "1700007020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "1931ff97862b5ea949f7023087dbbfcae18b78cb5bd4919bd8f02bfe5472ae26",
+      "stats": {
+        "frames": 770,
+        "ingress_ipv4": 770,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "val_1_0",
+      "pcap": "val_1_0.pcap",
+      "split": "val",
+      "label": "1",
+      "start": "1700008000",
+      "end": "1700008020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "ecf286b2ec6c873d3a0619eef05803256680587f5ad9a4ea813e3b1c7bdd510a",
+      "stats": {
+        "frames": 5741,
+        "ingress_ipv4": 5741,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "val_1_1",
+      "pcap": "val_1_1.pcap",
+      "split": "val",
+      "label": "1",
+      "start": "1700009000",
+      "end": "1700009020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "efac8dfaffecf85b62cf297dc1317a4ae4d6849c337535acbeffb83d1ab58348",
+      "stats": {
+        "frames": 6534,
+        "ingress_ipv4": 6534,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "val_2_0",
+      "pcap": "val_2_0.pcap",
+      "split": "val",
+      "label": "2",
+      "start": "1700010000",
+      "end": "1700010020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "a5cc39676e54893b8014714b9af9363c3dc3f471363bd77732346382f4bcab41",
+      "stats": {
+        "frames": 1689,
+        "ingress_ipv4": 1689,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "val_2_1",
+      "pcap": "val_2_1.pcap",
+      "split": "val",
+      "label": "2",
+      "start": "1700011000",
+      "end": "1700011020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "b50739848e14b3d86e65691c1ef39f647a9a8390f2f245381f9ac01b52dc9f7d",
+      "stats": {
+        "frames": 1703,
+        "ingress_ipv4": 1703,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "test_0_0",
+      "pcap": "test_0_0.pcap",
+      "split": "test",
+      "label": "0",
+      "start": "1700012000",
+      "end": "1700012020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "f55936af70c4e911888e54055627da1face442971e85fa892e57c78c9b732c13",
+      "stats": {
+        "frames": 744,
+        "ingress_ipv4": 744,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "test_0_1",
+      "pcap": "test_0_1.pcap",
+      "split": "test",
+      "label": "0",
+      "start": "1700013000",
+      "end": "1700013020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "b5af51ccd8a048a69daf14a4ffc11f64fcc9a9051953d5229220ebcc4c369a6f",
+      "stats": {
+        "frames": 920,
+        "ingress_ipv4": 920,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "test_1_0",
+      "pcap": "test_1_0.pcap",
+      "split": "test",
+      "label": "1",
+      "start": "1700014000",
+      "end": "1700014020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "cb4a04519422cd0ad1968fad412e98bc881d3648e194e3fe46df5180b637e6cf",
+      "stats": {
+        "frames": 6129,
+        "ingress_ipv4": 6129,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "test_1_1",
+      "pcap": "test_1_1.pcap",
+      "split": "test",
+      "label": "1",
+      "start": "1700015000",
+      "end": "1700015020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "3e2351f33c4ce8a60c18021a45568fbcbd190bec125b5fae91357de67e07b289",
+      "stats": {
+        "frames": 6298,
+        "ingress_ipv4": 6298,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "test_2_0",
+      "pcap": "test_2_0.pcap",
+      "split": "test",
+      "label": "2",
+      "start": "1700016000",
+      "end": "1700016020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "0c5fa74aa6c4260cf080faef9491570af0357d0141e687f0fbacbae71ccfe91d",
+      "stats": {
+        "frames": 1651,
+        "ingress_ipv4": 1651,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    },
+    {
+      "capture_id": "test_2_1",
+      "pcap": "test_2_1.pcap",
+      "split": "test",
+      "label": "2",
+      "start": "1700017000",
+      "end": "1700017020",
+      "source_kind": "synthetic",
+      "target_net": "198.18.0.1/32",
+      "sha256": "8444256dbb79f562ae73cc5792ef4f6d36af331a0ec9518772457ed285be5155",
+      "stats": {
+        "frames": 1588,
+        "ingress_ipv4": 1588,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0
+      },
+      "windows": 20
+    }
+  ],
+  "rows": 360,
+  "note": "Scenario/window labels, not per-packet labels; empty attack windows remain labeled and must be reviewed."
+}
+rtl/ai_core.v:32: warning: @* is sensitive to all 48 words in array 'w1'.
+rtl/ai_core.v:34: warning: @* is sensitive to all 8 words in array 'hidden'.
+rtl/ai_core.v:35: warning: @* is sensitive to all 24 words in array 'w2'.
+PASS vectors=384 cycles_min=84 cycles_max=84 (start accepted to done)
+sim/tb_ai_core.v:54: $finish called at 330376000 (1ps)
+
+Selfcheck finished. Synthetic data: NOT evidence of real attack accuracy.

@@ -1,0 +1,101 @@
+{
+  "kind": "review_of_uploaded_gowin_v6_reports",
+  "input_zip_sha256": "29392ddc21f6ce9be6b7330a1b2a08c07e0306584efdedb4380fcf72dba918f7",
+  "report_tool": "Gowin V1.9.8.11 Education",
+  "report_created_local": "2026-11-05 20:20:21",
+  "device": "GW1NR-LV9QN88PC6/I5",
+  "device_version": "C",
+  "top_module": "gowin_top",
+  "source_model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "source_firmware_sha256": "492eebd36fd67625596ef5f72cfc9bd408649e39e0f0d693b5503ffd40b684a2",
+  "collection_model_and_firmware_hashes_match_release": true,
+  "synthesis_finished": true,
+  "place_and_route_finished": true,
+  "bitstream_generated": true,
+  "timing_closed": false,
+  "setup_violated_endpoints": 8,
+  "hold_violated_endpoints": 0,
+  "worst_setup_slack_ns": -0.268,
+  "b_ref_setup_tns_ns": -0.349,
+  "clocks": [
+    {
+      "name": "clk_27m",
+      "required_mhz": 27,
+      "reported_fmax_mhz": 38.957,
+      "setup_pass": true
+    },
+    {
+      "name": "a_ref_clk",
+      "required_mhz": 50,
+      "reported_fmax_mhz": 91.777,
+      "setup_pass": true
+    },
+    {
+      "name": "b_ref_clk",
+      "required_mhz": 50,
+      "reported_fmax_mhz": 48.696,
+      "setup_pass": false
+    }
+  ],
+  "resources": {
+    "logic_used": 5372,
+    "logic_available": 8640,
+    "logic_percent": 63,
+    "registers_used": 3201,
+    "registers_available": 6693,
+    "register_percent": 48,
+    "bsram_sp": 8,
+    "bsram_sdpb": 7,
+    "bsram_percent": 58,
+    "dsp_used": 1,
+    "latches": 0,
+    "io_ports": 26,
+    "cls_used": 3592,
+    "cls_available": 4320,
+    "cls_percent": 84
+  },
+  "worst_path": {
+    "start": "u_top/g_mac.u_eth/u_rxB/rxd_n_0_s1/Q",
+    "end": "u_top/g_mac.u_eth/u_rxB/crc_26_s1/D",
+    "launch_edge": "b_ref_clk falling",
+    "capture_edge": "b_ref_clk rising",
+    "budget_ns": 10,
+    "data_delay_ns": 9.715,
+    "reported_data_arrival_ns": 22.246,
+    "reported_data_required_ns": 21.978
+  },
+  "warnings": [
+    {
+      "code": "PR1014",
+      "description": "Clock b_ref_clk_d uses generic routing under the pin constraints; possible extra delay/skew."
+    },
+    {
+      "description": "62 synthesis warnings, all at PicoRV32/its adapter: unused mem_la_read/disabled PCPI outputs, full/parallel-case pragmas and width truncations. No synthesis ERROR in supplied log. This review is not a post-synthesis functional equivalence proof."
+    }
+  ],
+  "constraints": {
+    "sdc_matches_release": true,
+    "cst_matches_release": true,
+    "three_base_clocks_and_async_groups_active": true,
+    "input_output_delay_constraints_present": false
+  },
+  "conclusion": "Released V6 fits the device, but port B fails internal setup at 50 MHz. The failed paths are in the RMII receiver, not the MLP/AI clock domain. Bitstream generation is not timing acceptance.",
+  "patch": {
+    "package_version": "v6.1",
+    "changed_rtl": "rtl/part4_eth/rmii_rx.v",
+    "change": "In SAMPLE_NEG mode, capture on falling edge into rxd_f/crs_f, align both on rising edge into rxd_n/crs_n, then process CRC/FSM on the next rising edge.",
+    "extra_rx_latency_ref_clk_cycles": 1,
+    "extra_rx_latency_ns_at_50mhz": 20,
+    "model_changed": false,
+    "firmware_changed": false,
+    "clock_frequency_or_sdc_changed": false,
+    "pin_or_sampling_edge_changed": false,
+    "changed_synthesis_result_available": false,
+    "new_pnr_required": true
+  },
+  "remaining": [
+    "Rerun V6.1 synthesis and P&R; require zero setup/hold violations at the existing 27/50/50 MHz constraints.",
+    "PR1014 and PHY I/O timing/CDC/reset still require physical-design review; no board PASS yet.",
+    "Original prototype MAC overflow and official P3 integration remain unresolved; model/data limits stay unchanged."
+  ]
+}

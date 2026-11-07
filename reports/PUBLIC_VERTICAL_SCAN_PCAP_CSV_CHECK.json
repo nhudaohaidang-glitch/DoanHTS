@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "source": {
+    "author": "Chris Sanders",
+    "repository": "https://github.com/chrissanders/packets",
+    "commit": "0412fb1dc0aa671128f9da6689e0dbd4459c0b51",
+    "file": "synscan.pcapng",
+    "url": "https://raw.githubusercontent.com/chrissanders/packets/0412fb1dc0aa671128f9da6689e0dbd4459c0b51/synscan.pcapng",
+    "sha256": "3ef7a9011bcc2901080d3800d52fd5bb5cbcc1aeb8b5943bed3810868400aa58",
+    "bytes": 185072,
+    "readme_sha256": "dd48b5c27324e49bbcdbe95dfb00354373919a141fb86186633ce8093e3e244f",
+    "scanner_ip": "172.16.0.8",
+    "target_ip": "64.13.134.52",
+    "expected_frames": 2011,
+    "expected_syn_open": 1994,
+    "expected_target_ports": 1000,
+    "expected_flow_tuples": 1994
+  },
+  "evidence": {
+    "capture_frames": 2011,
+    "flow_rows": 1994,
+    "scanner_ip": "172.16.0.8",
+    "target_ip": "64.13.134.52",
+    "scanner_count": 1,
+    "target_ip_count": 1,
+    "distinct_target_ports": 1000,
+    "scanner_source_ports": [
+      36050,
+      36051,
+      36061
+    ],
+    "orig_packets": 1994,
+    "response_packets": 17,
+    "syn_open_packets": 1994,
+    "first_packet_timestamp": "1278275056.274870",
+    "last_packet_timestamp": "1278275079.360213",
+    "capture_duration_seconds": "23.085343",
+    "verified_scan_first_syn": "1278275056.274870",
+    "verified_scan_last_syn": "1278275061.416441",
+    "scan_syn_duration_seconds": "5.141571",
+    "per_second_probe_evidence": [
+      {
+        "epoch_second": 1278275056,
+        "syn_open_packets": 16,
+        "distinct_target_ports": 16
+      },
+      {
+        "epoch_second": 1278275057,
+        "syn_open_packets": 80,
+        "distinct_target_ports": 53
+      },
+      {
+        "epoch_second": 1278275058,
+        "syn_open_packets": 329,
+        "distinct_target_ports": 176
+      },
+      {
+        "epoch_second": 1278275059,
+        "syn_open_packets": 548,
+        "distinct_target_ports": 293
+      },
+      {
+        "epoch_second": 1278275060,
+        "syn_open_packets": 708,
+        "distinct_target_ports": 391
+      },
+      {
+        "epoch_second": 1278275061,
+        "syn_open_packets": 313,
+        "distinct_target_ports": 180
+      }
+    ],
+    "packet_tcp_payload_bytes": 0,
+    "flow_definition": "TCP 5-tuple across this 23-second sample; orig=scanner, resp=target. Retries with different source ports are separate rows.",
+    "label_origin": "Project review of the public SYN-scan example: one scanner probes 1000 ports on one destination. No original publisher CSV labels exist.",
+    "late_response_windows_are_not_automatically_labelled_as_active_scan": true
+  },
+  "public_source_downloaded_and_sha256_pinned": true,
+  "pcapng_to_pcap_all_frames_bytes_timestamps_and_order_compared": true,
+  "independent_classic_pcap_record_parser_counts": {
+    "frames": 2011,
+    "syn_open": 1994,
+    "unique_ports": 1000,
+    "directed_pairs": 1,
+    "tcp_flags": {
+      "02": 1994,
+      "12": 12,
+      "14": 5
+    }
+  },
+  "csv_reconstructed_against_original_capture": true,
+  "source_packet_csv_labels_are_project_review_not_publisher_annotations": true,
+  "installer_uses_standard_library_only": true,
+  "bundled_installer_executed_twice": true,
+  "existing_normal_syn_files_preserved": true,
+  "tests_passed": 3,
+  "not_selected_sources": [
+    {
+      "url": "https://github.com/zeek/zeek/blob/4a56a48f9d32e2be3aca0a93ed1247292cfee4d5/testing/btest/Traces/nmap-vsn.pcap",
+      "reason": "Mixed probes of multiple hosts with only 1-2 TCP destination ports each; not selected for the single-victim many-port reference"
+    }
+  ],
+  "model_changed": false,
+  "active_network_scan_performed": false,
+  "zip_bytes": 105844,
+  "zip_sha256": "79c602c7ab250636aa59a900b50d8b58ac75ba3c1d7c4a33e424d4f6bbffd273"
+}

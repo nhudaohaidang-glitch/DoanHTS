@@ -1,0 +1,248 @@
+{
+  "kind": "offline_rmii_waveforms_not_training_data",
+  "generator_seed": 6112026,
+  "crc_reference": "Python zlib.crc32",
+  "cases": [
+    {
+      "payload_bytes": 60,
+      "received_bytes": 64,
+      "good_crc": true,
+      "phase_ns": 2
+    },
+    {
+      "payload_bytes": 64,
+      "received_bytes": 68,
+      "good_crc": true,
+      "phase_ns": 2
+    },
+    {
+      "payload_bytes": 70,
+      "received_bytes": 74,
+      "good_crc": true,
+      "phase_ns": 2
+    },
+    {
+      "payload_bytes": 127,
+      "received_bytes": 131,
+      "good_crc": false,
+      "phase_ns": 2
+    },
+    {
+      "payload_bytes": 256,
+      "received_bytes": 260,
+      "good_crc": true,
+      "phase_ns": 2
+    },
+    {
+      "payload_bytes": 512,
+      "received_bytes": 516,
+      "good_crc": true,
+      "phase_ns": 2
+    },
+    {
+      "payload_bytes": 1514,
+      "received_bytes": 1518,
+      "good_crc": true,
+      "phase_ns": 2
+    },
+    {
+      "payload_bytes": 1518,
+      "received_bytes": 1522,
+      "good_crc": false,
+      "phase_ns": 2
+    },
+    {
+      "payload_bytes": 60,
+      "received_bytes": 64,
+      "good_crc": true,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 64,
+      "received_bytes": 68,
+      "good_crc": true,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 70,
+      "received_bytes": 74,
+      "good_crc": true,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 127,
+      "received_bytes": 131,
+      "good_crc": false,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 256,
+      "received_bytes": 260,
+      "good_crc": true,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 512,
+      "received_bytes": 516,
+      "good_crc": true,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 1514,
+      "received_bytes": 1518,
+      "good_crc": true,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 1518,
+      "received_bytes": 1522,
+      "good_crc": false,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 60,
+      "received_bytes": 64,
+      "good_crc": true,
+      "phase_ns": 14
+    },
+    {
+      "payload_bytes": 64,
+      "received_bytes": 68,
+      "good_crc": true,
+      "phase_ns": 14
+    },
+    {
+      "payload_bytes": 70,
+      "received_bytes": 74,
+      "good_crc": true,
+      "phase_ns": 14
+    },
+    {
+      "payload_bytes": 127,
+      "received_bytes": 131,
+      "good_crc": false,
+      "phase_ns": 14
+    },
+    {
+      "payload_bytes": 256,
+      "received_bytes": 260,
+      "good_crc": true,
+      "phase_ns": 14
+    },
+    {
+      "payload_bytes": 512,
+      "received_bytes": 516,
+      "good_crc": true,
+      "phase_ns": 14
+    },
+    {
+      "payload_bytes": 1514,
+      "received_bytes": 1518,
+      "good_crc": true,
+      "phase_ns": 14
+    },
+    {
+      "payload_bytes": 1518,
+      "received_bytes": 1522,
+      "good_crc": false,
+      "phase_ns": 14
+    },
+    {
+      "payload_bytes": 216,
+      "received_bytes": 220,
+      "good_crc": true,
+      "phase_ns": 17
+    },
+    {
+      "payload_bytes": 578,
+      "received_bytes": 582,
+      "good_crc": true,
+      "phase_ns": 12
+    },
+    {
+      "payload_bytes": 339,
+      "received_bytes": 343,
+      "good_crc": true,
+      "phase_ns": 3
+    },
+    {
+      "payload_bytes": 190,
+      "received_bytes": 194,
+      "good_crc": false,
+      "phase_ns": 18
+    },
+    {
+      "payload_bytes": 893,
+      "received_bytes": 897,
+      "good_crc": true,
+      "phase_ns": 7
+    },
+    {
+      "payload_bytes": 239,
+      "received_bytes": 243,
+      "good_crc": true,
+      "phase_ns": 12
+    },
+    {
+      "payload_bytes": 246,
+      "received_bytes": 250,
+      "good_crc": true,
+      "phase_ns": 11
+    },
+    {
+      "payload_bytes": 1182,
+      "received_bytes": 1186,
+      "good_crc": false,
+      "phase_ns": 7
+    },
+    {
+      "payload_bytes": 1264,
+      "received_bytes": 1268,
+      "good_crc": true,
+      "phase_ns": 8
+    },
+    {
+      "payload_bytes": 539,
+      "received_bytes": 543,
+      "good_crc": true,
+      "phase_ns": 9
+    },
+    {
+      "payload_bytes": 477,
+      "received_bytes": 481,
+      "good_crc": true,
+      "phase_ns": 17
+    },
+    {
+      "payload_bytes": 1444,
+      "received_bytes": 1448,
+      "good_crc": false,
+      "phase_ns": 15
+    },
+    {
+      "payload_bytes": 740,
+      "received_bytes": 744,
+      "good_crc": true,
+      "phase_ns": 6
+    },
+    {
+      "payload_bytes": 1400,
+      "received_bytes": 1404,
+      "good_crc": true,
+      "phase_ns": 5
+    },
+    {
+      "payload_bytes": 1022,
+      "received_bytes": 1026,
+      "good_crc": true,
+      "phase_ns": 6
+    },
+    {
+      "payload_bytes": 981,
+      "received_bytes": 985,
+      "good_crc": false,
+      "phase_ns": 2
+    }
+  ],
+  "total_received_bytes": 24273
+}

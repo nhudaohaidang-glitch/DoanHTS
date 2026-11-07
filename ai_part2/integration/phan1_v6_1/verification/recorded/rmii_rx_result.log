@@ -1,0 +1,2 @@
+PASS V6_1_RMII_RX frames_per_edge=40 bytes_per_edge=24273 good_crc=30 bad_crc=10 cycle_equivalence=100358 neg_latency_added=1
+sim/tb_rmii_rx_retime.v:67: $finish called at 2007592000 (1ps)

@@ -1,0 +1,32 @@
+{
+  "source": "User screenshot of exact capture35 saved-log target counts",
+  "capture_id": "CTU-IoT-Malware-Capture-35-1",
+  "targets": [
+    {
+      "dst": "216.18.168.16",
+      "flow_records": 268404,
+      "origin_syn_history_rows": 259,
+      "orig_pkts_metadata_sum": 763789,
+      "ports": 2
+    },
+    {
+      "dst": "54.39.87.104",
+      "flow_records": 1008350,
+      "origin_syn_history_rows": 6,
+      "orig_pkts_metadata_sum": 4016458,
+      "ports": 1
+    },
+    {
+      "dst": "209.97.190.136",
+      "flow_records": 908543,
+      "origin_syn_history_rows": 0,
+      "orig_pkts_metadata_sum": 6304672,
+      "ports": 2
+    }
+  ],
+  "primary_target": "216.18.168.16",
+  "selection_based_on_native_flow_evidence_not_model_predictions": true,
+  "declared_syn_episode_gap_seconds": 2.0,
+  "actual_syn_window_count_not_yet_known": true,
+  "vertical_scan_not_established": true
+}

@@ -1,0 +1,28 @@
+# IDS GW - tuong lua Ethernet, PicoRV32 RV32I, AI v5 6-8-3 (Phan 2)
+# AI V5 SHA256 688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e
+# POST OK: bus, thanh ghi, AI 37/37 vector, LAT 86 chu ky, OLED KHONG tra loi
+# $IDS,win,cls,alert,pkt,avg,syn%,src,dst,port,flags,lat,base,s0,s1,s2,susp,conf*CS
+$MODE,DETECT*28
+$MODE,BLOCK*66
+$IDS,3,0,0,0,0,0,0,0,0,8,0,0,0,0,0,0.0.0.0,0*57
+$CNT,26,0,0,0,25*46
+$IDS,4,0,0,26,40,100,2,1,1,0,86,1,215,-405,182,0.0.0.0,0*45
+$CNT,26,0,0,0,25*46
+# REF_CLK A=277760 OK, B=277472 OK (can ~277750; 0 = chua noi LAN8720 hoac dut day REF_CLK)
+$IDS,5,0,0,26,40,100,2,1,1,0,86,1,215,-405,182,192.168.10.50,25*72
+$CNT,26,0,0,0,25*46
+$IDS,6,0,0,26,40,100,2,1,1,0,86,1,215,-405,182,192.168.10.50,25*71
+$CNT,26,0,0,0,25*46
+$IDS,7,0,0,26,40,100,2,1,1,0,86,1,215,-405,182,192.168.10.50,25*70
+$CNT,26,0,0,0,25*46
+$IDS,8,0,0,26,40,100,2,1,1,0,86,1,215,-405,182,192.168.10.50,25*7F
+$CNT,1,0,0,0,0*44
+
+[tb] ket qua: $IDS=6 $BLK=0 chan.50=0 | raB=131 (cambien=6, .50=125)
+[tb] OK   POST OK qua UART
+[tb] OK   co >= 4 dong $IDS (MAC -> parser -> feat chay)
+[tb] OK   khung cam bien .20 luon duoc chuyen ra cong B
+[tb] LOI  chan dung 192.168.10.50 sau SYN flood ($BLK)
+[tb] OK   CPU khong loi
+[tb] FAIL: 1 loi
+sim/tb_system_mac.v:161: $finish called at 52454697894 (1ps)

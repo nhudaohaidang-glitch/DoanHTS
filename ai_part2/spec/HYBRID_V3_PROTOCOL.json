@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "model_version": "v3",
+  "kind": "hybrid_IoT23_and_controlled_lab",
+  "classes": [
+    "Normal",
+    "SYN flood",
+    "TCP vertical scan"
+  ],
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "window_seconds": 1.0,
+  "distinct": "exact",
+  "valid_sample_rule": "RAW packet_count > 0; skip/report empty windows, never q0==0 filtering",
+  "training_sources": [
+    "all previously inspected challenge01 lab captures from v1 diagnostics",
+    "IoT23 benign Philips Hue capture4, ingress protected 192.168.1.132",
+    "IoT23 malware34 SYN-only native-DDoS episode toward 71.61.66.148"
+  ],
+  "validation_sources": [
+    "all previously inspected v2test01 lab captures, now DEVELOPMENT VALIDATION",
+    "IoT23 benign Amazon Echo capture5, ingress protected 192.168.2.3"
+  ],
+  "reserved_external_test": {
+    "capture_id": "iot23_somfy01",
+    "scenario_group": "CTU-Honeypot-Capture-7-1",
+    "subcapture": "Somfy-01",
+    "class_id": 0,
+    "pcap_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-7-1/Somfy-01/2019-07-03-15-15-47-first_start_somfy_gateway.pcap",
+    "protected_ip_rule": "First RFC1918 nonzero origin IPv4 in publisher labelled flow metadata:192.168.1.158; IPv6/unspecified/broadcast excluded. Fixed before PCAP download/feature inspection.",
+    "all_Somfy_sessions_reserved_from_training": true,
+    "protected_ip": "192.168.1.158"
+  },
+  "reserved_lab_test": "Fresh hybrid-v3 profile captures collected after model freeze, not any old v1/v2 challenge/holdout",
+  "selection": {
+    "seeds": [
+      11,
+      23,
+      47
+    ],
+    "alpha": [
+      0.01,
+      0.1,
+      0.001
+    ],
+    "solver": "lbfgs",
+    "hidden": 8,
+    "max_iter": 1600,
+    "primary_metric": "mean class recall after equal capture weighting within each class",
+    "ties": [
+      "global macro-F1",
+      "smaller worst-source normal FPR",
+      "fixed candidate order"
+    ]
+  },
+  "fit_sampling": "Deduplicate quantized training points separately per class; repeat to equal per-class counts using seed. Never count repetitions as independent windows.",
+  "split_rule": "Whole original PCAP/capture group belongs to one split. Never random adjacent window splitting.",
+  "reuse_disclosure": "V1 challenge and V2 holdout are repurposed as V3 development. They are not V3 independent tests.",
+  "coverage_limits": [
+    "Native IoT23 SYN currently only one verified 22-second episode, used for train",
+    "Vertical scan from controlled lab, not relabelled horizontal IoT23 scan",
+    "Reserved IoT23 external test is benign-only; fresh lab test must supply all three classes",
+    "No claim of a fully IoT23 three-class model or unseen IoT23 SYN/vertical coverage"
+  ]
+}

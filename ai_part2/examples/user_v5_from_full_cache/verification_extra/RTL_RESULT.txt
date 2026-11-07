@@ -1,0 +1,4 @@
+ai_part2/examples/user_v5_from_full_cache/candidate_v5/gowin/src/ai_core_model_v5.v:146: warning: @* is sensitive to all 8 words in array 'hidden'.
+
+PASS vectors=1069 cycles_min=84 cycles_max=84 (start accepted to done)
+ai_part2/examples/user_v5_from_full_cache/candidate_v5/gowin/verification/tb_ai_core.v:54: $finish called at 919476000 (1ps)

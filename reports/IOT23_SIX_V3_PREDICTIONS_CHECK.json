@@ -1,0 +1,50 @@
+{
+  "actual_native_feature_csvs_used": true,
+  "development_reproduction_only": true,
+  "independent_test": false,
+  "model_sha256": "e10f81b3e3ec9b458c4d574ee978cf0f2efa45954b4f8fe0c86fed6a3a26c35d",
+  "model_unchanged": true,
+  "input_csvs_unchanged": true,
+  "total_rows": 2901,
+  "confusion_matrix": [
+    [
+      2880,
+      0,
+      0
+    ],
+    [
+      0,
+      21,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "correct": 2901,
+  "per_source": {
+    "iot23_hue4": {
+      "label": 0,
+      "rows": 2880,
+      "correct": 2880,
+      "incorrect": 0
+    },
+    "iot23_syn34": {
+      "label": 1,
+      "rows": 21,
+      "correct": 21,
+      "incorrect": 0
+    }
+  },
+  "missing_true_classes": [
+    2
+  ],
+  "synthetic_guard_tests_passed": 4,
+  "zero_q0_windows_kept": true,
+  "raw_vs_quantized_consistency_checked": true,
+  "bundled_cli_output_matches_repository_cli": true,
+  "execution": "CPU integer Python; not live FPGA",
+  "user_vm_executed_here": false
+}

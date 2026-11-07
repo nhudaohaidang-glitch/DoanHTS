@@ -1,0 +1,16 @@
+{
+  "actual_reviewed_native_logs_used": true,
+  "native34_tcp_ddos_flow_candidates": 14393,
+  "native34_udp_ddos_not_exported_as_tcp": 1,
+  "native_hue4_benign_flow_rows": 452,
+  "native_rows_and_labels_preserved": true,
+  "no_syn_or_vertical_training_labels_created": true,
+  "no_model_change": true,
+  "archive_hash_matches_previous_report": true,
+  "synthetic_guard_tests_passed": 4,
+  "full_user_archive_executed_here": false,
+  "full_native7_public_log_audited": true,
+  "native7_ddos_udp": 39584,
+  "native7_ddos_tcp": 0,
+  "standalone_packaged_cli_verified": true
+}

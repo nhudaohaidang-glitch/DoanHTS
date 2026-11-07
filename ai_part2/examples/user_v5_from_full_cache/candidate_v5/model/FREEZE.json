@@ -1,0 +1,195 @@
+{
+  "format": 1,
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "metrics_sha256": "8e58c62924c60500a30b4ae727309cce60349fae317cf5467dc85ce47d2c84fd",
+  "float_model_sha256": "eebd9d2c42c716f168cd6695625ebeef7de015e02d08ceb6c2410988f2581507",
+  "data_sources": [
+    {
+      "id": "base_v4_class0",
+      "sha256": "8c042139277d66fa483b7f98bc3057d8423454c5bd088c69f6d55f439c6d2635",
+      "source_group": "base_V4_all_original_groups_training_only",
+      "label": 0
+    },
+    {
+      "id": "base_v4_class1",
+      "sha256": "403c66cd38017702f96dcd1d98e54d9f779063e1903d6ea2f9e70df2a0fa5724",
+      "source_group": "base_V4_all_original_groups_training_only",
+      "label": 1
+    },
+    {
+      "id": "base_v4_class2",
+      "sha256": "926505ef344c639b20eec963fc02e5e8b050d248f6acbc5ca685087167c5d00b",
+      "source_group": "base_V4_all_original_groups_training_only",
+      "label": 2
+    },
+    {
+      "id": "scan_scale002_phase000000",
+      "sha256": "87a7cca241cd1160a508011e0d485fcc96f2ce3c2109b06947a7fe9b8670b6e1",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale002_phase250000",
+      "sha256": "9f53adfff17a465e41518c1537bc8aca12f6311e7ecbcae9a1d5536db2318616",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale002_phase500000",
+      "sha256": "9b07a6854248663bea5732b8ace7952851f59857af0ff001d8bed16e1773e125",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale002_phase750000",
+      "sha256": "996322e17515560c3fa8e49d95182b7240197d7346a8deb3741d1119fb4d6fef",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale004_phase000000",
+      "sha256": "f9be2ebf010876113427553d13bf1648ecbc8dc8135c6aa480ee66969e5198e0",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale004_phase250000",
+      "sha256": "1d84d698b9782281e5f2714023c63ee7fe69ac86dc9970b6d1828625b61227a6",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale004_phase500000",
+      "sha256": "77305dfe9d9bef7e4f5815094ec8e7aa0904c93dd557be74cce9e3d0118c8521",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale004_phase750000",
+      "sha256": "3b7f74d3a2bb14d0ce7763bf13d00e0dfc20841dadee2cceecfe8a0ea19c8f7a",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale008_phase000000",
+      "sha256": "1acbe6231485fe2d62efa98a5b31de62e4510f4a340f2dd728ae97608b739898",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale008_phase250000",
+      "sha256": "3c0c9803e209404bbe6a97bae627afd6a1739d09dccbb2de7197927bf3b2d33d",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale008_phase500000",
+      "sha256": "48706e836411e1c3b1db2e0e447487b52b3083e5ef0df82a8182b68ee7e78786",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale008_phase750000",
+      "sha256": "cf94e36d415fbfb6446b4d6a135e0bc5f4bd29a7b2119013aeacf97c2b68540e",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale016_phase000000",
+      "sha256": "308056c452fbb71db9d629dcdbf7d16d70376ee393b58947d2d5a595c95d9211",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale016_phase250000",
+      "sha256": "325780443709a165e0730dc3e69fc682e43bb210eb28da912f0a40a9798cd658",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale016_phase500000",
+      "sha256": "6f9b441d11ded57466b0309f36b5fe5c5dbf10dd55ec9045713bbe1b85dda759",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale016_phase750000",
+      "sha256": "3bbe2fdc1b2615038fbfb6a2017f6658231b68e3149a213d7c1994637d7a8bed",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale032_phase000000",
+      "sha256": "6fafa18f1584709b9f9c50c3a225df4f19fa8d99feb907370abd349ddc683ebf",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale032_phase250000",
+      "sha256": "78dc7e774d760ced1a4e1f45b6b8ae4ba2a922f5620aa2c950400798b4c12ca9",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale032_phase500000",
+      "sha256": "168580cd22cfc728a0709705ba03e053a62847a8ca15035a89a347b5e8ab498d",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale032_phase750000",
+      "sha256": "967305d4cfae2b0792a848578efd755af706f90d4d54eb8bc97d8fd355d9e26d",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale064_phase000000",
+      "sha256": "2d3a6561a9583c609125d28392946cbc094bbd4fc44b429cceb06bdcd98668ad",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale064_phase250000",
+      "sha256": "fe7f113540dfeda92f4e0f30d1d6dba9245352b64331d9e5d9942ac125a5ca53",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale064_phase500000",
+      "sha256": "18e7f4a03290a4ea7d0fcc204157c1c39cde7dd2fb8f0aa8d1338091ec3c097e",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale064_phase750000",
+      "sha256": "8106233f0a9c96365afacf13906872405b023c3f546f5535a6c8e0acbd009fd0",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale128_phase000000",
+      "sha256": "305a80d3956458dfe6ae8afa40a74f0368873160388ff07e7aa172799bab80f4",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale128_phase250000",
+      "sha256": "5c086dfa73712956f3fa2e49ff2dd8b09ae2e8ac4ae15a586bf2df437619930e",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale128_phase500000",
+      "sha256": "fe9e45b19030ab6203c00a9550e9b64b90aa0f412fe36aab9a2dccf47a11db01",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    },
+    {
+      "id": "scan_scale128_phase750000",
+      "sha256": "d1ea05d730b0bf896a237818538e9d5d978df37119c9f0ff806e936358742636",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2
+    }
+  ],
+  "independent_test_evaluated": false
+}

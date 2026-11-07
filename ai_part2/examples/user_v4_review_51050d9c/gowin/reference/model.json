@@ -1,0 +1,144 @@
+{
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "model_version": "v4",
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "shift1": 8,
+  "shift2": 2,
+  "w1": [
+    [
+      51,
+      -12,
+      27,
+      18,
+      -16,
+      -70
+    ],
+    [
+      95,
+      -34,
+      29,
+      -16,
+      4,
+      -64
+    ],
+    [
+      -32,
+      -9,
+      -3,
+      -3,
+      -15,
+      87
+    ],
+    [
+      23,
+      66,
+      -75,
+      -5,
+      -17,
+      -73
+    ],
+    [
+      -44,
+      60,
+      -64,
+      17,
+      14,
+      -79
+    ],
+    [
+      69,
+      -20,
+      36,
+      -3,
+      -2,
+      -71
+    ],
+    [
+      -14,
+      4,
+      -16,
+      14,
+      -14,
+      0
+    ],
+    [
+      -5,
+      15,
+      -21,
+      9,
+      2,
+      -4
+    ]
+  ],
+  "w2": [
+    [
+      -35,
+      -27,
+      -43,
+      112,
+      71,
+      -2,
+      -19,
+      -21
+    ],
+    [
+      48,
+      48,
+      -30,
+      -29,
+      -28,
+      85,
+      6,
+      -7
+    ],
+    [
+      -14,
+      -32,
+      86,
+      -76,
+      -47,
+      -60,
+      -20,
+      19
+    ]
+  ],
+  "b1": [
+    -5945,
+    -4117,
+    6758,
+    14949,
+    12610,
+    -924,
+    -1438,
+    -2936
+  ],
+  "b2": [
+    -910,
+    -842,
+    1582
+  ],
+  "weight_fraction_bits": [
+    5,
+    5
+  ],
+  "hidden_scale": 16,
+  "score_scale": 128,
+  "source_kind": "filtered_class_pcap_training",
+  "selected_seed": 23,
+  "arithmetic": "round-to-nearest-even; arithmetic shifts; hidden 0..127; int16 scores; first argmax",
+  "candidate_kind": "filtered_iot23_public_vertical_scan",
+  "selected_alpha": 0.01,
+  "independent_test_evaluated": false,
+  "training_receiver_scope": "each destination /32; positive reviewed target only"
+}

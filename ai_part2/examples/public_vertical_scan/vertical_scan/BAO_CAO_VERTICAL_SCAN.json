@@ -1,0 +1,105 @@
+{
+  "status": "complete",
+  "kind": "public_vertical_scan_pcap_and_derived_flow_csv",
+  "source": {
+    "author": "Chris Sanders",
+    "repository": "https://github.com/chrissanders/packets",
+    "commit": "0412fb1dc0aa671128f9da6689e0dbd4459c0b51",
+    "file": "synscan.pcapng",
+    "url": "https://raw.githubusercontent.com/chrissanders/packets/0412fb1dc0aa671128f9da6689e0dbd4459c0b51/synscan.pcapng",
+    "sha256": "3ef7a9011bcc2901080d3800d52fd5bb5cbcc1aeb8b5943bed3810868400aa58",
+    "bytes": 185072,
+    "readme_sha256": "dd48b5c27324e49bbcdbe95dfb00354373919a141fb86186633ce8093e3e244f",
+    "scanner_ip": "172.16.0.8",
+    "target_ip": "64.13.134.52",
+    "expected_frames": 2011,
+    "expected_syn_open": 1994,
+    "expected_target_ports": 1000,
+    "expected_flow_tuples": 1994
+  },
+  "evidence": {
+    "capture_frames": 2011,
+    "flow_rows": 1994,
+    "scanner_ip": "172.16.0.8",
+    "target_ip": "64.13.134.52",
+    "scanner_count": 1,
+    "target_ip_count": 1,
+    "distinct_target_ports": 1000,
+    "scanner_source_ports": [
+      36050,
+      36051,
+      36061
+    ],
+    "orig_packets": 1994,
+    "response_packets": 17,
+    "syn_open_packets": 1994,
+    "first_packet_timestamp": "1278275056.274870",
+    "last_packet_timestamp": "1278275079.360213",
+    "capture_duration_seconds": "23.085343",
+    "verified_scan_first_syn": "1278275056.274870",
+    "verified_scan_last_syn": "1278275061.416441",
+    "scan_syn_duration_seconds": "5.141571",
+    "per_second_probe_evidence": [
+      {
+        "epoch_second": 1278275056,
+        "syn_open_packets": 16,
+        "distinct_target_ports": 16
+      },
+      {
+        "epoch_second": 1278275057,
+        "syn_open_packets": 80,
+        "distinct_target_ports": 53
+      },
+      {
+        "epoch_second": 1278275058,
+        "syn_open_packets": 329,
+        "distinct_target_ports": 176
+      },
+      {
+        "epoch_second": 1278275059,
+        "syn_open_packets": 548,
+        "distinct_target_ports": 293
+      },
+      {
+        "epoch_second": 1278275060,
+        "syn_open_packets": 708,
+        "distinct_target_ports": 391
+      },
+      {
+        "epoch_second": 1278275061,
+        "syn_open_packets": 313,
+        "distinct_target_ports": 180
+      }
+    ],
+    "packet_tcp_payload_bytes": 0,
+    "flow_definition": "TCP 5-tuple across this 23-second sample; orig=scanner, resp=target. Retries with different source ports are separate rows.",
+    "label_origin": "Project review of the public SYN-scan example: one scanner probes 1000 ports on one destination. No original publisher CSV labels exist.",
+    "late_response_windows_are_not_automatically_labelled_as_active_scan": true
+  },
+  "files": {
+    "pcap/chris_sanders_synscan_vertical.pcap": {
+      "bytes": 148872,
+      "sha256": "dec17c51b1b9d464831edb6e1f0a5bbcbeabdc519bfb4a5a402803384adb257c"
+    },
+    "csv/chris_sanders_synscan_vertical.csv": {
+      "bytes": 307333,
+      "sha256": "55316550068b508447bf4a7d0da01eca418408cd4091313f09e15e0488241244"
+    },
+    "nguon_goc/synscan.pcapng": {
+      "bytes": 185072,
+      "sha256": "3ef7a9011bcc2901080d3800d52fd5bb5cbcc1aeb8b5943bed3810868400aa58"
+    },
+    "nguon_goc/README_CHRIS_SANDERS.md": {
+      "bytes": 514,
+      "sha256": "dd48b5c27324e49bbcdbe95dfb00354373919a141fb86186633ce8093e3e244f"
+    }
+  },
+  "source_format": "pcapng",
+  "output_format": "classic Ethernet PCAP, microseconds",
+  "packet_bytes_times_and_order_preserved": true,
+  "project_class_id": 2,
+  "publisher_flow_labels_available": false,
+  "synthetic_packets_created": false,
+  "packets_transmitted": false,
+  "model_trained_or_changed": false
+}

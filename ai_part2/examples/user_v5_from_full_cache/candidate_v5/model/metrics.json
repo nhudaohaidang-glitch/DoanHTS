@@ -1,0 +1,4032 @@
+{
+  "kind": "v5_filtered_three_class_training_fit",
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "library_versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.18.1",
+    "sklearn": "1.6.1"
+  },
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "independent_test_evaluated": false,
+  "validation_used_for_selection": false,
+  "selection": {
+    "seed": 23,
+    "alpha": 0.01,
+    "max_iter": 1600,
+    "solver": "lbfgs",
+    "candidate_count": 1,
+    "integer_calibration_candidates": 40
+  },
+  "training_windows_by_class": [
+    39253935,
+    21,
+    1427
+  ],
+  "unique_quantized_patterns_by_class": [
+    1513,
+    1,
+    118
+  ],
+  "retained_fit_patterns_by_class": [
+    1513,
+    1,
+    118
+  ],
+  "balanced_fit_rows": 4539,
+  "fit_sampling": "Uniform deterministic reservoir of unique q patterns, capped per class; repeat retained patterns to equal class sizes. Repeats are not new traffic.",
+  "sampling_cap_per_class": 5000,
+  "training_fit": {
+    "float": {
+      "windows": 39255383,
+      "accuracy": 0.9999997197836537,
+      "macro_f1": 0.9308175633584393,
+      "confusion_matrix": [
+        [
+          39253924,
+          11,
+          0
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          0,
+          1427
+        ]
+      ],
+      "false_positive_rate": 2.8022668300642983e-07,
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 0.999999719773317,
+          "f1": 0.9999998598866389,
+          "support": 39253935
+        },
+        {
+          "id": 1,
+          "precision": 0.65625,
+          "recall": 1.0,
+          "f1": 0.7924528301886793,
+          "support": 21
+        },
+        {
+          "id": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1427
+        }
+      ]
+    },
+    "integer": {
+      "windows": 39255383,
+      "accuracy": 0.9999996943094404,
+      "macro_f1": 0.9259258749756122,
+      "confusion_matrix": [
+        [
+          39253923,
+          12,
+          0
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          0,
+          1427
+        ]
+      ],
+      "false_positive_rate": 3.057018360070143e-07,
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 0.999999694298164,
+          "f1": 0.9999998471490587,
+          "support": 39253935
+        },
+        {
+          "id": 1,
+          "precision": 0.6363636363636364,
+          "recall": 1.0,
+          "f1": 0.7777777777777778,
+          "support": 21
+        },
+        {
+          "id": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1427
+        }
+      ]
+    }
+  },
+  "per_source": [
+    {
+      "source_id": "base_v4_class0",
+      "source_group": "base_V4_all_original_groups_training_only",
+      "label": 0,
+      "windows": 39253935,
+      "metrics": {
+        "float": {
+          "windows": 39253935,
+          "accuracy": 0.999999719773317,
+          "macro_f1": 0.3333332866288796,
+          "confusion_matrix": [
+            [
+              39253924,
+              11,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 2.8022668300642983e-07,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 0.999999719773317,
+              "f1": 0.9999998598866389,
+              "support": 39253935
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 39253935,
+          "accuracy": 0.999999694298164,
+          "macro_f1": 0.33333328238301957,
+          "confusion_matrix": [
+            [
+              39253923,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": 3.057018360070143e-07,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 1.0,
+              "recall": 0.999999694298164,
+              "f1": 0.9999998471490587,
+              "support": 39253935
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "base_v4_class1",
+      "source_group": "base_V4_all_original_groups_training_only",
+      "label": 1,
+      "windows": 21,
+      "metrics": {
+        "float": {
+          "windows": 21,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              21,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 21
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        },
+        "integer": {
+          "windows": 21,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              21,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 21
+            },
+            {
+              "id": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "base_v4_class2",
+      "source_group": "base_V4_all_original_groups_training_only",
+      "label": 2,
+      "windows": 4,
+      "metrics": {
+        "float": {
+          "windows": 4,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4
+            }
+          ]
+        },
+        "integer": {
+          "windows": 4,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale002_phase000000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 9,
+      "metrics": {
+        "float": {
+          "windows": 9,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              9
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 9
+            }
+          ]
+        },
+        "integer": {
+          "windows": 9,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              9
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale002_phase250000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 8,
+      "metrics": {
+        "float": {
+          "windows": 8,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 8
+            }
+          ]
+        },
+        "integer": {
+          "windows": 8,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale002_phase500000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 8,
+      "metrics": {
+        "float": {
+          "windows": 8,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 8
+            }
+          ]
+        },
+        "integer": {
+          "windows": 8,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              8
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale002_phase750000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 9,
+      "metrics": {
+        "float": {
+          "windows": 9,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              9
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 9
+            }
+          ]
+        },
+        "integer": {
+          "windows": 9,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              9
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale004_phase000000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 17,
+      "metrics": {
+        "float": {
+          "windows": 17,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              17
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 17
+            }
+          ]
+        },
+        "integer": {
+          "windows": 17,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              17
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 17
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale004_phase250000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 15,
+      "metrics": {
+        "float": {
+          "windows": 15,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              15
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 15
+            }
+          ]
+        },
+        "integer": {
+          "windows": 15,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              15
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale004_phase500000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 17,
+      "metrics": {
+        "float": {
+          "windows": 17,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              17
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 17
+            }
+          ]
+        },
+        "integer": {
+          "windows": 17,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              17
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 17
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale004_phase750000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 17,
+      "metrics": {
+        "float": {
+          "windows": 17,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              17
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 17
+            }
+          ]
+        },
+        "integer": {
+          "windows": 17,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              17
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 17
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale008_phase000000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 33,
+      "metrics": {
+        "float": {
+          "windows": 33,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              33
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 33
+            }
+          ]
+        },
+        "integer": {
+          "windows": 33,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              33
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale008_phase250000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 32,
+      "metrics": {
+        "float": {
+          "windows": 32,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              32
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 32
+            }
+          ]
+        },
+        "integer": {
+          "windows": 32,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              32
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 32
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale008_phase500000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 32,
+      "metrics": {
+        "float": {
+          "windows": 32,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              32
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 32
+            }
+          ]
+        },
+        "integer": {
+          "windows": 32,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              32
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 32
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale008_phase750000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 32,
+      "metrics": {
+        "float": {
+          "windows": 32,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              32
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 32
+            }
+          ]
+        },
+        "integer": {
+          "windows": 32,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              32
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 32
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale016_phase000000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 61,
+      "metrics": {
+        "float": {
+          "windows": 61,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              61
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 61
+            }
+          ]
+        },
+        "integer": {
+          "windows": 61,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              61
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 61
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale016_phase250000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 60,
+      "metrics": {
+        "float": {
+          "windows": 60,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              60
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 60
+            }
+          ]
+        },
+        "integer": {
+          "windows": 60,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              60
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 60
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale016_phase500000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 60,
+      "metrics": {
+        "float": {
+          "windows": 60,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              60
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 60
+            }
+          ]
+        },
+        "integer": {
+          "windows": 60,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              60
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 60
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale016_phase750000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 62,
+      "metrics": {
+        "float": {
+          "windows": 62,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              62
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 62
+            }
+          ]
+        },
+        "integer": {
+          "windows": 62,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              62
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 62
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale032_phase000000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 71,
+      "metrics": {
+        "float": {
+          "windows": 71,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              71
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 71
+            }
+          ]
+        },
+        "integer": {
+          "windows": 71,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              71
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 71
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale032_phase250000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 71,
+      "metrics": {
+        "float": {
+          "windows": 71,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              71
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 71
+            }
+          ]
+        },
+        "integer": {
+          "windows": 71,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              71
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 71
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale032_phase500000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 73,
+      "metrics": {
+        "float": {
+          "windows": 73,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              73
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 73
+            }
+          ]
+        },
+        "integer": {
+          "windows": 73,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              73
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 73
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale032_phase750000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 72,
+      "metrics": {
+        "float": {
+          "windows": 72,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              72
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 72
+            }
+          ]
+        },
+        "integer": {
+          "windows": 72,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              72
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 72
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale064_phase000000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 78,
+      "metrics": {
+        "float": {
+          "windows": 78,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              78
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 78
+            }
+          ]
+        },
+        "integer": {
+          "windows": 78,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              78
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 78
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale064_phase250000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 81,
+      "metrics": {
+        "float": {
+          "windows": 81,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              81
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 81
+            }
+          ]
+        },
+        "integer": {
+          "windows": 81,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              81
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 81
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale064_phase500000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 77,
+      "metrics": {
+        "float": {
+          "windows": 77,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              77
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 77
+            }
+          ]
+        },
+        "integer": {
+          "windows": 77,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              77
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 77
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale064_phase750000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 71,
+      "metrics": {
+        "float": {
+          "windows": 71,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              71
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 71
+            }
+          ]
+        },
+        "integer": {
+          "windows": 71,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              71
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 71
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale128_phase000000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 89,
+      "metrics": {
+        "float": {
+          "windows": 89,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              89
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 89
+            }
+          ]
+        },
+        "integer": {
+          "windows": 89,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              89
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 89
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale128_phase250000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 98,
+      "metrics": {
+        "float": {
+          "windows": 98,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              98
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 98
+            }
+          ]
+        },
+        "integer": {
+          "windows": 98,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              98
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 98
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale128_phase500000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 86,
+      "metrics": {
+        "float": {
+          "windows": 86,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              86
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 86
+            }
+          ]
+        },
+        "integer": {
+          "windows": 86,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              86
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 86
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "scan_scale128_phase750000",
+      "source_group": "ChrisSanders/synscan_one_episode",
+      "label": 2,
+      "windows": 84,
+      "metrics": {
+        "float": {
+          "windows": 84,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              84
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 84
+            }
+          ]
+        },
+        "integer": {
+          "windows": 84,
+          "accuracy": 1.0,
+          "macro_f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              84
+            ]
+          ],
+          "false_positive_rate": null,
+          "per_class": [
+            {
+              "id": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            {
+              "id": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 84
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "conflicting_quantized_patterns": 1,
+  "conflict_examples": [
+    {
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "counts_by_label": {
+        "0": 11,
+        "1": 21
+      }
+    }
+  ],
+  "candidate_status": "needs_label_review",
+  "ready_for_automatic_blocking": false,
+  "convergence_warning_count": 0,
+  "rtl_vector_count": 1896,
+  "limitations": [
+    "Scores are training-fit metrics across all prepared windows, not independent test accuracy.",
+    "Only one reviewed SYN-flood episode and one public vertical-scan episode; no independent three-class holdout can be formed.",
+    "No random adjacent-window split; repeated/unique quantized rows are not independent sessions.",
+    "Different labels with identical q inputs cannot be separated by any classifier using only those q values; labels are preserved for review.",
+    "Normal uses filtered Benign-only packets, grouped by receiver /32. Both traffic directions may produce different receiver samples.",
+    "Filtered packets change traffic composition; results do not reproduce full unfiltered capture windows.",
+    "Protected destination scope and one-second clock alignment must agree with hardware.",
+    "Any Somfy data used here ceases to be an independent test for this candidate.",
+    "No Ethernet blocking, board timing, fresh lab test or superiority over V3 is established."
+  ],
+  "integer_calibration": {
+    "kind": "training_only_integer_calibration",
+    "candidate_count": 40,
+    "selection": "minimize mean per-class window error; tie-break mean per-class distinct-pattern error; stable grid order",
+    "calibration_unique_patterns_by_class": [
+      1513,
+      1,
+      118
+    ],
+    "calibration_windows_by_class": [
+      39253935,
+      21,
+      1427
+    ],
+    "independent_validation_used": false,
+    "engineered_probes_used": false,
+    "selected": {
+      "kind": "per_neuron_rescaling",
+      "shift1": 5,
+      "hidden_utilization": 0.5,
+      "output_scale_exponent": 5,
+      "window_errors_by_class": [
+        12,
+        0,
+        0
+      ],
+      "unique_pattern_errors_by_class": [
+        2,
+        0,
+        0
+      ],
+      "mean_class_window_error": 1.019006120023381e-07,
+      "mean_class_unique_error": 0.0004406256884776382
+    },
+    "candidates": [
+      {
+        "kind": "legacy_global_hidden_scale",
+        "window_errors_by_class": [
+          21950743,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          3,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639951213383663,
+        "mean_class_unique_error": 0.0006609385327164574
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 0,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          0,
+          21,
+          1427
+        ],
+        "unique_pattern_errors_by_class": [
+          0,
+          1,
+          118
+        ],
+        "mean_class_window_error": 0.6666666666666666,
+        "mean_class_unique_error": 0.6666666666666666
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 0,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          0,
+          21,
+          1427
+        ],
+        "unique_pattern_errors_by_class": [
+          0,
+          1,
+          118
+        ],
+        "mean_class_window_error": 0.6666666666666666,
+        "mean_class_unique_error": 0.6666666666666666
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 0,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          38477246,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          13,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673790963037636,
+        "mean_class_unique_error": 0.0028640669751046487
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 1,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          38477246,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          13,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673790963037636,
+        "mean_class_unique_error": 0.0028640669751046487
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 1,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          0,
+          21,
+          25
+        ],
+        "unique_pattern_errors_by_class": [
+          0,
+          1,
+          2
+        ],
+        "mean_class_window_error": 0.3391730903994394,
+        "mean_class_unique_error": 0.3389830508474576
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 1,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          0,
+          21,
+          1060
+        ],
+        "unique_pattern_errors_by_class": [
+          0,
+          1,
+          41
+        ],
+        "mean_class_window_error": 0.5809390329362298,
+        "mean_class_unique_error": 0.4491525423728813
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 2,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          0,
+          21,
+          1018
+        ],
+        "unique_pattern_errors_by_class": [
+          0,
+          1,
+          39
+        ],
+        "mean_class_window_error": 0.5711282410651717,
+        "mean_class_unique_error": 0.4435028248587571
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 2,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          38477178,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          6,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.326737332193575,
+        "mean_class_unique_error": 0.001321877065432915
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 2,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          38477179,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          7,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673734068529264,
+        "mean_class_unique_error": 0.001542189909671734
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 3,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          38477179,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          7,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673734068529264,
+        "mean_class_unique_error": 0.001542189909671734
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 3,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950751,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639958006757795,
+        "mean_class_unique_error": 0.0011015642211940956
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 3,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          0,
+          21,
+          25
+        ],
+        "unique_pattern_errors_by_class": [
+          0,
+          1,
+          2
+        ],
+        "mean_class_window_error": 0.3391730903994394,
+        "mean_class_unique_error": 0.3389830508474576
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 4,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          100,
+          21,
+          9
+        ],
+        "unique_pattern_errors_by_class": [
+          1,
+          1,
+          1
+        ],
+        "mean_class_window_error": 0.33543649504889816,
+        "mean_class_unique_error": 0.33637850493463434
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 4,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          38477178,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          6,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.326737332193575,
+        "mean_class_unique_error": 0.001321877065432915
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 4,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          12,
+          0,
+          9
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          0,
+          1
+        ],
+        "mean_class_window_error": 0.0021024144444101805,
+        "mean_class_unique_error": 0.003265484445539785
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 5,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          12,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          0,
+          0
+        ],
+        "mean_class_window_error": 1.019006120023381e-07,
+        "mean_class_unique_error": 0.0004406256884776382
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 5,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950643,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          2,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639866296206994,
+        "mean_class_unique_error": 0.0004406256884776382
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 5,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          21950744,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863995206255543,
+        "mean_class_unique_error": 0.0008812513769552765
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 6,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950751,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639958006757795,
+        "mean_class_unique_error": 0.0011015642211940956
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 6,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950744,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863995206255543,
+        "mean_class_unique_error": 0.0008812513769552765
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 6,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          21950743,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          3,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639951213383663,
+        "mean_class_unique_error": 0.0006609385327164574
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 7,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950744,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863995206255543,
+        "mean_class_unique_error": 0.0008812513769552765
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 7,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950744,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863995206255543,
+        "mean_class_unique_error": 0.0008812513769552765
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 7,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 6,
+        "window_errors_by_class": [
+          21950744,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863995206255543,
+        "mean_class_unique_error": 0.0008812513769552765
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 8,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950744,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863995206255543,
+        "mean_class_unique_error": 0.0008812513769552765
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 8,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950744,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863995206255543,
+        "mean_class_unique_error": 0.0008812513769552765
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 8,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 5,
+        "window_errors_by_class": [
+          21950744,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          4,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.1863995206255543,
+        "mean_class_unique_error": 0.0008812513769552765
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 9,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 4,
+        "window_errors_by_class": [
+          21950751,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639958006757795,
+        "mean_class_unique_error": 0.0011015642211940956
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 9,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 4,
+        "window_errors_by_class": [
+          21950751,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639958006757795,
+        "mean_class_unique_error": 0.0011015642211940956
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 9,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 4,
+        "window_errors_by_class": [
+          21950751,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639958006757795,
+        "mean_class_unique_error": 0.0011015642211940956
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 10,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 3,
+        "window_errors_by_class": [
+          21950751,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639958006757795,
+        "mean_class_unique_error": 0.0011015642211940956
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 10,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 3,
+        "window_errors_by_class": [
+          21950751,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639958006757795,
+        "mean_class_unique_error": 0.0011015642211940956
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 10,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 3,
+        "window_errors_by_class": [
+          21950751,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          5,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.18639958006757795,
+        "mean_class_unique_error": 0.0011015642211940956
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 11,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 2,
+        "window_errors_by_class": [
+          38477179,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          7,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673734068529264,
+        "mean_class_unique_error": 0.001542189909671734
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 11,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 2,
+        "window_errors_by_class": [
+          38477179,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          7,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673734068529264,
+        "mean_class_unique_error": 0.001542189909671734
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 11,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 2,
+        "window_errors_by_class": [
+          38477179,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          7,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673734068529264,
+        "mean_class_unique_error": 0.001542189909671734
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 12,
+        "hidden_utilization": 0.5,
+        "output_scale_exponent": 1,
+        "window_errors_by_class": [
+          38477179,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          7,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673734068529264,
+        "mean_class_unique_error": 0.001542189909671734
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 12,
+        "hidden_utilization": 0.75,
+        "output_scale_exponent": 1,
+        "window_errors_by_class": [
+          38477179,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          7,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673734068529264,
+        "mean_class_unique_error": 0.001542189909671734
+      },
+      {
+        "kind": "per_neuron_rescaling",
+        "shift1": 12,
+        "hidden_utilization": 1.0,
+        "output_scale_exponent": 1,
+        "window_errors_by_class": [
+          38477179,
+          0,
+          0
+        ],
+        "unique_pattern_errors_by_class": [
+          7,
+          0,
+          0
+        ],
+        "mean_class_window_error": 0.32673734068529264,
+        "mean_class_unique_error": 0.001542189909671734
+      }
+    ]
+  }
+}
