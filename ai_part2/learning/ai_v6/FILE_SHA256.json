@@ -1,0 +1,21 @@
+{
+  ".gitattributes": "67a9effb2713e7402ffbf314fe9b5abb160d1c5a4183c7193504f4d618adec39",
+  ".gitignore": "7f3df7cee7757c95ff451ee382cf71ad258cefc65cec95e11c8659f5854c67d6",
+  "DE_CUONG_HOC_AI_V6.docx": "8eb76c0d55ff5a59ee0c71b4b6e8718a8bdfad6dcbad1b096b52b9a81016376d",
+  "DE_CUONG_HOC_AI_V6.html": "6a6dca3cb6b9e9ab1a1640e7b59420203da27a5b06d646608f6b9699a72f602a",
+  "DE_CUONG_HOC_AI_V6.md": "7483ecffcd20b91356817cf5f00b08cbb955a683ea8597c41a99b5678114650f",
+  "DE_CUONG_HOC_AI_V6.pdf": "829a0b113695317d4f037fb39427356daa758130469a86b8da14f3ae7bf7ffc3",
+  "HOC_AI.py": "3a9a20271d21ecebd1e7c620e5bfa151092a6ef410b8be282605417624f47b35",
+  "KIEM_CHUNG_TAI_LIEU.json": "7fb6eba6f44f04c9efdbac93ac68baace13d273a4b1b3257f755b5138796074d",
+  "README.md": "1b2ec1a3e81927c465ba4ce10e03336a68f302244a9a6a9e2132106637606eba",
+  "VI_DU_DA_DOI_CHIEU.json": "589ebe5a5a95ef70725ae1d1f71b6e659cb0c4688b2d48d4fd833feb63bd7cd0",
+  "model/model.json": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "tools/ai_reference.py": "c12d7ec7879b0659e5fa46c673c8e3a97663573907aaa8a8abf8200e589aa886",
+  "tools/learning_template.html": "6e8fb89b4100cb941fda7d155b7d6ffa1551112966f055304d991920baf75bf0",
+  "vi_du/normal_train_14_sensor7.csv": "8275fc85ad73065eea8ffec7d74fae172a456b2e1af4cb3f2dc9a24e9aa0e2e5",
+  "vi_du/normal_train_14_sensor7.pcap.gz": "ea1aee9752b2d919007e33c242bcf385fbaac91f08366c0e1bf8c050ea2dd7ec",
+  "vi_du/scan_train_2_one_syn.csv": "be8caa5f2f246afd9b487eb88a11ce3064f2dc05fa7244e398e2c8cd23903b02",
+  "vi_du/scan_train_2_one_syn.pcap.gz": "49861b572602adf6388da1a0bf0fda9bc35a9aac544db8a624e29169545f1a4b",
+  "vi_du/syn_train_512_sensor7.csv": "027c7b3f60189bef982e1d8849e8d88861da1c966f6b296f5b70804b10595fe9",
+  "vi_du/syn_train_512_sensor7.pcap.gz": "7965c65021b4683ca20927c4cd87b1b828048584cfaa9ddb37bed020a5b25388"
+}

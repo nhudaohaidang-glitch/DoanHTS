@@ -1,5 +1,9 @@
 # Người 2 — bộ mã độc lập cho SYN flood và vertical scan
 
+## Đề cương học chi tiết phần AI V6
+
+[Đọc bản PDF](learning/ai_v6/DE_CUONG_HOC_AI_V6.pdf) hoặc [tải gói học](../de_cuong_hoc_ai_v6.zip). Tài liệu có nguồn dữ liệu, cách đọc PCAP/CSV để phân biệt ba lớp, sáu đặc trưng, phép tính MLP 6–8–3, train/lượng tử hóa, đọc lỗi/metrics và hợp đồng ghép. Có lộ trình mười buổi, bài tập/đáp án, câu hỏi bảo vệ, bản Word và HTML tính thử ngoại tuyến, kèm ba profile PCAP/CSV đã đối chiếu. Model bàn giao giữ nguyên.
+
 ## Gói mới chỉ riêng phần AI V6 để gửi người tích hợp
 
 [Tải phan2_ai_v6_ban_giao.zip](../phan2_ai_v6_ban_giao.zip) — chỉ có core AI, model, header C, hợp đồng giao tiếp và bộ kiểm riêng; không kèm CPU/bus/firmware hệ thống/MAC/P3/top/demo của các thành viên khác. Giữ nguyên model V6 đã chốt. Python, C và RTL độc lập đã kiểm 3.762 vector q và 41 tham chiếu counter; core mất 84 chu kỳ. [Hướng dẫn gói riêng](handoff/phan2_ai_v6_ban_giao/README.md).

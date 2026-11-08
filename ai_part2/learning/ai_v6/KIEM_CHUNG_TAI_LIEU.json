@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-08",
+  "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "pdf_pages": 25,
+  "major_sections": 17,
+  "docx_tables": 16,
+  "examples": 3,
+  "all_example_csv_windows_reextracted_from_pcaps": 60,
+  "checks": {
+    "python_cli_examples_and_edge_cases": true,
+    "extracted_zip_hash_and_crc": true,
+    "paths_with_spaces_and_other_working_directory": true,
+    "pcap_decompression_content_identity": true,
+    "pdf_unicode_and_outline": true,
+    "pdf_cover_and_model_page_visually_reviewed": true,
+    "chromium_samples_raw_and_counter": true,
+    "chromium_arithmetic_matches_python_30_inputs": true,
+    "chromium_known_803_tie_empty_invalid_inputs_quiz": true,
+    "chromium_navigation_and_mobile_width": true
+  },
+  "browser_test_transport": "local HTTP in cloud Chromium; HTML has no external runtime dependencies",
+  "scope": "Learning/documentation only; no new independent traffic test, no model or handoff change"
+}
