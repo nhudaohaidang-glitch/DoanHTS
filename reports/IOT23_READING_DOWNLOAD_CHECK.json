@@ -1,0 +1,12 @@
+{
+  "total_flows": 181311,
+  "preview_rows": 234,
+  "captured_files": 6,
+  "download_bytes": 27962074,
+  "original_labels_preserved": true,
+  "local_reader_links_valid": true,
+  "full_archive_head_bytes": 21510801277,
+  "small_archive_head_bytes": 9373916249,
+  "scope": "Five complete original labeled logs and one complete benign PCAP, not the full IoT-23 dataset",
+  "original_files_hash_verified": true
+}

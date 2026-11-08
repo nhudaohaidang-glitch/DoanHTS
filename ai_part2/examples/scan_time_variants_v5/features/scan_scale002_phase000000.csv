@@ -1,0 +1,10 @@
+variant,window_start,training_label,window_scope,packet_count,mean_ip_bytes,syn_ratio_q127,src_count,dst_count,dst_port_count,q0,q1,q2,q3,q4,q5
+scan_scale002_phase000000,1278275056,2,scan_window,16,44,127,1,1,16,2,22,127,1,1,16
+scan_scale002_phase000000,1278275058,2,scan_window,42,44,127,1,1,42,5,22,127,1,1,42
+scan_scale002_phase000000,1278275059,2,scan_window,121,44,127,1,1,80,15,22,127,1,1,80
+scan_scale002_phase000000,1278275060,2,scan_window,164,44,127,1,1,93,20,22,127,1,1,93
+scan_scale002_phase000000,1278275061,2,scan_window,164,44,127,1,1,93,20,22,127,1,1,93
+scan_scale002_phase000000,1278275062,2,scan_window,316,44,127,1,1,177,39,22,127,1,1,127
+scan_scale002_phase000000,1278275063,2,scan_window,325,44,127,1,1,190,40,22,127,1,1,127
+scan_scale002_phase000000,1278275064,2,scan_window,381,44,127,1,1,229,47,22,127,1,1,127
+scan_scale002_phase000000,1278275065,2,scan_window,378,44,127,1,1,228,47,22,127,1,1,127

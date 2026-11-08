@@ -1,0 +1,709 @@
+{
+  "kind": "v5_numeric_cpu_post_references_not_training_or_network_accuracy",
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "examples": [
+    {
+      "name": "empty_skip",
+      "counter_inputs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decision_valid": false,
+      "feat_hex": "000000000000",
+      "scores": [
+        0,
+        0,
+        0
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "sensor_feedback",
+      "counter_inputs": [
+        7,
+        427,
+        1,
+        1,
+        1,
+        1
+      ],
+      "decision_valid": true,
+      "feat_hex": "010101121e00",
+      "scores": [
+        5606,
+        -2278,
+        -3298
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "single_legitimate_syn",
+      "counter_inputs": [
+        1,
+        40,
+        1,
+        1,
+        1,
+        1
+      ],
+      "decision_valid": true,
+      "feat_hex": "0101017f1400",
+      "scores": [
+        225,
+        -457,
+        225
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "ack52_1",
+      "counter_inputs": [
+        1,
+        52,
+        0,
+        1,
+        1,
+        1
+      ],
+      "decision_valid": true,
+      "feat_hex": "010101001a00",
+      "scores": [
+        6308,
+        -2518,
+        -3754
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "ack52_7",
+      "counter_inputs": [
+        7,
+        364,
+        0,
+        1,
+        1,
+        1
+      ],
+      "decision_valid": true,
+      "feat_hex": "010101001a00",
+      "scores": [
+        6308,
+        -2518,
+        -3754
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "ack52_8",
+      "counter_inputs": [
+        8,
+        416,
+        0,
+        1,
+        1,
+        1
+      ],
+      "decision_valid": true,
+      "feat_hex": "010101001a01",
+      "scores": [
+        6308,
+        -2518,
+        -3754
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "ack52_30",
+      "counter_inputs": [
+        30,
+        1560,
+        0,
+        1,
+        1,
+        1
+      ],
+      "decision_valid": true,
+      "feat_hex": "010101001a03",
+      "scores": [
+        6308,
+        -2518,
+        -3754
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "ack52_100",
+      "counter_inputs": [
+        100,
+        5200,
+        0,
+        1,
+        1,
+        1
+      ],
+      "decision_valid": true,
+      "feat_hex": "010101001a0c",
+      "scores": [
+        6260,
+        -2508,
+        -3715
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "ack52_1000",
+      "counter_inputs": [
+        1000,
+        52000,
+        0,
+        1,
+        1,
+        1
+      ],
+      "decision_valid": true,
+      "feat_hex": "010101001a7d",
+      "scores": [
+        5797,
+        -1249,
+        -4536
+      ],
+      "class_id": 0
+    },
+    {
+      "name": "pure_vertical_scan_3",
+      "counter_inputs": [
+        3,
+        120,
+        3,
+        1,
+        1,
+        3
+      ],
+      "decision_valid": true,
+      "feat_hex": "0301017f1400",
+      "scores": [
+        158,
+        -468,
+        305
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_4",
+      "counter_inputs": [
+        4,
+        160,
+        4,
+        1,
+        1,
+        4
+      ],
+      "decision_valid": true,
+      "feat_hex": "0401017f1400",
+      "scores": [
+        158,
+        -468,
+        305
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_5",
+      "counter_inputs": [
+        5,
+        200,
+        5,
+        1,
+        1,
+        5
+      ],
+      "decision_valid": true,
+      "feat_hex": "0501017f1400",
+      "scores": [
+        56,
+        -428,
+        365
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_6",
+      "counter_inputs": [
+        6,
+        240,
+        6,
+        1,
+        1,
+        6
+      ],
+      "decision_valid": true,
+      "feat_hex": "0601017f1400",
+      "scores": [
+        8,
+        -418,
+        404
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_7",
+      "counter_inputs": [
+        7,
+        280,
+        7,
+        1,
+        1,
+        7
+      ],
+      "decision_valid": true,
+      "feat_hex": "0701017f1400",
+      "scores": [
+        8,
+        -418,
+        404
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_8",
+      "counter_inputs": [
+        8,
+        320,
+        8,
+        1,
+        1,
+        8
+      ],
+      "decision_valid": true,
+      "feat_hex": "0801017f1401",
+      "scores": [
+        8,
+        -418,
+        404
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_9",
+      "counter_inputs": [
+        9,
+        360,
+        9,
+        1,
+        1,
+        9
+      ],
+      "decision_valid": true,
+      "feat_hex": "0901017f1401",
+      "scores": [
+        -94,
+        -378,
+        464
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_10",
+      "counter_inputs": [
+        10,
+        400,
+        10,
+        1,
+        1,
+        10
+      ],
+      "decision_valid": true,
+      "feat_hex": "0a01017f1401",
+      "scores": [
+        -142,
+        -368,
+        503
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_11",
+      "counter_inputs": [
+        11,
+        440,
+        11,
+        1,
+        1,
+        11
+      ],
+      "decision_valid": true,
+      "feat_hex": "0b01017f1401",
+      "scores": [
+        -142,
+        -368,
+        503
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_12",
+      "counter_inputs": [
+        12,
+        480,
+        12,
+        1,
+        1,
+        12
+      ],
+      "decision_valid": true,
+      "feat_hex": "0c01017f1401",
+      "scores": [
+        -142,
+        -368,
+        503
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_13",
+      "counter_inputs": [
+        13,
+        520,
+        13,
+        1,
+        1,
+        13
+      ],
+      "decision_valid": true,
+      "feat_hex": "0d01017f1401",
+      "scores": [
+        -244,
+        -328,
+        563
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_14",
+      "counter_inputs": [
+        14,
+        560,
+        14,
+        1,
+        1,
+        14
+      ],
+      "decision_valid": true,
+      "feat_hex": "0e01017f1401",
+      "scores": [
+        -244,
+        -328,
+        563
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_15",
+      "counter_inputs": [
+        15,
+        600,
+        15,
+        1,
+        1,
+        15
+      ],
+      "decision_valid": true,
+      "feat_hex": "0f01017f1401",
+      "scores": [
+        -244,
+        -328,
+        563
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_16",
+      "counter_inputs": [
+        16,
+        640,
+        16,
+        1,
+        1,
+        16
+      ],
+      "decision_valid": true,
+      "feat_hex": "1001017f1402",
+      "scores": [
+        -244,
+        -328,
+        563
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_17",
+      "counter_inputs": [
+        17,
+        680,
+        17,
+        1,
+        1,
+        17
+      ],
+      "decision_valid": true,
+      "feat_hex": "1101017f1402",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_18",
+      "counter_inputs": [
+        18,
+        720,
+        18,
+        1,
+        1,
+        18
+      ],
+      "decision_valid": true,
+      "feat_hex": "1201017f1402",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_19",
+      "counter_inputs": [
+        19,
+        760,
+        19,
+        1,
+        1,
+        19
+      ],
+      "decision_valid": true,
+      "feat_hex": "1301017f1402",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_20",
+      "counter_inputs": [
+        20,
+        800,
+        20,
+        1,
+        1,
+        20
+      ],
+      "decision_valid": true,
+      "feat_hex": "1401017f1402",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_21",
+      "counter_inputs": [
+        21,
+        840,
+        21,
+        1,
+        1,
+        21
+      ],
+      "decision_valid": true,
+      "feat_hex": "1501017f1402",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_22",
+      "counter_inputs": [
+        22,
+        880,
+        22,
+        1,
+        1,
+        22
+      ],
+      "decision_valid": true,
+      "feat_hex": "1601017f1402",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_23",
+      "counter_inputs": [
+        23,
+        920,
+        23,
+        1,
+        1,
+        23
+      ],
+      "decision_valid": true,
+      "feat_hex": "1701017f1402",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_24",
+      "counter_inputs": [
+        24,
+        960,
+        24,
+        1,
+        1,
+        24
+      ],
+      "decision_valid": true,
+      "feat_hex": "1801017f1403",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_25",
+      "counter_inputs": [
+        25,
+        1000,
+        25,
+        1,
+        1,
+        25
+      ],
+      "decision_valid": true,
+      "feat_hex": "1901017f1403",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_26",
+      "counter_inputs": [
+        26,
+        1040,
+        26,
+        1,
+        1,
+        26
+      ],
+      "decision_valid": true,
+      "feat_hex": "1a01017f1403",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_27",
+      "counter_inputs": [
+        27,
+        1080,
+        27,
+        1,
+        1,
+        27
+      ],
+      "decision_valid": true,
+      "feat_hex": "1b01017f1403",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_28",
+      "counter_inputs": [
+        28,
+        1120,
+        28,
+        1,
+        1,
+        28
+      ],
+      "decision_valid": true,
+      "feat_hex": "1c01017f1403",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_29",
+      "counter_inputs": [
+        29,
+        1160,
+        29,
+        1,
+        1,
+        29
+      ],
+      "decision_valid": true,
+      "feat_hex": "1d01017f1403",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    },
+    {
+      "name": "pure_vertical_scan_30",
+      "counter_inputs": [
+        30,
+        1200,
+        30,
+        1,
+        1,
+        30
+      ],
+      "decision_valid": true,
+      "feat_hex": "1e01017f1403",
+      "scores": [
+        -346,
+        -288,
+        623
+      ],
+      "class_id": 2
+    }
+  ]
+}

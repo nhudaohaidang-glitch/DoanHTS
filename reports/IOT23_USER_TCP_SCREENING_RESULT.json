@@ -1,0 +1,22 @@
+{
+  "source": "User-provided screenshots of completed native-label screening",
+  "units": "native connection records, not packets or one-second samples",
+  "labelled_logs": 23,
+  "total_connection_records": 325309946,
+  "total_tcp_ddos_candidate_flow_records": 19433293,
+  "tcp_candidates": {
+    "CTU-IoT-Malware-Capture-17-1": 13655172,
+    "CTU-IoT-Malware-Capture-34-1": 14393,
+    "CTU-IoT-Malware-Capture-35-1": 2185297,
+    "CTU-IoT-Malware-Capture-60-1": 3578431
+  },
+  "capture43_tcp_ddos_flow_records": 0,
+  "capture43_udp_ddos_flow_records": 65803,
+  "native_benign_scenario_flow_records": {
+    "Somfy-01": 130,
+    "Echo5": 1374,
+    "Hue4": 452
+  },
+  "whole_dataset_vertical_coverage_determined": false,
+  "next_step": "Profile saved TCP candidate logs before choosing PCAP targets; do not rescan archive yet"
+}

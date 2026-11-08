@@ -1,0 +1,479 @@
+{
+  "version": "v6.1_RMII_timing_candidate",
+  "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "ready_for_team_integration": true,
+  "board_validated": false,
+  "ready_for_unattended_blocking": false,
+  "new_independent_detection_test_passed": false,
+  "verification": {
+    "ai_v6": {
+      "test": "ai_v6",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "ai_cpu": {
+      "test": "ai_cpu",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "features": {
+      "test": "features",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "rmii_rx": {
+      "test": "rmii_rx",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "mac": {
+      "test": "mac",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "full": {
+      "test": "full",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [
+        {
+          "kind": "uart_policy_scenario",
+          "passed": true
+        }
+      ],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    },
+    "system": {
+      "test": "system",
+      "passed": true,
+      "full_check": true,
+      "extra_checks": [],
+      "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+    }
+  },
+  "runtime_trace": {
+    "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+    "runtime_windows": 37,
+    "raw_to_pack_and_scores_match": true,
+    "detection_accuracy_claimed": false,
+    "syn_demo_examples": [
+      {
+        "win": 6,
+        "raw": [
+          406,
+          40,
+          125,
+          2,
+          1,
+          1
+        ],
+        "q": [
+          50,
+          20,
+          125,
+          2,
+          1,
+          1
+        ],
+        "scores": [
+          606,
+          1002,
+          -1700
+        ],
+        "predicted_class": 1,
+        "note": "SYN stimulus in the existing demo; predicted class is recorded, not assumed"
+      },
+      {
+        "win": 7,
+        "raw": [
+          407,
+          40,
+          125,
+          2,
+          1,
+          1
+        ],
+        "q": [
+          50,
+          20,
+          125,
+          2,
+          1,
+          1
+        ],
+        "scores": [
+          606,
+          1002,
+          -1700
+        ],
+        "predicted_class": 1,
+        "note": "SYN stimulus in the existing demo; predicted class is recorded, not assumed"
+      }
+    ]
+  },
+  "feature_vectors": 3762,
+  "cpu_post_cases": 37,
+  "cpu_inference_calls": 36,
+  "empty_cases_skipped": 1,
+  "full_gateway": {
+    "simulated_seconds": 40,
+    "sensor_forwarded": 266,
+    "sensor_dropped": 0,
+    "syn_blacklist_dropped": 1580,
+    "scan_blacklist_dropped": 737,
+    "spoofed_syn_rate_limited": 779,
+    "blacklist_adds": 2,
+    "blacklist_expiries": 2
+  },
+  "prototype_mac": {
+    "scenario_passed": true,
+    "sensor_frames_forwarded": 6,
+    "attack_source_blocked": "192.168.10.50",
+    "overflow_counter_observed": 25,
+    "zero_loss_claimed": false
+  },
+  "original_native_metrics": {
+    "windows": 39253960,
+    "accuracy": 0.9999996942983587,
+    "macro_f1": 0.9259258749756122,
+    "confusion_matrix": [
+      [
+        39253923,
+        12,
+        0
+      ],
+      [
+        0,
+        21,
+        0
+      ],
+      [
+        0,
+        0,
+        4
+      ]
+    ],
+    "false_positive_rate": 3.057018360070143e-07,
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 1.0,
+        "recall": 0.999999694298164,
+        "f1": 0.9999998471490587,
+        "support": 39253935
+      },
+      {
+        "id": 1,
+        "precision": 0.6363636363636364,
+        "recall": 1.0,
+        "f1": 0.7777777777777778,
+        "support": 21
+      },
+      {
+        "id": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      }
+    ]
+  },
+  "same_parent_development_metrics": {
+    "windows": 3344,
+    "accuracy": 0.999700956937799,
+    "macro_f1": 0.9994510035377178,
+    "confusion_matrix": [
+      [
+        348,
+        0,
+        0
+      ],
+      [
+        1,
+        2355,
+        0
+      ],
+      [
+        0,
+        0,
+        640
+      ]
+    ],
+    "false_positive_rate": 0.0,
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 0.997134670487106,
+        "recall": 1.0,
+        "f1": 0.9985652797704447,
+        "support": 348
+      },
+      {
+        "id": 1,
+        "precision": 1.0,
+        "recall": 0.9995755517826825,
+        "f1": 0.9997877308427086,
+        "support": 2356
+      },
+      {
+        "id": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 640
+      }
+    ]
+  },
+  "historical_lab_regression": {
+    "confusion_matrix": [
+      [
+        113,
+        0,
+        1
+      ],
+      [
+        0,
+        63,
+        0
+      ],
+      [
+        0,
+        0,
+        42
+      ]
+    ],
+    "correct": 218,
+    "errors": [
+      {
+        "capture": "v3test01_challenge_retry_high",
+        "window": "1793448084.0",
+        "raw": [
+          14,
+          66,
+          72,
+          2,
+          1,
+          2
+        ],
+        "q": [
+          1,
+          33,
+          72,
+          2,
+          1,
+          2
+        ],
+        "expected": 0,
+        "predicted": 2
+      }
+    ]
+  },
+  "historical_lab_regression_v5": [
+    [
+      114,
+      0,
+      0
+    ],
+    [
+      63,
+      0,
+      0
+    ],
+    [
+      21,
+      0,
+      21
+    ]
+  ],
+  "known_limits": [
+    "Original Native label false positives: 12, including 11 quantized aliases with SYN. Same count as V5 but q42 is a new error and q109 is corrected.",
+    "Eligible same-parent development: one SYN miss (803 packets, q=[100,20,127,1,1,1]). Excluded sparse/ambiguous rows remain in CSV and metrics, not claimed correct.",
+    "Historical lab: 218/219; one Normal reconnect window predicted Scan. Not a new blind test; no retraining on these lab rows.",
+    "P3 parser/features/filter are Person1 reference stubs; official P3 modules still need contract integration and tests.",
+    "RAM stack high-water not measured; provided policy defaults DETECT, whitelist and two-window confirmation unchanged.",
+    "Uploaded V6 P&R report fails 8 setup endpoints in b_ref_clk at 50MHz. V6.1 has not been rerun in Gowin here, so no closure claim.",
+    "PR1014 clock source routing and PHY I/O delays/CDC/reset remain to be reviewed with actual board/PHY connections."
+  ],
+  "physical_acceptance_pending": [
+    "Rerun V6.1 full-top Gowin synthesis/P&R at 27/50/50MHz; require zero setup/hold violations, then review PR1014, CDC/reset and pin/PHY I/O timing against actual wiring.",
+    "Build configuration must match the actual protected receiver /32 and whitelist; recompile firmware after edits.",
+    "On-board POST37/37 with V6 hash; real Ethernet forwarding/MQTT/ARP, both directions, capture+UART and counter/drop/overflow review.",
+    "Controlled real-board SYN/scan and legitimate reconnect sessions, TTL/unblock; independent detection evaluation before unattended blocking."
+  ],
+  "evidence": {
+    "ai_cpu_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ai_cpu_result.log": "74d9eb09a80f659aa4a142590d70b065a09d47eef9348eb7bb631073764340d1",
+    "ai_cpu_status.json": "54e8cb3317fc22ab11a6718dffeab479b381e0a7b2a1bb4679cb0d9ff92f5e2e",
+    "ai_v6_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ai_v6_result.log": "53d54fd9b98122dd749639770741099fbbfd14e8bc2a7c74ea4895e9bc173969",
+    "ai_v6_status.json": "e170a87d9b81626c761cc029fd4a27f25f2bb6b508be9334b71ef31a2e2bd8a3",
+    "features_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "features_result.log": "3f0245c00edd5fbe46c0ac378f490bdb8b4ceb9e100bcabaf739fd82811d8e85",
+    "features_status.json": "282451eb49d287b35966aeae5cdc8cd651c4d7d1b05e08c4677bae8571411133",
+    "full_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_result.log": "3e448122e665dbf96f6f72e6e1da49bd5ce007f667d6d8f57ea5720335e1b068",
+    "full_status.json": "79c618dccb82613902397c5b33143038baf9a9e18a21929121a1e4449a67fe53",
+    "full_uart_check.log": "84fa9ce7b5b9fde4ac8fda9dcaaa2248515bf80b2be85e63f9b625128b7752fa",
+    "integration_checks.log": "bee67e3d234a63d56233f68c57063b49fbdd3e364aa4ad7d2ac64600fb040d98",
+    "mac_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mac_result.log": "b448d352f2812962e7351dd0480192985c1cee592c24acc8fd21cef452dbcf3e",
+    "mac_status.json": "9925fcb07b148a8bed7bb89c759a1e7545078276cb0190134c61648e4bd757f0",
+    "rmii_rx_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rmii_rx_result.log": "b4338e047ee4e090fb113b663fcf9154d76841cd39db21d38530e959a4b40319",
+    "rmii_rx_status.json": "29bf5974176af8c11496f745063656676af95946d6571bab6213166dee4adf3e",
+    "runtime_feature_trace.csv": "f45dfdeccbc4bd680a439637d7c56c080a52571463180f92fc76b5f9f1fafd48",
+    "rx_negative_check.log": "c4f22601a24d4a5de50b1ab8bbc8a3f6308127757c22ad40ef5c050f9ef411c5",
+    "system_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "system_result.log": "b3c931a6cc674cb6c62b9de9d27bb4f6905d7e55bef928b5fc01cd2b8ac89276",
+    "system_status.json": "10c99d460afdf5af3faf51432fddbc58cca30caf8a646c37982bfe6212234a52",
+    "uart.log": "ccb14ab1817e5e6be6e4bcfda0f02a53bc9aba29144332be857fb227d7060772",
+    "v6_cpu_post_uart.log": "e75e5701cc55434dda0deb733cbaf5b0c6cbf62c22dfe4d3ffc02fac771cc11d",
+    "v6_feature_trace.csv": "f45dfdeccbc4bd680a439637d7c56c080a52571463180f92fc76b5f9f1fafd48",
+    "v6_trace_check.json": "b1d736d59c4821cbcac09030b463188ca2ac28d9b5c5b04cdc0eb16b8665e3a8"
+  },
+  "reproducibility": {
+    "120_profile_packet_and_feature_values_reproduced": true,
+    "selected_model_exact_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+    "selected_model_exact_reproduction": true,
+    "new_independent_test": false
+  },
+  "firmware_memory_bytes": {
+    "ram_total": 16384,
+    "board_text_data_bss": 12900,
+    "simulation_text_data_bss": 12816,
+    "board_remaining_for_stack": 3484,
+    "stack_high_water_measured": false
+  },
+  "package_version": "v6.1",
+  "model_version": "v6",
+  "model_and_firmware_unchanged": true,
+  "rx_regression": {
+    "frames_per_sampling_mode": 40,
+    "bytes_per_sampling_mode": 24273,
+    "crc_good_frames_per_mode": 30,
+    "crc_bad_frames_per_mode": 10,
+    "checked_cycles": 100358,
+    "positive_edge_cycle_equivalent": true,
+    "negative_edge_exact_delay_cycles": 1,
+    "stage_removal_negative_check_passed": true
+  },
+  "firmware_sha256": "492eebd36fd67625596ef5f72cfc9bd408649e39e0f0d693b5503ffd40b684a2",
+  "baseline_gowin_v6_review": {
+    "kind": "review_of_uploaded_gowin_v6_reports",
+    "input_zip_sha256": "29392ddc21f6ce9be6b7330a1b2a08c07e0306584efdedb4380fcf72dba918f7",
+    "report_tool": "Gowin V1.9.8.11 Education",
+    "report_created_local": "2026-11-05 20:20:21",
+    "device": "GW1NR-LV9QN88PC6/I5",
+    "device_version": "C",
+    "top_module": "gowin_top",
+    "source_model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+    "source_firmware_sha256": "492eebd36fd67625596ef5f72cfc9bd408649e39e0f0d693b5503ffd40b684a2",
+    "collection_model_and_firmware_hashes_match_release": true,
+    "synthesis_finished": true,
+    "place_and_route_finished": true,
+    "bitstream_generated": true,
+    "timing_closed": false,
+    "setup_violated_endpoints": 8,
+    "hold_violated_endpoints": 0,
+    "worst_setup_slack_ns": -0.268,
+    "b_ref_setup_tns_ns": -0.349,
+    "clocks": [
+      {
+        "name": "clk_27m",
+        "required_mhz": 27,
+        "reported_fmax_mhz": 38.957,
+        "setup_pass": true
+      },
+      {
+        "name": "a_ref_clk",
+        "required_mhz": 50,
+        "reported_fmax_mhz": 91.777,
+        "setup_pass": true
+      },
+      {
+        "name": "b_ref_clk",
+        "required_mhz": 50,
+        "reported_fmax_mhz": 48.696,
+        "setup_pass": false
+      }
+    ],
+    "resources": {
+      "logic_used": 5372,
+      "logic_available": 8640,
+      "logic_percent": 63,
+      "registers_used": 3201,
+      "registers_available": 6693,
+      "register_percent": 48,
+      "bsram_sp": 8,
+      "bsram_sdpb": 7,
+      "bsram_percent": 58,
+      "dsp_used": 1,
+      "latches": 0,
+      "io_ports": 26,
+      "cls_used": 3592,
+      "cls_available": 4320,
+      "cls_percent": 84
+    },
+    "worst_path": {
+      "start": "u_top/g_mac.u_eth/u_rxB/rxd_n_0_s1/Q",
+      "end": "u_top/g_mac.u_eth/u_rxB/crc_26_s1/D",
+      "launch_edge": "b_ref_clk falling",
+      "capture_edge": "b_ref_clk rising",
+      "budget_ns": 10,
+      "data_delay_ns": 9.715,
+      "reported_data_arrival_ns": 22.246,
+      "reported_data_required_ns": 21.978
+    },
+    "warnings": [
+      {
+        "code": "PR1014",
+        "description": "Clock b_ref_clk_d uses generic routing under the pin constraints; possible extra delay/skew."
+      },
+      {
+        "description": "62 synthesis warnings, all at PicoRV32/its adapter: unused mem_la_read/disabled PCPI outputs, full/parallel-case pragmas and width truncations. No synthesis ERROR in supplied log. This review is not a post-synthesis functional equivalence proof."
+      }
+    ],
+    "constraints": {
+      "sdc_matches_release": true,
+      "cst_matches_release": true,
+      "three_base_clocks_and_async_groups_active": true,
+      "input_output_delay_constraints_present": false
+    },
+    "conclusion": "Released V6 fits the device, but port B fails internal setup at 50 MHz. The failed paths are in the RMII receiver, not the MLP/AI clock domain. Bitstream generation is not timing acceptance.",
+    "patch": {
+      "package_version": "v6.1",
+      "changed_rtl": "rtl/part4_eth/rmii_rx.v",
+      "change": "In SAMPLE_NEG mode, capture on falling edge into rxd_f/crs_f, align both on rising edge into rxd_n/crs_n, then process CRC/FSM on the next rising edge.",
+      "extra_rx_latency_ref_clk_cycles": 1,
+      "extra_rx_latency_ns_at_50mhz": 20,
+      "model_changed": false,
+      "firmware_changed": false,
+      "clock_frequency_or_sdc_changed": false,
+      "pin_or_sampling_edge_changed": false,
+      "changed_synthesis_result_available": false,
+      "new_pnr_required": true
+    },
+    "remaining": [
+      "Rerun V6.1 synthesis and P&R; require zero setup/hold violations at the existing 27/50/50 MHz constraints.",
+      "PR1014 and PHY I/O timing/CDC/reset still require physical-design review; no board PASS yet.",
+      "Original prototype MAC overflow and official P3 integration remain unresolved; model/data limits stay unchanged."
+    ]
+  },
+  "patched_gowin_timing_verified": false,
+  "ready_for_board_test": false
+}

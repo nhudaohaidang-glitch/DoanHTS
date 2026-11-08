@@ -1,0 +1,2 @@
+PASS V6_WISHBONE vectors=3762 wrapper_cycles=86 signed_scores=OK byte_enables=OK abort=OK
+sim/tb_ai_v6_bus.v:66: $finish called at 3988796000 (1ps)

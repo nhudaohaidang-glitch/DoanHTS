@@ -1,0 +1,7 @@
+{
+  "test": "features",
+  "passed": true,
+  "full_check": true,
+  "extra_checks": [],
+  "note": "Arithmetic tests are not detection accuracy; full/system failures remain visible."
+}

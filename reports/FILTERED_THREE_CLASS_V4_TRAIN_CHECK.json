@@ -1,0 +1,152 @@
+{
+  "status": "passed",
+  "scope": {
+    "kind": "reference_training_subset_not_full_user_vm_data",
+    "used_sources": [
+      "IoT23 Hue4 Benign filtered PCAP",
+      "IoT23 capture34 Benign filtered PCAP",
+      "IoT23 capture34 reviewed SYN flood excerpt",
+      "Chris Sanders public SYN vertical scan example"
+    ],
+    "full_user_vm_dataset_trained_here": false,
+    "training_windows_by_class": [
+      10997,
+      21,
+      4
+    ],
+    "independent_test_evaluated": false,
+    "normal_sources_present_here": 2,
+    "result_type": "training-fit only; one SYN episode and one scan episode",
+    "label_conflicts": [
+      {
+        "q": [
+          127,
+          20,
+          127,
+          1,
+          1,
+          1
+        ],
+        "counts_by_label": {
+          "0": 11,
+          "1": 21
+        }
+      }
+    ]
+  },
+  "model_sha256": "8950476e72b1135a8867ace566ddd20d7460e58c79e7ef82ed060472e20c74f5",
+  "training_fit": {
+    "float": {
+      "windows": 11022,
+      "accuracy": 0.999001996007984,
+      "macro_f1": 0.9306508145087529,
+      "confusion_matrix": [
+        [
+          10986,
+          11,
+          0
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "false_positive_rate": 0.0010002728016731835,
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 0.9989997271983269,
+          "f1": 0.9994996133375791,
+          "support": 10997
+        },
+        {
+          "id": 1,
+          "precision": 0.65625,
+          "recall": 1.0,
+          "f1": 0.7924528301886793,
+          "support": 21
+        },
+        {
+          "id": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        }
+      ]
+    },
+    "integer": {
+      "windows": 11022,
+      "accuracy": 0.999001996007984,
+      "macro_f1": 0.9306508145087529,
+      "confusion_matrix": [
+        [
+          10986,
+          11,
+          0
+        ],
+        [
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "false_positive_rate": 0.0010002728016731835,
+      "per_class": [
+        {
+          "id": 0,
+          "precision": 1.0,
+          "recall": 0.9989997271983269,
+          "f1": 0.9994996133375791,
+          "support": 10997
+        },
+        {
+          "id": 1,
+          "precision": 0.65625,
+          "recall": 1.0,
+          "f1": 0.7924528301886793,
+          "support": 21
+        },
+        {
+          "id": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        }
+      ]
+    }
+  },
+  "reference_v3_unchanged": true,
+  "v3_sha256": "e10f81b3e3ec9b458c4d574ee978cf0f2efa45954b4f8fe0c86fed6a3a26c35d",
+  "rtl": {
+    "rtl": "PASS vectors=398 cycles_min=84 cycles_max=84 (start accepted to done)\n/workspace/train_v4_reference/release_reference/.candidate_training_1v6k6gl7/candidate/gowin/verification/tb_ai_core.v:54: $finish called at 342416000 (1ps)",
+    "vectors": 398,
+    "gowin_synthesis_executed": false
+  },
+  "c_header_rv32i_ilp32_freestanding_compile_and_link_passed": true,
+  "c_header_executed_on_target": false,
+  "interrupt_after_preparation_resume_without_reextracting_sources_checked": true,
+  "feature_contract_tests_passed": 4,
+  "independent_holdout_available": false,
+  "model_status": "needs_label_review",
+  "automatic_blocking_ready": false,
+  "full_user_vm_data_trained_here": false,
+  "bundled_trainer_executed_on_authentic_reference_input": true,
+  "bundled_second_run_reuses_frozen_candidate": true,
+  "bundled_model_sha256_matches_trained_reference": true,
+  "zip_bytes": 138281,
+  "zip_sha256": "6824f5b9b99fc5319bc3a8ee04edb1dd0c88c42f4c8f2e28fbd2c30687f38141"
+}

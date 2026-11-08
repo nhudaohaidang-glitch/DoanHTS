@@ -1,0 +1,17 @@
+{
+  "exact_chunked_destination_grouping": true,
+  "chunk_boundary_and_missing_metadata_tests": true,
+  "rare_large_flow_not_lost_by_flow_count_ranking": true,
+  "integer_sum_above_2_to_53_verified": true,
+  "native34_full_filtered_flow_log_verified": true,
+  "native34_known_packet_metadata_sum": 40568,
+  "native17_real_partial_prefix_flows": 7040,
+  "native17_prefix_only_ground_truth_counter_agrees": true,
+  "native17_prefix_only_known_orig_pkts_sum": 14080,
+  "standalone_packaged_cli_verified": true,
+  "synthetic_guard_tests_passed": 4,
+  "full_user_capture17_processed_here": false,
+  "no_packet_rates_or_project_labels_inferred": true,
+  "no_archive_or_pcap_opened": true,
+  "no_original_files_or_model_modified": true
+}

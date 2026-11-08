@@ -1,0 +1,29 @@
+{
+  "source_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-7-1/bro/conn.log.labeled",
+  "bytes": 1581263847,
+  "sha256": "3d603dc7c5a78f59b65aee892c8ccdca6023c8517ce1322eda6ecf2d903bfd73",
+  "all_connection_records": 11454714,
+  "ddos_connection_records": 39584,
+  "ddos_protocols": {
+    "udp": 39584
+  },
+  "ddos_history": [
+    {
+      "proto": "udp",
+      "history": "D",
+      "state": "S0",
+      "records": 39584
+    }
+  ],
+  "ddos_top_targets": [
+    {
+      "src": "192.168.100.108",
+      "dst": "64.237.233.111",
+      "port": "80",
+      "proto": "udp",
+      "records": 39584
+    }
+  ],
+  "unique_ddos_target_tuples": 1,
+  "note": "Exact original DDoS flow selection; not automatically SYN flood training labels. Packet flags/windows still require verification."
+}

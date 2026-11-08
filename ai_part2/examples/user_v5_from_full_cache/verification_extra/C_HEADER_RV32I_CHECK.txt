@@ -1,0 +1,3 @@
+RV32I/ILP32 compile and link: PASS.
+Firmware header integration compiled with empty-window guard and q0=0 controls.
+Execution on RISC-V hardware/emulator: NOT performed. This is not a runtime packing test.

@@ -1,0 +1,27 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Phần 1 ghép AI V5</title>
+<style>body{font:18px system-ui;max-width:1150px;margin:32px auto;line-height:1.65}table{border-collapse:collapse}td,th{border:1px solid #ccd;padding:10px}.bad{background:#ffe0df;padding:16px}.ok{background:#e5f5ed;padding:14px}code{font-size:15px}pre{background:#eef;padding:15px;overflow:auto}</style>
+<h1>CPU Phần 1 đã ghép core AI V5 để kiểm thử</h1>
+<p>Đầu vào là ZIP iot-gateway-riscv-phan1.zip của người 1. Model V5 giữ nguyên trọng số đã train trên ba nhóm dữ liệu đã tạo. Không thêm dữ liệu học, không đổi ngưỡng/chính sách chặn để làm test đạt.</p>
+<p class="ok">Đã kiểm: CPU → C pack → Wishbone → core AI và kết quả trả về khớp model V5. 37 cửa sổ runtime có counter/feat/scores khớp Python.</p>
+<p class="bad"><strong>Kiểm phát hiện toàn hệ thống còn FAIL.</strong> Đợt SYN khoảng 400 gói/cửa sổ trong demo được V5 gán Normal. Scan có chặn, khung cảm biến không bị bỏ trong demo. Bản này dùng kiểm ghép và chẩn đoán; chưa xác nhận firewall hoàn thiện hoặc chạy trên bo.</p>
+<table><tr><th>Phép kiểm đã chạy</th><th>Kết quả</th><th>Phạm vi</th></tr>
+<tr><td>Wishbone + V5</td><td>PASS 1.896 vector</td><td>Scores signed, 48 bit input, byte enables, START/busy, ABORT; LAT wrapper 86 chu kỳ</td></tr>
+<tr><td>CPU RV32I chạy firmware C</td><td>PASS POST 37/37</td><td>36 lần gọi AI, một hàng rỗng skip. Không trap</td></tr>
+<tr><td>Header → feature tham chiếu</td><td>PASS 5 cửa sổ</td><td>Kiểm bản người 1 viết; chưa phải nghiệm thu module chính thức người 3</td></tr>
+<tr><td>Runtime counter → scores</td><td>PASS 37 cửa sổ</td><td>Đối chiếu Python V5, gồm các dự đoán sai về ý nghĩa</td></tr>
+<tr><td>Demo 40 giây</td><td>FAIL 2 kiểm tra</td><td>SYN chưa chặn; scan chặn 738 khung, 266 khung cảm biến qua/0 bỏ, gỡ chặn và TTL có chạy</td></tr>
+<tr><td>Demo RMII/MAC của người 1</td><td>FAIL kiểm chặn SYN</td><td>POST/CPU và chuyển khung cảm biến đạt; còn overflow MAC trong kịch bản</td></tr>
+<tr><td>Synthesis/timing top V5, bo thật</td><td>Chưa kiểm</td><td>Elaborate top đã đạt; không kế thừa tài nguyên/timing của V2 hoặc core đơn lẻ</td></tr></table>
+<h2>Bắt đầu trên Ubuntu</h2>
+<p>Giải nén vào Downloads thành ghep_phan1_ai_v5, giữ riêng bản gốc người 1. Cần Python 3 và Icarus đã có trên máy bạn:</p>
+<pre>python3 ~/Downloads/ghep_phan1_ai_v5/KIEM_TRA_GHEP_V5.py</pre>
+<p>Lệnh kiểm hash gói và chạy ba bài kết nối CPU/bus/feature tham chiếu. Log mới nằm tại sim/out. Log đã đo đi kèm ở verification/recorded.</p>
+<h2>Vì sao SYN demo chưa chặn?</h2>
+<p>Ví dụ raw [407,40,125,2,1,1] → q [50,20,125,2,1,1] → scores [416,96,-541] → Normal. CPU và RTL khớp Python; model float cũng chọn Normal. Cần cải thiện/đánh giá model ở những điều kiện tải này trong ứng viên riêng, giữ kết quả V5 làm đối chứng. Không sửa wire hay đổi nhãn để che kết quả.</p>
+<h2>Mở top trên Gowin Windows</h2>
+<p>Tải/giải nén cùng ZIP, mở terminal trong thư mục gốc gói rồi chạy:</p>
+<pre>python CHUAN_BI_GOWIN.py</pre>
+<p>Mở gateway_phan1_v5.gprj vừa tạo, chọn top gowin_top và chạy Synthesize. Helper chỉ tạo project cùng đường dẫn firmware trên máy bạn; chưa chạy build hoặc nạp bo. Clock hệ thống 27 MHz, hai REF_CLK RMII 50 MHz. Cần kiểm tài nguyên và place-and-route trên top thực tế.</p>
+<h2>Những phần còn cần của nhóm</h2>
+<p>Ba file rtl/stubs/pkt_parser_stub.v, feat_core_stub.v và pkt_filter_stub.v là bản tham chiếu của người 1. Giữ model/header/source đúng V5 và đối chiếu bản chính thức người 3 khi có. Prototype MAC trong ZIP cũng cần kiểm riêng; chưa đo Ethernet/MQTT trên bo.</p>
+<p><a href="README.md">Hướng dẫn chi tiết</a> | <a href="INTEGRATION_REPORT.json">Nguồn và kết quả kiểm</a> | <a href="AI_TRAINING_PROVENANCE.json">Nguồn model giữ nguyên</a> | <a href="verification/recorded/cpu_post_uart.log">Log CPU POST</a> | <a href="verification/recorded/wishbone.log">Log Wishbone</a> | <a href="verification/recorded/gateway_demo.log">Log demo có cả FAIL</a> | <a href="verification/recorded/runtime_feature_trace.csv">Trace counter/feat/scores</a></p></html>

@@ -1,0 +1,14 @@
+[tb] OK   khung tu A ra o B du 68 byte (64 + 4 FCS)
+[tb] OK   noi dung khung ra o B khop tung byte
+[tb] OK   khung tu A khong vong lai cong A
+[tb] OK   khung CRC sai bi bo, khong ra B
+[tb] OK   khung bi verdict bo khong ra B
+[tb] OK   khung tu B ra o A du 74 byte
+[tb] OK   Forwarded payload and all FCS bytes exact
+[tb] OK   B bad CRC dropped
+[tb] OK   B-to-A long frame length includes FCS
+[tb] OK   Forwarded payload and all FCS bytes exact
+[tb] OK   A-to-B long frame length includes FCS
+[tb] OK   Forwarded payload and all FCS bytes exact
+[tb] PASS
+sim/tb_eth_mac.v:195: $finish called at 2803347430 (1ps)

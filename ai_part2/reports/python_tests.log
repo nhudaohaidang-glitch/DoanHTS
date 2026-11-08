@@ -1,0 +1,13 @@
+test_real_publish_and_receive (test_mqtt_integration.MQTTIntegration.test_real_publish_and_receive) ... ok
+test_direction_synack_empty_and_integer_counts (test_pipeline.FeaturesTest.test_direction_synack_empty_and_integer_counts) ... ok
+test_divisors_and_clipping (test_pipeline.FeaturesTest.test_divisors_and_clipping) ... ok
+test_duplicate_capture_rejected (test_pipeline.FeaturesTest.test_duplicate_capture_rejected) ... ok
+test_fragment_excluded (test_pipeline.FeaturesTest.test_fragment_excluded) ... ok
+test_negative_shift_and_saturation (test_pipeline.IntegerTest.test_negative_shift_and_saturation) ... ok
+test_vector_pack (test_pipeline.IntegerTest.test_vector_pack) ... ok
+test_checksum_and_source_format (test_pipeline.LogTest.test_checksum_and_source_format) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.537s
+
+OK

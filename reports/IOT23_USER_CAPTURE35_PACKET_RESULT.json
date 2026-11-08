@@ -1,0 +1,33 @@
+{
+  "source": "User screenshot outputs from completed extraction and saved-report review",
+  "capture_id": "CTU-IoT-Malware-Capture-35-1",
+  "targets": [
+    {
+      "dst": "216.18.168.16",
+      "decoded_tcp_packets": 763789,
+      "syn_open_packets": 378,
+      "complete_ingress_windows_reviewed": 406,
+      "peak_syn_pps_in_reviewed_windows": 3,
+      "sparse_pure_syn_candidate_rows": 9,
+      "candidate_pps": [
+        1,
+        1
+      ]
+    },
+    {
+      "dst": "54.39.87.104",
+      "decoded_tcp_packets": 4016458,
+      "syn_open_packets": 7
+    },
+    {
+      "dst": "209.97.190.136",
+      "decoded_tcp_packets": 6304727,
+      "syn_open_packets": 0
+    }
+  ],
+  "automatic_project_flood_labels_disabled": true,
+  "no_normal_labels_assigned": true,
+  "no_additional_syn_flood_samples_verified_from_these_subsets": true,
+  "not_a_claim_of_absence_in_all_IoT23": true,
+  "next_step": "Exact per-destination flow-metadata census of saved capture17 candidates"
+}

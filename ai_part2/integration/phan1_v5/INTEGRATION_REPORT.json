@@ -1,0 +1,167 @@
+{
+  "kind": "person1_cpu_with_frozen_v5_integration",
+  "input_archive_sha256": "8ca5bd4f8a97afca5f0c7a4eb80ae71f27be8f663c1a8f2818c2fb80e4292fb9",
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "rtl_sha256": "28163b57fe02875a11360ade0b8513f14b53e84506b8d869ffbc0c116d3b23fb",
+  "model_retrained": false,
+  "weights_changed": false,
+  "labels_changed": false,
+  "policy_thresholds_changed": false,
+  "cpu_ai_numeric_integration_pass": true,
+  "full_detection_scenario_pass": false,
+  "evidence": {
+    "wishbone_vectors": 1896,
+    "wishbone_wrapper_cycles": 86,
+    "standalone_core_cycles": 84,
+    "cpu_post_cases": 37,
+    "cpu_hardware_calls": 36,
+    "empty_window_skips": 1,
+    "rv32i_cpu_post_cycles": 308283,
+    "reference_header_feature_windows": 5,
+    "runtime_trace_windows": 37,
+    "counters_to_C_pack_to_bus_to_RTL_to_Python_match": true,
+    "unit_tests_passed": 4,
+    "top_verilog_elaboration": "PASS, MAC mode; not synthesis or timing"
+  },
+  "gateway_demo": {
+    "simulated_seconds": 40,
+    "sensor_forwarded": 266,
+    "sensor_dropped": 0,
+    "scan_frames_blocked": 738,
+    "spoofed_syn_frames_rate_limited": 775,
+    "syn_flood_frames_blocked": 0,
+    "full_testbench_failed_assertions": 2,
+    "uart_policy_checker_pass": false,
+    "button_testbench_change": "wait for the longer V5 POST and use 0.6s short/3.5s long presses; no traffic/threshold changes",
+    "misses": [
+      {
+        "win": 6,
+        "raw": [
+          406,
+          40,
+          125,
+          2,
+          1,
+          1
+        ],
+        "q": [
+          50,
+          20,
+          125,
+          2,
+          1,
+          1
+        ],
+        "scores": [
+          416,
+          96,
+          -541
+        ],
+        "predicted_class": 0,
+        "note": "SYN stimulus in the existing demo; model predicts Normal, even though arithmetic is correct"
+      },
+      {
+        "win": 7,
+        "raw": [
+          407,
+          40,
+          125,
+          2,
+          1,
+          1
+        ],
+        "q": [
+          50,
+          20,
+          125,
+          2,
+          1,
+          1
+        ],
+        "scores": [
+          416,
+          96,
+          -541
+        ],
+        "predicted_class": 0,
+        "note": "SYN stimulus in the existing demo; model predicts Normal, even though arithmetic is correct"
+      }
+    ],
+    "same_example_float_prediction": {
+      "q": [
+        50,
+        20,
+        125,
+        2,
+        1,
+        1
+      ],
+      "scores": [
+        15.181594002170195,
+        4.4385423504024,
+        -20.992157960997123
+      ],
+      "class_id": 0
+    },
+    "diagnosis": "Both frozen float V5 and integer V5 predict Normal for the demonstrated SYN input. All 37 runtime counters/packing/RTL scores match; this miss is not explained by a CPU wiring mismatch."
+  },
+  "system_mac_demo": {
+    "post_pass": true,
+    "cpu_no_trap": true,
+    "sensor_frames_forwarded": 6,
+    "syn_ip_blocking_pass": false,
+    "failed_assertions": 1,
+    "overflow_observed": true,
+    "overflow_per_observed_burst": 25,
+    "prototype_mac_only": true
+  },
+  "firmware": {
+    "compiler": "riscv64-unknown-elf-gcc (14.2.0+19) 14.2.0",
+    "isa": "RV32I / ILP32",
+    "board_text_data_bss_bytes": 12900,
+    "sim_text_data_bss_bytes": 12816,
+    "ram_bytes": 16384,
+    "board_stack_space_remaining_bytes": 3484,
+    "stack_high_water_mark_measured": false,
+    "hex_sha256": {
+      "firmware.hex": "76dd35d82da714413289d816ec78776238fb7b3e67d9c6fa98f9931957fa6622",
+      "firmware_sim.hex": "c8cfe9384aec18907b2757d9c40cb024aa839a110ad70206b9c3ba17d1cff7ff"
+    }
+  },
+  "remaining": {
+    "official_part3_modules_verified": false,
+    "full_soc_gowin_synthesis_verified": false,
+    "post_route_timing_verified": false,
+    "board_test_performed": false,
+    "independent_traffic_accuracy_established": false,
+    "automatic_blocking_ready": false
+  },
+  "modified_original_files": [
+    "README.md",
+    "docs/HUONG_DAN_DEMO.md",
+    "docs/THIET_KE_PHAN1.md",
+    "fw/ai_vectors.h",
+    "fw/config.h",
+    "fw/firmware.hex",
+    "fw/firmware_sim.hex",
+    "fw/hw.h",
+    "fw/main.c",
+    "fw/part2/INTEGRATION_VECTORS.json",
+    "rtl/gateway_soc.v",
+    "rtl/part2_ai/model.json",
+    "rtl/wb_ai_regs.v",
+    "rtl/wb_feat_regs.v",
+    "run_sim.bat",
+    "run_sim.sh",
+    "sim/modelsim_gateway.do",
+    "sim/tb_gateway.v",
+    "sources.f",
+    "tools/gen_tables.py"
+  ],
+  "notes": [
+    "Original upload preserved; V2 AI backup is inactive in reference/original_v2_ai.zip.",
+    "Original prebuilt .fs was excluded; new firmware.hex and firmware_sim.hex were rebuilt for V5.",
+    "Feature test covers the included Person 1 reference module, not an official Part 3 delivery.",
+    "The new full/system scenario failures are reported; old README V2 PASS claims are not inherited."
+  ]
+}

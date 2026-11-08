@@ -1,0 +1,20 @@
+So cua so co goi theo (AI tho, ket luan, luat nguong, cong kiem tra doi ket qua):
+   AI=BT    ket luan=BT    luat=BT    cong=-   : 22
+   AI=DoS   ket luan=BT    luat=DoS   cong=-   : 1
+   AI=DoS   ket luan=DoS   luat=DoS   cong=-   : 5
+   AI=SCAN  ket luan=BT    luat=DoS   cong=co  : 4
+   AI=SCAN  ket luan=BT    luat=SCAN  cong=-   : 1
+   AI=SCAN  ket luan=SCAN  luat=SCAN  cong=-   : 4
+OK   83 dong '$' dung checksum va so truong
+OK   co 37 dong $IDS (>= 35 cua so)
+OK   chan 192.168.10.50 voi ly do DOS
+OK   chan 192.168.10.51 voi ly do SCAN
+OK   moi IP bi chan deu duoc go ($UNB) sau do
+OK   khong chan IP gia 10.x (IP nghi van khong chiem qua nua SYN)
+OK   $MODE: DETECT (khoi dong) -> BLOCK -> DETECT
+OK   $SYN,ON roi $SYN,OFF
+OK   lop 2 bo goi SYN khi bat ($CNT drop_syn > 0)
+OK   lop 2 khong bo goi nao khi dang tat
+OK   khong bo goi nao truoc lan $BLK dau
+OK   22 cua so chi co cam bien: khong bao dong
+PASS

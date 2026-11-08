@@ -1,0 +1,60 @@
+{
+  "model_sha256": "688f1109f77da566c542c4903a0555be79cbf3e22ea08866187de20de68b7b8e",
+  "runtime_windows": 37,
+  "raw_to_pack_and_scores_match": true,
+  "detection_accuracy_claimed": false,
+  "syn_demo_miss_examples": [
+    {
+      "win": 6,
+      "raw": [
+        406,
+        40,
+        125,
+        2,
+        1,
+        1
+      ],
+      "q": [
+        50,
+        20,
+        125,
+        2,
+        1,
+        1
+      ],
+      "scores": [
+        416,
+        96,
+        -541
+      ],
+      "predicted_class": 0,
+      "note": "SYN stimulus in the existing demo; model predicts Normal, even though arithmetic is correct"
+    },
+    {
+      "win": 7,
+      "raw": [
+        407,
+        40,
+        125,
+        2,
+        1,
+        1
+      ],
+      "q": [
+        50,
+        20,
+        125,
+        2,
+        1,
+        1
+      ],
+      "scores": [
+        416,
+        96,
+        -541
+      ],
+      "predicted_class": 0,
+      "note": "SYN stimulus in the existing demo; model predicts Normal, even though arithmetic is correct"
+    }
+  ]
+}

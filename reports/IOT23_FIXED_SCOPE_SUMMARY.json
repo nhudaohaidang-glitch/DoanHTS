@@ -1,0 +1,133 @@
+{
+  "scope_retained": [
+    "normal",
+    "SYN flood",
+    "vertical scan"
+  ],
+  "model_trained": false,
+  "training_ready": false,
+  "pcap_sources": [
+    {
+      "scenario": "CTU-IoT-Malware-Capture-34-1",
+      "file": "2018-12-21-15-50-14-192.168.1.195.pcap",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+      "bytes": 126317980,
+      "sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+      "elapsed_s": 15.6,
+      "publisher_checksum_verified": false
+    },
+    {
+      "scenario": "CTU-IoT-Malware-Capture-3-1",
+      "file": "2018-05-21_capture.pcap",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/2018-05-21_capture.pcap",
+      "bytes": 57919772,
+      "sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+      "elapsed_s": 25.3,
+      "publisher_checksum_verified": false
+    },
+    {
+      "scenario": "CTU-IoT-Malware-Capture-35-1",
+      "file": "104.248.160.24.port80TCP.pcap",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-35-1/104.248.160.24.port80TCP.pcap",
+      "bytes": 1225095,
+      "sha256": "adaccebdabad15e964507a88eced38cdea720a8c8e91ea14dc647d4f68e4351a",
+      "elapsed_s": 1.6,
+      "publisher_checksum_verified": false
+    }
+  ],
+  "SYN34": {
+    "dataset": "IoT-23 selected native DDoS-confirmed SYN-only episode, capture34",
+    "purpose": "Exploratory external check of frozen LAB v2, not a new trained IoT-23 model",
+    "windows": 21,
+    "unique_raw_vectors": 19,
+    "unique_quantized_vectors": 1,
+    "predictions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "correct_syn_windows": 21,
+    "source_capture_count": 1,
+    "model_sha256": "57da88b7b596766749034a5bdf72a9a21be82189517260176e4d8ecdc4387a07",
+    "packet_reader_stats": {
+      "frames": 233865,
+      "ingress_ipv4": 40568,
+      "non_ingress": 193297,
+      "fragments_skipped": 0,
+      "truncated_skipped": 0,
+      "timestamp_reversals": 0,
+      "max_backward_seconds": 0.0
+    },
+    "retained_model": true,
+    "trained_on_iot23": false,
+    "limits": [
+      "21 windows are from one 22-second attack, not independent sessions",
+      "All quantized vectors collapse to one input at these divisors",
+      "Not a three-class IoT-23 accuracy claim"
+    ]
+  },
+  "BENIGN4": {
+    "dataset": "IoT-23 benign Philips Hue capture4",
+    "purpose": "Exploratory external check of frozen LAB v2, not training or a final new-model test",
+    "protected_ip": "192.168.1.132",
+    "windows": 2880,
+    "all_complete_time_windows": 78845,
+    "sample_rule": "Only nonempty complete 1-second ingress windows; empty windows invalid by deployed guard",
+    "source_capture_count": 1,
+    "prediction_counts": {
+      "2": 1984,
+      "0": 896
+    },
+    "normal_correct_windows": 896,
+    "false_positive_rate": 0.6888888888888889,
+    "publisher_pcap_sha256_verified": true,
+    "model_sha256": "57da88b7b596766749034a5bdf72a9a21be82189517260176e4d8ecdc4387a07",
+    "trained_on_iot23": false,
+    "stats": {
+      "frames": 21664,
+      "ingress_ipv4": 3534,
+      "non_ingress": 18130,
+      "fragments_skipped": 0,
+      "truncated_skipped": 0,
+      "timestamp_reversals": 0,
+      "max_backward_seconds": 0.0
+    }
+  },
+  "vertical_coverage": [
+    {
+      "capture": "34",
+      "syn_open_max_dest_ports_per_pair": 2
+    },
+    {
+      "capture": "3",
+      "syn_open_max_dest_ports_per_pair": 1
+    },
+    {
+      "capture": "35 filtered TCP subset",
+      "syn_open_max_dest_ports_per_pair": 1
+    },
+    {
+      "capture": "benign4",
+      "syn_open_max_dest_ports_per_pair": 1
+    }
+  ],
+  "data_source_constraint": "Awaiting whether a documented hybrid with vertical-scan data from another source is acceptable"
+}

@@ -1,0 +1,32 @@
+{
+  "authentic_native_pcaps_used": true,
+  "official_hue_download_bytes": 376840,
+  "recovery_without_opening_archive": true,
+  "old_work_files_unchanged": true,
+  "mismatch_uses_explicit_official_supplement": true,
+  "valid_existing_sources_reused_without_network": true,
+  "raw_quantized_labels_and_row_provenance_match_prior_native_cache": true,
+  "total_windows": 2901,
+  "windows": {
+    "iot23_hue4": 2880,
+    "iot23_syn34": 21
+  },
+  "input_columns": 6,
+  "observed_labels": [
+    0,
+    1
+  ],
+  "real_global_header_only_difference_packet_equivalence": {
+    "equivalent": true,
+    "reason": "all_packet_records_equal",
+    "compared_packets": 21664
+  },
+  "original_archive_processor_regression": true,
+  "unverified_variants_have_diagnostic_page_but_no_labels": true,
+  "synthetic_guard_tests_passed": 3,
+  "model_changed": false,
+  "user_variant_executed_here": false,
+  "note": "User f770897e... capture not available here. Unknown variants are compared locally or left unused, never accepted by filename or feature similarity.",
+  "bundled_cli_checked": true,
+  "zip_member_hashes_verified": true
+}

@@ -1,0 +1,2 @@
+PASS V6_1_BOARD_DEMO_ALL3 POST=37/37 normal=11 syn=6 scan=2 block50=OK block51=OK checksums=OK PHY_clocks=none
+sim/tb_board_demo_v6_1.v:104: $finish called at 316657411122 (1ps)

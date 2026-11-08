@@ -1,0 +1,1921 @@
+{
+  "kind": "historical_lab_regression_not_new_independent_test",
+  "rows": 219,
+  "training_used_this_lab": false,
+  "models": {
+    "v5": {
+      "confusion_matrix": [
+        [
+          114,
+          0,
+          0
+        ],
+        [
+          63,
+          0,
+          0
+        ],
+        [
+          21,
+          0,
+          21
+        ]
+      ],
+      "correct": 135,
+      "errors": [
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448102.0",
+          "raw": [
+            34,
+            47,
+            100,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            100,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448103.0",
+          "raw": [
+            36,
+            46,
+            102,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            102,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448104.0",
+          "raw": [
+            36,
+            46,
+            102,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            102,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448105.0",
+          "raw": [
+            34,
+            47,
+            100,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            100,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448106.0",
+          "raw": [
+            38,
+            46,
+            103,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            103,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448107.0",
+          "raw": [
+            31,
+            47,
+            98,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            3,
+            23,
+            98,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448108.0",
+          "raw": [
+            34,
+            47,
+            100,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            100,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448109.0",
+          "raw": [
+            34,
+            47,
+            100,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            100,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448110.0",
+          "raw": [
+            31,
+            47,
+            98,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            3,
+            23,
+            98,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448111.0",
+          "raw": [
+            33,
+            47,
+            100,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            100,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448112.0",
+          "raw": [
+            33,
+            47,
+            100,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            100,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448113.0",
+          "raw": [
+            32,
+            47,
+            99,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            99,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448114.0",
+          "raw": [
+            32,
+            47,
+            99,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            99,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448115.0",
+          "raw": [
+            35,
+            46,
+            101,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            101,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448116.0",
+          "raw": [
+            35,
+            46,
+            101,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            101,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448117.0",
+          "raw": [
+            29,
+            48,
+            96,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            3,
+            24,
+            96,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448118.0",
+          "raw": [
+            30,
+            48,
+            97,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            3,
+            24,
+            97,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448119.0",
+          "raw": [
+            36,
+            46,
+            102,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            102,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448120.0",
+          "raw": [
+            31,
+            47,
+            98,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            3,
+            23,
+            98,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448121.0",
+          "raw": [
+            32,
+            47,
+            99,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            4,
+            23,
+            99,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_low",
+          "window": "1793448122.0",
+          "raw": [
+            31,
+            47,
+            98,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            3,
+            23,
+            98,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448129.0",
+          "raw": [
+            93,
+            42,
+            117,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            117,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448130.0",
+          "raw": [
+            93,
+            42,
+            117,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            117,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448131.0",
+          "raw": [
+            90,
+            42,
+            117,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            117,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448132.0",
+          "raw": [
+            93,
+            42,
+            117,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            117,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448133.0",
+          "raw": [
+            90,
+            42,
+            118,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            118,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448134.0",
+          "raw": [
+            90,
+            42,
+            118,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            118,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448135.0",
+          "raw": [
+            75,
+            43,
+            115,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            9,
+            21,
+            115,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448136.0",
+          "raw": [
+            65,
+            43,
+            113,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            8,
+            21,
+            113,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448137.0",
+          "raw": [
+            57,
+            44,
+            111,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            22,
+            111,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448138.0",
+          "raw": [
+            57,
+            44,
+            111,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            22,
+            111,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448139.0",
+          "raw": [
+            63,
+            43,
+            112,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            21,
+            112,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448140.0",
+          "raw": [
+            58,
+            44,
+            111,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            22,
+            111,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448141.0",
+          "raw": [
+            90,
+            42,
+            117,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            117,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448142.0",
+          "raw": [
+            90,
+            42,
+            117,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            117,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448143.0",
+          "raw": [
+            83,
+            42,
+            116,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            10,
+            21,
+            116,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448144.0",
+          "raw": [
+            92,
+            42,
+            117,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            117,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448145.0",
+          "raw": [
+            91,
+            42,
+            117,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            11,
+            21,
+            117,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448146.0",
+          "raw": [
+            63,
+            43,
+            112,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            21,
+            112,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448147.0",
+          "raw": [
+            51,
+            44,
+            112,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            6,
+            22,
+            112,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448148.0",
+          "raw": [
+            55,
+            44,
+            110,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            6,
+            22,
+            110,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_mid",
+          "window": "1793448149.0",
+          "raw": [
+            59,
+            44,
+            111,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            22,
+            111,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448156.0",
+          "raw": [
+            213,
+            41,
+            122,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            26,
+            20,
+            122,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448157.0",
+          "raw": [
+            109,
+            42,
+            120,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            13,
+            21,
+            120,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448158.0",
+          "raw": [
+            163,
+            41,
+            121,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            20,
+            20,
+            121,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448159.0",
+          "raw": [
+            212,
+            41,
+            122,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            26,
+            20,
+            122,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448160.0",
+          "raw": [
+            207,
+            41,
+            122,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            25,
+            20,
+            122,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448161.0",
+          "raw": [
+            68,
+            43,
+            113,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            8,
+            21,
+            113,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448162.0",
+          "raw": [
+            198,
+            41,
+            122,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            24,
+            20,
+            122,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448163.0",
+          "raw": [
+            59,
+            44,
+            111,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            22,
+            111,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448164.0",
+          "raw": [
+            73,
+            43,
+            114,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            9,
+            21,
+            114,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448165.0",
+          "raw": [
+            61,
+            44,
+            112,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            22,
+            112,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448166.0",
+          "raw": [
+            50,
+            44,
+            109,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            6,
+            22,
+            109,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448167.0",
+          "raw": [
+            51,
+            44,
+            109,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            6,
+            22,
+            109,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448168.0",
+          "raw": [
+            66,
+            43,
+            113,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            8,
+            21,
+            113,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448169.0",
+          "raw": [
+            62,
+            43,
+            112,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            7,
+            21,
+            112,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448170.0",
+          "raw": [
+            72,
+            43,
+            114,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            9,
+            21,
+            114,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448171.0",
+          "raw": [
+            72,
+            43,
+            114,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            9,
+            21,
+            114,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448172.0",
+          "raw": [
+            183,
+            41,
+            122,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            22,
+            20,
+            122,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448173.0",
+          "raw": [
+            161,
+            41,
+            121,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            20,
+            20,
+            121,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448174.0",
+          "raw": [
+            74,
+            43,
+            114,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            9,
+            21,
+            114,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448175.0",
+          "raw": [
+            66,
+            43,
+            113,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            8,
+            21,
+            113,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_syn_high",
+          "window": "1793448176.0",
+          "raw": [
+            108,
+            42,
+            118,
+            2,
+            1,
+            1
+          ],
+          "q": [
+            13,
+            21,
+            118,
+            2,
+            1,
+            1
+          ],
+          "expected": 1,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448183.0",
+          "raw": [
+            11,
+            62,
+            46,
+            2,
+            1,
+            4
+          ],
+          "q": [
+            1,
+            31,
+            46,
+            2,
+            1,
+            4
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448184.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448185.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448186.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448187.0",
+          "raw": [
+            11,
+            62,
+            46,
+            2,
+            1,
+            4
+          ],
+          "q": [
+            1,
+            31,
+            46,
+            2,
+            1,
+            4
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448188.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448189.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448190.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448191.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448192.0",
+          "raw": [
+            11,
+            62,
+            46,
+            2,
+            1,
+            4
+          ],
+          "q": [
+            1,
+            31,
+            46,
+            2,
+            1,
+            4
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448193.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448194.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448195.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448196.0",
+          "raw": [
+            11,
+            62,
+            46,
+            2,
+            1,
+            4
+          ],
+          "q": [
+            1,
+            31,
+            46,
+            2,
+            1,
+            4
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448197.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448198.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448199.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448200.0",
+          "raw": [
+            11,
+            62,
+            46,
+            2,
+            1,
+            4
+          ],
+          "q": [
+            1,
+            31,
+            46,
+            2,
+            1,
+            4
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448201.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448202.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        },
+        {
+          "capture": "v3test01_challenge_scan_slow",
+          "window": "1793448203.0",
+          "raw": [
+            12,
+            60,
+            52,
+            2,
+            1,
+            5
+          ],
+          "q": [
+            1,
+            30,
+            52,
+            2,
+            1,
+            5
+          ],
+          "expected": 2,
+          "predicted": 0
+        }
+      ]
+    },
+    "v6": {
+      "confusion_matrix": [
+        [
+          113,
+          0,
+          1
+        ],
+        [
+          0,
+          63,
+          0
+        ],
+        [
+          0,
+          0,
+          42
+        ]
+      ],
+      "correct": 218,
+      "errors": [
+        {
+          "capture": "v3test01_challenge_retry_high",
+          "window": "1793448084.0",
+          "raw": [
+            14,
+            66,
+            72,
+            2,
+            1,
+            2
+          ],
+          "q": [
+            1,
+            33,
+            72,
+            2,
+            1,
+            2
+          ],
+          "expected": 0,
+          "predicted": 2
+        }
+      ]
+    }
+  }
+}

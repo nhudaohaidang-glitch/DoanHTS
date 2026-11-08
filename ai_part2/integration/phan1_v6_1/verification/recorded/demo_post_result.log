@@ -1,0 +1,2 @@
+PASS V6_1_BOARD_DEMO_POST board_firmware=unchanged UART=115200 POST=37/37 model_hash=OK PHY_clocks=none
+sim/tb_board_demo_v6_1.v:95: $finish called at 32152414522 (1ps)
