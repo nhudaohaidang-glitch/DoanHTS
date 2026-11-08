@@ -1,3 +1,4 @@
 *.pdf binary
 *.docx binary
 *.pcap.gz binary
+vi_du/BANG_TAP_DOC.csv -text whitespace=cr-at-eol
