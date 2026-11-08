@@ -1,5 +1,9 @@
 # Người 2 — bộ mã độc lập cho SYN flood và vertical scan
 
+## Bắt đầu học: bản viết lại dễ hiểu
+
+[Tải PDF dễ hiểu](learning/ai_v6_de_hieu/BAT_DAU_HOC_AI_V6.pdf) hoặc [gói học dễ hiểu](../de_cuong_ai_v6_de_hieu.zip). Bản này giải nghĩa từ mới trước, đi từ gói tin/TCP đến đọc dataset, sáu con số và model. Có 12 bài, câu hỏi/lời giải, HTML đọc từng bài với phần bấm thử TCP/AI, bảng CSV rút gọn và PCAP đã giải nén sẵn. Công thức/mã để ở phụ lục. Giữ nguyên model và dữ liệu của gói người dùng gửi; bản kỹ thuật trước vẫn ở dưới để tra cứu.
+
 ## Đề cương học chi tiết phần AI V6
 
 [Đọc bản PDF](learning/ai_v6/DE_CUONG_HOC_AI_V6.pdf) hoặc [tải gói học](../de_cuong_hoc_ai_v6.zip). Tài liệu có nguồn dữ liệu, cách đọc PCAP/CSV để phân biệt ba lớp, sáu đặc trưng, phép tính MLP 6–8–3, train/lượng tử hóa, đọc lỗi/metrics và hợp đồng ghép. Có lộ trình mười buổi, bài tập/đáp án, câu hỏi bảo vệ, bản Word và HTML tính thử ngoại tuyến, kèm ba profile PCAP/CSV đã đối chiếu. Model bàn giao giữ nguyên.

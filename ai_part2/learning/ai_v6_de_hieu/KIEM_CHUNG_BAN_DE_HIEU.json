@@ -1,0 +1,29 @@
+{
+  "source_uploaded_zip_sha256": "3ff1d960f299170db41a43b7ae28bb0ba98d7a49909848f6dcedb5422c937ff4",
+  "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "model_and_original_sample_packets_changed": false,
+  "pdf_pages": 21,
+  "main_lessons": 12,
+  "pdf_bookmarks": 16,
+  "checks": {
+    "pdf_Vietnamese_and_direction_text": true,
+    "pdf_cover_and_TCP_page_visually_reviewed": true,
+    "docx_readable_structure": true,
+    "browser_one_lesson_at_a_time": true,
+    "browser_answers_TCP_steps_and_navigation": true,
+    "browser_three_examples_and_20_integer_comparisons": true,
+    "browser_empty_invalid_input_and_known_803_miss": true,
+    "browser_mobile_no_horizontal_overflow": true,
+    "pcap_one_second_frame_counts": [
+      14,
+      489,
+      112
+    ],
+    "pcap_one_second_SYN_counts": [
+      2,
+      483,
+      112
+    ]
+  },
+  "scope": "Pedagogical rewrite only, no new training or independent detection test."
+}

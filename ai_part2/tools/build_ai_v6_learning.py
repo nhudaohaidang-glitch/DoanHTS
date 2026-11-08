@@ -25,6 +25,8 @@ from reportlab.platypus.tableofcontents import TableOfContents
 REPO = Path(__file__).resolve().parents[2]
 ROOT = REPO / 'ai_part2/learning/ai_v6'
 STEM = 'DE_CUONG_HOC_AI_V6'
+BEGINNER = False
+ZIP_NAME = 'de_cuong_hoc_ai_v6'
 
 
 def blocks(source):
@@ -92,11 +94,11 @@ def pdf_document(items):
         pdfmetrics.registerFont(TTFont(name, str(fontroot / file)))
     pdfmetrics.registerFontFamily('Noto', normal='Noto', bold='NotoBold', italic='NotoItalic', boldItalic='NotoBold')
     styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle(name='TextVI', fontName='Noto', fontSize=10, leading=15, spaceAfter=7, splitLongWords=True, allowWidows=0, allowOrphans=0))
+    styles.add(ParagraphStyle(name='TextVI', fontName='Noto', fontSize=11 if BEGINNER else 10, leading=17 if BEGINNER else 15, spaceAfter=8 if BEGINNER else 7, splitLongWords=True, allowWidows=0, allowOrphans=0))
     styles.add(ParagraphStyle(name='ChapterVI', fontName='NotoBold', fontSize=17, leading=23, spaceAfter=15, keepWithNext=True))
     styles.add(ParagraphStyle(name='SubVI', fontName='NotoBold', fontSize=12, leading=17, spaceBefore=10, spaceAfter=7, keepWithNext=True))
-    styles.add(ParagraphStyle(name='CellVI', fontName='Noto', fontSize=8.4, leading=12.2, splitLongWords=True))
-    styles.add(ParagraphStyle(name='CodeVI', fontName='NotoMono', fontSize=7.4, leading=11, spaceBefore=5, spaceAfter=10, leftIndent=8))
+    styles.add(ParagraphStyle(name='CellVI', fontName='Noto', fontSize=9.5 if BEGINNER else 8.4, leading=14 if BEGINNER else 12.2, splitLongWords=True))
+    styles.add(ParagraphStyle(name='CodeVI', fontName='NotoMono', fontSize=8.5 if BEGINNER else 7.4, leading=13 if BEGINNER else 11, spaceBefore=5, spaceAfter=10, leftIndent=8))
     styles.add(ParagraphStyle(name='TitleVI', fontName='NotoBold', fontSize=26, leading=34, spaceAfter=18))
     class GuideDoc(SimpleDocTemplate):
         def beforeDocument(self):
@@ -113,7 +115,7 @@ def pdf_document(items):
         canvas.drawString(1.8*cm, 1.05*cm, 'Phần 2 • AI V6 • Model đã chốt, ví dụ đã đối chiếu')
         canvas.drawRightString(19.2*cm, 1.05*cm, str(doc.page)); canvas.restoreState()
     doc = GuideDoc(str(ROOT/(STEM+'.pdf')), pagesize=(21*cm,29.7*cm), rightMargin=1.8*cm, leftMargin=1.8*cm, topMargin=1.7*cm, bottomMargin=1.8*cm,
-                   title='Đề cương học và hiểu phần AI V6', author='Tài liệu dự án DoanHTS — phần AI')
+                   title='Bắt đầu học AI V6 từ những điều đơn giản' if BEGINNER else 'Đề cương học và hiểu phần AI V6', author='Tài liệu dự án DoanHTS — phần AI')
     story = [Spacer(1,1*cm), Paragraph('Học và hiểu<br/>phần AI V6 của bạn', styles['TitleVI']),
              Paragraph('Đề cương có giải thích, dữ liệu mẫu, thực hành và đáp án', styles['SubVI']),
              Paragraph('Normal IoT-23 • SYN flood capture 34 • Vertical scan Chris Sanders', styles['TextVI']),
@@ -122,6 +124,23 @@ def pdf_document(items):
              Paragraph('Đối chiếu đúng model V6 và các file bàn giao. Có nêu nhãn xung đột, lỗi còn lại và giới hạn đánh giá. Ngày soạn: 08/11/2026.', styles['TextVI']),
              Paragraph('Đọc PDF để học; mở bản HTML để thay sáu đặc trưng và xem phép tính. Các PCAP/CSV mẫu nằm trong gói ZIP đi kèm.', styles['TextVI']), PageBreak(),
              Paragraph('Mục lục', styles['TitleVI'])]
+    if BEGINNER:
+        diagram=Drawing(450,95)
+        for x,label in [(0,'Gói mạng'),(157,'Sáu số thống kê'),(314,'Kết quả AI')]:
+            from reportlab.graphics.shapes import Rect
+            diagram.add(Rect(x,25,136,50,rx=7,ry=7,fillColor=colors.HexColor('#e0f2fe'),strokeColor=colors.HexColor('#88b3c7')))
+            diagram.add(String(x+68,46,label,fontName='NotoBold',fontSize=11,textAnchor='middle'))
+        for x in (138,295):
+            diagram.add(Line(x,50,x+16,50,strokeColor=colors.HexColor('#174d6b'),strokeWidth=1.2))
+            diagram.add(Line(x+12,54,x+16,50,strokeColor=colors.HexColor('#174d6b'),strokeWidth=1.2))
+            diagram.add(Line(x+12,46,x+16,50,strokeColor=colors.HexColor('#174d6b'),strokeWidth=1.2))
+        story=[Spacer(1,1*cm),Paragraph('Bắt đầu học AI V6<br/>từ những điều đơn giản',styles['TitleVI']),
+               Paragraph('Bản viết lại dễ hiểu • Mỗi bài giải thích một việc',styles['SubVI']),
+               Paragraph('Dùng ví dụ cảm biến gửi dữ liệu, giải nghĩa từng từ rồi mới tới số liệu và công thức.',styles['TextVI']),
+               Spacer(1,1*cm),diagram,Spacer(1,.8*cm),
+               Paragraph('Bạn chưa cần chạy lệnh. Đọc từng bài, thử trả lời câu hỏi cuối bài rồi mới học tiếp.',styles['TextVI']),
+               Paragraph('Giữ nguyên bộ AI và dữ liệu của bạn. Lần này thay đổi cách giải thích và cách học, không huấn luyện một bộ AI mới.',styles['TextVI']),
+               Paragraph('Ngày viết lại: 08/11/2026. Bản Word để ghi chú; bản HTML chia từng bài và có chỗ bấm thử.',styles['TextVI']),PageBreak(),Paragraph('Mục lục',styles['TitleVI'])]
     toc=TableOfContents();toc.levelStyles=[ParagraphStyle(name='TOCVI',fontName='Noto',fontSize=10,leading=16,spaceBefore=5)]
     story.extend([toc,PageBreak()])
     first_chapter=True
@@ -138,7 +157,7 @@ def pdf_document(items):
                 story.append(Paragraph(prefix+inline(item,True),styles['TextVI']))
         elif kind=='code':
             lines=[]
-            for line in body.splitlines():lines.extend(textwrap.wrap(line,104,replace_whitespace=False,drop_whitespace=False) or [''])
+            for line in body.splitlines():lines.extend(textwrap.wrap(line,88 if BEGINNER else 104,replace_whitespace=False,drop_whitespace=False) or [''])
             story.append(Preformatted('\n'.join(lines),styles['CodeVI']))
         elif kind=='table':
             width=doc.width/len(body[0])
@@ -153,12 +172,12 @@ def word_document(items):
     doc=Document();section=doc.sections[0];section.top_margin=Cm(1.8);section.bottom_margin=Cm(1.8);section.left_margin=Cm(2);section.right_margin=Cm(2)
     for name in ('Normal','Title','Heading 1','Heading 2'):
         doc.styles[name].font.name='Noto Sans'
-    normal=doc.styles['Normal'];normal.font.size=Pt(10.5);normal.paragraph_format.space_after=Pt(6)
+    normal=doc.styles['Normal'];normal.font.size=Pt(11.5 if BEGINNER else 10.5);normal.paragraph_format.space_after=Pt(8 if BEGINNER else 6)
     doc.core_properties.title='Đề cương học và hiểu phần AI V6'
     doc.core_properties.subject='Model 6–8–3, dữ liệu, thực hành và bàn giao phần AI'
-    doc.add_heading('Học và hiểu phần AI V6 của bạn',0)
-    doc.add_paragraph('Đề cương có giải thích, ví dụ PCAP/CSV thật, bài tập và đáp án.\nNgày 08/11/2026 • MLP 6–8–3 • 83 tham số')
-    doc.add_paragraph('6 q → 8 hidden ReLU → 3 score [Normal, SYN flood, Vertical scan]')
+    doc.add_heading('Bắt đầu học AI V6 từ những điều đơn giản' if BEGINNER else 'Học và hiểu phần AI V6 của bạn',0)
+    doc.add_paragraph('Bản viết lại dễ hiểu, giải nghĩa từng từ trước khi dùng công thức.\nNgày 08/11/2026 • Mỗi bài giải thích một việc.' if BEGINNER else 'Đề cương có giải thích, ví dụ PCAP/CSV thật, bài tập và đáp án.\nNgày 08/11/2026 • MLP 6–8–3 • 83 tham số')
+    doc.add_paragraph('Gói mạng → sáu số thống kê → kết quả AI' if BEGINNER else '6 q → 8 hidden ReLU → 3 score [Normal, SYN flood, Vertical scan]')
     doc.add_paragraph('Bản Word để ghi chú. PDF có mục lục theo trang; HTML có bộ tính tương tác. Nguồn và phạm vi đánh giá được ghi trong tài liệu.')
     doc.add_page_break()
     for kind,body in items:
@@ -201,10 +220,10 @@ def package():
     candidates=sorted(p for p in ROOT.rglob('*') if p.is_file() and not {'__pycache__','pcap_da_giai_nen'}.intersection(p.relative_to(ROOT).parts))
     candidates=[p for p in candidates if p.name!='FILE_SHA256.json']
     (ROOT/'FILE_SHA256.json').write_text(json.dumps({p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in candidates},indent=2)+'\n')
-    out=REPO/'de_cuong_hoc_ai_v6.zip'
+    out=REPO/(ZIP_NAME+'.zip')
     with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for p in sorted(candidates+[ROOT/'FILE_SHA256.json']):
-            entry=zipfile.ZipInfo('de_cuong_hoc_ai_v6/'+p.relative_to(ROOT).as_posix(),(2000,1,1,0,0,0));entry.create_system=3;entry.external_attr=0o100644<<16;entry.compress_type=zipfile.ZIP_DEFLATED
+            entry=zipfile.ZipInfo(ZIP_NAME+'/'+p.relative_to(ROOT).as_posix(),(2000,1,1,0,0,0));entry.create_system=3;entry.external_attr=0o100644<<16;entry.compress_type=zipfile.ZIP_DEFLATED
             z.writestr(entry,p.read_bytes())
     out.with_suffix('.zip.sha256').write_text(hashlib.sha256(out.read_bytes()).hexdigest()+'  '+out.name+'\n')
     print('ZIP',out.stat().st_size,'bytes',hashlib.sha256(out.read_bytes()).hexdigest())

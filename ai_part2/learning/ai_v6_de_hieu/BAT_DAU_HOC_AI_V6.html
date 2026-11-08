@@ -1,0 +1,595 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bắt đầu học AI V6 — bản dễ hiểu</title><style>
+:root{--ink:#223746;--blue:#174d6b;--teal:#117869;--muted:#556b79;--line:#d8e3e9;--paper:#fff;--ground:#f3f6f8}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;font:18px/1.85 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--ground)}header{max-width:1120px;margin:0 auto;padding:38px 24px 22px}header .tag{font-size:13px;font-weight:700;color:var(--teal);letter-spacing:.06em}h1{font-size:clamp(27px,4.5vw,39px);line-height:1.3;margin:8px 0 16px}header p{max-width:760px;margin:10px 0;color:var(--muted)}a{color:var(--blue);text-underline-offset:4px}.layout{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:240px minmax(0,1fr);gap:25px;padding:0 24px 40px}aside{align-self:start;position:sticky;top:18px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;font-size:14px}summary{font-weight:700;cursor:pointer}nav a{display:block;font-size:13px;padding:8px 0;line-height:1.6;text-decoration:none}nav a[aria-current=page]{font-weight:750;color:var(--teal)}main{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:30px 38px;min-width:0}#where{color:var(--teal);font-size:14px;font-weight:750;letter-spacing:.02em}h2{font-size:29px;line-height:1.4;margin:14px 0 25px;color:var(--blue)}h3{font-size:22px;line-height:1.5;margin:27px 0 12px}p,li{overflow-wrap:anywhere}li{margin:10px 0}pre{background:#f1f5f7;border-left:4px solid #9bb9cb;padding:16px;overflow:auto;font:14px/1.8 ui-monospace,"Cascadia Code",monospace;border-radius:4px}code{font-family:ui-monospace,monospace;font-size:.88em;background:#f0f4f6;border-radius:3px;padding:2px 3px}pre code{background:none;padding:0;font-size:inherit}.table-wrap{overflow:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.75}th,td{padding:11px 12px;border:1px solid var(--line);text-align:left;vertical-align:top;min-width:75px}th{background:#eef6f9}tr:nth-child(even){background:#fafcfd}.question{background:#fff8e7;border-left:4px solid #d39c38;padding:16px}.answer{padding:13px 17px;background:#edf7f4;border:1px solid #cce2d9;border-radius:7px}.answer p{margin-bottom:5px}.controls{border-top:1px solid var(--line);padding-top:24px;margin-top:35px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}.hint{font-size:14px;color:var(--muted)}button{font:600 15px/1.6 system-ui,sans-serif;color:var(--blue);background:white;border:1px solid #7198ae;border-radius:7px;padding:11px 17px;cursor:pointer}button.primary{background:var(--blue);color:white;border-color:var(--blue)}button:disabled{opacity:.5;cursor:default}button:hover:enabled{filter:brightness(.95)}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #d99d31;outline-offset:3px}.interactive{padding:20px;background:#f5fafb;border:1px solid #cfe0e6;border-radius:10px;margin-top:24px}.interactive h3{margin-top:0}.button-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.bubble{background:white;border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.fields label{font-size:14px;font-weight:650;display:block;line-height:1.5}.fields input{display:block;width:100%;margin-top:7px;border:1px solid #9eb6c4;padding:10px;border-radius:5px;font:17px system-ui;background:white;color:var(--ink)}#calc-out{background:#fff;border-left:4px solid var(--teal);padding:18px;margin:18px 0;font-size:17px;line-height:1.9}.scores{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:14px}.scores div{background:white;border:1px solid var(--line);padding:10px;border-radius:7px}.scores .winner{background:#e2f4ed;border-color:#4b9d7c}.scores b{display:block;font-size:22px}#numbers{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.8 ui-monospace,monospace}#miss-result{background:#fff7e5;padding:16px;border-radius:7px}footer{max-width:1100px;margin:auto;padding:0 24px 30px;color:var(--muted);font-size:13px}@media(max-width:900px){.layout{grid-template-columns:1fr;padding:0 13px 25px}aside{position:static;padding:14px 18px}header{padding:25px 20px 15px}main{padding:25px 22px}}@media(max-width:460px){body{font-size:17px}.fields{grid-template-columns:1fr}h2{font-size:25px}.scores{grid-template-columns:1fr}main{padding:20px 17px}th,td{font-size:13px;padding:9px}.controls button{font-size:14px;padding:10px 12px}}@media print{aside,header,.controls,.interactive,footer{display:none}body{background:white}.layout{display:block;margin:0;padding:0}main{border:0;padding:0}.lesson[hidden]{display:block!important}.lesson{break-before:page}.answer{display:block}.answer p{display:block}}
+</style></head><body>
+<header><div class="tag">PHẦN AI CỦA BẠN / BẢN VIẾT LẠI DỄ HIỂU</div><h1>Bắt đầu từ gói tin, rồi mới học AI</h1><p>Mỗi lần đọc một bài. Giải nghĩa từ mới, xem ví dụ và thử trả lời trước khi mở lời giải. Bạn chưa cần chạy Python hoặc đọc Verilog.</p><p class="hint"><a href="BAT_DAU_HOC_AI_V6.pdf">Đọc bằng PDF</a> · <a href="BAT_DAU_HOC_AI_V6.docx">Bản Word để ghi chú</a></p></header>
+<div class="layout"><aside><details id="menu"><summary>Mục lục — chọn bài</summary><nav aria-label="Các bài học"><a href="#s0">Đọc trang này trước</a>
+<a href="#s1">Bài 1. Phần AI của bạn có nhiệm vụ gì?</a>
+<a href="#s2">Bài 2. Gói tin, IP và cổng là gì?</a>
+<a href="#s3">Bài 3. TCP bắt tay ra sao? “SYN mở” nghĩa là gì?</a>
+<a href="#s4">Bài 4. Ba loại lưu lượng khác nhau ở đâu?</a>
+<a href="#s5">Bài 5. Dataset của bạn là gì? PCAP và CSV dùng làm gì?</a>
+<a href="#s6">Bài 6. Vì sao cần gom một giây và lấy sáu con số?</a>
+<a href="#s7">Bài 7. Đọc một dòng dữ liệu thật của bạn</a>
+<a href="#s8">Bài 8. Vì sao sáu số lại bị chia và đổi thành q?</a>
+<a href="#s9">Bài 9. Model 6–8–3 thực sự làm gì?</a>
+<a href="#s10">Bài 10. “Train” là học điều gì? Bo có tự học không?</a>
+<a href="#s11">Bài 11. Vì sao accuracy cao mà AI vẫn có thể chưa tốt?</a>
+<a href="#s12">Bài 12. Học và thực hành ngay trên gói này</a>
+<a href="#s13">Phụ lục A. Khi đã hiểu, hãy xem công thức</a>
+<a href="#s14">Phụ lục B. Biết gì trước khi ghép với bạn trong nhóm?</a>
+<a href="#s15">Tự kiểm cuối cùng: bạn đã hiểu tới đâu?</a></nav></details><p class="hint">Học bài 1–12 trước. Phụ lục để tra cứu khi đã hiểu phần nền.</p></aside><main id="main"><div id="where">Bắt đầu ở đây</div><article id="s0" class="lesson"><h2>Đọc trang này trước</h2><p>Bạn hãy coi tài liệu này như một người đang ngồi bên cạnh giải thích từng bước. Chưa cần học thuộc công thức, đọc Verilog hoặc chạy lại train.</p><p>Mỗi bài chỉ tập trung vào một việc. Đọc ví dụ, trả lời câu hỏi cuối bài, rồi xem lời giải ngay bên dưới. Nếu chưa nói lại được bằng lời của mình, hãy đọc lại bài đó; không cần cố đọc hết trong một lần.</p><ul><li>Lần đầu: bài 1–4 để hiểu mạng đang làm gì.</li><li>Lần tiếp theo: bài 5–8 để hiểu file dữ liệu và sáu con số.</li><li>Sau đó: bài 9–12 để hiểu model, train và kết quả.</li><li>Phụ lục A và B: chỉ mở khi muốn xem công thức hoặc ghép phần cứng.</li></ul><p>Trong bản HTML, mỗi màn hình là một bài; dùng nút “Bài tiếp theo”. Trong PDF/Word, đọc theo mục lục. Bạn chỉ cần mở PDF để bắt đầu, không cần cài công cụ.</p><p><b>Một điều xuyên suốt:</b> AI của bạn nhìn sáu con số tóm tắt lưu lượng rồi đưa ra một dự đoán. Ta sẽ đi từng bước để hiểu câu này.</p></article>
+<article id="s1" class="lesson" hidden><h2>Bài 1. Phần AI của bạn có nhiệm vụ gì?</h2><h3>Bắt đầu bằng chuyện cảm biến gửi nhiệt độ</h3><p>Giả sử cảm biến đo được 30°C và gửi thông tin tới máy chủ MQTT. Máy chủ MQTT là chương trình nhận và chuyển các thông điệp MQTT cho bên cần nhận. Ví dụ này giúp hiểu cách hệ thống hoạt động, không phải khẳng định dữ liệu train của bạn toàn là MQTT.</p><p>Dữ liệu đi qua thiết bị gateway của nhóm. Gateway có thể quan sát lượng gói mạng đi qua. Phần AI cần hỗ trợ nhận xét: lưu lượng đang giống bình thường, SYN flood hay vertical scan?</p><pre><code>Gói mạng đi qua gateway
+        v
+Đếm và tóm tắt thành sáu con số trong một giây
+        v
+AI tính toán
+        v
+Trả về một trong ba tên loại lưu lượng</code></pre><p><b>AI không đọc câu “nhiệt độ 30°C” để quyết định tấn công.</b> Model hiện tại nhận các thống kê như số gói và số cổng được truy cập.</p><h3>Hai từ bạn sẽ gặp thường xuyên</h3><div class="table-wrap"><table><tr><th>Từ</th><th>Hiểu bằng lời thường</th></tr><tr><td>Model</td><td>Bộ phép tính có các hệ số đã học từ dữ liệu mẫu</td></tr><tr><td>Dự đoán</td><td>Câu trả lời của model khi nhận dữ liệu mới; có thể đúng hoặc sai</td></tr></table></div><p>Ví dụ AI trả về SYN flood. Phần điều khiển của gateway còn phải gắn kết quả với nguồn gửi và quy tắc xử lý. Core AI không tự có danh sách IP để chặn.</p><p><b>Cần nhớ:</b> phần của bạn tạo bộ phân loại. Các phần đếm gói, CPU, mạng và điều khiển phải ghép với bộ đó để thành hệ thống.</p><p class="question">Tự hỏi: AI nhận cả file PCAP hay sáu con số khi hệ thống chạy?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: core AI nhận sáu con số đã đổi sang dạng phù hợp. File PCAP phục vụ chuẩn bị dữ liệu và kiểm thử trên máy tính.</p></details></article>
+<article id="s2" class="lesson" hidden><h2>Bài 2. Gói tin, IP và cổng là gì?</h2><h3>Một thông điệp không nhất thiết đi thành một khối duy nhất</h3><p>Khi hai máy liên lạc, thông tin được truyền qua các gói tin. Bạn có thể hình dung mỗi gói như một phong bì: có người gửi, người nhận và phần thông tin bên trong. Trong mạng thật còn có các gói điều khiển, không mang nội dung ứng dụng như nhiệt độ.</p><p>Trong đề cương này, bạn chỉ cần hiểu ba thông tin sau:</p><div class="table-wrap"><table><tr><th>Thông tin</th><th>Nó trả lời câu hỏi nào?</th></tr><tr><td>IP nguồn</td><td>Gói được gửi từ địa chỉ nào?</td></tr><tr><td>IP đích</td><td>Gói đang đi tới địa chỉ nào?</td></tr><tr><td>Cổng đích</td><td>Gói đang nhắm tới dịch vụ nào trên máy đích?</td></tr></table></div><p>Ví dụ minh họa: máy A gửi tới IP của máy B, cổng 1883. 1883 thường dùng cho MQTT. Một máy có thể cung cấp nhiều dịch vụ trên nhiều cổng.</p><p>IP có thể so với địa chỉ một tòa nhà; cổng giống số phòng dịch vụ trong tòa nhà. Đây là cách nhớ đơn giản, không phải mô tả toàn bộ hoạt động của giao thức mạng.</p><h3>“Nguồn” và “đích” phụ thuộc chiều gói</h3><p>Khi cảm biến gửi tới máy chủ, cảm biến là nguồn. Khi máy chủ trả lời, máy chủ là nguồn của gói trả lời đó. Đừng mặc định một IP luôn là nguồn trong mọi dòng.</p><p>Máy được chọn để bảo vệ và thống kê trong một mẫu được gọi là <b>receiver</b>, nghĩa là máy nhận. Phép đếm của model chỉ lấy gói đi tới IP máy đó trong khoảng đang xét.</p><p><b>Cần nhớ:</b> nhiều cổng nguồn chưa có nghĩa là quét nhiều dịch vụ. Khi tìm vertical scan, cần đặc biệt xem cổng đích.</p><p class="question">Tự hỏi: một nguồn gửi tới cổng 22, 80 và 443 trên cùng một IP đích. Nó đã nhắm bao nhiêu cổng đích khác nhau?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: ba cổng. Gửi lại cổng 80 nhiều lần không làm số cổng khác nhau tăng thêm.</p></details></article>
+<article id="s3" class="lesson" hidden><h2>Bài 3. TCP bắt tay ra sao? “SYN mở” nghĩa là gì?</h2><h3>Hai bên xác nhận trước khi trao đổi dữ liệu</h3><p>TCP là một cách truyền dữ liệu có kết nối. Trong trường hợp thông thường, hai bên làm ba bước xác nhận trước khi trao đổi dữ liệu của phiên.</p><div class="table-wrap"><table><tr><th>Bước</th><th>Ai gửi cho ai?</th><th>Tên gói</th><th>Hiểu bằng lời thường</th></tr><tr><td>1</td><td>Cảm biến gửi tới máy chủ</td><td>SYN</td><td>“Tôi muốn thiết lập kết nối.”</td></tr><tr><td>2</td><td>Máy chủ gửi tới cảm biến</td><td>SYN + ACK</td><td>“Tôi nhận được yêu cầu; tôi cũng sẵn sàng thiết lập kết nối.”</td></tr><tr><td>3</td><td>Cảm biến gửi tới máy chủ</td><td>ACK</td><td>“Tôi đã nhận phản hồi của bạn.”</td></tr></table></div><p>Quá trình này gọi là <b>bắt tay TCP</b>. Sau đó, cảm biến có thể trao đổi dữ liệu MQTT qua kết nối đó.</p><p>SYN và ACK là tên các <b>cờ TCP</b>. Cờ ở đây là dấu hiệu trong phần điều khiển của gói. “Bật cờ” có nghĩa dấu hiệu đó đang có giá trị 1. ACK dùng để xác nhận đã nhận thông tin; SYN tham gia bắt đầu và đồng bộ kết nối.</p><h3>Phần AI đếm loại nào?</h3><p>Trong model của bạn, “SYN mở” là tên gọi cho gói có SYN bật và ACK chưa bật. Nó thường là yêu cầu ở bước 1.</p><ul><li>SYN: được tính vào số SYN mở.</li><li>SYN + ACK: không tính vào số SYN mở.</li><li>ACK: không tính vào số SYN mở.</li></ul><p>“Mở” ở đây nghĩa là yêu cầu bắt đầu kết nối. Nó không chứng minh cổng đích đang mở, kết nối đã thành công hoặc kết nối đã thất bại. Muốn biết thành công hay không phải xem diễn biến hai chiều.</p><h3>Khi nào liên quan tới tấn công?</h3><p>Một SYN là điều bình thường khi tạo kết nối mới. SYN flood thường làm máy chủ nhận rất nhiều yêu cầu kiểu này; nhiều yêu cầu có thể không hoàn tất bắt tay, gây áp lực lên tài nguyên máy chủ. Nhưng chỉ nhìn một SYN thì không biết đó có phải tấn công hay không.</p><p><b>Cần nhớ:</b> bộ đếm SYN của bạn đếm yêu cầu bắt đầu, không trực tiếp đếm “số kết nối thất bại”.</p><p class="question">Tự hỏi: thấy SYN-ACK có tăng bộ đếm SYN mở không?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: không, vì ACK đã bật. Công thức kiểm hai cờ nằm ở phụ lục A; bây giờ chỉ cần hiểu bảng trên.</p></details><section class="interactive" aria-label="Bấm xem bắt tay TCP"><h3>Bấm từng bước để xem</h3><div class="button-row"><button type="button" data-step="0">1. SYN</button><button type="button" data-step="1">2. SYN + ACK</button><button type="button" data-step="2">3. ACK</button></div><div class="bubble"><strong id="tcp-step-title"></strong><p id="tcp-speech"></p><p id="tcp-flags"></p><p id="tcp-count"></p></div></section></article>
+<article id="s4" class="lesson" hidden><h2>Bài 4. Ba loại lưu lượng khác nhau ở đâu?</h2><h3>Normal: bình thường</h3><p>Ví dụ: cảm biến mở kết nối, gửi dữ liệu theo chức năng rồi tiếp tục hoạt động. Nó có thể gửi SYN và có thể có nhiều gói. Không thể dùng quy tắc “có SYN là tấn công” hoặc “nhiều gói luôn là xấu”.</p><h3>SYN flood: dồn nhiều yêu cầu mở kết nối</h3><p>Hình dung một dịch vụ liên tục nhận yêu cầu bắt đầu kết nối. Trong ngữ cảnh gây quá tải và các dấu hiệu liên quan, hành vi đó phù hợp SYN flood.</p><p>Trong mẫu của bạn, dấu hiệu thường gặp là nhiều gói, phần lớn là SYN mở và tập trung vào một cổng dịch vụ. Đây là dấu hiệu để nhận xét, không phải ngưỡng cố định mà AI luôn làm theo.</p><h3>Vertical scan: thăm nhiều cổng trên cùng một máy</h3><p>Ví dụ một nguồn lần lượt thử các cổng 21, 22, 23, 80, 443 trên cùng một IP đích. Nó đang thăm nhiều dịch vụ của cùng máy. Đây là hành vi phù hợp vertical scan khi ngữ cảnh củng cố việc thăm dò.</p><p>Nếu thăm cùng một cổng trên nhiều máy, thường gọi là horizontal scan. Model hiện tại không có lớp riêng cho loại đó.</p><div class="table-wrap"><table><tr><th>Điều đang quan sát</th><th>Có thể nhận xét gì?</th></tr><tr><td>Một SYN tới một dịch vụ</td><td>Chưa đủ để kết luận tấn công</td></tr><tr><td>Rất nhiều SYN tới một dịch vụ</td><td>Cần xem xét SYN flood và ngữ cảnh</td></tr><tr><td>Một nguồn thăm nhiều cổng trên một máy</td><td>Cần xem xét vertical scan</td></tr><tr><td>Nhiều người dùng truy cập các dịch vụ khác nhau</td><td>Có thể bình thường; tổng nhiều cổng chưa chứng minh một người đang scan</td></tr></table></div><p>Cả flood và scan đều có thể dùng SYN. Vì vậy AI cần xem nhiều đặc điểm cùng nhau.</p><p><b>Cần nhớ:</b> xem số gói, loại gói, nguồn, đích, cổng và thời gian; không kết luận chỉ từ một dấu hiệu.</p><p class="question">Tự hỏi: “1.000 gói” có đủ để chọn Normal, SYN flood hay scan không?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: chưa đủ. Cần biết 1.000 gói trong bao lâu, gửi những gì và tới các cổng/đích nào.</p></details></article>
+<article id="s5" class="lesson" hidden><h2>Bài 5. Dataset của bạn là gì? PCAP và CSV dùng làm gì?</h2><h3>Dataset là bộ dữ liệu mẫu để học và kiểm tra</h3><p>Để dạy model, ta cần nhiều ví dụ và thông tin mỗi ví dụ thuộc loại nào. Thông tin loại đó gọi là <b>nhãn</b>.</p><p>Model của bạn dùng ba mã nhãn:</p><div class="table-wrap"><table><tr><th>Nhãn</th><th>Tên loại</th></tr><tr><td>0</td><td>Normal — bình thường</td></tr><tr><td>1</td><td>SYN flood</td></tr><tr><td>2</td><td>Vertical scan</td></tr></table></div><p>0, 1, 2 chỉ là mã tên lớp. Class 2 không có nghĩa nguy hiểm gấp đôi class 1.</p><h3>Các nguồn bạn đang dùng</h3><div class="table-wrap"><table><tr><th>Loại</th><th>Nguồn dữ liệu</th></tr><tr><td>Normal</td><td>Phần đã lọc theo nhãn bình thường gốc của IoT-23; danh sách chọn có 28 tệp PCAP</td></tr><tr><td>SYN flood</td><td>Đoạn SYN flood đã rà soát của capture 34 trong IoT-23</td></tr><tr><td>Vertical scan</td><td>Mẫu công khai của Chris Sanders mà dự án đã rà soát hành vi quét</td></tr></table></div><p>IoT-23 là tên một bộ dữ liệu mạng IoT. Chris Sanders là người công bố bộ mẫu packet có file scan đã dùng. Nhóm dùng nguồn gốc rồi chọn/lọc và tạo các biến thể thời gian hoặc trộn nền để học. Không phải toàn bộ IoT-23 đều là SYN flood, và không phải mọi file từ capture malware đều chỉ chứa tấn công.</p><p>Ba PCAP/CSV nhỏ trong gói này là <b>biến thể mô phỏng đã dùng</b>, lấy từ các nguồn đó. Những ví dụ cảm biến/MQTT ở bài trước chỉ giúp hiểu hệ thống; không khẳng định mọi gói của IoT-23 là MQTT.</p><h3>PCAP là bản ghi gói, CSV là bảng</h3><div class="table-wrap"><table><tr><th>File</th><th>Bạn xem được gì?</th></tr><tr><td>PCAP</td><td>Từng gói, thời điểm, IP, cổng và cờ TCP; mở bằng Wireshark</td></tr><tr><td>CSV flow</td><td>Tóm tắt kết nối/nhóm gói; có thể dùng xem nhãn gốc</td></tr><tr><td>CSV sáu đặc trưng</td><td>Tóm tắt lưu lượng trong từng giây; đây là loại bảng model cần</td></tr></table></div><p>Ví dụ minh họa: có 10 gói cùng một kết nối đi tới máy chủ trong một giây. Wireshark có 10 hàng gói. CSV flow có thể chỉ có một hàng kết nối. CSV đặc trưng có một hàng cho máy nhận trong giây đó.</p><p><b>Cần nhớ:</b> một hàng CSV không phải lúc nào cũng là một gói. Hãy xem tên các cột để biết bảng đang ghi loại thông tin gì.</p><p class="question">Tự hỏi: file có <code>packet_count</code> và <code>mean_ip_bytes</code> có khả năng là bảng gì?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: bảng đặc trưng đã tổng hợp, không phải bản liệt kê từng packet.</p></details></article>
+<article id="s6" class="lesson" hidden><h2>Bài 6. Vì sao cần gom một giây và lấy sáu con số?</h2><h3>AI cần một bảng tóm tắt có độ dài cố định</h3><p>Một giây có thể có ít gói, giây khác có rất nhiều. Model của bạn không nhận một danh sách packet dài ngắn tùy ý. Ta đếm và tóm tắt chúng thành sáu con số.</p><p>Khoảng một giây này được gọi là <b>cửa sổ</b>. Ví dụ minh họa cách chia:</p><pre><code>Từ 10:00:00 đến trước 10:00:01 -&gt; một mẫu thống kê
+Từ 10:00:01 đến trước 10:00:02 -&gt; một mẫu khác</code></pre><p>IPv4 là phiên bản IP dùng trong phép trích này; địa chỉ của nó thường viết như 192.168.1.10. Một mẫu chỉ xét gói đi tới <b>một IP máy nhận được chọn</b>. Nếu đếm cả hai chiều hoặc cả nhiều máy, các con số có thể khác và không còn đúng cách model đã học.</p><h3>Sáu con số trả lời sáu câu hỏi</h3><div class="table-wrap"><table><tr><th>Tên cột tiếng Anh</th><th>Hiểu bằng câu hỏi</th></tr><tr><td>packet_count</td><td>Có bao nhiêu gói IPv4 hợp lệ đi tới máy này trong một giây?</td></tr><tr><td>mean_ip_bytes</td><td>Mỗi gói dài trung bình bao nhiêu byte ở phần IP?</td></tr><tr><td>syn_ratio_q127</td><td>Trong các gói được đếm, SYN mở chiếm tỷ lệ bao nhiêu, viết trên thang 0–127?</td></tr><tr><td>src_count</td><td>Có bao nhiêu IP nguồn khác nhau gửi tới?</td></tr><tr><td>dst_count</td><td>Có bao nhiêu IP đích khác nhau được thống kê?</td></tr><tr><td>dst_port_count</td><td>Có bao nhiêu cổng đích TCP/UDP khác nhau được nhắm tới?</td></tr></table></div><p>Một byte là đơn vị đo lượng dữ liệu. Độ dài IP dùng ở đây không phải độ dài riêng nội dung nhiệt độ hoặc toàn bộ khung Ethernet. Trong phần mềm, tên trường độ dài đó là IP Total Length.</p><p>Vì chọn một IP nhận, <code>dst_count</code> thường là 1. Cột này không có nghĩa “có một kẻ tấn công”. Số nguồn khác nhau cũng không tự cho biết nguồn nào tốt hay xấu.</p><h3>Tỷ lệ SYN trên thang 127: tính chậm từng bước</h3><p>Ví dụ minh họa để học phép tính: một giây có 20 SYN mở, 50 gói TCP khác và 30 UDP. Tổng số gói được đếm là 100.</p><ol><li>Tỷ lệ SYN là 20 chia 100, bằng 20%.</li><li>Model cần viết tỷ lệ trên thang 127: lấy 20 chia 100 rồi nhân 127.</li><li>Kết quả là 25,4. Bỏ phần lẻ còn 25.</li></ol><p>Vậy cột <code>syn_ratio_q127</code> ghi 25. <b>25 không phải 25 gói, cũng không phải 25%.</b> Nó biểu diễn khoảng 20% trên thang 127. Chọn thang này giúp phù hợp dạng số nhỏ mà core dùng.</p><p>Mẫu số có cả TCP, UDP và các IPv4 hợp lệ khác tới máy nhận. Chỉ lọc TCP rồi chia sẽ ra một tỷ lệ khác. Các gói phân mảnh hoặc bị thiếu dữ liệu được loại theo quy tắc trích của dự án.</p><p><b>Cần nhớ:</b> sáu con số là sáu thống kê của một máy nhận trong một giây.</p><p class="question">Tự hỏi: trong một giây có 10 gói nhưng tất cả từ cùng một IP nguồn, <code>src_count</code> là 10 hay 1?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: 1, vì đếm số IP khác nhau, không đếm số gói.</p></details></article>
+<article id="s7" class="lesson" hidden><h2>Bài 7. Đọc một dòng dữ liệu thật của bạn</h2><h3>Hãy mở ví dụ Normal trước</h3><p>File <code>vi_du/normal_train_14_sensor7.csv</code> có nhiều dòng. Xét dòng có <code>window_start</code> là 1800000003. Đây là mốc thời gian của cửa sổ trong file mô phỏng; bạn chưa cần đổi số này sang ngày tháng.</p><p>Trong dòng đó có sáu giá trị:</p><pre><code>14, 54, 18, 1, 1, 1</code></pre><p>Đừng cố đoán nghĩa theo trí nhớ. Đọc cùng tên cột:</p><div class="table-wrap"><table><tr><th>Cột</th><th>Giá trị</th><th>Đọc thành lời</th></tr><tr><td>packet_count</td><td>14</td><td>Trong một giây có 14 gói tới máy nhận</td></tr><tr><td>mean_ip_bytes</td><td>54</td><td>Độ dài IP trung bình, bỏ phần lẻ, là 54 byte</td></tr><tr><td>syn_ratio_q127</td><td>18</td><td>Tỷ lệ SYN biểu diễn trên thang 127 là 18</td></tr><tr><td>src_count</td><td>1</td><td>Một IP nguồn khác nhau</td></tr><tr><td>dst_count</td><td>1</td><td>Một IP đích khác nhau</td></tr><tr><td>dst_port_count</td><td>1</td><td>Một cổng đích khác nhau</td></tr></table></div><p>PCAP tương ứng cho biết một giây đó có <b>hai SYN mở trong 14 gói</b>. Vì vậy 18 không phải 18 SYN và không phải 18%: hai chia 14 rồi nhân 127, bỏ phần lẻ, được 18.</p><p>Nhãn dòng là 0, tức Normal. Đây là ví dụ cụ thể cho thấy dữ liệu bình thường vẫn có SYN.</p><h3>Đặt ba ví dụ cạnh nhau</h3><p>Cùng mốc 1800000003, hai file mẫu còn lại có:</p><div class="table-wrap"><table><tr><th>Thông tin</th><th>Normal mẫu</th><th>SYN flood mẫu</th><th>Scan mẫu</th></tr><tr><td>Nhãn trong CSV</td><td>0</td><td>1</td><td>2</td></tr><tr><td>Số gói</td><td>14</td><td>489</td><td>112</td></tr><tr><td>Tỷ lệ SYN trên thang 127</td><td>18</td><td>125</td><td>127</td></tr><tr><td>Số IP nguồn</td><td>1</td><td>2</td><td>2</td></tr><tr><td>Số IP đích</td><td>1</td><td>1</td><td>1</td></tr><tr><td>Số cổng đích</td><td>1</td><td>1</td><td>70</td></tr></table></div><p>SYN mẫu: nhiều gói, tỷ lệ SYN cao và tập trung một cổng. Scan mẫu: tỷ lệ SYN cũng cao nhưng có nhiều cổng đích. Hai nguồn trong các mẫu attack có cả thành phần nền đã trộn, không tự chứng minh cả hai nguồn đều đang tấn công.</p><p>Đây là ba ví dụ đã có, <b>không phải quy tắc cố định</b> như “489 gói luôn là flood”.</p><h3>Các cột khác tạm hiểu như sau</h3><ul><li><code>label</code>: nhãn người chuẩn bị dữ liệu ghi, 0/1/2.</li><li><code>profile</code>: tên biến thể dữ liệu, không phải đầu vào AI.</li><li><code>window_start</code>: mốc giây đang xét, không phải thời gian kéo dài của dòng đó.</li><li><code>status</code>: dòng đủ điều kiện để học hay cần xem thêm ngữ cảnh.</li><li><code>q0</code> đến <code>q5</code>: sáu số đã thu gọn cho model; học ở bài 8.</li></ul><p><code>eligible</code> nghĩa là được cho phép dùng ở bước học/lựa chọn theo quy tắc chuẩn bị dữ liệu. <code>sparse</code> là ít gói hoặc ít cổng tấn công nên cần ngữ cảnh. <code>ambiguous</code> là đầu vào bị trùng với nhãn khác. Các dòng cần ngữ cảnh vẫn được giữ để xem, không tự đổi thành Normal.</p><p><b>Cần nhớ:</b> có ba việc khác nhau: nhãn file đang ghi gì, packet thể hiện hành vi gì và AI dự đoán gì. AI dự đoán khác nhãn không có nghĩa phải sửa nhãn theo AI.</p><p class="question">Tự hỏi: <code>label = 2</code> có phải số cổng đích bằng 2 không?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: không. 2 là mã lớp vertical scan; số cổng đọc ở <code>dst_port_count</code>.</p></details></article>
+<article id="s8" class="lesson" hidden><h2>Bài 8. Vì sao sáu số lại bị chia và đổi thành q?</h2><h3>Hiểu “thu gọn số” trước khi học tên chuyên môn</h3><p>FPGA là chip mà nhóm dùng để thực hiện phép tính bằng mạch số. Khối mạch làm phép tính AI được gọi là core AI. Với core AI nhỏ, ta muốn dùng số nguyên nhỏ thay vì tính số thập phân phức tạp.</p><p>Bước chuyển số cho phù hợp cách biểu diễn được gọi là <b>lượng tử hóa</b>. Trong bước đầu vào của bạn, nó làm việc sau:</p><ol><li>Số gói chia 8, bỏ phần lẻ.</li><li>Độ dài trung bình chia 2, bỏ phần lẻ.</li><li>Bốn giá trị còn lại giữ theo số đã tính.</li><li>Nếu giá trị lớn hơn 127 thì chỉ giữ 127.</li></ol><h3>Làm với dòng Normal vừa đọc</h3><div class="table-wrap"><table><tr><th>Giá trị trước khi thu gọn</th><th>Cách đổi</th><th>Giá trị đưa vào AI</th></tr><tr><td>Số gói 14</td><td>14 chia 8 bằng 1,75; bỏ phần lẻ</td><td>1</td></tr><tr><td>Mean byte 54</td><td>54 chia 2</td><td>27</td></tr><tr><td>Tỷ lệ SYN 18</td><td>Giữ nguyên</td><td>18</td></tr><tr><td>Số nguồn 1</td><td>Giữ nguyên</td><td>1</td></tr><tr><td>Số đích 1</td><td>Giữ nguyên</td><td>1</td></tr><tr><td>Số cổng 1</td><td>Giữ nguyên</td><td>1</td></tr></table></div><pre><code>Trước:  [14, 54, 18, 1, 1, 1]
+Sau:    [ 1, 27, 18, 1, 1, 1]</code></pre><p>Sáu số sau được gọi là q0, q1, q2, q3, q4, q5. Phần mềm thường đánh số từ 0 nên q0 là số thứ nhất. q chỉ là tên gọi cho số sau khi thu gọn, không phải sáu nhãn khác.</p><h3>Thu gọn thì phải chấp nhận mất chi tiết</h3><p>8 gói và 15 gói đều cho số đầu tiên là 1. 1.016 gói và 2.000 gói đều cho 127 vì đã tới giới hạn. Nếu hai lưu lượng biến thành cùng sáu q, riêng model này không còn thấy sự khác biệt ban đầu đó.</p><p>Không tự đổi phép chia 8 thành chia 4 mà giữ model cũ. Khi đổi cách biểu diễn đầu vào, model có thể trả lời khác với ý nghĩa nó đã học.</p><h3>Chỗ rất dễ nhầm: q0 bằng 0 chưa chắc rỗng</h3><p>Một giây có 7 gói: 7 chia 8, bỏ phần lẻ, được q0 = 0. Nhưng vẫn có gói, nên vẫn suy luận.</p><p>Một giây không có gói nào: bỏ suy luận. Kiểm cửa sổ rỗng bằng <b>số gói thật</b>, không bằng q0.</p><p><b>Cần nhớ:</b> model nhận sáu số sau khi đổi, và thứ tự phải luôn giữ nguyên.</p><p class="question">Tự hỏi: sáu q có phải sáu quyết định Normal/SYN/scan không?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: không. Đó vẫn là sáu đặc trưng đầu vào; quyết định chỉ có sau khi model tính xong.</p></details></article>
+<article id="s9" class="lesson" hidden><h2>Bài 9. Model 6–8–3 thực sự làm gì?</h2><h3>Đọc ba số trong tên model</h3><pre><code>6 số đầu vào -&gt; 8 đơn vị tính trung gian -&gt; 3 điểm đầu ra</code></pre><ul><li>6 là sáu q đã học ở bài trước.</li><li>8 là số đơn vị tính trong lớp giữa, gọi là neuron ẩn.</li><li>3 là số điểm cho ba lớp: Normal, SYN flood, vertical scan.</li></ul><p><b>Neuron</b> ở đây là một đơn vị tính toán, không phải bộ não nhỏ thật. <b>Lớp ẩn</b> nghĩa là kết quả trung gian bên trong model, không phải một loại tấn công bị giấu.</p><h3>Mỗi đơn vị tính cộng và nhân những gì?</h3><p>Mỗi neuron lấy các đầu vào nhân với những hệ số rồi cộng thêm một số điều chỉnh. Hệ số gọi là <b>weight</b>, số cộng thêm gọi là <b>bias</b>. Chúng được điều chỉnh khi train.</p><p>Ví dụ chỉ để hiểu phép tính, không phải trọng số model của bạn:</p><pre><code>Hai đầu vào: 10 và 4
+Hai weight:  3 và -2
+Bias:       1
+
+Tổng = 10×3 + 4×(-2) + 1 = 23</code></pre><p>Weight có thể âm hoặc dương. Bias giúp thay đổi mức đáp ứng của neuron ngay cả khi đầu vào bằng 0. Không được nhìn một weight rồi kết luận toàn bộ model luôn làm theo một luật đơn giản.</p><p>Trong lớp giữa có bước <b>ReLU</b>: phần âm được đưa về 0. Core còn chia/giới hạn giá trị theo cách cố định. Phụ lục A trình bày phép tính đúng của model; hiện tại bạn chỉ cần hiểu nó có chuỗi nhân, cộng và điều chỉnh số.</p><h3>Cuối cùng AI chọn điểm cao nhất</h3><p>Với dòng SYN thật, sau khi đổi có sáu q:</p><pre><code>[61, 20, 125, 2, 1, 1]</code></pre><p>Model V6 tính được:</p><div class="table-wrap"><table><tr><th>Lớp</th><th>Điểm model trả về</th></tr><tr><td>Normal</td><td>718</td></tr><tr><td>SYN flood</td><td>1142</td></tr><tr><td>Vertical scan</td><td>-2011</td></tr></table></div><p>1142 lớn nhất nên chọn SYN flood, tức class 1. Điểm này gọi là <b>score</b>. 1142 không phải phần trăm tin cậy; số âm cũng không phải tỷ lệ âm.</p><p>Toàn model có 83 tham số học: 72 weight và 11 bias. Tám neuron giữa không được đặt tên sẵn “neuron flood” hoặc “neuron scan”; chúng cùng góp phần tạo ba score.</p><p><b>Cần nhớ:</b> một lần dự đoán là tính bằng hệ số đã có; không phải học lại từ đầu.</p><p class="question">Tự hỏi: ba điểm [5,12,3] theo thứ tự Normal/SYN/scan thì chọn lớp nào?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: SYN, vì 12 lớn nhất. Không đọc số 12 thành 12%.</p></details><section class="interactive" aria-label="Thử ba mẫu đã giải thích"><h3>Bấm thử bằng đúng model của bạn</h3><p>Bắt đầu bằng mẫu Normal. Sau đó chọn SYN hoặc Scan. Các ô là sáu giá trị trước khi thu gọn, giống bảng bài 7.</p><div class="button-row"><button type="button" data-example="0">Normal mẫu</button><button type="button" data-example="1">SYN flood mẫu</button><button type="button" data-example="2">Scan mẫu</button></div><p id="example-name" class="hint"></p><div class="fields" id="input-numbers"><div><label for="n0">Số gói trong một giây<input id="n0" type="number" min="0" step="1" value="0"></label></div><div><label for="n1">Độ dài IP trung bình (byte)<input id="n1" type="number" min="0" step="1" value="0"></label></div><div><label for="n2">Điểm tỷ lệ SYN (0–127)<input id="n2" type="number" min="0" step="1" value="0"></label></div><div><label for="n3">Số IP nguồn khác nhau<input id="n3" type="number" min="0" step="1" value="0"></label></div><div><label for="n4">Số IP đích khác nhau<input id="n4" type="number" min="0" step="1" value="0"></label></div><div><label for="n5">Số cổng đích khác nhau<input id="n5" type="number" min="0" step="1" value="0"></label></div></div><div id="calc-out" aria-live="polite"></div><div id="score-cards" class="scores"></div><details class="answer"><summary>Xem sáu số trước và sau</summary><div id="numbers"></div></details><p class="hint">Bạn đang xem phép tính của model đã chốt. Các điểm không phải phần trăm. Tự thay số chỉ giúp học phản ứng, không tự tạo nhãn đúng cho lưu lượng mới.</p></section></article>
+<article id="s10" class="lesson" hidden><h2>Bài 10. “Train” là học điều gì? Bo có tự học không?</h2><h3>Hình dung tập bài có đáp án</h3><p>Ta chuẩn bị nhiều dòng sáu đặc trưng và nhãn đi kèm. Model thử dự đoán, so với nhãn và điều chỉnh weight/bias để giảm sai. Một phép đo mức sai gọi là <b>hàm mất mát</b>. Đây là ý nghĩa cơ bản của train, tức huấn luyện.</p><pre><code>Sáu số + nhãn tham chiếu
+        v
+Học các weight và bias trên máy tính
+        v
+Lưu model đã học</code></pre><p>Khi có lưu lượng mới, chỉ lấy model đã lưu để tính dự đoán. Bước này gọi là <b>inference</b>, nghĩa là suy luận.</p><p><b>Trong hệ thống của bạn, Python train trên máy tính; core FPGA chỉ tính dự đoán.</b> Bo không tự học lại mỗi khi nhận một packet, và khi chạy thật không cần nhập nhãn cho nó.</p><h3>Vì sao phải tách dữ liệu để đánh giá?</h3><p>Nếu học một tập câu hỏi rồi chỉ thi lại đúng tập đó, điểm cao chưa chắc đã làm được câu mới. Model cũng vậy.</p><ul><li><b>Train:</b> dùng để học các hệ số.</li><li><b>Development:</b> dùng so sánh các ứng viên và chọn cấu hình.</li><li><b>Test độc lập:</b> dữ liệu giữ riêng, không dùng để điều chỉnh/chọn model; nên có phiên thu mới với nhãn được kiểm.</li></ul><p>Trong V6, các biến thể vẫn từ cùng nguồn SYN và scan ban đầu. Có 120 biến thể không có nghĩa có 120 phiên tấn công độc lập. Đổi thời gian, chia đoạn hoặc lặp lại dữ liệu không tạo hành vi nguồn mới.</p><p>Dữ liệu gốc có nhiều Normal hơn attack. Quy trình học đã cân bằng số mẫu đầu vào khác nhau giữa các lớp bằng cách lặp mẫu của lớp ít. Lặp giúp cách học cân bằng hơn nhưng không biến thành dữ liệu thực mới.</p><p>Bản V6 hiện đã có trọng số. Bạn không cần train lại để đọc tài liệu này hoặc học cách suy luận.</p><p><b>Cần nhớ:</b> điểm trên dữ liệu đã dùng để phát triển model không phải lời bảo đảm cho mọi mạng mới.</p><p class="question">Tự hỏi: chép một PCAP thành 100 file có được 100 phiên thu độc lập không?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: không. Vẫn cùng dữ liệu và hành vi ban đầu, dù tên file hoặc thời gian có thay đổi.</p></details></article>
+<article id="s11" class="lesson" hidden><h2>Bài 11. Vì sao accuracy cao mà AI vẫn có thể chưa tốt?</h2><h3>Accuracy là tỷ lệ trả lời đúng chung</h3><p>Giả sử có 1.000 ví dụ: 990 Normal, 10 tấn công. Một chương trình luôn nói “Normal” vẫn đúng 990/1.000, tức 99%. Nhưng nó bỏ sót cả 10 tấn công.</p><p>Đây là ví dụ giả định để hiểu tỷ lệ, không phải số liệu đánh giá của V6. Nó cho thấy cần hỏi thêm: phát hiện được bao nhiêu attack và báo nhầm bao nhiêu Normal?</p><h3>Xem số liệu thật của model bạn</h3><p>Trong thống kê gốc của V6:</p><ul><li>Có 21 cửa sổ SYN có nhãn SYN; model gọi đúng cả 21.</li><li>Có thêm 12 cửa sổ Normal bị model gọi nhầm là SYN.</li><li>Như vậy model nói “SYN” tổng cộng 33 lần, nhưng chỉ 21 lần đúng theo nhãn hiện có.</li></ul><p><b>Precision SYN</b> trả lời: “Trong các lần AI nói SYN, có bao nhiêu lần đúng?” Ở đây là 21 chia 33, khoảng 63,64%.</p><p><b>Recall SYN</b> trả lời: “Trong các SYN có nhãn, AI tìm được bao nhiêu?” Ở nhóm này là 21 chia 21, bằng 100%.</p><p>Đây vẫn là thống kê trên dữ liệu đã tham gia phát triển model, không phải phép kiểm mạng mới độc lập. Tập gốc có rất nhiều Normal nên accuracy chung gần 100% không xóa được vấn đề báo nhầm.</p><h3>Model còn những lỗi nào?</h3><div class="table-wrap"><table><tr><th>Nhóm kiểm</th><th>Điều cần hiểu</th></tr><tr><td>Dữ liệu gốc</td><td>Còn 12 Normal bị gọi SYN; trong đó có các đầu vào trùng nhau giữa nhãn Normal và SYN</td></tr><tr><td>Development cùng nguồn</td><td>Có một cửa sổ SYN 803 gói bị dự đoán thành Normal</td></tr><tr><td>Lab cũ</td><td>Đúng 218/219; có một Normal bị gọi scan</td></tr></table></div><p>Nếu hai mẫu mang nhãn khác nhau nhưng sau thu gọn có đúng cùng sáu số, model chỉ thấy cùng đầu vào nên phải trả cùng kết quả. Cần xem lại ngữ cảnh/nhãn/cách biểu diễn, không tự sửa nhãn để báo cáo đẹp.</p><h3>“PASS RTL” là chuyện khác</h3><p>RTL là mã mô tả mạch số. Bài kiểm 3.762 vector cho thấy core tính giống kết quả tham chiếu trong các trường hợp kiểm. “Vector” ở đây là một bộ số đầu vào.</p><p>Điều đó giống kiểm máy tính có nhân cộng đúng không. Nó không tự chứng minh dữ liệu/nhãn hoàn hảo hoặc model sẽ phát hiện tốt trên mọi mạng mới. Kiểm timing và chạy bo lại là những bước triển khai khác.</p><p><b>Cần nhớ:</b> phân biệt tính đúng phép toán với phân loại đúng lưu lượng.</p><p class="question">Tự hỏi: AI nói SYN 33 lần, trong đó 12 lần là Normal. Có được nói “100% dự đoán SYN đúng” không?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: không. Precision SYN chỉ khoảng 63,64% trong nhóm số liệu này, dù recall SYN là 100%.</p></details><section class="interactive"><h3>Xem một lỗi có thật</h3><p>Một cửa sổ được gán nhãn SYN có 803 gói. Model vẫn có thể trả lời sai.</p><button type="button" id="show-miss">Xem model trả lời gì</button><p id="miss-result" aria-live="polite" hidden></p></section></article>
+<article id="s12" class="lesson" hidden><h2>Bài 12. Học và thực hành ngay trên gói này</h2><h3>Việc đầu tiên: tập nói bằng lời</h3><p>Đọc lại dòng Normal [14,54,18,1,1,1] và nói: “Trong một giây có 14 gói tới một máy nhận, từ một nguồn, nhắm một cổng. Mean IP là 54 byte; điểm tỷ lệ SYN là 18 trên thang 127.”</p><p>Nếu nói được và giải thích vì sao 18 không phải 18 gói, bạn đã hiểu phần nền quan trọng.</p><h3>Bước 1 — Xem bảng rút gọn</h3><p>Mở bản HTML của tài liệu và tới bài 7, hoặc mở <code>vi_du/BANG_TAP_DOC.csv</code>. Bảng rút gọn chỉ có ba dòng mẫu Normal/SYN/scan để tập đọc. File CSV gốc với các cột tiếng Anh vẫn được giữ cạnh đó.</p><p>Nếu Excel mở CSV thành một cột, bạn có thể xem bảng trong PDF/HTML trước; chưa cần sửa Excel để học. Không dùng bảng ba dòng này thay toàn bộ dữ liệu train.</p><h3>Bước 2 — Mở từng PCAP</h3><p>Các file sau đã được giải nén sẵn, không cần chạy Python:</p><pre><code>vi_du/pcap_de_mo/1_Binh_thuong.pcap
+vi_du/pcap_de_mo/2_SYN_flood.pcap
+vi_du/pcap_de_mo/3_Vertical_scan.pcap</code></pre><p>Mở Wireshark → File → Open → chọn file. Mỗi hàng ở màn hình là một frame/gói đã ghi. Chọn một hàng, xem phần IPv4 để biết nguồn/đích và phần TCP để xem cổng/cờ.</p><p>Chưa cần hiểu toàn bộ các mục Wireshark hiển thị. Trước mắt chỉ tìm: Source, Destination, TCP destination port và SYN/ACK.</p><h3>Bước 3 — Xem đúng một giây</h3><p>Để khớp các dòng đã đọc ở bài 7, nhập vào ô display filter của Wireshark rồi nhấn Enter:</p><pre><code>frame.time_epoch &gt;= 1800000003 &amp;&amp; frame.time_epoch &lt; 1800000004</code></pre><p>Dấu <code>&amp;&amp;</code> nghĩa là “và”: lấy thời điểm từ số bên trái tới trước số bên phải. Sau lọc, các file mẫu cho lần lượt 14, 489 và 112 frame. Đây là những PCAP mô phỏng đã chỉ giữ hướng tới receiver. Nó không phải tổng frame của cả file.</p><p>Để chỉ xem SYN mở trong giây đó, dùng:</p><pre><code>frame.time_epoch &gt;= 1800000003 &amp;&amp; frame.time_epoch &lt; 1800000004 &amp;&amp; tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0</code></pre><p>Khi dán, có thể viết thành một dòng. Ba file lần lượt có 2, 483 và 112 SYN mở trong cửa sổ đó. File một chiều không có đủ phản hồi để chứng minh lại bắt tay của từng kết nối; muốn điều tra điều đó phải xem nguồn có cả hai chiều.</p><h3>Bước 4 — Bấm thử trong HTML</h3><p>Ở bài 9 có nút Normal, SYN flood và Scan. Bấm từng nút, xem ba score và tên lớp thắng. Muốn xem số trước/sau khi thu gọn thì mở “Xem sáu số trước và sau”.</p><p>Bấm thêm ví dụ SYN 803 ở bài 11 để thấy một lỗi thật đã ghi. Công cụ giữ nguyên model, không sửa trọng số và không phát traffic.</p><h3>Bước 5 — Nói lại phần của mình trong một phút</h3><p>“Em dùng dữ liệu Normal, SYN flood và vertical scan. Em trích sáu thống kê cho một máy nhận trong một giây, đổi chúng thành số nguyên nhỏ rồi đưa vào model 6–8–3. Model trả ba score và chọn lớp có điểm cao nhất. Em kiểm phép tính giữa phần mềm và core FPGA, đồng thời ghi rõ những lỗi phân loại còn lại.”</p><p class="question">Tự hỏi: đã hiểu sáu số và ba score thì có cần học thuộc toàn bộ weight để trình bày không?</p><details class="answer"><summary>Xem lời giải</summary><p>Lời giải: không. Cần biết chúng ở đâu, được học như thế nào và cách kiểm một ví dụ. Phụ lục dưới giúp đọc chi tiết khi bạn đã vững phần cơ bản.</p></details></article>
+<article id="s13" class="lesson" hidden><h2>Phụ lục A. Khi đã hiểu, hãy xem công thức</h2><h3>A1. Các tên trong code chỉ điều gì?</h3><div class="table-wrap"><table><tr><th>Tên</th><th>Nghĩa</th></tr><tr><td>N</td><td>Số gói thật được đếm trong một giây</td></tr><tr><td>B</td><td>Tổng độ dài IP của các gói đó</td></tr><tr><td>S</td><td>Số SYN mở trong các gói đó</td></tr><tr><td>raw</td><td>Sáu đặc trưng trước khi chia/giới hạn cho core</td></tr><tr><td>q</td><td>Sáu số sau chia/giới hạn</td></tr><tr><td>floor hoặc dấu //</td><td>Với số không âm ở đây: chia rồi bỏ phần lẻ</td></tr><tr><td>clip</td><td>Giữ số trong một khoảng; vượt biên thì lấy giá trị biên</td></tr></table></div><p>Dòng Normal có N = 14, B = 768, S = 2:</p><pre><code>Mean byte = 768 chia 14, bỏ phần lẻ = 54
+Tỷ lệ SYN = 127 × 2 chia 14, bỏ phần lẻ = 18
+raw = [14,54,18,1,1,1]
+q   = [1,27,18,1,1,1]</code></pre><p>Chú ý khi gọi hàm C: nó nhận <b>N, B, S</b>, tức số gói, tổng byte và số SYN thực. Nó tự tính mean và tỷ lệ. Không truyền 54 vào chỗ tổng byte 768 hoặc 18 vào chỗ số SYN 2.</p><h3>A2. Công thức đếm SYN mà bài trước làm bạn khó hiểu</h3><pre><code>(flags &amp; 0x12) == 0x02</code></pre><p><code>flags</code> là nhóm dấu cờ trong gói TCP. Trong cách biểu diễn của TCP, SYN có vị trí ứng với 0x02, ACK có vị trí ứng với 0x10. Dấu <code>&amp;</code> ở đây là phép AND theo bit: <code>&amp; 0x12</code> chỉ lấy hai vị trí SYN và ACK để kiểm.</p><p>Nếu kết quả bằng 0x02 thì SYN bật, ACK tắt. Đó là điều kiện đã nói bằng lời ở bài 3. Công thức này chỉ kiểm hai cờ đó, không bắt buộc mọi cờ khác bằng 0.</p><div class="table-wrap"><table><tr><th>Gói</th><th>Sau khi chỉ giữ hai cờ</th><th>Có bằng 0x02 không?</th></tr><tr><td>SYN</td><td>0x02</td><td>Có, được đếm</td></tr><tr><td>SYN + ACK</td><td>0x12</td><td>Không</td></tr><tr><td>ACK</td><td>0x10</td><td>Không</td></tr></table></div><p>Bạn không cần thuộc số hex để hiểu hành vi TCP. Chỉ khi đọc code kiểm cờ mới cần đối chiếu bảng này.</p><h3>A3. Tính một neuron thật</h3><p>Với mẫu SYN, sáu q là [61,20,125,2,1,1]. Neuron ẩn đầu tiên dùng các weight [-25,3,40,-127,2,-35] và bias -1135.</p><pre><code>Tổng = -25×61 + 3×20 + 40×125 - 127×2 + 2×1 - 35×1 - 1135
+     = 2113</code></pre><p>Core dịch phải số học 5 bit, tương đương chia 32 rồi lấy phần nguyên xuống, sau đó giữ trong 0–127. Với số dương 2113, kết quả là 66. Với số âm, phải giữ đúng quy tắc dịch có dấu, không tùy tiện thay bằng phép chia C.</p><p>Làm đủ tám neuron được [66,0,11,97,0,0,1,0]. Nhân–cộng tiếp bằng lớp đầu ra cho [718,1142,-2011], nên chọn SYN.</p><p>Weight dùng số nguyên có dấu 8 bit; bias và bộ cộng dồn dùng 32 bit. Score trả về là số nguyên có dấu 16 bit. Bit là một chữ số nhị phân 0/1; số bit quyết định phạm vi biểu diễn. Giới hạn số nhằm làm phép tính nhỏ và thống nhất giữa Python/C/RTL.</p><h3>A4. 6–8–3 có 83 tham số ra sao?</h3><ul><li>Sáu đầu vào tới tám neuron: 6×8 = 48 weight.</li><li>Tám neuron có tám bias.</li><li>Tám kết quả tới ba output: 8×3 = 24 weight.</li><li>Ba output có ba bias.</li></ul><p>Tổng 48+8+24+3 = 83. Tệp <code>model/model.json</code> ghi các số này; model số nguyên có w1 gồm 8 hàng × 6 cột và w2 gồm 3 hàng × 8 cột. Mỗi hàng thuộc một neuron đầu ra của lớp đó.</p></article>
+<article id="s14" class="lesson" hidden><h2>Phụ lục B. Biết gì trước khi ghép với bạn trong nhóm?</h2><h3>B1. Người nhận cần thống nhất đầu vào và đầu ra</h3><p>Clock là nhịp đồng hồ điều khiển mạch; một chu kỳ là một nhịp. Reset là yêu cầu đưa core về trạng thái bắt đầu.</p><p>Sáu q được xếp trong một nhóm 48 bit, mỗi số một byte. Số thứ nhất ở byte thấp nhất. Đây là đóng gói số để truyền qua giao diện, không có nghĩa model có 48 đặc trưng.</p><p>Các tên tín hiệu chính:</p><div class="table-wrap"><table><tr><th>Tín hiệu</th><th>Hiểu bằng lời</th></tr><tr><td>feat</td><td>Sáu q đã đóng gói</td></tr><tr><td>start</td><td>“Hãy bắt đầu tính mẫu này”</td></tr><tr><td>busy</td><td>“Core đang tính”</td></tr><tr><td>done</td><td>“Đã có kết quả mới”</td></tr><tr><td>class_id</td><td>Mã lớp 0/1/2</td></tr><tr><td>scores</td><td>Ba score có dấu</td></tr></table></div><p>Gửi start một chu kỳ khi core rảnh. Nếu gửi lúc busy, core bỏ qua yêu cầu mới đó. done chỉ lên một chu kỳ nên phía nhận phải bắt đúng dấu hiệu. Reset mức thấp của core được thực hiện ở cạnh lên clock.</p><h3>B2. Thời gian tính không phải toàn bộ thời gian phát hiện</h3><p>Core cần 84 chu kỳ từ lúc nhận start tới done theo bài kiểm. Ở clock giả định 27 MHz, riêng phép tính khoảng 3,11 microsecond.</p><p>Nhưng dữ liệu được gom trong một giây, rồi còn thời gian đọc counter, giao tiếp và quyết định. Không nói hệ thống phát hiện/chặn trong 3,11 microsecond chỉ từ số chu kỳ core. Chạy trên bo phải kiểm riêng cả hệ thống.</p><h3>B3. Các file nên đọc sau</h3><div class="table-wrap"><table><tr><th>File trong gói AI bàn giao</th><th>Đọc khi muốn biết</th></tr><tr><td>model/model.json</td><td>Trọng số, số neuron và cách chia/giới hạn</td></tr><tr><td>tools/ai_reference.py</td><td>Phép tính tham chiếu bằng Python</td></tr><tr><td>firmware/ai_quant_v6.h</td><td>Counter đổi sang q và 48 bit thế nào</td></tr><tr><td>rtl/ai_core_model_v6.v</td><td>Cách mạch tính lần lượt từng neuron</td></tr><tr><td>HOP_DONG_GHEP_AI_V6.md</td><td>Giao tiếp để ghép vào hệ thống</td></tr><tr><td>model/metrics.json</td><td>Số liệu và lỗi phân loại</td></tr></table></div><p>Tên/đường dẫn trên thuộc gói AI bàn giao, không phải mọi file đều nằm trong gói học dễ hiểu này. Gói học có model, dữ liệu mẫu và công cụ Python học thêm; bộ bàn giao cho bạn tích hợp vẫn giữ riêng.</p><p>Bản kỹ thuật cũ trong <code>tham_khao/DE_CUONG_KY_THUAT_V6.pdf</code> dành để tra cứu sau. Nó không phải tài liệu cần đọc đầu tiên.</p></article>
+<article id="s15" class="lesson" hidden><h2>Tự kiểm cuối cùng: bạn đã hiểu tới đâu?</h2><p>Hãy trả lời bằng lời của mình, rồi đối chiếu:</p><ol><li>SYN có phải luôn là tấn công? Không, đó còn là bước mở kết nối bình thường.</li><li>Một dòng feature CSV mô tả gì? Một máy nhận trong một cửa sổ một giây.</li><li><code>src_count = 3</code> nghĩa gì? Có ba IP nguồn khác nhau, không phải ba gói.</li><li>Điểm tỷ lệ SYN 18 có phải 18 gói? Không; là tỷ lệ trên thang 127.</li><li>6–8–3 nghĩa gì? Sáu đầu vào, tám neuron giữa và ba score.</li><li>Ai học các weight? Chương trình train trên máy tính; core trên bo dùng chúng để dự đoán.</li><li>Ba score có phải phần trăm? Không; chọn score lớn nhất theo quy ước model.</li><li>PASS phép tính có nghĩa nhận mọi tấn công mới? Không; cần đánh giá trên dữ liệu mới độc lập.</li></ol><p>Bạn có thể chia việc học thành ba lượt: bài 1–4, bài 5–8, bài 9–12. Chỉ đọc phụ lục khi các câu trên đã rõ. Nếu còn vướng, ghi đúng từ hoặc dòng chưa hiểu để học tiếp từ chỗ đó.</p><p>Số liệu và ví dụ được giữ theo model V6 đã bàn giao; lần viết lại này không train lại. Ba mẫu dùng nguồn IoT-23/Chris Sanders đã biến đổi có kiểm soát, không phải phiên thu mới. Ghi nguồn và checksum chi tiết trong <code>VI_DU_DA_DOI_CHIEU.json</code>; nguồn bài học được đối chiếu với gói ZIP bạn gửi.</p></article><div class="controls"><button id="prev" type="button">← Bài trước</button><button id="next" class="primary" type="button">Bài tiếp theo →</button></div><p id="pace" class="hint">Bạn có thể dừng sau một bài rồi quay lại.</p></main></div><footer>Model V6 và dữ liệu mẫu được giữ nguyên theo gói bạn gửi. Tài liệu và các chỗ bấm thử hoạt động ngoại tuyến; không gửi dữ liệu nhập đi đâu.</footer>
+<script>
+'use strict';
+const titles=["Đọc trang này trước", "Bài 1. Phần AI của bạn có nhiệm vụ gì?", "Bài 2. Gói tin, IP và cổng là gì?", "Bài 3. TCP bắt tay ra sao? “SYN mở” nghĩa là gì?", "Bài 4. Ba loại lưu lượng khác nhau ở đâu?", "Bài 5. Dataset của bạn là gì? PCAP và CSV dùng làm gì?", "Bài 6. Vì sao cần gom một giây và lấy sáu con số?", "Bài 7. Đọc một dòng dữ liệu thật của bạn", "Bài 8. Vì sao sáu số lại bị chia và đổi thành q?", "Bài 9. Model 6–8–3 thực sự làm gì?", "Bài 10. “Train” là học điều gì? Bo có tự học không?", "Bài 11. Vì sao accuracy cao mà AI vẫn có thể chưa tốt?", "Bài 12. Học và thực hành ngay trên gói này", "Phụ lục A. Khi đã hiểu, hãy xem công thức", "Phụ lục B. Biết gì trước khi ghép với bạn trong nhóm?", "Tự kiểm cuối cùng: bạn đã hiểu tới đâu?"];
+const M={
+  "architecture": [
+    6,
+    8,
+    3
+  ],
+  "model_version": "v6",
+  "divisors": [
+    8,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "shift1": 5,
+  "shift2": 0,
+  "w1": [
+    [
+      -25,
+      3,
+      40,
+      -127,
+      2,
+      -35
+    ],
+    [
+      -112,
+      -12,
+      0,
+      -30,
+      2,
+      48
+    ],
+    [
+      -7,
+      -4,
+      7,
+      19,
+      -1,
+      27
+    ],
+    [
+      13,
+      -27,
+      22,
+      35,
+      0,
+      -50
+    ],
+    [
+      -3,
+      -15,
+      25,
+      117,
+      -127,
+      -127
+    ],
+    [
+      42,
+      -127,
+      -87,
+      -116,
+      6,
+      -11
+    ],
+    [
+      -20,
+      -5,
+      31,
+      -50,
+      1,
+      24
+    ],
+    [
+      5,
+      -59,
+      -64,
+      -77,
+      127,
+      -26
+    ]
+  ],
+  "w2": [
+    [
+      9,
+      20,
+      -91,
+      6,
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      -6,
+      -34,
+      15,
+      16,
+      0,
+      0,
+      -6,
+      0
+    ],
+    [
+      -2,
+      15,
+      88,
+      -26,
+      0,
+      0,
+      3,
+      0
+    ]
+  ],
+  "b1": [
+    -1135,
+    642,
+    -63,
+    91,
+    -19813,
+    -25375,
+    -2421,
+    -10741
+  ],
+  "b2": [
+    539,
+    -173,
+    -328
+  ],
+  "score_scale": 64.0,
+  "source_kind": "same_source_packet_derived_development",
+  "selected_seed": 5,
+  "arithmetic": "round-to-nearest-even; arithmetic shifts; hidden 0..127; int16 scores; first argmax",
+  "hidden_scales": [
+    50.02977620864701,
+    27.72326205100518,
+    7.345090724349087,
+    22.73757533395701,
+    1004.2695714913873,
+    1464.7353094615414,
+    34.74661429249648,
+    1030.6022489104853
+  ],
+  "integer_conversion": "positive per-hidden-neuron rescaling; shared shift; int8 weights",
+  "selected_alpha": 0.01,
+  "independent_test_evaluated": false
+};
+const FACTS={
+  "model_sha256": "3f1b2052ca30aad7f493b9f9091b86bcaf37dbf4c209363dea0c841f70f11515",
+  "examples": [
+    {
+      "id": "normal_train_14_sensor7",
+      "parent_group": "IoT23/Normal34",
+      "target": "71.61.66.148",
+      "pcap_sha256": "ea1aee9752b2d919007e33c242bcf385fbaac91f08366c0e1bf8c050ea2dd7ec",
+      "csv_gz_sha256": "c6ebb0a4a20ac4d516a47d09254e0e8da94acfce7f7fb8d1b8c46a482b4266c0",
+      "csv": "features/normal_train_14_sensor7.csv.gz",
+      "stats": {
+        "frames": 420,
+        "ingress_ipv4": 420,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "complete_csv_windows": 29,
+      "row": {
+        "profile": "normal_train_14_sensor7",
+        "split": "train",
+        "label": "0",
+        "window_start": "1800000003",
+        "status": "eligible",
+        "attack_count": "0",
+        "attack_port_count": "0",
+        "background_count": "14",
+        "packet_count": "14",
+        "mean_ip_bytes": "54",
+        "syn_ratio_q127": "18",
+        "src_count": "1",
+        "dst_count": "1",
+        "dst_port_count": "1",
+        "q0": "1",
+        "q1": "27",
+        "q2": "18",
+        "q3": "1",
+        "q4": "1",
+        "q5": "1"
+      },
+      "counters": [
+        14,
+        768,
+        2,
+        1,
+        1,
+        1
+      ],
+      "q": [
+        1,
+        27,
+        18,
+        1,
+        1,
+        1
+      ],
+      "feat_hex": "010101121b01",
+      "hidden_accumulators": [
+        -519,
+        226,
+        -7,
+        -244,
+        -19908,
+        -30449,
+        -2043,
+        -13457
+      ],
+      "hidden": [
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": [
+        679,
+        -411,
+        -223
+      ],
+      "predicted": 0,
+      "source_transforms": [
+        "Attack frame bytes preserved; only timestamp spacings scaled to requested rates.",
+        "Background packet templates are from original Native Benign normal34; SYN templates have recorded SYN-ACK replies.",
+        "Background source/destination IP and TCP destination port remapped to combine traffic at one protected receiver; IP/TCP checksums recomputed.",
+        "Derived labels are controlled scenario annotations, not new publisher-provided labels.",
+        "Keep all original cache labels. Derived windows aliasing another original native label are retained as ambiguous and excluded from fit/selection; report them separately.",
+        "Development rates and timestamps differ from training profiles but share the same parent captures; not an independent test."
+      ],
+      "uncompressed_pcap_sha256": "09f9a859272d906278ca402fc1886cd40cf9aebe01eb50fb662638bb6210cac8",
+      "csv_sha256": "8275fc85ad73065eea8ffec7d74fae172a456b2e1af4cb3f2dc9a24e9aa0e2e5"
+    },
+    {
+      "id": "syn_train_512_sensor7",
+      "parent_group": "IoT23/SYN34_one_episode",
+      "target": "71.61.66.148",
+      "pcap_sha256": "7965c65021b4683ca20927c4cd87b1b828048584cfaa9ddb37bed020a5b25388",
+      "csv_gz_sha256": "288e8ca900532d1496cce7cc4b46283c751584719fb856241823779a1ba971e2",
+      "csv": "features/syn_train_512_sensor7.csv.gz",
+      "stats": {
+        "frames": 12164,
+        "ingress_ipv4": 12164,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "complete_csv_windows": 22,
+      "row": {
+        "profile": "syn_train_512_sensor7",
+        "split": "train",
+        "label": "1",
+        "window_start": "1800000003",
+        "status": "eligible",
+        "attack_count": "482",
+        "attack_port_count": "1",
+        "background_count": "7",
+        "packet_count": "489",
+        "mean_ip_bytes": "40",
+        "syn_ratio_q127": "125",
+        "src_count": "2",
+        "dst_count": "1",
+        "dst_port_count": "1",
+        "q0": "61",
+        "q1": "20",
+        "q2": "125",
+        "q3": "2",
+        "q4": "1",
+        "q5": "1"
+      },
+      "counters": [
+        489,
+        19728,
+        483,
+        2,
+        1,
+        1
+      ],
+      "q": [
+        61,
+        20,
+        125,
+        2,
+        1,
+        1
+      ],
+      "feat_hex": "0101027d143d",
+      "hidden_accumulators": [
+        2113,
+        -6440,
+        369,
+        3114,
+        -17191,
+        -36465,
+        59,
+        -19669
+      ],
+      "hidden": [
+        66,
+        0,
+        11,
+        97,
+        0,
+        0,
+        1,
+        0
+      ],
+      "scores": [
+        718,
+        1142,
+        -2011
+      ],
+      "predicted": 1,
+      "source_transforms": [
+        "Attack frame bytes preserved; only timestamp spacings scaled to requested rates.",
+        "Background packet templates are from original Native Benign normal34; SYN templates have recorded SYN-ACK replies.",
+        "Background source/destination IP and TCP destination port remapped to combine traffic at one protected receiver; IP/TCP checksums recomputed.",
+        "Derived labels are controlled scenario annotations, not new publisher-provided labels.",
+        "Keep all original cache labels. Derived windows aliasing another original native label are retained as ambiguous and excluded from fit/selection; report them separately.",
+        "Development rates and timestamps differ from training profiles but share the same parent captures; not an independent test."
+      ],
+      "uncompressed_pcap_sha256": "4cd467f81dbef67c645741db838e3efb42f935f641abbe77c413138aead201b5",
+      "csv_sha256": "027c7b3f60189bef982e1d8849e8d88861da1c966f6b296f5b70804b10595fe9"
+    },
+    {
+      "id": "scan_train_2_one_syn",
+      "parent_group": "ChrisSanders/scan_one_episode",
+      "target": "64.13.134.52",
+      "pcap_sha256": "49861b572602adf6388da1a0bf0fda9bc35a9aac544db8a624e29169545f1a4b",
+      "csv_gz_sha256": "6ef0152e47f5a4c6127b8351a53f331c700ec8b7ab3e490f522031f9f4a2375d",
+      "csv": "features/scan_train_2_one_syn.csv.gz",
+      "stats": {
+        "frames": 2004,
+        "ingress_ipv4": 2004,
+        "non_ingress": 0,
+        "fragments_skipped": 0,
+        "truncated_skipped": 0,
+        "timestamp_reversals": 0,
+        "max_backward_seconds": 0.0
+      },
+      "complete_csv_windows": 9,
+      "row": {
+        "profile": "scan_train_2_one_syn",
+        "split": "train",
+        "label": "2",
+        "window_start": "1800000003",
+        "status": "eligible",
+        "attack_count": "111",
+        "attack_port_count": "69",
+        "background_count": "1",
+        "packet_count": "112",
+        "mean_ip_bytes": "44",
+        "syn_ratio_q127": "127",
+        "src_count": "2",
+        "dst_count": "1",
+        "dst_port_count": "70",
+        "q0": "14",
+        "q1": "22",
+        "q2": "127",
+        "q3": "2",
+        "q4": "1",
+        "q5": "70"
+      },
+      "counters": [
+        112,
+        4944,
+        112,
+        2,
+        1,
+        70
+      ],
+      "q": [
+        14,
+        22,
+        127,
+        2,
+        1,
+        70
+      ],
+      "feat_hex": "4601027f160e",
+      "hidden_accumulators": [
+        959,
+        2112,
+        2567,
+        -957,
+        -25793,
+        -39626,
+        2707,
+        -21944
+      ],
+      "hidden": [
+        29,
+        66,
+        80,
+        0,
+        0,
+        0,
+        84,
+        0
+      ],
+      "scores": [
+        -4824,
+        -1895,
+        7896
+      ],
+      "predicted": 2,
+      "source_transforms": [
+        "Attack frame bytes preserved; only timestamp spacings scaled to requested rates.",
+        "Background packet templates are from original Native Benign normal34; SYN templates have recorded SYN-ACK replies.",
+        "Background source/destination IP and TCP destination port remapped to combine traffic at one protected receiver; IP/TCP checksums recomputed.",
+        "Derived labels are controlled scenario annotations, not new publisher-provided labels.",
+        "Keep all original cache labels. Derived windows aliasing another original native label are retained as ambiguous and excluded from fit/selection; report them separately.",
+        "Development rates and timestamps differ from training profiles but share the same parent captures; not an independent test."
+      ],
+      "uncompressed_pcap_sha256": "f745da7d14b5775960a0c76fa42e3dc926977fbb8ead99bdeb8ebfa3b48f7856",
+      "csv_sha256": "be8caa5f2f246afd9b487eb88a11ce3064f2dc05fa7244e398e2c8cd23903b02"
+    }
+  ],
+  "additional_numeric_cases": [
+    {
+      "name": "known_syn_803_miss",
+      "q": [
+        100,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        1413,
+        1413,
+        -3174
+      ],
+      "predicted": 0
+    },
+    {
+      "name": "native_alias",
+      "q": [
+        127,
+        20,
+        127,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        1463,
+        1691,
+        -3592
+      ],
+      "predicted": 1
+    },
+    {
+      "name": "normal_sensor7",
+      "q": [
+        0,
+        30,
+        18,
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        719,
+        -479,
+        -193
+      ],
+      "predicted": 0
+    },
+    {
+      "name": "pure_vertical_scan_3",
+      "q": [
+        0,
+        20,
+        127,
+        1,
+        1,
+        3
+      ],
+      "scores": [
+        136,
+        -189,
+        304
+      ],
+      "predicted": 2
+    }
+  ],
+  "source_root": "ai_part2/integration/phan1_v6_1/training",
+  "new_independent_test": false,
+  "native_cache_reading_example": {
+    "label": 0,
+    "q": [
+      0,
+      20,
+      127,
+      1,
+      1,
+      1
+    ],
+    "count": 21950632,
+    "source": "cache/native_patterns.sqlite",
+    "note": "Recorded original label, not independently relabeled by this guide."
+  }
+}
+;
+const lessonIds=[...Array(13).keys(),15];
+let current=0;
+const menu=document.getElementById('menu');menu.open=window.matchMedia('(min-width:901px)').matches;
+function showLesson(index,scroll=true){if(!Number.isInteger(index)||index<0||index>=titles.length)index=0;current=index;document.querySelectorAll('.lesson').forEach((el,i)=>el.hidden=i!==index);document.querySelectorAll('nav a').forEach((a,i)=>{if(i===index)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});document.getElementById('where').textContent=index>=1&&index<=12?'Bài '+index+' trong 12 bài nền tảng':index===0?'Đọc chậm, từng bước':index===15?'Ôn lại những điều đã học':'Phụ lục — chỉ cần đọc khi muốn tìm hiểu thêm';const pos=lessonIds.indexOf(index);document.getElementById('prev').disabled=index===0;document.getElementById('next').disabled=index===15;document.getElementById('next').textContent=index===12?'Tự kiểm lại →':index===15?'Đã tới phần ôn tập':'Bài tiếp theo →';document.getElementById('pace').textContent=index>=13&&index<=14?'Bạn có thể quay lại bài 12 nếu chưa cần phần chi tiết.':'Đọc câu hỏi cuối bài trước khi mở lời giải. Không cần học thuộc các số.';if(window.innerWidth<=900)menu.open=false;if(scroll)document.getElementById('main').scrollIntoView({block:'start'});}
+function navigate(index){history.replaceState(null,'','#s'+index);showLesson(index);}
+document.getElementById('prev').addEventListener('click',()=>{const p=lessonIds.indexOf(current);navigate(p>0?lessonIds[p-1]:12);});document.getElementById('next').addEventListener('click',()=>{const p=lessonIds.indexOf(current);navigate(p>=0&&p<lessonIds.length-1?lessonIds[p+1]:15);});document.querySelectorAll('nav a').forEach((a,i)=>a.addEventListener('click',e=>{e.preventDefault();navigate(i);}));window.addEventListener('hashchange',()=>showLesson(Number(location.hash.replace('#s',''))));showLesson(/^#s\d+$/.test(location.hash)?Number(location.hash.slice(2)):0,false);
+const steps=[{title:'Bước 1: cảm biến → máy chủ',speech:'“Tôi muốn thiết lập kết nối.”',flags:'SYN bật, ACK tắt.',count:'Gói này được tính vào số SYN mở. Chưa biết kết nối có hoàn tất hay không.'},{title:'Bước 2: máy chủ → cảm biến',speech:'“Tôi đã nhận yêu cầu; tôi cũng sẵn sàng thiết lập kết nối.”',flags:'SYN và ACK cùng bật.',count:'Không tính gói SYN-ACK vào số SYN mở.'},{title:'Bước 3: cảm biến → máy chủ',speech:'“Tôi đã nhận phản hồi của bạn.”',flags:'ACK bật, SYN tắt.',count:'Không tính gói ACK này vào số SYN mở. Hai bên đã hoàn tất bắt tay trong ví dụ thông thường.'}];
+function handshake(i){const s=steps[i];document.getElementById('tcp-step-title').textContent=s.title;document.getElementById('tcp-speech').textContent=s.speech;document.getElementById('tcp-flags').textContent=s.flags;document.getElementById('tcp-count').textContent=s.count;}
+document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>handshake(Number(b.dataset.step))));handshake(0);
+const classNames=['Bình thường','SYN flood','Vertical scan'];
+function computeTeaching(raw){const q=raw.map((x,i)=>Math.min(127,Math.floor(x/M.divisors[i])));const h=M.w1.map((weights,j)=>Math.max(0,Math.min(127,Math.floor(weights.reduce((a,w,i)=>a+w*q[i],M.b1[j])/2**M.shift1))));const scores=M.w2.map((weights,j)=>Math.max(-32768,Math.min(32767,Math.floor(weights.reduce((a,w,i)=>a+w*h[i],M.b2[j])/2**M.shift2))));const predicted=scores.indexOf(Math.max(...scores));return {q,h,scores,predicted};}
+function recalculate(){const out=document.getElementById('calc-out');try{const raw=[0,1,2,3,4,5].map(i=>{const field=document.getElementById('n'+i);if(!field.value.trim())throw Error('Bạn hãy nhập đủ sáu số.');return Number(field.value);});if(raw.some(x=>!Number.isSafeInteger(x)||x<0))throw Error('Hãy dùng số nguyên không âm, vừa phạm vi tính chính xác của trình duyệt.');if(raw[2]>127)throw Error('Cột tỷ lệ SYN dùng thang 0 đến 127, không nhập số lớn hơn 127.');if(raw[0]===0){out.textContent='Số gói thật bằng 0: bỏ suy luận. Không có kết quả AI mới.';document.getElementById('score-cards').hidden=true;document.getElementById('numbers').textContent='Không dùng score cũ để quyết định.';return;}const r=computeTeaching(raw);out.textContent='AI dự đoán: '+classNames[r.predicted]+'. Vì điểm của lớp này cao nhất'+(r.scores.filter(s=>s===Math.max(...r.scores)).length>1?' (có hòa thì ưu tiên chỉ số lớp nhỏ hơn).':'.');const cards=document.getElementById('score-cards');cards.hidden=false;cards.replaceChildren();r.scores.forEach((score,i)=>{const c=document.createElement('div'),b=document.createElement('b');if(i===r.predicted)c.className='winner';c.append(document.createTextNode(classNames[i]));b.textContent=score;c.append(b);cards.append(c);});document.getElementById('numbers').textContent='Trước khi thu gọn: ['+raw.join(', ')+']\nSáu q đưa vào AI: ['+r.q.join(', ')+']';}catch(error){out.textContent=error.message;document.getElementById('score-cards').hidden=true;document.getElementById('numbers').textContent='';}}
+function loadExample(index){const e=FACTS.examples[index],keys=['packet_count','mean_ip_bytes','syn_ratio_q127','src_count','dst_count','dst_port_count'];keys.forEach((k,i)=>document.getElementById('n'+i).value=e.row[k]);document.getElementById('example-name').textContent='Mẫu '+classNames[Number(e.row.label)]+' trong bảng của bạn, một cửa sổ một giây.';recalculate();}
+document.querySelectorAll('[data-example]').forEach(b=>b.addEventListener('click',()=>loadExample(Number(b.dataset.example))));document.querySelectorAll('#input-numbers input').forEach(i=>i.addEventListener('input',recalculate));loadExample(0);
+document.getElementById('show-miss').addEventListener('click',()=>{const r=computeTeaching([803,40,127,1,1,1]);const panel=document.getElementById('miss-result');panel.hidden=false;panel.textContent='Nhãn dữ liệu: SYN flood. AI trả điểm ['+r.scores.join(', ')+'] và chọn '+classNames[r.predicted]+'. Hai điểm đầu cùng 1413, quy tắc hòa chọn class 0. Đây là một SYN bị bỏ sót đã có trong báo cáo, không phải bằng chứng nhãn nên đổi thành Normal.';});
+</script></body></html>

@@ -1,0 +1,22 @@
+{
+  "uploaded_zip_sha256": "3ff1d960f299170db41a43b7ae28bb0ba98d7a49909848f6dcedb5422c937ff4",
+  "pcap_decompressed_without_packet_changes": [
+    {
+      "easy_name": "vi_du/pcap_de_mo/1_Binh_thuong.pcap",
+      "source_profile": "normal_train_14_sensor7",
+      "sha256": "09f9a859272d906278ca402fc1886cd40cf9aebe01eb50fb662638bb6210cac8"
+    },
+    {
+      "easy_name": "vi_du/pcap_de_mo/2_SYN_flood.pcap",
+      "source_profile": "syn_train_512_sensor7",
+      "sha256": "4cd467f81dbef67c645741db838e3efb42f935f641abbe77c413138aead201b5"
+    },
+    {
+      "easy_name": "vi_du/pcap_de_mo/3_Vertical_scan.pcap",
+      "source_profile": "scan_train_2_one_syn",
+      "sha256": "f745da7d14b5775960a0c76fa42e3dc926977fbb8ead99bdeb8ebfa3b48f7856"
+    }
+  ],
+  "short_csv_kind": "3 teaching rows derived from the unchanged source CSVs; not replacement training data",
+  "model_unchanged": true
+}
