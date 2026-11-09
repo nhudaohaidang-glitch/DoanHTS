@@ -1,0 +1,159 @@
+{
+  "syn34_selected": {
+    "path": "ai_part2/integration/phan1_v6_1/training/sources/syn34.pcap.gz",
+    "sha256": "e9adf7269ba420ffa57c552e8d7b0dd1150fec50da8cb9bad1b9db831dcfd9d9",
+    "stats": {
+      "frames": 40568,
+      "tcp_packets": 40568,
+      "tcp_payload_bytes": 0,
+      "tcp_packets_with_payload": 0,
+      "tcp_syn_without_ack": 40568
+    },
+    "flags": {
+      "0x2": 40568
+    },
+    "source_ips": {
+      "192.168.1.195": 40568
+    },
+    "destination_ips": {
+      "71.61.66.148": 40568
+    },
+    "distinct_dports": 1,
+    "top_dports": [
+      [
+        80,
+        40568
+      ]
+    ],
+    "packets_to_1883": 0,
+    "packets_to_8883": 0,
+    "first_timestamp": 1545475806.96806,
+    "last_timestamp": 1545475828.998385,
+    "duration_seconds": 22.030324935913086,
+    "examples": [
+      {
+        "source": "192.168.1.195",
+        "destination": "71.61.66.148",
+        "dport": 80,
+        "flags": "0x2",
+        "ip_bytes": 40,
+        "tcp_payload_bytes": 0
+      },
+      {
+        "source": "192.168.1.195",
+        "destination": "71.61.66.148",
+        "dport": 80,
+        "flags": "0x2",
+        "ip_bytes": 40,
+        "tcp_payload_bytes": 0
+      },
+      {
+        "source": "192.168.1.195",
+        "destination": "71.61.66.148",
+        "dport": 80,
+        "flags": "0x2",
+        "ip_bytes": 40,
+        "tcp_payload_bytes": 0
+      }
+    ]
+  },
+  "vertical_scan": {
+    "path": "ai_part2/integration/phan1_v6_1/training/sources/vertical_scan.pcap",
+    "sha256": "dec17c51b1b9d464831edb6e1f0a5bbcbeabdc519bfb4a5a402803384adb257c",
+    "stats": {
+      "frames": 2011,
+      "tcp_packets": 2011,
+      "tcp_payload_bytes": 0,
+      "tcp_packets_with_payload": 0,
+      "tcp_syn_without_ack": 1994
+    },
+    "flags": {
+      "0x2": 1994,
+      "0x12": 12,
+      "0x14": 5
+    },
+    "source_ips": {
+      "172.16.0.8": 1994,
+      "64.13.134.52": 17
+    },
+    "destination_ips": {
+      "64.13.134.52": 1994,
+      "172.16.0.8": 17
+    },
+    "top_dports": [
+      [
+        36050,
+        16
+      ],
+      [
+        443,
+        2
+      ],
+      [
+        143,
+        2
+      ],
+      [
+        3306,
+        2
+      ],
+      [
+        199,
+        2
+      ],
+      [
+        111,
+        2
+      ],
+      [
+        1025,
+        2
+      ],
+      [
+        995,
+        2
+      ]
+    ],
+    "packets_to_1883": 0,
+    "packets_to_8883": 0,
+    "first_timestamp": 1278275056.27487,
+    "last_timestamp": 1278275079.360213,
+    "duration_seconds": 23.0853431224823,
+    "examples": [
+      {
+        "source": "172.16.0.8",
+        "destination": "64.13.134.52",
+        "dport": 443,
+        "flags": "0x2",
+        "ip_bytes": 44,
+        "tcp_payload_bytes": 0
+      },
+      {
+        "source": "172.16.0.8",
+        "destination": "64.13.134.52",
+        "dport": 143,
+        "flags": "0x2",
+        "ip_bytes": 44,
+        "tcp_payload_bytes": 0
+      },
+      {
+        "source": "172.16.0.8",
+        "destination": "64.13.134.52",
+        "dport": 3306,
+        "flags": "0x2",
+        "ip_bytes": 44,
+        "tcp_payload_bytes": 0
+      }
+    ],
+    "distinct_dports_both_directions": 1002,
+    "scanner_to_target": {
+      "source": "172.16.0.8",
+      "destination": "64.13.134.52",
+      "syn_open_packets": 1994,
+      "distinct_target_ports": 1000,
+      "tcp_payload_bytes": 0,
+      "response_packets": 17,
+      "scan_duration_seconds": 5.141571
+    }
+  }
+}

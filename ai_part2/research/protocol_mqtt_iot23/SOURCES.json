@@ -1,0 +1,26 @@
+[
+  {
+    "id": "iot23_official",
+    "url": "https://www.stratosphereips.org/datasets-iot23",
+    "final_url": "https://www.stratosphereips.org/datasets-iot23",
+    "bytes": 269455,
+    "sha256": "4643239b10fbaff48d19afb8cdb39ca1e6e9175763b80c5eca56ea58f7d0b7bf",
+    "text_chars": 31178
+  },
+  {
+    "id": "iot23_scenarios",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+    "final_url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+    "bytes": 6453,
+    "sha256": "8be6c9be09e8b913077a7d120093035160d60f39fb07e345e1a1a0968bf30e72",
+    "text_chars": 1380
+  },
+  {
+    "id": "chris_readme",
+    "url": "https://raw.githubusercontent.com/chrissanders/packets/0412fb1dc0aa671128f9da6689e0dbd4459c0b51/README.md",
+    "final_url": "https://raw.githubusercontent.com/chrissanders/packets/0412fb1dc0aa671128f9da6689e0dbd4459c0b51/README.md",
+    "bytes": 514,
+    "sha256": "dd48b5c27324e49bbcdbe95dfb00354373919a141fb86186633ce8093e3e244f",
+    "text_chars": 508
+  }
+]

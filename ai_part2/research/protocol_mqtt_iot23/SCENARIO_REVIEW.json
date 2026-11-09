@@ -1,0 +1,588 @@
+[
+  {
+    "scenario": "CTU-Honeypot-Capture-4-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-4-1/",
+    "documents": [
+      {
+        "file": "README.json",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-4-1/README.json",
+        "bytes": 13312,
+        "sha256": "b7d59b7cb738fe72e264ea7fd31ec09b98682634384e26e331b5045ef9b09fbc",
+        "mqtt_mentioned": false
+      },
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-4-1/README.md",
+        "bytes": 2821,
+        "sha256": "640e713a2864cd3c6b0343518375fde49fed0b10f266c939cc96c1b81e3c0a30",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-10-25-14-06-32-192.168.1.132.capinfos",
+      "2018-10-25-14-06-32-192.168.1.132.dnstop",
+      "2018-10-25-14-06-32-192.168.1.132.passivedns",
+      "2018-10-25-14-06-32-192.168.1.132.pcap.xz",
+      "README.html",
+      "README.json",
+      "README.md",
+      "bro/",
+      "suricata/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-Honeypot-Capture-5-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-5-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-5-1/README.md",
+        "bytes": 311,
+        "sha256": "b970d43aef87cd87ae9906e0da32d5a1b4bc53df8015d166248a4231487af368",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-09-21-capture.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-Honeypot-Capture-7-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-Honeypot-Capture-7-1/",
+    "documents": [],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "Somfy-01/",
+      "Somfy-02/",
+      "Somfy-03/",
+      "Somfy-04/",
+      "Somfy-05/",
+      "Somfy-06/"
+    ],
+    "status": "index_and_publisher_overview_only"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-1-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-1-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-1-1/README.md",
+        "bytes": 1745,
+        "sha256": "27b932e5777c5b457eafc2f9cd8db3792527e509b31b123dfdf70d6e0c86fcfa",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-05-09-192.168.100.103.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-3-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/README.md",
+        "bytes": 3663,
+        "sha256": "426f8ce8680c2593815f6d8bdc4f1f9cf183210a26d9459f135d4d100e91558f",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-05-21_capture.pcap",
+      "README.md",
+      "bro/",
+      "test.pcap"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-7-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-7-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-7-1/README.md",
+        "bytes": 2791,
+        "sha256": "58b07e98594bc61f7d639822fc0a58e5d7d9ec4dac568024cb206770db15c941",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-07-20-17-31-20-192.168.100.108.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-8-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-8-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-8-1/README.md",
+        "bytes": 1688,
+        "sha256": "1788755a075f580c3628e4698ba4dad699f91c058dede73bae3f480bb5cba840",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-07-31-15-15-09-192.168.100.113.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-9-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-9-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-9-1/README.md",
+        "bytes": 1806,
+        "sha256": "4faafd766fb8f0637df8b704ab9fd69ca4bb041d41158c83aee123b088b25fb4",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-07-25-10-53-16-192.168.100.111-only5000.pcap",
+      "2018-07-25-10-53-16-192.168.100.111.pcap",
+      "README.md",
+      "bro/",
+      "telnet.pcap"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-17-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-17-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-17-1/README.md",
+        "bytes": 2018,
+        "sha256": "22882055e6671cc46d737f5bcf017e3f20e02bb6bdeef6efed2eb9ac5826a40a",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-09-06-11-43-12-192.168.100.111.only15000000.pcap",
+      "2018-09-06-11-43-12-192.168.100.111.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-20-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-20-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-20-1/README.md",
+        "bytes": 1786,
+        "sha256": "67a196f4c4203865df1e5ffe767551590d611d60aaab1b2df0ff865cfaee3e3c",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-10-02-13-12-30-192.168.100.103.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-21-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-21-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-21-1/README.md",
+        "bytes": 1787,
+        "sha256": "bfbafe60b85f7425f888ebfb5a2c37cc5beb9eb2a98cb76bc17e4f5b52143c0b",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-10-03-15-22-32-192.168.100.113.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-33-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-33-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-33-1/README.md",
+        "bytes": 1537,
+        "sha256": "f560ff65ab70d133c346499d7f3c0477ffd499701c84e422b32cac841ccd5a99",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-12-20-21-10-00-192.168.1.197.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-34-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/README.md",
+        "bytes": 1596,
+        "sha256": "940e8778cba292b4c9d2f8b7e10d77976c8eccfc8b6b8bfa79faa53230203f7f",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-12-21-15-50-14-192.168.1.195.capinfos",
+      "2018-12-21-15-50-14-192.168.1.195.dnstop",
+      "2018-12-21-15-50-14-192.168.1.195.pcap",
+      "README.html",
+      "README.md",
+      "bro/",
+      "other-pcap/",
+      "suricata/",
+      "https://www.virustotal.com/en/file/49fd1cb22e0325c1f9038160da534fc23672e5509e903a94ce5bcddc893eb2c0/analysis/",
+      "https://www.hybrid-analysis.com/sample/49fd1cb22e0325c1f9038160da534fc23672e5509e903a94ce5bcddc893eb2c0?environmentId=2",
+      "https://robohash.org"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-35-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-35-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-35-1/README.md",
+        "bytes": 1526,
+        "sha256": "62e48b0391f2ea036c3cf197a6d88fcf81f0f2e07d9c38533ee931c4a0579cd8",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "85.217.225.181.23.pcap",
+      "104.248.160.24-23.pcap",
+      "104.248.160.24-80.pcap",
+      "104.248.160.24.port80TCP.pcap",
+      "104.248.160.24.port80UDP.pcap",
+      "2018-12-21-15-33-59-192.168.1.196.pcap",
+      "README.md",
+      "bro/",
+      "malware-capture-35-1-port-23.pcap"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-36-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-36-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-36-1/README.md",
+        "bytes": 1532,
+        "sha256": "071bf8a9d801b6890d6065aa93835a9a68d33a06acc11dadae3e680040b80794",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2018-12-21-13-36-41-192.168.1.198.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-39-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-39-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-39-1/README.md",
+        "bytes": 1525,
+        "sha256": "5b2b5d76e14a44251fdbb6208867d9b9e61d05eeec78578c1ad74ce250dbba0c",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2019-01-09-21-25-11-192.168.1.194.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-42-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-42-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-42-1/README.md",
+        "bytes": 1528,
+        "sha256": "3b3ca5b655db82a93e7f69fcbba76bb9de3f4fff3ea2938726062abe4ff889b3",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2019-01-10-14-34-38-192.168.1.197.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-43-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-43-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-43-1/README.md",
+        "bytes": 1641,
+        "sha256": "cc44f42a855e76d1836e6fb3bf3ddef8778333689a72b736378eda3b2eb05037",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2019-01-10-19-22-51-192.168.1.198.capinfos",
+      "2019-01-10-19-22-51-192.168.1.198.dnstop",
+      "2019-01-10-19-22-51-192.168.1.198.pcap",
+      "README.html",
+      "README.md",
+      "bro/",
+      "labeled/",
+      "suricata/",
+      "https://www.virustotal.com/en/file/9d5374b9f13ed32baf68aae86d88f44b2d2a58400e1dce276b317d7b43abbd08/analysis/",
+      "https://www.hybrid-analysis.com/sample/9d5374b9f13ed32baf68aae86d88f44b2d2a58400e1dce276b317d7b43abbd08?environmentId=2",
+      "https://robohash.org"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-44-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-44-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-44-1/README.md",
+        "bytes": 1527,
+        "sha256": "296294529a47ffe3d52dcc8787c694ddd20b097e0c9966a53c097c622b2a6910",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2019-01-10-21-06-26-192.168.1.199.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-48-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-48-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-48-1/README.md",
+        "bytes": 1522,
+        "sha256": "fd8035f10bc57f4fe6114ade18eaae7de26b9385f1b9ed67ccedd1b3a51e7f83",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2019-02-28-19-15-13-192.168.1.200.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-49-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-49-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-49-1/README.md",
+        "bytes": 1582,
+        "sha256": "7554343f0f2e2eceaf06f000e911a1c0bc5b4b07ccf14529a9c1f67d3b8eafdd",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2019-02-28-20-50-15-192.168.1.193.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-52-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-52-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-52-1/README.md",
+        "bytes": 1532,
+        "sha256": "69e6c5587d2e824da096aadab883dba0a4ee14b5b835648a55925880eef6c9a3",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2019-03-08-13-24-30-192.168.1.197.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  },
+  {
+    "scenario": "CTU-IoT-Malware-Capture-60-1",
+    "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-60-1/",
+    "documents": [
+      {
+        "file": "README.md",
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-60-1/README.md",
+        "bytes": 1873,
+        "sha256": "6ab25ea8b2cc2d95b19c5b9f477d81c4a8e9ae0e04c3cf489d1e8461e3ce2fba",
+        "mqtt_mentioned": false
+      }
+    ],
+    "files": [
+      "?C=N;O=D",
+      "?C=M;O=A",
+      "?C=S;O=A",
+      "?C=D;O=A",
+      "/publicDatasets/IoT-23-Dataset/IndividualScenarios/",
+      "2019-09-20-02-40-32-192.168.1.195.pcap",
+      "README.md",
+      "bro/"
+    ],
+    "status": "read_documents"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "url": "https://raw.githubusercontent.com/eclipse-mosquitto/mosquitto/v2.0.22/ChangeLog.txt",
+  "bytes": 143577,
+  "sha256": "90074b0a9b439b19b19ee23445214fe444f69c39804386a6237bed264f0ed9ef",
+  "finding": "Official changelog section 2.0.10 documents CVE-2021-28166: an authenticated MQTT v5 client could trigger a crash in broker versions 2.0.0 through 2.0.9; fixed in 2.0.10. Not evidence of vulnerability in user broker."
+}

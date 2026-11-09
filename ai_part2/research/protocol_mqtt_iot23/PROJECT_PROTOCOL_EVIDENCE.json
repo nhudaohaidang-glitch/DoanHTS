@@ -1,0 +1,34 @@
+{
+  "review_date": "2026-11-09",
+  "user_confirmed_target": "MQTT server behind gateway",
+  "network_or_malware_experiments_run": false,
+  "model_changed": false,
+  "files": [
+    {
+      "path": "ai_part2/lab/lab_traffic.py",
+      "sha256": "1ab9580a497b1b12f27ba37c4989c785e62a80a26420b53b67252a5acc7d1ce8"
+    },
+    {
+      "path": "ai_part2/lab/sensor_client.py",
+      "sha256": "d63ea96a3e8476e3c19dfb7f90c9e107fedf2a3ed8238ceec1a5084114761cdc"
+    },
+    {
+      "path": "ai_part2/lab/run_capture.sh",
+      "sha256": "7770faf6d5451de22c97fb1fb174c6df868c884729e22d59086dae1aa228f6b6"
+    },
+    {
+      "path": "ai_part2/integration/phan1_v6_1/docs/README_PERSON1_ORIGINAL.md",
+      "sha256": "2842618e6b555f55927ae6460c821b070dd6bf5f95edf214638e2e2f259d20d8"
+    },
+    {
+      "path": "ai_part2/handoff/phan2_ai_v6_ban_giao/spec/FEATURES_V0.md",
+      "sha256": "07c95ccdc28c0e20a762c397d936805d9e64c441d51e8db5fc1f9e8e930e4290"
+    }
+  ],
+  "findings": [
+    "lab syn/scan generate raw TCP SYN, not MQTT application messages",
+    "sensor client uses real MQTT connect/publish QoS1",
+    "gateway is intended as transparent Ethernet bridge",
+    "current model consumes six traffic features, not MQTT application fields"
+  ]
+}

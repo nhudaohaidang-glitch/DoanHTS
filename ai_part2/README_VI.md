@@ -1,5 +1,9 @@
 # Người 2 — bộ mã độc lập cho SYN flood và vertical scan
 
+## Làm rõ giao thức tấn công và MQTT
+
+[Báo cáo đối chiếu 09/11/2026](research/protocol_mqtt_iot23/BAO_CAO_GIAO_THUC_TAN_CONG.pdf) và [gói bằng chứng](../bao_cao_giao_thuc_iot23_mqtt.zip). Rà danh mục/mô tả 23 kịch bản IoT-23, nhãn công bố của 20 kịch bản malware, toàn capture 34, hai mẫu attack đang dùng và code lab. SYN/scan hiện tại thuộc TCP, không phải bản tin MQTT. Báo cáo tách đúng phạm vi đọc, việc phát hiện tấn công, ảnh hưởng dịch vụ và crash broker; không thay model hoặc chạy tấn công.
+
 ## Bắt đầu học: bản viết lại dễ hiểu
 
 [Tải PDF dễ hiểu](learning/ai_v6_de_hieu/BAT_DAU_HOC_AI_V6.pdf) hoặc [gói học dễ hiểu](../de_cuong_ai_v6_de_hieu.zip). Bản này giải nghĩa từ mới trước, đi từ gói tin/TCP đến đọc dataset, sáu con số và model. Có 12 bài, câu hỏi/lời giải, HTML đọc từng bài với phần bấm thử TCP/AI, bảng CSV rút gọn và PCAP đã giải nén sẵn. Công thức/mã để ở phụ lục. Giữ nguyên model và dữ liệu của gói người dùng gửi; bản kỹ thuật trước vẫn ở dưới để tra cứu.

@@ -1,0 +1,74 @@
+{
+  "scope": "Full original capture34 only, not full IoT23",
+  "source": "Original CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+  "sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+  "bytes": 126317980,
+  "counts": {
+    "frames": 233865,
+    "ipv4_frames": 228469
+  },
+  "ipv4_protocol_numbers": {
+    "6": 167905,
+    "17": 60564
+  },
+  "tcp_packets_destination_ports_1883_8883": {
+    "1883": 0,
+    "8883": 0
+  },
+  "top_tcp_destination_ports": [
+    [
+      80,
+      70056
+    ],
+    [
+      63798,
+      38060
+    ],
+    [
+      6667,
+      24756
+    ],
+    [
+      53,
+      19437
+    ],
+    [
+      1,
+      2200
+    ],
+    [
+      48986,
+      1070
+    ],
+    [
+      54430,
+      340
+    ],
+    [
+      53332,
+      289
+    ],
+    [
+      55770,
+      285
+    ],
+    [
+      22,
+      200
+    ],
+    [
+      40831,
+      184
+    ],
+    [
+      41052,
+      119
+    ]
+  ],
+  "infected_to_selected_target_port80": {
+    "tcp_packets": 40568,
+    "SYN_without_ACK": 40568
+  },
+  "elapsed_seconds": 0.74,
+  "warning": "Port counts alone do not establish application protocol; no MQTT absence claim for all IoT23."
+}
